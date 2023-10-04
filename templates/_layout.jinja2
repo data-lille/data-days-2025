@@ -1,0 +1,103 @@
+<!--
+{%- set MENU = (
+  ('index', ('À propos', 'About')),
+  ('schedule', ('Programme', 'Schedule')),
+  ('venue', ('Venir', 'Venue')),
+  ('financial', ('Bourses', 'Financial Assistance')),
+  ('sponsors', ('Sponsors', 'Sponsors')),
+  ('news', ('Actualités', 'News')),
+  ('conduct', ('Code de conduite', 'Code of Conduct')),
+  ('support', ('Nous soutenir', 'Support Us')),
+) -%}
+-->
+{%- set MENU = (
+  ('index', ('À propos', 'About')),
+  ('sponsors', ('Sponsors', 'Sponsors')),
+  ('conduct', ('Code de conduite', 'Code of Conduct')),
+  ('support', ('Nous soutenir', 'Support Us')),
+) -%}
+{%- set EXTRA_PAGES = (
+  ('talks-plenary', ('Plénières', 'Plenary Sessions')),
+  ('talks-1h', ('Conférences d’une heure', '1-hour Talks')),
+  ('talks-30m', ('Conférences de 30 minutes', '30-minute Talks')),
+  ('talks-workshop', ('Ateliers', 'Workshops')),
+  ('talks-sprint', ('Sprints', 'Sprints')),
+) -%}
+
+{%- set title = dict(MENU + EXTRA_PAGES).get(page_name, ['', ''])[1 if lang == 'en' else 0] -%}
+
+{%- from '_sponsors.jinja2' import sponsors -%}
+{%- from '_map.jinja2' import map -%}
+
+<!DOCTYPE html>
+
+<html lang="{{ lang }}">
+  <head>
+    {% block head %}
+      <title>{{ title }} − PyConFr 2024</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.svg') }}" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% endblock head %}
+  </head>
+
+  <body id="{{ page_name }}">
+
+    <nav>
+      <ul>
+        {% for endpoint, (title_fr, title_en) in MENU %}
+          <li class="{{ 'active' if page_name == endpoint }}">
+            <a href="{{ url_for('page', name=endpoint, lang=lang) }}">{{ title_en if lang == 'en' else title_fr }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    {% if request.endpoint == 'talks' %}
+      <nav>
+        <ul>
+          {% for endpoint, (title_fr, title_en) in EXTRA_PAGES %}
+            <li class="{{ 'active' if page_name == endpoint }}">
+              <a href="{{ url_for('talks', lang=lang, category=endpoint.split('-')[1]) }}">{{ title_en if lang == 'en' else title_fr }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
+
+    {% if request.endpoint == 'page' %}
+      <aside>
+        <ul>
+          <li id="french" class="{{ 'active' if lang == 'fr' }}">
+            <a title="Français" href="{{ url_for('page', name=page_name, lang='fr') }}">
+              Français
+            </a>
+          </li>
+          <li id="english" class="{{ 'active' if lang == 'en' }}">
+            <a title="English" href="{{ url_for('page', name=page_name, lang='en') }}">
+              English
+            </a>
+          </li>
+        </ul>
+      </aside>
+    {% endif %}
+
+    <main>
+      {% block content %}{% endblock content %}
+    </main>
+
+    <footer>
+      <ul>
+        <li><a href="mailto:contact@pycon.fr">Email</a></li>
+        <li><a href="https://mamot.fr/@AFPy">Mastodon</a></li>
+        <li><a href="https://twitter.com/pyconfr">Twitter</a></li>
+        <li><a href="https://discuss.afpy.org/">Discourse</a></li>
+        <li><a href="https://github.com/AFPy/pyconfr-2024">GitHub</a></li>
+        <li><a href="https://pythonhosted.org/Frozen-Flask/">Frozen-Flask</a></li>
+        <li><a href="https://afpy.org/">© 2024 AFPy</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+{% macro description(company, lang) %}
+  <div class="description">
+
+  {% if lang == 'fr' %}
+
+  {% elif lang == 'en' %}
+
+  {% endif %}
+  </div>
+{% endmacro %}
+
+{% macro sponsors(lang, only_logo=False) %}
+  {% set levels = {
+      'Platine' if lang == 'fr' else 'Platinum': {
+      },
+
+      'Or' if lang == 'fr' else 'Gold': {
+      },
+
+      'Argent' if lang == 'fr' else 'Silver': {
+      },
+
+      'Bronze': {
+      },
+
+      'Cœur' if lang == 'fr' else 'Heart': {
+      },
+
+      'Partenaires' if lang == 'fr' else 'Partners':
+      {
+      },
+  } %}
+
+  {% set png_logos = ('Invivoo',) %}
+
+  {% if lang == 'fr' %}
+    <p>
+      Vous souhaitez nous soutenir ?
+      <a href="{{ url_for('page', name='support', lang=lang)}}">Devenez sponsor</a> et
+      offrez à votre entreprise une plus grande visibilité lors de cet événement.
+    </p>
+  {% else %}
+    <p>
+      If you wish to support us, please
+      <a href="{{ url_for('page', name='support', lang=lang)}}">become sponsor</a> to
+      offer a wider visibility to your enterprise during this event.
+    </p>
+  {% endif %}
+
+  {% for level, companies in levels.items() %}
+    {% if companies %}
+      <section class="sponsors">
+        <h3>{{ level }}</h3>
+        {% for company, link in companies.items() %}
+            {% if not only_logo and level not in ('Heart', 'Partners', 'Cœur', 'Partenaires') %}
+              <div class="sponsor">
+                <h4>{{ company }}</h4>
+            {% endif %}
+            {% if link %}
+              <a href="{{ link }}" class="logo">
+            {%- endif -%}
+              <img src="{{ url_for('static', filename='images/partners/{}.{}'.format(company.replace('/', '-'), 'png' if company in png_logos else 'svg')) }}" alt="Logo {{ company }}" />
+            {%- if link -%}
+              </a>
+            {% endif %}
+            {% if not only_logo and level not in ('Heart', 'Partners', 'Cœur', 'Partenaires') %}
+                {{ description(company, lang) }}
+              </div>
+            {% endif %}
+        {% endfor %}
+      {% endif %}
+    </section>
+  {% endfor %}
+{% endmacro %}

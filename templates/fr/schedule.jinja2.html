@@ -1,0 +1,90 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article>
+    <h2>Programme</h2>
+
+    <section>
+      <h3>Calendrier</h3>
+      <p>
+        Le calendrier est disponible ci-dessous, sur une
+        <a href="{{ url_for('schedule', lang=lang) }}">page en plein écran</a>,
+        ou <a href="{{ url_for('calendar') }}">dans votre application de calendrier favorite</a>.
+      </p>
+      <p>
+        Vous pouvez également lire la description des
+        <a href="{{ url_for('talks', lang=lang, category='plenary') }}">plénières</a>, des
+        <a href="{{ url_for('talks', lang=lang, category='1h') }}">conférences d’une heure</a>, des
+        <a href="{{ url_for('talks', lang=lang, category='30m') }}">conférences de 30 minutes</a>, des
+        <a href="{{ url_for('talks', lang=lang, category='workshop')}}">ateliers</a> et des
+        <a href="{{ url_for('talks', lang=lang, category='sprint') }}">sprints</a>.
+      </p>
+
+      <iframe src="{{ url_for('schedule', lang=lang) }}"></iframe>
+    </section>
+
+    <section id="register">
+      <h3>Inscriptions</h3>
+        <p>
+          L’accès aux sprints, aux conférences et aux ateliers de PyConFr est
+          gratuit.
+        </p>
+        <p>
+          Cependant, <strong>l’inscription est obligatoire pour tous</strong>, y
+          compris membres du comité d’organisation, bénévoles, conférenciers et
+          sponsors.
+        </p>
+        <p>
+          Les inscriptions sont ouvertes jusqu’à la fin de l’événement, dans la
+          limite de :
+        </p>
+        <ul>
+          <li>200 personnes pour les sprints,</li>
+          <li>1 000 personnes pour les conférences et ateliers,</li>
+          <li>150 personnes pour <a href="#dinner">le repas du samedi soir</a>.</li>
+        </ul>
+        <p>
+          Il est possible lors de cette inscription de :
+        </p>
+        <ul>
+          <li>
+            pré-réserver des t-shirts (10 €), qui seront également vendus lors de
+            la conférence mais en nombre limité,
+          </li>
+          <li>
+            vous inscrire pour le repas du samedi soir (30 €).
+          </li>
+        </ul>
+        <p>
+          Vous pouvez également soutenir <a href="https://afpy.org/">l’AFPy</a>,
+          qui organise chaque année cet événement,
+          en <a href="https://www.helloasso.com/associations/afpy/formulaires/1/">faisant
+          un don</a>. Si vous souhaitez avoir une voix à son assemblée générale,
+          qui aura lieu le dimanche matin, vous
+          devez <a href="https://www.afpy.org/adherer">devenir membre</a>.
+        </p>
+        <div class="column center">
+          <a class="button" href="https://www.helloasso.com/associations/afpy/evenements/pyconfr-2023">S’inscrire</a>
+        </div>
+      </p>
+    </section>
+
+    <section id="dinner">
+      <h3>Repas du samedi soir</h3>
+      <p>
+        Un repas est organisé le samedi soir, de 19 h 30 à 23 h 00,
+        au <a href="https://www.bordeaux.fr/l11032/agora-du-haut-carre">Haut-Carré (GPS : 44.81013118539135, -0.5945402728893399)</a>,
+        uniquement pour les personnes ayant réservé lors de leur inscription.
+      </p>
+      <p>
+        Ce repas comprend
+        un cocktail dînatoire comprenant divers petits fours et des boissons avec et
+        sans alcool.
+      </p>
+      <p>
+        L’achat d’autres boissons alcoolisées (non comprises dans le prix) est possible
+        lors du repas.
+      </p>
+    </section>
+  </article>
+{% endblock content %}

@@ -1,0 +1,398 @@
+// Colors
+$background: #ffffff
+$text: #3C3C3C
+$primary: #378899
+$secondary: #f6b36a
+$third: #fe6f61
+
+
+// Fonts
+@font-face
+  font-family: Manrope
+  font-weight: 100 400
+  font-style: normal
+  src: url(/2024/static/fonts/manrope/Manrope-Regular.otf)
+
+@font-face
+  font-family: Manrope
+  font-weight: 500 700
+  font-style: normal
+  src: url(/2024/static/fonts/manrope/Manrope-Medium.otf)
+
+@font-face
+  font-family: Manrope
+  font-weight: 800 900
+  font-style: normal
+  src: url(/2024/static/fonts/manrope/Manrope-ExtraBold.otf)
+
+
+// Common
+*
+  // No italic font available
+  font-style: normal !important
+
+html
+  color: $text
+  font-family: Manrope
+  font-size: 1.2em
+  font-weight: 400
+  letter-spacing: .05em
+
+body
+  display: flex
+  flex-direction: column
+  margin: 0
+  min-height: 100vh
+
+h1, h2, h3, h4
+  clear: left
+  font-weight: normal
+  margin: 2em 0 1em
+
+h1
+  font-size: 2em
+  font-weight: 900
+  color: $primary
+  margin-bottom: 0
+
+h2
+  font-weight: 700
+  text-transform: uppercase
+  color: $primary
+
+h3
+  font-weight: 700
+
+h4
+  color: $primary
+
+a
+  color: $primary
+  font-weight: 800
+  letter-spacing: .005em
+  text-decoration: inherit
+
+  &:hover, &:focus
+    text-decoration: underline
+
+address
+  white-space: pre-line
+
+
+ul li::marker
+  color: $third
+  content: '– '
+
+embed
+  display: block
+  float: left
+  margin: 0 1em 2em 0
+  width: 50%
+
+embed + p
+  margin-top: 2em
+
+.button
+  background-color: $primary
+  color: white
+  display: inline-block
+  margin: 1rem 0
+  padding: 0.5rem 1rem
+  max-width: max-content
+  transition: background-color 0.5s
+  border-radius: 12px
+
+  &:hover, &:focus
+    background-color: lighten($primary, 15%)
+    text-decoration: inherit
+
+
+aside, nav, footer
+  background: $background
+  color: $background
+
+  ul
+    display: flex
+    flex-wrap: wrap
+    margin: 0
+    padding: 0
+    justify-content: center
+
+    li
+      display: block
+
+      a
+        color: $primary
+        display: inline-block
+        padding: 1em
+        text-decoration: inherit
+        font-size: 0.8em
+        font-weight: normal
+        position: relative
+
+        &:hover, &:focus
+          text-decoration: inherit
+
+nav li
+  border-bottom: 2px solid transparent
+
+  &.active, &:hover, &:focus
+    border-color: $primary
+
+nav
+  border-bottom: 1px solid #37889947
+
+aside
+  align-self: flex-end
+  height: 0
+  z-index: 1
+
+  ul li
+    font-size: 0
+    opacity: 0.4
+    padding-right: 0.5rem
+    padding-top: 0.5rem
+
+    &:after, a:after
+      display: none !important
+
+    a::before
+      background: center / cover
+      content: ''
+      display: block
+      height: 1rem
+      width: 1.5rem
+
+    &#french a::before
+      background-image: url(/2024/static/images/france.svg)
+
+    &#english a::before
+      background-image: url(/2024/static/images/united-kingdom.svg)
+
+    &.active
+      opacity: 1
+
+      a
+        background: transparent
+
+footer ul
+  justify-content: center
+
+
+main
+  flex: 1
+
+  article > *
+    box-sizing: border-box
+    max-width: 95%
+    margin-left: auto
+    margin-right: auto
+    padding-left: 2rem
+    padding-right: 2rem
+    width: 70rem
+
+  article
+    overflow: auto
+    padding-bottom: 3em
+
+    &:nth-child(even)
+      background: #F9F9F9
+
+    section
+      margin-top: 4em
+
+    h3 a
+      color: inherit
+      cursor: text
+
+    table
+      border-collapse: collapse
+      margin: 2em auto
+      width: 60rem
+
+      th
+        font-weight: normal
+
+      td
+        border: 1px solid $secondary
+        padding: 0.25em
+
+        &:not(:first-child)
+          text-align: center
+          width: 15%
+
+    iframe
+      border: 0
+      height: 25rem
+      margin: 1em 0
+      max-width: 100%
+      min-height: 60vh
+      overflow: hidden
+      padding: 0
+      width: 100%
+
+
+  .sponsors img
+    display: inline-block
+    line-height: 120px
+    max-height: 100px
+    margin: 1rem
+    vertical-align: middle
+    width: 200px
+
+
+#sponsors
+  .sponsor
+    max-width: 32em
+
+    > a
+      display: block
+      text-align: center
+
+    .description
+      padding: 1.5rem
+      border-right: 5px solid $secondary
+      border-left: 5px solid $primary
+
+
+#index
+  .coverboard
+    display: none
+    position: relative
+    overflow: hidden
+
+    .cover
+      position: relative
+      width: 100%
+      padding-top: 39.21875%
+
+      img
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+
+    .program-button
+      position: absolute
+      z-index: 2
+      width: 100%
+      top: 58%
+      text-align: center
+
+      a
+        margin: 0 auto
+
+  .pycon-presentation
+    text-align: center
+
+  .pycon-date
+    margin-top: 0
+    font-weight: 800
+    color: $third
+
+  article
+    &:nth-child(odd)
+      background: #F9F9F9
+    &:nth-child(even)
+      background: $background
+
+  article:first-child
+    font-size: 1.25em
+    text-align: center
+    overflow: auto
+
+    & + article
+      border-top: none
+
+    &::before
+      background: url(/2024/static/images/banniere.png) top center no-repeat
+      content: ''
+      display: block
+      height: 100vh
+      position: absolute
+      top: 0
+      width: 100%
+      z-index: -1
+
+    h2
+      font-size: 0
+
+    li
+      display: flex
+      left: 50%
+      list-style: none
+      margin: 0 auto
+      padding: 1.25rem
+      position: absolute
+      top: 55vh
+      transform: translate(-50%, 0)
+      width: auto
+
+      a:first-of-type
+        margin-right: 2em
+
+      .button
+        border: white 1px solid
+
+    p
+      margin: 2em auto
+      width: 65%
+
+      &:first-of-type
+        color: $primary
+        font-size: 1.5em
+        font-weight: normal
+        line-height: 20vh
+        margin-top: 75vh
+
+        sup
+          font-size: 0.7em
+          line-height: 1
+
+  #place img
+    max-width: 15em
+
+
+[id|="talks"] section:nth-child(even)
+  background: #F9F9F9
+  padding-bottom: 1.2em
+  padding-top: 0.1em
+
+
+@media (max-width: 980px)
+  #index .coverboard
+    .cover
+      width: 200%
+      padding-top: calc(2 * 39.21875%
+
+      img
+        left: -50%
+        transform: translate(25%, 0)
+
+    .program-button
+      position: absolute
+      z-index: 2
+      width: 100%
+      top: 58%
+
+@media (max-width: 900px)
+  html
+    font-size: 1em
+
+  nav, footer
+    ul li a
+      font-size: 0.9em
+      padding: 0.5em
+
+  aside ul
+    flex-direction: column
+
+  main article table
+    font-size: 0.9em
+    width: auto
+
+  embed
+    float: none
+    margin: 0
+    width: 100%

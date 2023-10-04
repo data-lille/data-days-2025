@@ -1,0 +1,83 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article>
+    <h2>Schedule</h2>
+
+    <section>
+      <h3>Calendar</h3>
+      <p>
+        The calendar is available below, in a
+        <a href="{{ url_for('schedule', lang=lang) }}">fullscreen page</a>, or
+        <a href="{{ url_for('calendar') }}">in your favourite calendar application</a>.
+      </p>
+      <p>
+        You can read the description of
+        <a href="{{ url_for('talks', lang=lang, category='plenary') }}">plenary sessions</a>,
+        <a href="{{ url_for('talks', lang=lang, category='1h') }}">1-hour talks</a>,
+        <a href="{{ url_for('talks', lang=lang, category='30m') }}">30-minute talks</a>,
+        <a href="{{ url_for('talks', lang=lang, category='workshop')}}">workshops</a> and
+        <a href="{{ url_for('talks', lang=lang, category='sprint') }}">sprints</a>.
+      </p>
+      <iframe src="{{ url_for('schedule', lang=lang) }}"></iframe>
+    </section>
+
+    <section id="register">
+      <h3>Registration</h3>
+      <p>
+        PyConFr's sprints, talks and workshops are free.
+      </p>
+      <p>
+        However, <strong>registration is mandatory for everyone</strong>,
+        including organization staff, volunteers, speakers and sponsors.
+      </p>
+      <p>
+        Registration is open until the end of the event, limited to:
+      </p>
+      <ul>
+        <li>200 places for sprints,</li>
+        <li>1,000 places for talks and workshops,</li>
+        <li>150 places for <a href="#dinner">the Saturday night dinner</a>.</li>
+      </ul>
+      <p>
+        With this registration, it is possible to:
+      </p>
+      <ul>
+        <li>
+          reserve t-shirts (€10), also sold during the event with limited stocks,
+        </li>
+        <li>
+          reserve a place for the Saturday night dinner (€35).
+        </li>
+      </ul>
+      <p>
+        You can also support <a href="https://afpy.org/">AFPy</a>, the
+        association organizing PyConFr, with
+        a <a href="https://www.helloasso.com/associations/afpy/formulaires/1/en">donation</a>.
+        If you want to vote during its general assembly on Sunday morning, you
+        must <a href="https://www.afpy.org/adherer">become a member</a>.
+      </p>
+      <div class="column center">
+        <a class="button" href="https://www.helloasso.com/associations/afpy/evenements/pyconfr-2023">Register</a>
+      </div>
+
+    </section>
+
+    <section id="dinner">
+      <h3>Saturday night dinner</h3>
+      <p>
+        A dinner is organized on Saturday night, from 7:30 PM to 11:00 PM,
+        in <a href="https://www.bordeaux.fr/l11032/agora-du-haut-carre">Haut-Carré (GPS : 44.81013118539135, -0.5945402728893399)</a>,
+        only for the ones who chose the option during their registration.
+      </p>
+      <p>
+        This dinner includes a cocktail buffet with petit fours and soft and
+        alcoholic drinks.
+      </p>
+      <p>
+        Other alcoholic drinks can be bought (not included in the price) during the
+        dinner.
+      </p>
+    </section>
+  </article>
+{% endblock content %}

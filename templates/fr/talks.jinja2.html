@@ -1,0 +1,33 @@
+{% extends '_layout.jinja2' %}
+
+{% set days = {'2023-02-18': 'Samedi', '2023-02-19': 'Dimanche'} %}
+{% set titles = {'30m': 'Conférences de 30 minutes', '1h': 'Conférences d’une heure', 'workshop': 'Ateliers', 'sprint': 'Sprints', 'plenary': 'Plénières'} %}
+{% set page_name = 'talks-' + category %}
+
+{% block content %}
+  <article>
+    <h2>{{ titles[category] }}</h2>
+    {% if category == 'sprint' %}
+    <p>
+      La liste et les horaires des sprints sont définies. Pour les derniers détails d'organisation, consultez les personnes à l'accueil ou l'affichage proche.
+    </p>
+    {% endif %}
+
+    {% for talk in talks %}
+      {% set talk_title_slug = talk.title | slug %}
+      <section id="{{ talk_title_slug }}">
+        <h3><a href="#{{ talk_title_slug }}">{{ talk.title }}</a></h3>
+        <p>
+          Par {{ talk.person }}
+          {% if category == 'sprint' %}
+            − Jeudi et vendredi de 10 h 00 à 18 h 00
+          {% else %}
+            − Salle {{ talk.room }}
+            − {{ days[talk.day] }} à {{ talk.start.replace(':', ' h ') }}
+          {% endif %}
+        </p>
+        {{ talk.description | safe }}
+      </section>
+    {% endfor %}
+  </article>
+{% endblock content %}
