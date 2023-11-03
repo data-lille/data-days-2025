@@ -1,4 +1,5 @@
 from urllib.request import urlopen
+from urllib.error import HTTPError
 from xml.etree import ElementTree
 
 from bs4 import BeautifulSoup
@@ -33,9 +34,12 @@ def page(name='index', lang='fr'):
 
 @app.route('/2024/<lang>/talks/<category>.html')
 def talks(lang, category):
+    try:
+        with urlopen('https://cfp-2024.pycon.fr/schedule/xml/') as fd:
+            tree = ElementTree.fromstring(fd.read().decode('utf-8'))
+    except HTTPError:
+        return []
     talks = []
-    with urlopen('https://cfp-2024.pycon.fr/schedule/xml/') as fd:
-        tree = ElementTree.fromstring(fd.read().decode('utf-8'))
     for day in tree.findall('.//day'):
         for event in day.findall('.//event'):
             talk = {child.tag: child.text for child in event}
@@ -54,8 +58,11 @@ def talks(lang, category):
 
 @app.route('/2024/<lang>/full-schedule.html')
 def schedule(lang):
-    with urlopen('https://cfp-2024.pycon.fr/schedule/html/') as fd:
-        html = fd.read().decode('utf-8')
+    try:
+        with urlopen('https://cfp-2024.pycon.fr/schedule/html/') as fd:
+            html = fd.read().decode('utf-8')
+    except HTTPError:
+        html = ""
 
     if lang == 'fr':
         html = (
@@ -98,8 +105,11 @@ def schedule(lang):
 
 @app.route('/2024/pyconfr-2024.ics')
 def calendar():
-    with urlopen('https://cfp-2024.pycon.fr/schedule/ics/') as fd:
-        calendar = Calendar.from_ical(fd.read())
+    try:
+        with urlopen('https://cfp-2024.pycon.fr/schedule/ics/') as fd:
+            calendar = Calendar.from_ical(fd.read())
+    except HTTPError:
+        calendar = Calendar()
 
     # Delete sprints
     calendar.subcomponents = [

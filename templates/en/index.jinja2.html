@@ -3,7 +3,7 @@
 {% block content %}
   <section class="coverboard">
     <div class="cover">
-      <img src="/2023/static/images/banniere.png" width="1920" height="753" alt="" />
+      <img src="/2024/static/images/banniere.png" width="1920" height="753" alt="" />
     </div>
     <div class="program-button">
       <a class="button" href="{{ url_for('page', name='schedule', lang=lang) }}">Schedule</a>
@@ -14,7 +14,7 @@
   <article class="pycon-presentation">
     <h1>Presenting PyConFR 2024!</h1>
     <!--
-    <p class="pycon-date">February 16<sup>th</sup> – 19<sup>th</sup> 2023 at Bordeaux</p>
+    <p class="pycon-date">October 30<sup>th</sup> – November 3<sup>rd</sup> 2024 at Strasbourg</p>
     -->
     <p>
       Organized by <a href="https://afpy.org">AFPy</a>, this four days conference is free, entirely coordinated by volunteers and dedicated to bringing together people interested by the <a href="https://python.org">Python</a> programming language.
@@ -74,12 +74,11 @@
   <article id="place">
     <h2>The Place</h2>
     <section>
-      <img src="{{ url_for('static', filename='images/partners/Université de Bordeaux.svg') }}"/>
+      <img src="{{ url_for('static', filename='images/partners/UFR.png') }}"/>
       <address>
-        Université de Bordeaux
-        Bâtiment A22
-        351 Cours de la Libération
-        33400 Talence
+        UFR Mathématique et Informatique
+        7 rue René Descartes
+        67000 Strasbourg
       </address>
       <a class="button" href="{{ url_for('page', name='venue', lang=lang) }}">
         More Details
