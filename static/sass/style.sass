@@ -1,10 +1,9 @@
 // Colors
 $background: #ffffff
-$text: #3C3C3C
-$primary: #378899
-$secondary: #f6b36a
+$text: #000000
+$primary: #FF2A35
+$secondary: $text
 $third: #fe6f61
-
 
 // Fonts
 @font-face
@@ -257,7 +256,7 @@ main
 
 #index
   .coverboard
-    display: none
+    height: 60vh
     position: relative
     overflow: hidden
 
@@ -267,21 +266,30 @@ main
       padding-top: 39.21875%
 
       img
+        opacity: 65%
         position: absolute
-        top: 0
+        top: -25vh
         left: 0
         width: 100%
-        height: 100%
 
     .program-button
       position: absolute
       z-index: 2
       width: 100%
-      top: 58%
+      top: 40%
       text-align: center
 
       a
         margin: 0 auto
+
+      &::before
+        content: url(/2024/static/images/pyconfr.svg)
+        display: block
+        margin: 2em auto
+        max-width: 30rem
+        width: 80%
+        z-index: 2
+
 
   .pycon-presentation
     text-align: center
