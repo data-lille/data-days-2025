@@ -1,28 +1,28 @@
 // Colors
-$background: #ffffff
-$text: #000000
-$primary: #FF2A35
+$background: #eff1f3
+$text: #1b0e29
+$primary: #ff213b
 $secondary: $text
 $third: $primary
 
 // Fonts
 @font-face
-  font-family: Manrope
-  font-weight: 100 400
+  font-family: MonaSans
   font-style: normal
-  src: url(/2024/static/fonts/manrope/Manrope-Regular.otf)
+  font-weight: 400
+  src: url(/2024/static/fonts/MonaSans-Regular.ttf)
 
 @font-face
-  font-family: Manrope
-  font-weight: 500 700
+  font-family: MonaSans
   font-style: normal
-  src: url(/2024/static/fonts/manrope/Manrope-Medium.otf)
+  font-weight: 700
+  src: url(/2024/static/fonts/MonaSans-Bold.ttf)
 
 @font-face
-  font-family: Manrope
-  font-weight: 800 900
+  font-family: MonaSans
   font-style: normal
-  src: url(/2024/static/fonts/manrope/Manrope-ExtraBold.otf)
+  font-weight: 800
+  src: url(/2024/static/fonts/MonaSansCondensed-ExtraBold.ttf)
 
 
 // Common
@@ -32,9 +32,8 @@ $third: $primary
 
 html
   color: $text
-  font-family: Manrope
+  font-family: MonaSans
   font-size: 1.2em
-  font-weight: 400
   letter-spacing: .05em
 
 body
@@ -50,14 +49,14 @@ h1, h2, h3, h4
 
 h1
   font-size: 2em
-  font-weight: 900
+  font-weight: 800
   color: $primary
   margin-bottom: 0
 
 h2
-  font-weight: 700
+  font-weight: 800
   text-transform: uppercase
-  color: $primary
+  color: $text
 
 h3
   font-weight: 700
@@ -285,9 +284,9 @@ main
       &::before
         content: url(/2024/static/images/pyconfr.svg)
         display: block
-        margin: 2em auto
+        margin: -2em auto auto auto
         max-width: 30rem
-        width: 80%
+        width: 100%
         z-index: 2
 
 
@@ -296,7 +295,7 @@ main
 
   .pycon-date
     margin-top: 0
-    font-weight: 800
+    font-weight: 700
     color: $third
 
   article
