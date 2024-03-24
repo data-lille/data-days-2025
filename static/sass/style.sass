@@ -100,6 +100,7 @@ embed + p
 
 .button
   background-color: $red
+  border: 2px solid $red
   border-radius: 6px
   color: white
   display: inline-block
@@ -244,7 +245,9 @@ footer
       width: 6em
 
       sup
+        font-size: 1.1em
         text-transform: initial
+        vertical-align: 95%
 
       span
         font-size: 3em
@@ -259,7 +262,6 @@ footer
 
       .schedule
         background: white
-        border: 2px solid $red
         color: $red
         transition: background-color 0.5s
 
@@ -374,6 +376,12 @@ footer
         color: $red
         font-size: 3em
         font-weight: 700
+
+    .sponsors
+      margin: auto
+
+      a
+        margin: initial
 
 
 body:not(#index)

@@ -1,37 +1,100 @@
 {% macro description(company, lang) %}
   <div class="description">
 
-  {% if lang == 'fr' %}
-
-  {% elif lang == 'en' %}
-
-  {% endif %}
+    {% if lang == 'fr' %}
+      {% if company == 'Université de Strasbourg' %}
+        <p>
+          L'UFR de Mathématique et d'Informatique est l'héritière
+          d'une longue présence des mathématiques au sein du monde
+          universitaire à Strasbourg. Depuis l'essor des sciences de
+          l'information, l'informatique a trouvé sa place à l'UFR qui
+          est naturellement organisée en deux départements
+          d'enseignement : le département de mathématiques et le
+          département d'informatique.
+        </p>
+        <p>
+          L’UFR de Mathématique et d’Informatique de l’Université de
+          Strasbourg accueille plus de 2000 étudiants et compte 165
+          enseignants-chercheurs, enseignants et doctorants. Elle
+          compte plus d’une trentaine de personnels administratifs qui
+          assurent le fonctionnement des services administratifs et
+          techniques.
+        </p>
+        <p>
+          L'UFR offre un ensemble de formations dans les différentes
+          thématiques liées aux mathématiques et à l’informatique. La
+          particularité des formations universitaires est leur
+          proximité avec la recherche scientifique. En effet, les
+          enseignants-chercheurs de l'UFR sont tous rattachés à une
+          unité de recherche, soit l'Institut de Recherche
+          Mathématique Avancée (IRMA), pour les mathématiciens et le
+          Laboratoire des sciences de l'ingénieur, de l'informatique
+          et de l'imagerie (ICube) pour les informaticiens. Ces deux
+          unités représentent un très large spectre en recherche
+          scientifique en mathématiques et en informatique
+          respectivement. La recherche scientifique y est représenté
+          tant par sa face théorique que par sa face appliquée.
+        </p>
+      {% endif %}
+    {% elif lang == 'en' %}
+      {% if company == 'Université de Strasbourg' %}
+        <p>
+          The UFR de Mathématique et d'Informatique is the heir to a
+          long tradition of mathematics in Strasbourg's academic
+          world. Since the rise of the information sciences, computer
+          science has found its place in the UFR, which is naturally
+          organized into two teaching departments: the Mathematics
+          Department and the Computer Science Department.
+        </p>
+        <p>
+          The UFR de Mathématique et d'Informatique de l'Université de
+          Strasbourg is home to over 2,000 students and 165 lecturers,
+          professors and doctoral students. It also employs over
+          thirty administrative staff to run the administrative and
+          technical services.
+        </p>
+        <p>
+          The UFR offers a wide range of courses in mathematics and
+          computer science. The distinctive feature of university
+          courses is their proximity to scientific research. Indeed,
+          the UFR's teacher-researchers are all attached to a research
+          unit, namely the Institut de Recherche Mathématique Avancée
+          (IRMA), for mathematicians, and the Laboratoire des Sciences
+          de l'Ingénieur, de l'Informatique et de l'Imagerie (ICube)
+          for computer scientists. These two units represent a very
+          broad spectrum of scientific research in mathematics and
+          computer science respectively. Both the theoretical and
+          applied sides of scientific research are represented.
+        </p>
+      {% endif %}
+    {% endif %}
   </div>
 {% endmacro %}
 
 {% macro sponsors(lang, only_logo=False) %}
   {% set levels = {
       'Platine' if lang == 'fr' else 'Platinum': {
+          'Université de Strasbourg': 'https://mathinfo.unistra.fr/',
       },
 
-      'Or' if lang == 'fr' else 'Gold': {
+          'Or' if lang == 'fr' else 'Gold': {
       },
 
-      'Argent' if lang == 'fr' else 'Silver': {
+          'Argent' if lang == 'fr' else 'Silver': {
       },
 
-      'Bronze': {
+          'Bronze': {
       },
 
-      'Cœur' if lang == 'fr' else 'Heart': {
+          'Cœur' if lang == 'fr' else 'Heart': {
       },
 
-      'Partenaires' if lang == 'fr' else 'Partners':
-      {
-      },
-  } %}
+          'Partenaires' if lang == 'fr' else 'Partners':
+          {
+          },
+      } %}
 
-  {% set png_logos = ('Invivoo',) %}
+  {% set png_logos = ('Université de Strasbourg',) %}
 
 
   {% if lang == 'fr' %}
