@@ -1,4 +1,9 @@
 // Colors
+$grey: #eff1f3
+$purple: #1b0e29
+$red: #ff213b
+
+// TODO: remove these variables when the whole website has the new style
 $background: #eff1f3
 $text: #1b0e29
 $primary: #ff213b
@@ -26,10 +31,6 @@ $third: $primary
 
 
 // Common
-*
-  // No italic font available
-  font-style: normal !important
-
 html
   color: $text
   font-family: MonaSans
@@ -65,21 +66,19 @@ h4
   color: $primary
 
 a
-  color: $primary
-  font-weight: 800
-  letter-spacing: .005em
+  color: $purple
+  font-weight: 700
   text-decoration: inherit
 
   &:hover, &:focus
-    text-decoration: underline
+    text-decoration: underline $red
 
 address
   white-space: pre-line
 
 
 ul li::marker
-  color: $third
-  content: '– '
+  color: $red
 
 embed
   display: block
@@ -104,8 +103,25 @@ embed + p
     background-color: lighten($primary, 15%)
     text-decoration: inherit
 
+// Footer
+footer
+  background: url(/2024/static/images/logo-simple-couleurs.svg) 10% center / 10rem no-repeat
+  border-top: 1px solid $grey
+  width: 100vw
 
-aside, nav, footer
+  ul
+    align-items: center
+    display: flex
+    justify-content: space-between
+    list-style: none
+    margin: 2em auto
+    padding: 0
+    width: 40%
+
+    a
+      font-weight: inherit
+
+aside, nav
   background: $background
   color: $background
 
@@ -172,10 +188,6 @@ aside
 
       a
         background: transparent
-
-footer ul
-  justify-content: center
-
 
 main
   flex: 1
@@ -281,15 +293,6 @@ main
       a
         margin: 0 auto
 
-      &::before
-        content: url(/2024/static/images/pyconfr.svg)
-        display: block
-        margin: -2em auto auto auto
-        max-width: 30rem
-        width: 100%
-        z-index: 2
-
-
   .pycon-presentation
     text-align: center
 
@@ -367,6 +370,7 @@ main
   padding-top: 0.1em
 
 
+// Mobile
 @media (max-width: 980px)
   #index .coverboard
     .cover
