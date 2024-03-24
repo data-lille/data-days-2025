@@ -73,18 +73,20 @@
   <article class="place">
     <h2>Venir</h2>
     <section>
-      <img src="{{ url_for('static', filename='images/partners/UFR.png') }}"/>
-      <address>
-        UFR Mathématique et Informatique
-        7 rue René Descartes
-        67000 Strasbourg
-      </address>
-      <a class="button" href="{{ url_for('page', name='venue', lang=lang) }}">
-        Plus de détails
-      </a>
-    </section>
+      <section>
+        <img src="{{ url_for('static', filename='images/partners/UFR.png') }}"/>
+        <address>
+          <strong>UFR Mathématique et Informatique</strong>
+          7 rue René Descartes
+          67000 Strasbourg
+        </address>
+        <a class="button" href="{{ url_for('page', name='venue', lang=lang) }}">
+          Plus de détails
+        </a>
+      </section>
 
-    {{ map() }}
+      {{ map() }}
+    </section>
   </article>
 
   <article>

@@ -298,6 +298,30 @@ footer
       p:last-of-type
         margin-bottom: 0
 
+  .place
+    h2
+      margin: 0 auto 0.5em auto
+      text-align: left
+
+    > section
+      display: flex
+      justify-content: space-between
+
+      section
+        width: 40%
+
+    iframe
+      margin: -5em 0 0 0
+      height: 20em
+      width: 55%
+
+    iframe + a
+      display: none
+
+    address
+      font-style: normal
+
+
 main
   flex: 1
 
@@ -329,7 +353,6 @@ main
       height: 25rem
       margin: 1em 0
       max-width: 100%
-      min-height: 60vh
       overflow: hidden
       padding: 0
       width: 100%
