@@ -56,6 +56,7 @@ h1
 
 h2
   color: $purple
+  font-size: 3em
   font-weight: 800
   text-transform: uppercase
 
@@ -176,6 +177,7 @@ nav
 footer
   background: url(/2024/static/images/logo-simple-couleurs.svg) 10% center / 10rem no-repeat
   border-top: 1px solid $grey
+  margin-top: 2em
   width: 100vw
 
   ul
@@ -194,19 +196,22 @@ footer
 #index
   .logo
     display: block
-    margin: auto
+    margin: 1em auto
     width: 20%
 
   .coverboard
     // Photo by https://unsplash.com/fr/@chan_lee94
     background: url(/2024/static/images/strasbourg-small.jpg) center/ cover no-repeat
-    height: 70%
+    align-items: center
+    display: flex
+    flex-direction: column
+    height: 40em
     overflow: hidden
 
   .pycon-presentation
     background: white
     border-radius: 5%
-    margin-left: 10%
+    margin: auto auto auto 10%
     padding: 2em
     width: 26%
 
@@ -264,23 +269,7 @@ main
     max-width: 95%
     margin-left: auto
     margin-right: auto
-    padding-left: 2rem
-    padding-right: 2rem
     width: 70rem
-
-  article
-    overflow: auto
-    padding-bottom: 3em
-
-    &:nth-child(even)
-      background: #F9F9F9
-
-    section
-      margin-top: 4em
-
-    h3 a
-      color: inherit
-      cursor: text
 
     table
       border-collapse: collapse
@@ -307,7 +296,6 @@ main
       overflow: hidden
       padding: 0
       width: 100%
-
 
   .sponsors img
     display: inline-block
