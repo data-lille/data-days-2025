@@ -111,20 +111,17 @@
     </section>
   </article>
 
-  <article>
-    <h2>Our Sponsors</h2>
+  <article class="become-sponsor">
     <aside>Support us!</aside>
+    <h2>Our Sponsors</h2>
 
-    <p>
-      <a href="{{ url_for('page', name='sponsors', lang='lang') }}">Become</a> a
-      sponsor and give your company greater visibility at this event.
-    </p>
-    <section>
-      {{ sponsors(lang, only_logo=True) }}
+    {{ sponsors(lang, only_logo=True) }}
+
+    <section class="contact-sponsor">
+      <p>
+        The team is available to answer your questions about the event
+        at <a href="mailto:contact@pycon.fr">contact@pycon.fr</a>
+      </p>
     </section>
-    <p>
-      The team is available to answer your questions about the event
-      at <a href="mailto:contact@pycon.fr">contact@pycon.fr</a>
-    </p>
   </article>
 {% endblock content %}
