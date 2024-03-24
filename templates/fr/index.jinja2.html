@@ -1,31 +1,31 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
-  <img src="/2024/static/images/pyconfr.svg" />
+  <img class="logo" src="/2024/static/images/pyconfr.svg" />
 
   <article class="coverboard">
     <section class="pycon-presentation">
       <h1>Bienvenue à la PyConFR 2024 !</h1>
 
       <aside>
-        15<sup>e</sup> édition
+        <span>15</span><sup>e</sup> édition
       </aside>
 
       <p class="pycon-date">Du 31 octobre au 3 novembre 2024 à Strasbourg</p>
 
       <p>
-        Organisée par <strong>l'AFPy</strong>, cette conférence de quatre
+        Organisée par <a href="https://www.afpy.org">l'AFPy</a>, cette conférence de quatre
         jours est gratuite, entièrement gérée par des bénévoles et dédiée
         au regroupement des personnes intéressées par le langage de
-        programmation <strong>Python</strong>.
+        programmation <a href="https://www.python.org/">Python</a>.
       </p>
 
       <ul>
         <li>
-          <a class="button" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">S’inscrire</a>
+          <a class="button register" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">S’inscrire</a>
         </li>
         <li>
-          <a class="button" href="{{ url_for('page', name='schedule', lang=lang) }}">Programme</a>
+          <a class="button schedule" href="{{ url_for('page', name='schedule', lang=lang) }}">Programme</a>
         </li>
       </ul>
     </section>

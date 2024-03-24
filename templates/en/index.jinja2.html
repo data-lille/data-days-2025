@@ -1,30 +1,30 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
-  <img src="/2024/static/images/pyconfr.svg" />
+  <img class="logo" src="/2024/static/images/pyconfr.svg" />
 
   <article class="coverboard">
     <section class="pycon-presentation">
       <h1>Presenting PyConFR 2024!</h1>
 
       <aside>
-        15<sup>e</sup> edition
+        <span>15</span><sup>e</sup> edition
       </aside>
 
       <p class="pycon-date">October 31<sup>th</sup> – November 3<sup>rd</sup> 2024 at Strasbourg</p>
 
       <p>
-        Organized by <strong>AFPy</strong>, this four days conference is free,
+        Organized by <a href="https://www.afpy.org">AFPy</a>, this four days conference is free,
         entirely coordinated by volunteers and dedicated to bringing
-        together people interested by the <strong>Python</strong> programming language.
+        together people interested by the <a href="https://www.python.org/">Python</a> programming language.
       </p>
 
       <ul>
         <li>
-          <a class="button" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">Register</a>
+          <a class="button register" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">Register</a>
         </li>
         <li>
-          <a class="button" href="{{ url_for('page', name='schedule', lang=lang) }}">Schedule</a>
+          <a class="button schedule" href="{{ url_for('page', name='schedule', lang=lang) }}">Schedule</a>
         </li>
       </ul>
     </section>

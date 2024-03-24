@@ -31,11 +31,14 @@ $third: $primary
 
 
 // Common
+*
+  line-height: 1.5
+
 html
   color: $text
   font-family: MonaSans
   font-size: 1.2em
-  letter-spacing: .05em
+  letter-spacing: .03em
 
 body
   display: flex
@@ -43,21 +46,18 @@ body
   margin: 0
   min-height: 100vh
 
-h1, h2, h3, h4
-  clear: left
-  font-weight: normal
-  margin: 2em 0 1em
-
 h1
-  font-size: 2em
+  color: $purple
+  font-size: 3em
   font-weight: 800
-  color: $primary
-  margin-bottom: 0
+  line-height: 1
+  margin: 0
+  text-transform: uppercase
 
 h2
+  color: $purple
   font-weight: 800
   text-transform: uppercase
-  color: $text
 
 h3
   font-weight: 700
@@ -68,7 +68,7 @@ h4
 a
   color: $purple
   font-weight: 700
-  text-decoration: inherit
+  text-decoration: none
 
   &:hover, &:focus
     text-decoration: underline $red
@@ -120,8 +120,15 @@ nav
     list-style: none
     padding: 0
 
+  li
+    padding-bottom: 0.3em
+
   li.active
+    border-bottom: 1px solid $red
     font-weight: 700
+
+    a:hover
+      text-decoration: none
 
   a
     color: inherit
@@ -144,6 +151,7 @@ nav
       opacity: 0.5
 
     li.active
+      border: none
       opacity: 1
 
     li a::before
@@ -181,6 +189,72 @@ footer
 
     a
       font-weight: inherit
+
+// Main page
+#index
+  .logo
+    display: block
+    margin: auto
+    width: 20%
+
+  .coverboard
+    // Photo by https://unsplash.com/fr/@chan_lee94
+    background: url(/2024/static/images/strasbourg-small.jpg) center/ cover no-repeat
+    height: 70%
+    overflow: hidden
+
+  .pycon-presentation
+    background: white
+    border-radius: 5%
+    margin-left: 10%
+    padding: 2em
+    width: 26%
+
+    aside
+      background: $red
+      border-radius: 50%
+      color: white
+      float: right
+      font-size: 0.8em
+      font-weight: 800
+      height: 6em
+      line-height: 0
+      margin: -10rem 0 0 21%
+      padding: 0.2em 0 0.2em 0.2em
+      position: absolute
+      text-align: center
+      text-transform: uppercase
+      width: 6em
+
+      sup
+        text-transform: initial
+
+      span
+        font-size: 3em
+
+    ul
+      display: flex
+      list-style: none
+      margin: 0
+      padding: 0
+
+      .register
+        margin-right: 1em
+
+      .schedule
+        background: white
+        border: 2px solid $red
+        color: $red
+        transition: background-color 0.5s
+
+        &:hover, &:focus
+          background-color: lighten($red, 40%)
+
+  .pycon-date
+    color: $red
+    font-size: 1.2em
+    font-weight: 700
+
 
 main
   flex: 1
@@ -256,105 +330,6 @@ main
       padding: 1.5rem
       border-right: 5px solid $secondary
       border-left: 5px solid $primary
-
-
-#index
-  .coverboard
-    height: 60vh
-    position: relative
-    overflow: hidden
-
-    .cover
-      position: relative
-      width: 100%
-      padding-top: 39.21875%
-
-      img
-        opacity: 55%
-        position: absolute
-        top: -25vh
-        left: 0
-        width: 100%
-
-    .program-button
-      position: absolute
-      z-index: 2
-      width: 100%
-      top: 40%
-      text-align: center
-
-      a
-        margin: 0 auto
-
-  .pycon-presentation
-    text-align: center
-
-  .pycon-date
-    margin-top: 0
-    font-weight: 700
-    color: $third
-
-  article
-    &:nth-child(odd)
-      background: #F9F9F9
-    &:nth-child(even)
-      background: $background
-
-  article:first-child
-    font-size: 1.25em
-    text-align: center
-    overflow: auto
-
-    & + article
-      border-top: none
-
-    &::before
-      background: url(/2024/static/images/banniere.png) top center no-repeat
-      content: ''
-      display: block
-      height: 100vh
-      position: absolute
-      top: 0
-      width: 100%
-      z-index: -1
-
-    h2
-      font-size: 0
-
-    li
-      display: flex
-      left: 50%
-      list-style: none
-      margin: 0 auto
-      padding: 1.25rem
-      position: absolute
-      top: 55vh
-      transform: translate(-50%, 0)
-      width: auto
-
-      a:first-of-type
-        margin-right: 2em
-
-      .button
-        border: white 1px solid
-
-    p
-      margin: 2em auto
-      width: 65%
-
-      &:first-of-type
-        color: $primary
-        font-size: 1.5em
-        font-weight: normal
-        line-height: 20vh
-        margin-top: 75vh
-
-        sup
-          font-size: 0.7em
-          line-height: 1
-
-  #place img
-    max-width: 15em
 
 
 [id|="talks"] section:nth-child(even)
