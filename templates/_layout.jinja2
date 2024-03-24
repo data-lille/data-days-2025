@@ -8,12 +8,20 @@
     ('conduct', ('Code de conduite', 'Code of Conduct')),
     ('support', ('Nous soutenir', 'Support Us')),
 ) -%}
+{%- set MENU = (
+    ('index', ('À propos', 'About')),
+    ('venue', ('Venir', 'Venue')),
+    ('sponsors', ('Sponsors', 'Sponsors')),
+    ('news', ('Actualités', 'News')),
+    ('conduct', ('Code de conduite', 'Code of Conduct')),
+    ('support', ('Nous soutenir', 'Support Us')),
+) -%}
 {%- set EXTRA_PAGES = (
-  ('talks-plenary', ('Plénières', 'Plenary Sessions')),
-  ('talks-1h', ('Conférences d’une heure', '1-hour Talks')),
-  ('talks-30m', ('Conférences de 30 minutes', '30-minute Talks')),
-  ('talks-workshop', ('Ateliers', 'Workshops')),
-  ('talks-sprint', ('Sprints', 'Sprints')),
+    ('talks-plenary', ('Plénières', 'Plenary Sessions')),
+    ('talks-1h', ('Conférences d’une heure', '1-hour Talks')),
+    ('talks-30m', ('Conférences de 30 minutes', '30-minute Talks')),
+    ('talks-workshop', ('Ateliers', 'Workshops')),
+    ('talks-sprint', ('Sprints', 'Sprints')),
 ) -%}
 
 {%- set title = dict(MENU + EXTRA_PAGES).get(page_name, ['', ''])[1 if lang == 'en' else 0] -%}

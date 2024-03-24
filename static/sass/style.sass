@@ -110,10 +110,11 @@ embed + p
   max-width: max-content
   padding: 1rem
   text-transform: uppercase
-  transition: background-color 0.5s
+  transition: background-color 0.5s, border-color 0.5s
 
   &:hover, &:focus
     background-color: lighten($red, 15%)
+    border-color: lighten($red, 15%)
     text-decoration: inherit
 
 .important
@@ -150,9 +151,9 @@ nav
 
   ul#pages
     align-items: center
+    gap: 1em
     justify-content: space-between
     margin: 2em auto
-    width: 50%
 
   ul#languages
     justify-content: space-evenly
@@ -446,8 +447,8 @@ main
 
     .description
       padding: 1.5rem
-      border-right: 5px solid $secondary
-      border-left: 5px solid $primary
+      border-right: 5px solid $purple
+      border-left: 5px solid $red
 
 
 [id|="talks"] section:nth-child(even)
