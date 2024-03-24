@@ -1,19 +1,10 @@
-<!--
-     {%- set MENU = (
-     ('index', ('À propos', 'About')),
-     ('schedule', ('Programme', 'Schedule')),
-     ('venue', ('Venir', 'Venue')),
-     ('financial', ('Bourses', 'Financial Assistance')),
-     ('sponsors', ('Sponsors', 'Sponsors')),
-     ('news', ('Actualités', 'News')),
-     ('conduct', ('Code de conduite', 'Code of Conduct')),
-     ('support', ('Nous soutenir', 'Support Us')),
-     ) -%}
--->
 {%- set MENU = (
     ('index', ('À propos', 'About')),
+    ('schedule', ('Programme', 'Schedule')),
     ('venue', ('Venir', 'Venue')),
+    ('financial', ('Bourses', 'Financial Assistance')),
     ('sponsors', ('Sponsors', 'Sponsors')),
+    ('news', ('Actualités', 'News')),
     ('conduct', ('Code de conduite', 'Code of Conduct')),
     ('support', ('Nous soutenir', 'Support Us')),
 ) -%}
@@ -35,7 +26,7 @@
 <html lang="{{ lang }}">
   <head>
     {% block head %}
-      <title>{{ title }} − PyConFr 2024</title>
+      <title>{{ title }} − PyConFR 2024</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -47,6 +38,7 @@
   <body id="{{ page_name }}">
 
     <nav>
+      <img src="/2024/static/images/logo-simple-couleurs.svg" />
       <ul>
         {% for endpoint, (title_fr, title_en) in MENU %}
           <li class="{{ 'active' if page_name == endpoint }}">
@@ -54,6 +46,21 @@
           </li>
         {% endfor %}
       </ul>
+      {% if request.endpoint == 'page' %}
+        <ul>
+          <li id="french" class="{{ 'active' if lang == 'fr' }}">
+            <a title="Français" href="{{ url_for('page', name=page_name, lang='fr') }}">
+              Français
+            </a>
+          </li>
+          <li id="english" class="{{ 'active' if lang == 'en' }}">
+            <a title="English" href="{{ url_for('page', name=page_name, lang='en') }}">
+              English
+            </a>
+          </li>
+        </ul>
+      {% endif %}
+      <a class="button" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">S’inscrire</a>
     </nav>
 
     {% if request.endpoint == 'talks' %}
@@ -68,28 +75,13 @@
       </nav>
     {% endif %}
 
-    {% if request.endpoint == 'page' %}
-      <aside>
-        <ul>
-          <li id="french" class="{{ 'active' if lang == 'fr' }}">
-            <a title="Français" href="{{ url_for('page', name=page_name, lang='fr') }}">
-              Français
-            </a>
-          </li>
-          <li id="english" class="{{ 'active' if lang == 'en' }}">
-            <a title="English" href="{{ url_for('page', name=page_name, lang='en') }}">
-              English
-            </a>
-          </li>
-        </ul>
-      </aside>
-    {% endif %}
-
     <main>
       {% block content %}{% endblock content %}
     </main>
 
     <footer>
+      <img src="/2024/static/images/logo-simple-couleurs.svg" />
+
       <ul>
         <li><a href="mailto:contact@pycon.fr">Email</a></li>
         <li><a href="https://mamot.fr/@AFPy">Mastodon</a></li>

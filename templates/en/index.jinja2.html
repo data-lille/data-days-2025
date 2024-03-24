@@ -1,62 +1,97 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
-  <section class="coverboard">
-    <div class="cover">
-      <img src="/2024/static/images/strasbourg-small.jpg" alt="" />
-    </div>
-    <div class="program-button">
-      <!--
-      <a class="button" href="{{ url_for('page', name='schedule', lang=lang) }}">Schedule</a>
-      <a class="button" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">Mandatory registration</a>
-      -->
-    </div>
-  </section>
+  <article class="coverboard">
+    <img src="/2024/static/images/pyconfr.svg" />
 
-  <article class="pycon-presentation">
-    <h1>Presenting PyConFR 2024!</h1>
-    <p class="pycon-date">October 31<sup>th</sup> – November 3<sup>rd</sup> 2024 at Strasbourg</p>
-    <p>
-      Organized by <a href="https://afpy.org">AFPy</a>, this four days conference is free, entirely coordinated by volunteers and dedicated to bringing together people interested by the <a href="https://python.org">Python</a> programming language.
-    </p>
+    <section class="pycon-presentation">
+      <h1>Presenting PyConFR 2024!</h1>
+
+      <aside>
+        15<sup>e</sup> edition
+      </aside>
+
+      <p class="pycon-date">October 31<sup>th</sup> – November 3<sup>rd</sup> 2024 at Strasbourg</p>
+
+      <p>
+        Organized by <strong>AFPy</strong>, this four days conference is free,
+        entirely coordinated by volunteers and dedicated to bringing
+        together people interested by the <strong>Python</strong> programming language.
+      </p>
+
+      <ul>
+        <li>
+          <a class="button" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">Register</a>
+        </li>
+        <li>
+          <a class="button" href="{{ url_for('page', name='schedule', lang=lang) }}">Schedule</a>
+        </li>
+      </ul>
+    </section>
   </article>
+
   <article>
     <h2>Schedule</h2>
-    <!--
-    <p>
-      The schedule is now <a href="{{ url_for('page', name='schedule', lang=lang) }}">available</a>!
-    </p>
-    -->
+    <a href="{{ url_for('page', name='schedule', lang=lang) }}">More details</a>!
     <section>
-      <h3>Participative Coding ("Sprints")</h3>
-      <p>
-        The first two days are dedicated to sprints.
-      </p>
+      <h3>Participative Coding: sprints!</h3>
+      <aside>Days 1&2</aside>
       <p>
         Developers of various open source projects gather in little groups to
         code together. Everyone is welcome to contribute, and we seek to guide
         beginners.
       </p>
       <p>
-        Take part to the development of your favorite project! We provide the
-        space and environment (tables, chairs, internet connection… and
-        coffee!).
+        Take part to the development of your favorite project!
+      </p>
+      <p>
+        We provide the space and environment (tables, chairs,
+        internet connection… and coffee!).
       </p>
     </section>
 
     <section>
       <h3>Conferences and Workshops</h3>
+      <aside>Days 3&4</aside>
       <p>
-        During the two following days, you will have the opportunity to attend
+        During these two days, you will have the opportunity to attend
         to presentations on various subjects, about the Python programming
-        language, its use cases, good practices, feedbacks, shared ideas…
+        language:
       </p>
+      <ul>
+        <li>use cases</li>
+        <li>good practices</li>
+        <li>feedbacks</li>
+        <li>shared ideas</li>
+      </ul>
     </section>
   </article>
 
-  <article>
-    <h2>AFPy</h2>
+  <article id="place">
+    <h2>Venue</h2>
     <section>
+      <img src="{{ url_for('static', filename='images/partners/UFR.png') }}"/>
+      <address>
+        UFR Mathématique et Informatique
+        7 rue René Descartes
+        67000 Strasbourg
+      </address>
+      <a class="button" href="{{ url_for('page', name='venue', lang=lang) }}">
+        More Details
+      </a>
+    </section>
+
+    {{ map() }}
+  </article>
+
+  <article>
+    <h2>AFPy, Association Francophone Python</h2>
+
+    <a href="https://www.afpy.org">Our website</a>
+    <section>
+      <p>
+        AFPy promotes the Python language, both to the informed public and to beginners.
+      </p>
       <p>
         We promote the Python programming language among the widest possible
         audience.
@@ -70,29 +105,20 @@
     </section>
   </article>
 
-  <article id="place">
-    <h2>The Place</h2>
-    <section>
-      <img src="{{ url_for('static', filename='images/partners/UFR.png') }}"/>
-      <address>
-        UFR Mathématique et Informatique
-        7 rue René Descartes
-        67000 Strasbourg
-      </address>
-      <a class="button" href="{{ url_for('page', name='venue', lang=lang) }}">
-        More Details
-      </a>
-    </section>
-  </article>
-
   <article>
     <h2>Our Sponsors</h2>
+    <aside>Support us!</aside>
+
+    <p>
+      <a href="{{ url_for('page', name='sponsors', lang='lang') }}">Become</a> a
+      sponsor and give your company greater visibility at this event.
+    </p>
     <section>
       {{ sponsors(lang, only_logo=True) }}
-      <p>
-        The team is available to answer your questions about the event
-        at <a href="mailto:contact@pycon.fr">contact@pycon.fr</a>.
-      </p>
     </section>
+    <p>
+      The team is available to answer your questions about the event
+      at <a href="mailto:contact@pycon.fr">contact@pycon.fr</a>
+    </p>
   </article>
 {% endblock content %}
