@@ -58,10 +58,15 @@ h2
   color: $purple
   font-size: 3em
   font-weight: 800
+  margin: 1.5em auto 0 auto
+  text-align: center
   text-transform: uppercase
 
 h3
+  font-size: 2em
   font-weight: 700
+  line-height: 1
+  margin: 1em auto
 
 h4
   color: $primary
@@ -77,6 +82,8 @@ a
 address
   white-space: pre-line
 
+ul
+  padding: 0
 
 ul li::marker
   color: $red
@@ -107,6 +114,10 @@ embed + p
     background-color: lighten($red, 15%)
     text-decoration: inherit
 
+.important
+  color: $red
+  font-weight: 700
+
 // Nav
 nav
   background: url(/2024/static/images/logo-simple-semi-couleurs.svg) 10% center / 10rem no-repeat
@@ -119,7 +130,6 @@ nav
     align-items: center
     display: flex
     list-style: none
-    padding: 0
 
   li
     padding-bottom: 0.3em
@@ -186,7 +196,6 @@ footer
     justify-content: space-between
     list-style: none
     margin: 2em auto
-    padding: 0
     width: 40%
 
     a
@@ -241,7 +250,6 @@ footer
       display: flex
       list-style: none
       margin: 0
-      padding: 0
 
       .register
         margin-right: 1em
@@ -260,6 +268,35 @@ footer
     font-size: 1.2em
     font-weight: 700
 
+  .details
+    display: block
+    margin: auto
+
+  .event-description
+    display: flex
+    justify-content: center
+
+    section
+      background: $grey
+      border-radius: 10px
+      margin: 4em auto
+      padding: 2em
+      width: 35%
+
+      h3
+        margin: 0 auto 1em auto
+
+      aside
+        color: $red
+        font-weight: 700
+        margin-bottom: 1em
+        text-transform: uppercase
+
+      ul
+        list-style: inside
+
+      p:last-of-type
+        margin-bottom: 0
 
 main
   flex: 1

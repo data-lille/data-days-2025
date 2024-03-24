@@ -33,41 +33,44 @@
 
   <article>
     <h2>Programme</h2>
-    <a href="{{ url_for('page', name='schedule', lang=lang) }}">Plus de détails</a>
-    <section>
-      <h3>Développements participatifs : sprints !</h3>
-      <aside>Jours 1&2</aside>
-      <p>
-        Les développeurs et développeuses de différents projets open source se
-        rejoignent pour coder ensemble. Chaque personne est la bienvenue pour
-        contribuer, et nous cherchons également à accompagner les débutantes.
-      </p>
-      <p>
-        Participez au développement de votre projet préféré !
-      </p>
-      <p>
-        Nous fournissons l'espace et le matériel nécessaire à l'organisation
-        (tables, chaises, connexion internet… et café !).
-      </p>
-    </section>
+    <a class="button details" href="{{ url_for('page', name='schedule', lang=lang) }}">Plus de détails</a>
 
-    <section>
-      <h3>Conférences & ateliers</h3>
-      <aside>Jours 3&4</aside>
-      <p>
-        Durant ces deux jours, vous aurez l'occasion de participer à des
-        présentations sur des sujets variés, autour du langage Python :
-      </p>
-      <ul>
-        <li>usages</li>
-        <li>bonnes pratiques</li>
-        <li>retours d'expériences</li>
-        <li>partages d'idées</li>
-      </ul>
+    <section class="event-description">
+      <section>
+        <aside>Jours 1&2</aside>
+        <h3>Développements participatifs : sprints !</h3>
+        <p>
+          Les développeurs et développeuses de différents projets open source se
+          rejoignent pour coder ensemble. Chaque personne est la bienvenue pour
+          contribuer, et nous cherchons également à accompagner les débutantes.
+        </p>
+        <p class="important">
+          Participez au développement de votre projet préféré !
+        </p>
+        <p>
+          Nous fournissons l'espace et le matériel nécessaire à l'organisation
+          (tables, chaises, connexion internet… et café !).
+        </p>
+      </section>
+
+      <section>
+        <aside>Jours 3&4</aside>
+        <h3>Conférences & ateliers</h3>
+        <p>
+          Durant ces deux jours, vous aurez l'occasion de participer à des
+          présentations sur des sujets variés, autour du langage Python :
+        </p>
+        <ul>
+          <li>usages</li>
+          <li>bonnes pratiques</li>
+          <li>retours d'expériences</li>
+          <li>partages d'idées</li>
+        </ul>
+      </section>
     </section>
   </article>
 
-  <article id="place">
+  <article class="place">
     <h2>Venir</h2>
     <section>
       <img src="{{ url_for('static', filename='images/partners/UFR.png') }}"/>

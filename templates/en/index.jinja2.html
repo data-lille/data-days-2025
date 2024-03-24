@@ -32,42 +32,45 @@
 
   <article>
     <h2>Schedule</h2>
-    <a href="{{ url_for('page', name='schedule', lang=lang) }}">More details</a>!
-    <section>
-      <h3>Participative Coding: sprints!</h3>
-      <aside>Days 1&2</aside>
-      <p>
-        Developers of various open source projects gather in little groups to
-        code together. Everyone is welcome to contribute, and we seek to guide
-        beginners.
-      </p>
-      <p>
-        Take part to the development of your favorite project!
-      </p>
-      <p>
-        We provide the space and environment (tables, chairs,
-        internet connection… and coffee!).
-      </p>
-    </section>
+    <a class="button details" href="{{ url_for('page', name='schedule', lang=lang) }}">More details</a>!
 
-    <section>
-      <h3>Conferences and Workshops</h3>
-      <aside>Days 3&4</aside>
-      <p>
-        During these two days, you will have the opportunity to attend
-        to presentations on various subjects, about the Python programming
-        language:
-      </p>
-      <ul>
-        <li>use cases</li>
-        <li>good practices</li>
-        <li>feedbacks</li>
-        <li>shared ideas</li>
-      </ul>
+    <section class="event-description">
+      <section>
+        <aside>Days 1&2</aside>
+        <h3>Participative Coding: sprints!</h3>
+        <p>
+          Developers of various open source projects gather in little groups to
+          code together. Everyone is welcome to contribute, and we seek to guide
+          beginners.
+        </p>
+        <p class="important">
+          Take part to the development of your favorite project!
+        </p>
+        <p>
+          We provide the space and environment (tables, chairs,
+          internet connection… and coffee!).
+        </p>
+      </section>
+
+      <section>
+        <aside>Days 3&4</aside>
+        <h3>Conferences and Workshops</h3>
+        <p>
+          During these two days, you will have the opportunity to attend
+          to presentations on various subjects, about the Python programming
+          language:
+        </p>
+        <ul>
+          <li>use cases</li>
+          <li>good practices</li>
+          <li>feedbacks</li>
+          <li>shared ideas</li>
+        </ul>
+      </section>
     </section>
   </article>
 
-  <article id="place">
+  <article class="place">
     <h2>Venue</h2>
     <section>
       <img src="{{ url_for('static', filename='images/partners/UFR.png') }}"/>
