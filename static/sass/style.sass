@@ -69,7 +69,7 @@ h3
   margin: 1em auto
 
 h4
-  color: $primary
+  color: $purple
 
 a
   color: $purple
@@ -80,6 +80,7 @@ a
     text-decoration: underline $red
 
 address
+  font-style: normal
   white-space: pre-line
 
 ul
@@ -117,6 +118,7 @@ embed + p
 .important
   color: $red
   font-weight: 700
+
 
 // Nav
 nav
@@ -201,6 +203,7 @@ footer
     a
       font-weight: inherit
 
+
 // Main page
 #index
   .logo
@@ -275,11 +278,12 @@ footer
   .event-description
     display: flex
     justify-content: center
+    margin: auto
 
     section
       background: $grey
       border-radius: 10px
-      margin: 4em auto
+      margin: 4em auto 0 auto
       padding: 2em
       width: 35%
 
@@ -299,6 +303,8 @@ footer
         margin-bottom: 0
 
   .place
+    margin: 4em auto
+
     h2
       margin: 0 auto 0.5em auto
       text-align: left
@@ -306,6 +312,7 @@ footer
     > section
       display: flex
       justify-content: space-between
+      margin: auto
 
       section
         width: 40%
@@ -318,8 +325,28 @@ footer
     iframe + a
       display: none
 
-    address
-      font-style: normal
+  .afpy
+    background: $purple
+    color: white
+    display: flex
+    justify-content: center
+    padding: 3em 0
+
+    section:first-of-type
+      width: 30%
+
+      h2
+        color: inherit
+        margin-top: 0.5em
+        text-align: left
+
+    section:last-of-type
+      width: 35%
+
+
+body:not(#index)
+  article > *
+    margin: auto
 
 
 main
@@ -328,8 +355,6 @@ main
   article > *
     box-sizing: border-box
     max-width: 95%
-    margin-left: auto
-    margin-right: auto
     width: 70rem
 
     table
