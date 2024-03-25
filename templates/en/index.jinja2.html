@@ -1,62 +1,107 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
-  <section class="coverboard">
-    <div class="cover">
-      <img src="/2024/static/images/strasbourg-small.jpg" alt="" />
-    </div>
-    <div class="program-button">
-      <!--
-      <a class="button" href="{{ url_for('page', name='schedule', lang=lang) }}">Schedule</a>
-      <a class="button" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">Mandatory registration</a>
-      -->
-    </div>
-  </section>
+  <img class="logo" src="/2024/static/images/pyconfr.svg" />
 
-  <article class="pycon-presentation">
-    <h1>Presenting PyConFR 2024!</h1>
-    <p class="pycon-date">October 31<sup>th</sup> – November 3<sup>rd</sup> 2024 at Strasbourg</p>
-    <p>
-      Organized by <a href="https://afpy.org">AFPy</a>, this four days conference is free, entirely coordinated by volunteers and dedicated to bringing together people interested by the <a href="https://python.org">Python</a> programming language.
-    </p>
+  <article class="coverboard">
+    <section class="pycon-presentation">
+      <h1>Presenting PyConFR 2024!</h1>
+
+      <aside>
+        <span>15</span><sup>th</sup> edition
+      </aside>
+
+      <p class="pycon-date">October 31<sup>th</sup> – November 3<sup>rd</sup> 2024 at Strasbourg</p>
+
+      <p>
+        Organized by <a href="https://www.afpy.org">AFPy</a>, this four days conference is free,
+        entirely coordinated by volunteers and dedicated to bringing
+        together people interested by the <a href="https://www.python.org/">Python</a> programming language.
+      </p>
+
+      <!--
+      <ul>
+        <li>
+          <a class="button register" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">Register</a>
+        </li>
+        <li>
+          <a class="button schedule" href="{{ url_for('page', name='schedule', lang=lang) }}">Schedule</a>
+        </li>
+      </ul>
+      -->
+    </section>
   </article>
+
   <article>
     <h2>Schedule</h2>
     <!--
-    <p>
-      The schedule is now <a href="{{ url_for('page', name='schedule', lang=lang) }}">available</a>!
-    </p>
+    <a class="button details" href="{{ url_for('page', name='schedule', lang=lang) }}">More details</a>!
     -->
-    <section>
-      <h3>Participative Coding ("Sprints")</h3>
-      <p>
-        The first two days are dedicated to sprints.
-      </p>
-      <p>
-        Developers of various open source projects gather in little groups to
-        code together. Everyone is welcome to contribute, and we seek to guide
-        beginners.
-      </p>
-      <p>
-        Take part to the development of your favorite project! We provide the
-        space and environment (tables, chairs, internet connection… and
-        coffee!).
-      </p>
-    </section>
 
-    <section>
-      <h3>Conferences and Workshops</h3>
-      <p>
-        During the two following days, you will have the opportunity to attend
-        to presentations on various subjects, about the Python programming
-        language, its use cases, good practices, feedbacks, shared ideas…
-      </p>
+    <section class="event-description">
+      <section>
+        <aside>Days 1&2</aside>
+        <h3>Participative Coding: sprints!</h3>
+        <p>
+          Developers of various open source projects gather in little groups to
+          code together. Everyone is welcome to contribute, and we seek to guide
+          beginners.
+        </p>
+        <p class="important">
+          Take part to the development of your favorite project!
+        </p>
+        <p>
+          We provide the space and environment (tables, chairs,
+          internet connection… and coffee!).
+        </p>
+      </section>
+
+      <section>
+        <aside>Days 3&4</aside>
+        <h3>Conferences and Workshops</h3>
+        <p>
+          During these two days, you will have the opportunity to attend
+          to presentations on various subjects, about the Python programming
+          language:
+        </p>
+        <ul>
+          <li>use cases</li>
+          <li>good practices</li>
+          <li>feedbacks</li>
+          <li>shared ideas</li>
+        </ul>
+      </section>
     </section>
   </article>
 
-  <article>
-    <h2>AFPy</h2>
+  <article class="place">
+    <h2>Venue</h2>
     <section>
+      <section>
+        <img src="{{ url_for('static', filename='images/partners/Université de Strasbourg.png') }}"/>
+        <address>
+          <strong>UFR Mathématique et Informatique</strong>
+          7 rue René Descartes
+          67000 Strasbourg
+        </address>
+        <a class="button" href="{{ url_for('page', name='venue', lang=lang) }}">
+          More Details
+        </a>
+      </section>
+
+      {{ map() }}
+    </section>
+  </article>
+
+  <article class="afpy">
+    <section>
+      <h2>AFPy, Association Francophone Python</h2>
+      <a class="button" href="https://www.afpy.org">Our website</a>
+    </section>
+    <section>
+      <h3>
+        AFPy promotes the Python language, both to the informed public and to beginners.
+      </h3>
       <p>
         We promote the Python programming language among the widest possible
         audience.
@@ -70,28 +115,16 @@
     </section>
   </article>
 
-  <article id="place">
-    <h2>The Place</h2>
-    <section>
-      <img src="{{ url_for('static', filename='images/partners/UFR.png') }}"/>
-      <address>
-        UFR Mathématique et Informatique
-        7 rue René Descartes
-        67000 Strasbourg
-      </address>
-      <a class="button" href="{{ url_for('page', name='venue', lang=lang) }}">
-        More Details
-      </a>
-    </section>
-  </article>
-
-  <article>
+  <article class="become-sponsor">
+    <aside>Support us!</aside>
     <h2>Our Sponsors</h2>
-    <section>
-      {{ sponsors(lang, only_logo=True) }}
+
+    {{ sponsors(lang, only_logo=True) }}
+
+    <section class="contact-sponsor">
       <p>
         The team is available to answer your questions about the event
-        at <a href="mailto:contact@pycon.fr">contact@pycon.fr</a>.
+        at <a href="mailto:contact@pycon.fr">contact@pycon.fr</a>
       </p>
     </section>
   </article>
