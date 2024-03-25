@@ -40,6 +40,7 @@
 
       <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.svg') }}" />
       <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <script>/* Stupid hack for iOS :hover */ document.addEventListener("touchstart", function(){}, true);</script>
     {% endblock head %}
   </head>
 
@@ -67,7 +68,7 @@
           </li>
         </ul>
       {% endif %}
-      <a class="button" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">{{ 'S’inscrire' if lang == 'fr' else 'Register' }}</a>
+      <!-- <a class="button" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">{{ 'S’inscrire' if lang == 'fr' else 'Register' }}</a> -->
     </nav>
 
     {% if request.endpoint == 'talks' %}

@@ -44,7 +44,7 @@ body
   display: flex
   flex-direction: column
   margin: 0
-  min-height: 100vh
+  min-height: 100svh
 
 h1
   color: $purple
@@ -98,6 +98,9 @@ embed
 embed + p
   margin-top: 2em
 
+img
+  max-width: 100%
+
 .button
   background-color: $red
   border: 2px solid $red
@@ -124,11 +127,12 @@ embed + p
 
 // Nav
 nav
-  background: url(/2024/static/images/logo-simple-semi-couleurs.svg) 10% center / 10rem no-repeat
+  background: url(/2024/static/images/logo-simple-semi-couleurs.svg) 2rem center no-repeat
   background-color: $purple
-  display: flex
   color: white
-  width: 100vw
+  display: flex
+  padding: 0 2rem 0 20rem
+  position: relative
 
   ul
     align-items: center
@@ -150,17 +154,22 @@ nav
     font-weight: inherit
 
   ul#pages
-    align-items: center
-    gap: 1em
-    justify-content: space-between
-    margin: 2em auto
+    flex-wrap: wrap
+    gap: 0 1em
+    justify-content: center
+    margin: auto
+
+    li:first-child a:before
+      content: ""
+      height: 100%
+      left: 0
+      position: absolute
+      top: 0
+      width: 16rem
 
   ul#languages
     justify-content: space-evenly
-    position: absolute
-    right: 10em
-    top: 1em
-    width: 10%
+    width: 10rem
 
     li
       opacity: 0.5
@@ -183,8 +192,10 @@ nav
       background-image: url(/2024/static/images/united-kingdom.svg)
 
   > a
-    position: absolute
-    right: 2em
+    box-sizing: border-box
+    max-width: none !important
+    text-align: center
+    width: 8rem
 
 
 // Footer
@@ -224,23 +235,24 @@ footer
 
   .pycon-presentation
     background: white
-    border-radius: 5%
+    border-radius: 1em
     margin: auto auto auto 10%
     padding: 2em
+    position: relative
     width: 26%
 
     aside
       background: $red
       border-radius: 50%
       color: white
-      float: right
       font-size: 0.8em
       font-weight: 800
       height: 6em
       line-height: 0
-      margin: -10rem 0 0 25%
       padding: 0.2em 0 0.2em 0.2em
       position: absolute
+      right: -2rem
+      top: -2rem
       text-align: center
       text-transform: uppercase
       width: 6em
@@ -281,14 +293,14 @@ footer
   .event-description
     display: flex
     justify-content: center
-    margin: auto
+    margin: 4em auto
+    gap: 2em
 
     section
       background: $grey
       border-radius: 10px
-      margin: 4em auto 0 auto
+      flex: 1
       padding: 2em
-      width: 35%
 
       h3
         margin: 0 auto 1em auto
@@ -314,16 +326,16 @@ footer
 
     > section
       display: flex
+      gap: 2em
       justify-content: space-between
       margin: auto
 
       section
-        width: 40%
+        max-width: 40em
 
     iframe
       margin: -5em 0 0 0
       height: 20em
-      width: 55%
 
     iframe + a
       display: none
@@ -333,10 +345,12 @@ footer
     color: white
     display: flex
     justify-content: center
+    gap: 1em
     padding: 3em 0
 
     section:first-of-type
-      width: 30%
+      margin: 0
+      max-width: 25em
 
       h2
         color: inherit
@@ -344,29 +358,30 @@ footer
         text-align: left
 
     section:last-of-type
-      width: 35%
+      margin: 0
+      max-width: 30em
 
   .become-sponsor
     aside
       color: $red
       font-weight: 700
-      margin: 3em 0 0 0
+      margin-top: 3em
       text-align: center
       text-transform: uppercase
-      width: 100%
 
     h2
       margin-top: 0
 
     p
       margin: auto
+      max-width: 30em
       text-align: center
-      width: 30%
 
     .contact-sponsor
       background: $grey
       border-radius: 10px
       margin: 3em auto
+      min-width: min-content
       padding: 2em 6em
       width: 30%
 
@@ -385,23 +400,14 @@ footer
         margin: initial
 
 
-body:not(#index)
-  article > *
-    margin: auto
-
-  h2
-    margin: 1em auto
-
-  article
-    p, ul
-      margin: 1em auto
-
-
 main
   flex: 1
 
   article > *
-    width: 70rem
+    margin-left: auto
+    margin-right: auto
+    max-width: 70rem
+    padding: 0 2rem
 
     table
       border-collapse: collapse
@@ -458,30 +464,103 @@ main
 
 
 // Mobile
-@media (max-width: 980px)
-  #index .coverboard
-    .cover
-      width: 200%
-      padding-top: calc(2 * 39.21875%
-
-      img
-        left: -50%
-        transform: translate(25%, 0)
-
-    .program-button
-      position: absolute
-      z-index: 2
-      width: 100%
-      top: 58%
-
-@media (max-width: 900px)
+@media (max-width: 1000px)
   html
     font-size: 1em
 
-  nav, footer
-    ul li a
-      font-size: 0.9em
-      padding: 0.5em
+  h3
+    font-size: 1.4em
+
+  #index
+    .logo
+      max-width: 30em
+      width: 80%
+
+    .pycon-presentation
+      margin: auto
+      width: 65%
+
+    .event-description
+      flex-direction: column
+      gap: 2em
+
+      section
+        padding: 1em
+
+    .place > section
+      flex-direction: column
+
+      iframe
+        margin-top: 0
+
+    .afpy
+      flex-direction: column
+
+      section:first-child,
+      section:last-child
+        max-width: none
+
+    .become-sponsor
+      .contact-sponsor a
+        font-size: 1.2em
+
+  nav
+    align-items: flex-start
+    background-image: none
+    flex-direction: row-reverse
+    flex-wrap: wrap
+    padding-left: 2rem
+
+    ul#pages
+      flex-direction: column
+      gap: 2em
+      justify-content: center
+      height: 0
+      margin: 0 auto 0 0
+      order: 10
+      overflow: hidden
+      width: 100%
+
+      &:hover
+        height: calc(100svh - 6rem)
+
+      &:before
+        content: '☰'
+        font-size: 3rem
+        position: absolute
+        right: 1.5rem
+        top: 0.5rem
+
+      &:hover:before
+        content: "⨯"
+
+    &:after
+      content: " "
+      height: 4rem
+      position: absolute
+      right: 1.5rem
+      top: 0.5rem
+      width: 4rem
+      z-index: -1
+
+    &:has(ul:hover):after
+      transition: z-index 1s
+      z-index: 1
+
+    li:first-child a:before
+      display: none
+
+    ul#languages
+      height: 4rem
+      margin-right: auto
+      width: 7rem
+
+  footer
+    background-position: center 40px
+
+    ul
+      flex-direction: column
+      margin-top: 100px
 
   aside ul
     flex-direction: column
