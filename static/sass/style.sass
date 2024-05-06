@@ -103,7 +103,9 @@ img
   max-width: 100%
 
 sup
+  line-height: 1
   text-transform: initial
+  vertical-align: 35%
 
 .button
   background-color: $red
@@ -147,13 +149,14 @@ nav
     list-style: none
 
   li
+    border-bottom: 1px solid transparent
     padding-bottom: 0.3em
 
   li:has(a:hover)
-    border-bottom: 1px solid $red-dark
+    border-bottom-color: $red-dark
 
   li.active
-    border-bottom: 1px solid $red
+    border-bottom-color: $red
     font-weight: 700
 
     a:hover
@@ -545,6 +548,11 @@ main
 
       section
         padding: 1em
+
+  #schedule
+    .event-description
+      .button
+        left: 1em
 
   nav
     align-items: flex-start
