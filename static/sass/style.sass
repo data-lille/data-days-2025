@@ -508,21 +508,31 @@ main
       display: flex
       justify-content: space-between
 
-      section
+      article
         background: $grey
         border-radius: 1em
         margin: 1em
-        padding: 2em
-        text-align: center
-        width: 33%
+        padding: 0 0 1em 0
+        width: 0
+        flex-grow: 1
 
-        img
+        header
           display: block
-          height: 20rem
+          width: 100%
           object-fit: contain
+          padding: 0em
+
+
+          img
+            width: 100%
+            border-top-left-radius: 1em
+            border-top-right-radius: 1em
 
         p
-          margin: 0
+          margin: 0 0 0 1em
+
+          strong
+            font-size: 1.2em
 
 
 // Mobile
@@ -576,7 +586,12 @@ main
         left: 1em
     .keynotes
       .speakers
-        display: block
+        flex-direction: column
+        gap: 1em
+        article
+          width: auto
+
+
 
   nav
     align-items: flex-start
