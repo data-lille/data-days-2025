@@ -46,25 +46,43 @@
       </section>
     </section>
 
-    <!--
-    <section>
-      <h3>Calendrier</h3>
-      <p>
-        Le calendrier est disponible ci-dessous, sur une
-        <a href="{{ url_for('schedule', lang=lang) }}">page en plein écran</a>,
-        ou <a href="{{ url_for('calendar') }}">dans votre application de calendrier favorite</a>.
-      </p>
-      <p>
-        Vous pouvez également lire la description des
-        <a href="{{ url_for('talks', lang=lang, category='plenary') }}">plénières</a>, des
-        <a href="{{ url_for('talks', lang=lang, category='1h') }}">conférences d’une heure</a>, des
-        <a href="{{ url_for('talks', lang=lang, category='30m') }}">conférences de 30 minutes</a>, des
-        <a href="{{ url_for('talks', lang=lang, category='workshop')}}">ateliers</a> et des
-        <a href="{{ url_for('talks', lang=lang, category='sprint') }}">sprints</a>.
-      </p>
-
-      <iframe src="{{ url_for('schedule', lang=lang) }}"></iframe>
+    <section class="keynotes">
+      <h3>Keynotes</h3>
+      <article class="speakers">
+        <section>
+          <img src="{{ url_for('static', filename='images/keynotes/houleymatou_baldé.png')  }}">
+          <p>Houleymatou Baldé</p>
+        </section>
+        <section>
+          <img src="{{ url_for('static', filename='images/keynotes/françoise_conil.jpg')  }}">
+          <p>Françoise Conil</p>
+        </section>
+        <section>
+          <img src="{{ url_for('static', filename='images/keynotes/ines_montani.jpg')  }}">
+          <p>Ines Montani</p>
+        </section>
+      </article>
     </section>
+
+    <!--
+         <section>
+         <h3>Calendrier</h3>
+         <p>
+         Le calendrier est disponible ci-dessous, sur une
+         <a href="{{ url_for('schedule', lang=lang) }}">page en plein écran</a>,
+         ou <a href="{{ url_for('calendar') }}">dans votre application de calendrier favorite</a>.
+         </p>
+         <p>
+         Vous pouvez également lire la description des
+         <a href="{{ url_for('talks', lang=lang, category='plenary') }}">plénières</a>, des
+         <a href="{{ url_for('talks', lang=lang, category='1h') }}">conférences d’une heure</a>, des
+         <a href="{{ url_for('talks', lang=lang, category='30m') }}">conférences de 30 minutes</a>, des
+         <a href="{{ url_for('talks', lang=lang, category='workshop')}}">ateliers</a> et des
+         <a href="{{ url_for('talks', lang=lang, category='sprint') }}">sprints</a>.
+         </p>
+
+         <iframe src="{{ url_for('schedule', lang=lang) }}"></iframe>
+         </section>
     -->
 
     <section id="register">
