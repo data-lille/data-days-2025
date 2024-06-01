@@ -503,6 +503,37 @@ main
       left: 2em
       position: absolute
 
+  .keynotes
+    .speakers
+      display: flex
+      justify-content: space-between
+
+      article
+        background: $grey
+        border-radius: 1em
+        margin: 1em
+        padding: 0 0 1em 0
+        width: 0
+        flex-grow: 1
+
+        header
+          display: block
+          width: 100%
+          object-fit: contain
+          padding: 0em
+
+
+          img
+            width: 100%
+            border-top-left-radius: 1em
+            border-top-right-radius: 1em
+
+        p
+          margin: 0 0 0 1em
+
+          strong
+            font-size: 1.2em
+
 
 // Mobile
 @media (max-width: 1000px)
@@ -553,6 +584,14 @@ main
     .event-description
       .button
         left: 1em
+    .keynotes
+      .speakers
+        flex-direction: column
+        gap: 1em
+        article
+          width: auto
+
+
 
   nav
     align-items: flex-start
