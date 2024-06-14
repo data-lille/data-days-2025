@@ -103,7 +103,9 @@ img
   max-width: 100%
 
 sup
+  line-height: 1
   text-transform: initial
+  vertical-align: 35%
 
 .button
   background-color: $red
@@ -147,13 +149,14 @@ nav
     list-style: none
 
   li
+    border-bottom: 1px solid transparent
     padding-bottom: 0.3em
 
   li:has(a:hover)
-    border-bottom: 1px solid $red-dark
+    border-bottom-color: $red-dark
 
   li.active
-    border-bottom: 1px solid $red
+    border-bottom-color: $red
     font-weight: 700
 
     a:hover
@@ -233,7 +236,7 @@ footer
 
 // Main page
 #index
-  .logo
+  .pycon-logo
     display: block
     margin: 1em auto
     width: 20%
@@ -287,13 +290,13 @@ footer
       .register
         margin-right: 1em
 
-      .schedule
+      /*.schedule
         background: white
         color: $red
         transition: background-color 0.5s
 
         &:hover, &:focus
-          background-color: lighten($red, 40%)
+          background-color: lighten($red, 40%)*/
 
   .pycon-date
     color: $red
@@ -303,33 +306,6 @@ footer
   .details
     display: block
     margin: auto
-
-  .event-description
-    display: flex
-    justify-content: center
-    margin: 4em auto
-    gap: 2em
-
-    section
-      background: $grey
-      border-radius: 10px
-      flex: 1
-      padding: 2em
-
-      h3
-        margin: 0 auto 1em auto
-
-      aside
-        color: $red
-        font-weight: 700
-        margin-bottom: 1em
-        text-transform: uppercase
-
-      ul
-        list-style: inside
-
-      p:last-of-type
-        margin-bottom: 0
 
   .place
     margin: 4em auto
@@ -485,6 +461,80 @@ main
   padding-top: 0.1em
 
 
+#index, #schedule
+  .event-description
+    display: flex
+    justify-content: center
+    margin: 4em auto
+    gap: 2em
+
+    section
+      background: $grey
+      border-radius: 10px
+      flex: 1
+      padding: 2em
+
+      h3
+        margin: 0 auto 1em auto
+
+      aside
+        color: $red
+        font-weight: 700
+        margin-bottom: 1em
+        text-transform: uppercase
+
+      ul
+        list-style: inside
+
+      p:last-of-type
+        margin-bottom: 0
+
+
+#schedule
+  .event-description
+    section
+      position: relative
+
+      p:last-of-type
+        margin-bottom: 4em
+
+    .button
+      bottom: 0
+      left: 2em
+      position: absolute
+
+  .keynotes
+    .speakers
+      display: flex
+      justify-content: space-between
+
+      article
+        background: $grey
+        border-radius: 1em
+        margin: 1em
+        padding: 0 0 1em 0
+        width: 0
+        flex-grow: 1
+
+        header
+          display: block
+          width: 100%
+          object-fit: contain
+          padding: 0em
+
+
+          img
+            width: 100%
+            border-top-left-radius: 1em
+            border-top-right-radius: 1em
+
+        p
+          margin: 0 0 0 1em
+
+          strong
+            font-size: 1.2em
+
+
 // Mobile
 @media (max-width: 1000px)
   html
@@ -502,12 +552,8 @@ main
       margin: auto
       width: 65%
 
-    .event-description
-      flex-direction: column
-      gap: 2em
-
-      section
-        padding: 1em
+      a
+        margin: 0 auto
 
     .place > section
       flex-direction: column
@@ -525,6 +571,27 @@ main
     .become-sponsor
       .contact-sponsor a
         font-size: 1.2em
+
+  #index, #schedule
+    .event-description
+      flex-direction: column
+      gap: 2em
+
+      section
+        padding: 1em
+
+  #schedule
+    .event-description
+      .button
+        left: 1em
+    .keynotes
+      .speakers
+        flex-direction: column
+        gap: 1em
+        article
+          width: auto
+
+
 
   nav
     align-items: flex-start

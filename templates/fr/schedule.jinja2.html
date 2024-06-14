@@ -4,69 +4,126 @@
   <article>
     <h2>Programme</h2>
 
-    <section>
-      <h3>Calendrier</h3>
-      <p>
-        Le calendrier est disponible ci-dessous, sur une
-        <a href="{{ url_for('schedule', lang=lang) }}">page en plein écran</a>,
-        ou <a href="{{ url_for('calendar') }}">dans votre application de calendrier favorite</a>.
-      </p>
-      <p>
-        Vous pouvez également lire la description des
-        <a href="{{ url_for('talks', lang=lang, category='plenary') }}">plénières</a>, des
-        <a href="{{ url_for('talks', lang=lang, category='1h') }}">conférences d’une heure</a>, des
-        <a href="{{ url_for('talks', lang=lang, category='30m') }}">conférences de 30 minutes</a>, des
-        <a href="{{ url_for('talks', lang=lang, category='workshop')}}">ateliers</a> et des
-        <a href="{{ url_for('talks', lang=lang, category='sprint') }}">sprints</a>.
-      </p>
+    <section class="event-description">
+      <section>
+        <aside>31 octobre &amp; 1<sup>er</sup> novembre</aside>
+        <h3>Développements participatifs : sprints !</h3>
+        <p>
+          Les développeurs et développeuses de différents projets open source se
+          rejoignent pour coder ensemble. Chaque personne est la bienvenue pour
+          contribuer, et nous cherchons également à accompagner les débutantes.
+        </p>
+        <p class="important">
+          Participez au développement de votre projet préféré !
+        </p>
+        <p>
+          Nous fournissons l'espace et le matériel nécessaire à l'organisation
+          (tables, chaises, connexion internet… et café !).
+        </p>
+        <p>
+          Le programme sera disponible en septembre.
+        </p>
+        <a class="button" href="https://cfp.pycon.fr/pyconfr-2024/cfp">proposez votre sujet</a>
+      </section>
 
-      <iframe src="{{ url_for('schedule', lang=lang) }}"></iframe>
+      <section>
+        <aside>2 &amp; 3 novembre</aside>
+        <h3>Conférences &amp; ateliers</h3>
+        <p>
+          Durant ces deux jours, vous aurez l'occasion de participer à des
+          présentations sur des sujets variés, autour du langage Python :
+        </p>
+        <ul>
+          <li>usages</li>
+          <li>bonnes pratiques</li>
+          <li>retours d'expériences</li>
+          <li>partages d'idées</li>
+        </ul>
+        <p>
+          Le programme sera disponible en septembre.
+        </p>
+        <a class="button" href="https://cfp.pycon.fr/pyconfr-2024/cfp">proposez votre sujet</a>.
+      </section>
     </section>
+
+    <section class="keynotes">
+      <h3>Keynotes</h3>
+      <section class="speakers">
+        <article>
+        <header><img src="{{ url_for('static', filename='images/keynotes/houleymatou_baldé.png')  }}"></header>
+        <p><strong>Houleymatou Baldé</strong></p>
+        <p>Fondatrice IT Woman by YEESO</p><br/>
+        <p>“De villageoise à l’itWoman… Quelles actions pour faire de mon rêve TECH une réalité ?”</p>
+        </article>
+        <article>
+        <header><img src="{{ url_for('static', filename='images/keynotes/françoise_conil.jpg')  }}"></header>
+        <p><strong>Françoise Conil</strong></p>
+        <p>Développeuse d'applications au CNRS</p><br/>
+        <p>“Recherche des bonnes pratiques de packaging”</p>
+        </article>
+        <article>
+        <header><img src="{{ url_for('static', filename='images/keynotes/ines_montani.jpg')  }}"></header>
+        <p><strong>Ines Montani</strong></p>
+        <p>Fondatrice d'Explosion</p><br/>
+        <p>“Reality is not an end-to-end prediction problem: Applied NLP in the age of Generative AI”</p>
+        </article>
+      </section>
+    </section>
+
+    <!--
+         <section>
+         <h3>Calendrier</h3>
+         <p>
+         Le calendrier est disponible ci-dessous, sur une
+         <a href="{{ url_for('schedule', lang=lang) }}">page en plein écran</a>,
+         ou <a href="{{ url_for('calendar') }}">dans votre application de calendrier favorite</a>.
+         </p>
+         <p>
+         Vous pouvez également lire la description des
+         <a href="{{ url_for('talks', lang=lang, category='plenary') }}">plénières</a>, des
+         <a href="{{ url_for('talks', lang=lang, category='1h') }}">conférences d’une heure</a>, des
+         <a href="{{ url_for('talks', lang=lang, category='30m') }}">conférences de 30 minutes</a>, des
+         <a href="{{ url_for('talks', lang=lang, category='workshop')}}">ateliers</a> et des
+         <a href="{{ url_for('talks', lang=lang, category='sprint') }}">sprints</a>.
+         </p>
+
+         <iframe src="{{ url_for('schedule', lang=lang) }}"></iframe>
+         </section>
+    -->
 
     <section id="register">
       <h3>Inscriptions</h3>
-        <p>
-          L’accès aux sprints, aux conférences et aux ateliers de PyConFR est
-          gratuit.
-        </p>
-        <p>
-          Cependant, <strong>l’inscription est obligatoire pour tous</strong>, y
-          compris membres du comité d’organisation, bénévoles, conférenciers et
-          sponsors.
-        </p>
-        <p>
-          Les inscriptions sont ouvertes jusqu’à la fin de l’événement, dans la
-          limite de :
-        </p>
-        <ul>
-          <li>200 personnes pour les sprints,</li>
-          <li>1 000 personnes pour les conférences et ateliers,</li>
-          <li>150 personnes pour <a href="#dinner">le repas du samedi soir</a>.</li>
-        </ul>
-        <p>
-          Il est possible lors de cette inscription de :
-        </p>
-        <ul>
-          <li>
-            pré-réserver des t-shirts (10 €), qui seront également vendus lors de
-            la conférence mais en nombre limité,
-          </li>
-          <li>
-            vous inscrire pour le repas du samedi soir (30 €).
-          </li>
-        </ul>
-        <p>
-          Vous pouvez également soutenir <a href="https://afpy.org/">l’AFPy</a>,
-          qui organise chaque année cet événement,
-          en <a href="https://www.helloasso.com/associations/afpy/formulaires/1/">faisant
-          un don</a>. Si vous souhaitez avoir une voix à son assemblée générale,
-          qui aura lieu le dimanche matin, vous
-          devez <a href="https://www.afpy.org/adherer">devenir membre</a>.
-        </p>
-        <div class="column center">
-          <a class="button" href="https://www.helloasso.com/associations/afpy/evenements/pyconfr-2024">S’inscrire</a>
-        </div>
+
+      <p>
+        Les inscriptions ne sont pas encore ouvertes.
       </p>
+      <p>
+        L’accès aux sprints, aux conférences et aux ateliers de PyConFR est
+        gratuit.
+      </p>
+      <p>
+        Cependant, <strong>l’inscription est obligatoire pour tous</strong>, y
+        compris membres du comité d’organisation, bénévoles, conférenciers et
+        sponsors.
+      </p>
+      <!--
+           TODO
+           add persons limit for sprints / talks & workshops / saturday dinner
+           add tshirt price
+      -->
+      <p>
+        Vous pouvez également soutenir <a href="https://afpy.org/">l’AFPy</a>,
+        qui organise chaque année cet événement,
+        en <a href="https://www.helloasso.com/associations/afpy/formulaires/1/">faisant
+        un don</a>. Si vous souhaitez avoir une voix à son assemblée générale,
+        qui aura lieu le dimanche matin, vous
+        devez <a href="https://www.afpy.org/adherer">devenir membre</a>.
+      </p>
+      <!--
+      <div class="column center">
+        <a class="button" href="https://www.helloasso.com/associations/afpy/evenements/pyconfr-2024">S’inscrire</a>
+      </div>
+      -->
     </section>
 
     <section id="dinner">
