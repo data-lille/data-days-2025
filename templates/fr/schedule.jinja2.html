@@ -49,24 +49,26 @@
     <section class="keynotes">
       <h3>Keynotes</h3>
       <section class="speakers">
-        <article>
-        <header><img src="{{ url_for('static', filename='images/keynotes/houleymatou_baldé.png')  }}"></header>
-        <p><strong>Houleymatou Baldé</strong></p>
-        <p>Fondatrice IT Woman by YEESO</p><br/>
-        <p>“De villageoise à l’itWoman… Quelles actions pour faire de mon rêve TECH une réalité ?”</p>
-        </article>
-        <article>
-        <header><img src="{{ url_for('static', filename='images/keynotes/françoise_conil.jpg')  }}"></header>
-        <p><strong>Françoise Conil</strong></p>
-        <p>Développeuse d'applications au CNRS</p><br/>
-        <p>“Recherche des bonnes pratiques de packaging”</p>
-        </article>
-        <article>
-        <header><img src="{{ url_for('static', filename='images/keynotes/ines_montani.jpg')  }}"></header>
-        <p><strong>Ines Montani</strong></p>
-        <p>Fondatrice d'Explosion</p><br/>
-        <p>“Reality is not an end-to-end prediction problem: Applied NLP in the age of Generative AI”</p>
-        </article>
+        <dl>
+          <dt><img src="{{ url_for('static', filename='images/keynotes/houleymatou_baldé.png')  }}"></dt>
+          <dd class="speaker">Houleymatou Baldé</dd>
+          <dd class="title">Fondatrice IT Woman by YEESO</dd>
+          <dd class="talk">De villageoise à l’itWoman… Quelles actions pour faire de mon rêve TECH une réalité ?</dd>
+        </dl>
+
+        <dl>
+          <dt><img src="{{ url_for('static', filename='images/keynotes/françoise_conil.jpg')  }}"></dt>
+          <dd class="speaker">Françoise Conil</dd>
+          <dd class="title">Développeuse d'applications au CNRS</dd>
+          <dd class="talk">Recherche des bonnes pratiques de packaging</dd>
+        </dl>
+
+        <dl>
+          <dt><img src="{{ url_for('static', filename='images/keynotes/ines_montani.jpg')  }}"></dt>
+          <dd class="speaker">Ines Montani</dd>
+          <dd class="title">Fondatrice d'Explosion</dd>
+          <dd class="talk">Reality is not an end-to-end prediction problem: Applied NLP in the age of Generative AI</dd>
+        </dl>
       </section>
     </section>
 
@@ -120,10 +122,27 @@
         devez <a href="https://www.afpy.org/adherer">devenir membre</a>.
       </p>
       <!--
-      <div class="column center">
-        <a class="button" href="https://www.helloasso.com/associations/afpy/evenements/pyconfr-2024">S’inscrire</a>
-      </div>
+           <div class="column center">
+           <a class="button" href="https://www.helloasso.com/associations/afpy/evenements/pyconfr-2024">S’inscrire</a>
+           </div>
       -->
+    </section>
+
+    <section>
+      <h3>Espace enfants</h3>
+
+      <p>
+        Un espace enfants est mis en place <strong>durant les quatre jours</strong> de la
+        PyConFR et est animé par <a href="https://www.babychou.com/">Babychou Services</a>.
+      </p>
+      <p>
+        L’espace enfants accueille <strong>un maximum de 18 enfants, de 3 ans à 12 ans</strong>.
+      </p>
+      <p>
+        Les inscriptions seront ouvertes en même temps que les inscriptions pour
+        l’évènement et jusqu’à 15 jours avant le début de la PyConFR.
+        Une priorité est donnée aux personnes animant des sprints, conférences et ateliers.
+      </p>
     </section>
 
     <section id="dinner">
