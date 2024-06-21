@@ -1,3 +1,10 @@
+{% macro brochures() %}
+  <ul class="brochures">
+    <li><a class="button" href="{{ url_for('static', filename='brochures/brochure.pdf') }}">Brochure de sponsoring (FR)</a></li>
+    <li><a class="button" href="{{ url_for('static', filename='brochures/brochure_en.pdf') }}">Sponsoring brochure (EN)</a></li>
+  </ul>
+{% endmacro %}
+
 {% macro description(company, lang) %}
   <div class="description">
 
@@ -297,6 +304,8 @@ En complément, nous proposons notre expertise pour la mise en place de deux sol
       offer a wider visibility to your enterprise during this event.
     </p>
   {% endif %}
+
+  {{ brochures() }}
 
   {% for level, companies in levels.items() %}
     {% if companies %}

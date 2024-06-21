@@ -19,6 +19,7 @@
 {%- set title = dict(MENU + EXTRA_PAGES).get(page_name, ['', ''])[1 if lang == 'en' else 0] -%}
 
 {%- from '_sponsors.jinja2' import sponsors -%}
+{%- from '_sponsors.jinja2' import brochures -%}
 {%- from '_map.jinja2' import map -%}
 
 <!DOCTYPE html>
