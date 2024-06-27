@@ -267,10 +267,10 @@ En complément, nous proposons notre expertise pour la mise en place de deux sol
           'EuroPython Society': 'https://www.europython-society.org/',
       },
 
-          'Or' if lang == 'fr' else 'Gold': {
+      'Or' if lang == 'fr' else 'Gold': {
       },
 
-          'Argent' if lang == 'fr' else 'Silver': {
+      'Argent' if lang == 'fr' else 'Silver': {
           'Alma': 'https://almapay.com/',
           'Entr\'ouvert': 'http://www.entrouvert.com/',
       },
@@ -287,10 +287,11 @@ En complément, nous proposons notre expertise pour la mise en place de deux sol
 
       'Partenaires' if lang == 'fr' else 'Partners':
       {
+          'Alsace Digitale': 'https://www.alsacedigitale.org/',
       },
   } %}
 
-  {% set png_logos = ('Université de Strasbourg',) %}
+  {% set png_logos = ('Université de Strasbourg', 'Alsace Digitale') %}
 
 
   {% if lang == 'fr' %}
