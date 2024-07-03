@@ -101,6 +101,16 @@
         grande flexibilité quant au dimensionnement des serveurs et une
         sécurité optimale des données.
       </p>
+      {% elif company == 'API Society' %}
+      Basé à Toulouse, API Society est un organisme certificateur titulaire de la certification « Développer en langage Python orienté objet ».<br/>
+
+Reconnue par France Compétences et inscrite au Répertoire Spécifique (RS6301), notre certification est un diplôme attestant de la connaissance des fondamentaux de la programmation en langage Python.<br/>
+
+Cette reconnaissance officielle vous permet de financer la formation et la certification en utilisant votre Compte Personnel de Formation (CPF).<br/>
+
+Passable à distance et au moment de son choix, composée d'une épreuve théorique et d'une épreuve pratique, corrigée par un professionnel Python, garantie sans fraude et sans discrimination, la certification « Développer en langage Python orienté objet » atteste que la personne certifiée sait réellement programmer en langage Python.<br/>
+
+En complément de l'obtention de la certification, les mentions Junior, Opérationnel, Expert et Instructeur permettent à un recruteur de connaître le niveau effectif d'un candidat certifié.
       {% elif company == "Yaal Coop" %}
         <p>
         Yaal Coop est une société coopérative d'intérêt collectif (SCIC)
@@ -226,6 +236,8 @@ En complément, nous proposons notre expertise pour la mise en place de deux sol
         These professional offerings combine the power of dedicated resources,
         great flexibility in server sizing and optimal data security.
       </p>
+      {% elif company == "API Society" %}
+      API Society is developing the innovative API Cert certification solution that meets the needs of the various market players.
       {% elif company == "Yaal Coop" %}
         <p>
           Yaal Coop is a cooperative specialized in consulting, development and services hosting.
@@ -280,6 +292,7 @@ En complément, nous proposons notre expertise pour la mise en place de deux sol
           'Camptocamp': 'https://www.camptocamp.org/',
           'Tempo Consulting': 'http://www.tempo-consulting.fr',
           'Yaal Coop': 'https://yaal.coop/',
+          'API Society': 'https://www.api-society.com/fr',
       },
 
       'Cœur' if lang == 'fr' else 'Heart': {
@@ -292,7 +305,7 @@ En complément, nous proposons notre expertise pour la mise en place de deux sol
       },
   } %}
 
-  {% set png_logos = ('Université de Strasbourg', 'Alsace Digitale', 'AIUS') %}
+  {% set png_logos = ('Université de Strasbourg', 'Alsace Digitale', 'AIUS', 'API Society') %}
 
 
   {% if lang == 'fr' %}
