@@ -4,12 +4,6 @@ $purple: #1b0e29
 $red: #ff213b
 $red-dark: #cc0018
 
-// TODO: remove these variables when the whole website has the new style
-$background: #eff1f3
-$text: #1b0e29
-$primary: #ff213b
-$secondary: $text
-$third: $primary
 
 // Fonts
 @font-face
@@ -36,7 +30,7 @@ $third: $primary
   line-height: 1.5
 
 html
-  color: $text
+  color: $purple
   font-family: MonaSans
   font-size: 1.1em
   letter-spacing: .03em
@@ -420,7 +414,7 @@ main
         font-weight: normal
 
       td
-        border: 1px solid $secondary
+        border: 1px solid $purple
         padding: 0.25em
 
         &:not(:first-child)
@@ -499,7 +493,7 @@ main
 
 
 #schedule
-  article p:first-of-type
+  article > p:first-of-type
     text-align: center
 
   .event-description
