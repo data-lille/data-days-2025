@@ -493,8 +493,9 @@ main
 
 
 #schedule
-  article > p:first-of-type
-    text-align: center
+  article
+    > p:first-of-type, > p:nth-of-type(2)
+      text-align: center
 
   .event-description
     section
