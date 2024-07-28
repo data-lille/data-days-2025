@@ -61,7 +61,7 @@
           </li>
         </ul>
       {% endif %}
-      <!-- <a class="button" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">{{ 'S’inscrire' if lang == 'fr' else 'Register' }}</a> -->
+      <a class="button" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">{{ 'S’inscrire' if lang == 'fr' else 'Register' }}</a>
     </nav>
 
     {% if request.endpoint == 'talks' %}
