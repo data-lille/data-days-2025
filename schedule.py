@@ -121,6 +121,8 @@ sprints = {day.isoformat(): {to_minutes(hour): {} for hour in hours} for day in 
 for talk in talks:
     slot = talk["slot"]
     # We assume that talks and schedule share the same timezone.
+    if not slot["start"]:
+        continue
     start = datetime.fromisoformat(slot["start"])
     end = datetime.fromisoformat(slot["end"])
     clean_talk(talk)
