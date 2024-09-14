@@ -1,9 +1,9 @@
-from urllib.request import urlopen
-from urllib.error import HTTPError
-from xml.etree import ElementTree
+import json
+from pathlib import Path
 
-from bs4 import BeautifulSoup
-from flask import Flask, Response, render_template, url_for
+from babel.dates import format_date, format_time, format_timedelta
+from datetime import date, time, timedelta
+from flask import Flask, Response, render_template
 from flask_frozen import Freezer
 from icalendar import Calendar
 from markdown2 import Markdown
@@ -17,6 +17,8 @@ app.wsgi_app = SassMiddleware(app.wsgi_app, {
         'css_path': 'static/css',
         'wsgi_path': '/2024/static/css',
         'strip_extension': True}})
+with (Path(app.root_path) / 'schedule.json').open() as fd:
+    SCHEDULE = json.load(fd)
 
 
 @app.template_filter()
@@ -24,98 +26,65 @@ def slug(string):
     return slugify(string, max_length=30)
 
 
+TALK_CATEGORIES = {
+    slug(talk['submission_type']['en']): talk['submission_type']
+    for dates in
+    tuple(SCHEDULE['schedule'].values()) + tuple(SCHEDULE['sprints'].values())
+    for hours in dates.values()
+    for talk in hours.values()
+}
+
+
+@app.template_filter()
+def format_duration(minutes):
+    return format_timedelta(
+        timedelta(seconds=minutes*60), threshold=10, format='short')
+
+
+@app.template_filter()
+def format_day(day, lang):
+    day_date = date.fromisoformat(day)
+    return format_date(day_date, format='full', locale=lang)
+
+
+@app.template_filter()
+def format_minutes(minutes, lang):
+    hour_time = time(int(minutes) // 60, int(minutes) % 60)
+    return format_time(hour_time, format='short', locale=lang)
+
+
+@app.template_filter()
+def markdown(string):
+    return Markdown().convert(string)
+
+
 @app.route('/')
 @app.route('/2024/')
 @app.route('/2024/<lang>/<name>.html')
 def page(name='index', lang='fr'):
     return render_template(
-        f'{lang}/{name}.jinja2.html', page_name=name, lang=lang)
+        f'{lang}/{name}.jinja2.html', page_name=name, lang=lang,
+        schedule=SCHEDULE)
 
 
 @app.route('/2024/<lang>/talks/<category>.html')
 def talks(lang, category):
-    try:
-        with urlopen('https://cfp-2024.pycon.fr/schedule/xml/') as fd:
-            tree = ElementTree.fromstring(fd.read().decode('utf-8'))
-    except HTTPError:
-        return []
-    talks = []
-    for day in tree.findall('.//day'):
-        for event in day.findall('.//event'):
-            talk = {child.tag: child.text for child in event}
-            talk['person'] = ', '.join(
-                person.text for person in event.findall('.//person'))
-            talk['id'] = event.attrib['id']
-            talk['day'] = day.attrib['date']
-            if talk['type'] != category:
-                continue
-            if 'description' in talk:
-                talk['description'] = Markdown().convert(talk['description'])
-            talks.append(talk)
     return render_template(
-        f'{lang}/talks.jinja2.html', category=category, talks=talks, lang=lang)
+        f'{lang}/talks.jinja2.html', lang=lang, page_name='talks',
+        category=category, title=TALK_CATEGORIES[category][lang],
+        schedule=SCHEDULE, categories=TALK_CATEGORIES)
 
 
 @app.route('/2024/<lang>/full-schedule.html')
 def schedule(lang):
-    try:
-        with urlopen('https://cfp-2024.pycon.fr/schedule/html/') as fd:
-            html = fd.read().decode('utf-8')
-    except HTTPError:
-        html = ""
-
-    if lang == 'fr':
-        html = (
-            html
-            .replace('Room', 'Salle')
-            .replace('Saturday 18 February', 'Samedi 18 février')
-            .replace('Sunday 19 February', 'Dimanche 19 février'))
-    else:
-        for minute in (0, 30):
-            html = html.replace(f'12:{minute:02}', f'12:{minute:02} PM')
-            for hour in range(9, 12):
-                html = html.replace(
-                    f'{hour:02}:{minute:02}', f'{hour:02}:{minute:02} AM')
-            for hour in range(13, 19):
-                html = html.replace(
-                    f'{hour:02}:{minute:02}',
-                    f'{hour-12:02}:{minute:02} PM')
-
-    # Insert links in the table
-    soup = BeautifulSoup(html, 'html.parser')
-    conf_colors = {
-        '#fe6f61': '1h',
-        '#f6b36a': '30m',
-        '#378899': 'workshop',
-        '#fce16b': 'plenary',
-    }
-    for color, kind in conf_colors.items():
-        for td in soup.find_all('td', attrs={'bgcolor': color}):
-            title = next(td.children)
-            anchor = slug(title)
-            href = url_for('talks', lang=lang, category=kind, _anchor=anchor)
-            link = soup.new_tag('a', href=href, target='_parent')
-            title.wrap(link)
-
-    for tag in soup.find_all(lambda tag: 'style' in tag.attrs):
-        del tag.attrs['style']
-
-    return render_template('schedule.jinja2.html', lang=lang, data=soup)
+    return render_template(
+        'schedule.jinja2.html', page_name='full-schedule', lang=lang,
+        schedule=SCHEDULE)
 
 
 @app.route('/2024/pyconfr-2024.ics')
 def calendar():
-    try:
-        with urlopen('https://cfp-2024.pycon.fr/schedule/ics/') as fd:
-            calendar = Calendar.from_ical(fd.read())
-    except HTTPError:
-        calendar = Calendar()
-
-    # Delete sprints
-    calendar.subcomponents = [
-        event for event in calendar.subcomponents
-        if event['DTSTART'].dt.day != 16]
-
+    calendar = Calendar.from_ical('TODO')
     return Response(calendar.to_ical(), mimetype='text/calendar')
 
 

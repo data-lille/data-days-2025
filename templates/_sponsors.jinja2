@@ -396,7 +396,7 @@ En complément, nous proposons notre expertise pour la mise en place de deux sol
             {% if link %}
               <a href="{{ link }}" class="logo">
             {%- endif -%}
-              <img src="{{ url_for('static', filename='images/partners/{}.{}'.format(company.replace('/', '-'), 'png' if company in png_logos else 'svg')) }}" alt="Logo {{ company }}" />
+              <img src="{{ url_for('static', filename='images/partners/{}.{}'.format(company.replace('/', '-'), 'png' if company in png_logos else 'svg')) }}" alt="Logo {{ company }}" loading="lazy" />
             {%- if link -%}
               </a>
             {% endif %}

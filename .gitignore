@@ -3,3 +3,6 @@ build
 __pycache__
 *.css
 *.css.map
+
+# See schedule.py
+token.key

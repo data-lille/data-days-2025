@@ -8,43 +8,28 @@ $red-dark: #cc0018
 // Fonts
 @font-face
   font-family: MonaSans
-  font-style: normal
-  font-weight: 400
-  src: url(/2024/static/fonts/MonaSans-Regular.ttf)
-
-@font-face
-  font-family: MonaSans
-  font-style: normal
-  font-weight: 700
-  src: url(/2024/static/fonts/MonaSans-Bold.ttf)
-
-@font-face
-  font-family: MonaSans
-  font-style: normal
-  font-weight: 800
-  src: url(/2024/static/fonts/MonaSansCondensed-ExtraBold.ttf)
+  src: url(/2024/static/fonts/MonaSans[slnt,wdth,wght].woff2)
 
 
 // Common
-*
-  line-height: 1.5
-
 html
   color: $purple
   font-family: MonaSans
   font-size: 1.1em
   letter-spacing: .03em
+  line-height: 1.5
 
 body
   display: flex
   flex-direction: column
   margin: 0
-  min-height: 100svh
+  min-height: 100vh
 
 h1
   color: $purple
   font-size: 3em
-  font-weight: 800
+  font-variation-settings: "wdth" 75
+  font-weight: 750
   line-height: 1
   margin: 0
   text-transform: uppercase
@@ -52,14 +37,15 @@ h1
 h2
   color: $purple
   font-size: 3em
-  font-weight: 800
+  font-variation-settings: "wdth" 75
+  font-weight: 750
   margin: 1em auto 0 auto
   text-align: center
   text-transform: uppercase
 
 h3
   font-size: 2em
-  font-weight: 700
+  font-weight: 600
   line-height: 1
   margin: 1em auto
 
@@ -68,7 +54,8 @@ h4
 
 a
   color: $purple
-  font-weight: 700
+  font-variation-settings: "wdth" 95
+  font-weight: 600
   text-decoration: none
 
   &:hover, &:focus
@@ -81,8 +68,11 @@ address
 ul
   padding: 0
 
-ul li::marker
-  color: $red
+  ul
+    padding-left: 2em
+
+  li::marker
+    color: $red
 
 embed
   display: block
@@ -96,10 +86,20 @@ embed + p
 img
   max-width: 100%
 
+strong
+  font-variation-settings: "wdth" 95
+  font-weight: 600
+
 sup
   line-height: 1
   text-transform: initial
   vertical-align: 35%
+
+*:target::before
+  content: ""
+  display: block
+  height: 10rem
+  margin-top: -10rem
 
 .button
   background-color: $red
@@ -107,7 +107,7 @@ sup
   border-radius: 6px
   color: white
   display: inline-block
-  font-weight: 700
+  font-weight: 600
   letter-spacing: 0.01em
   margin: 1rem 0
   max-width: max-content
@@ -122,17 +122,25 @@ sup
 
 .important
   color: $red
-  font-weight: 700
+  font-weight: 600
 
 .brochures
   display: flex
   justify-content: space-evenly
   list-style: none
 
+.avatar
+  border-radius: 100%
+  box-shadow: 0 0 0.2em #dddd
+  height: 3em
+  margin-right: 0.2em
+  object-fit: cover
+  vertical-align: middle
+  width: 3em
+
 // Nav
 nav
-  background: url(/2024/static/images/logo-simple-semi-couleurs.svg) 2rem center no-repeat
-  background-color: $purple
+  background: 2rem center no-repeat $purple
   color: white
   display: flex
   font-size: 0.9rem
@@ -155,7 +163,7 @@ nav
 
   li.active
     border-bottom-color: $red
-    font-weight: 700
+    font-weight: 600
 
     a:hover
       text-decoration: none
@@ -167,12 +175,13 @@ nav
     &:hover
       text-decoration: none
 
-  ul#pages
+  ul#pages, ul#categories
     flex-wrap: wrap
     gap: 0 1em
     justify-content: center
     margin: auto
 
+  ul#pages
     li:first-child a:before
       content: ""
       height: 100%
@@ -180,6 +189,9 @@ nav
       position: absolute
       top: 0
       width: 16rem
+
+  ul#categories
+    font-size: 0.8em
 
   ul#languages
     justify-content: space-evenly
@@ -206,10 +218,22 @@ nav
       background-image: url(/2024/static/images/united-kingdom.svg)
 
   > a
+    align-self: center
     box-sizing: border-box
+    display: block
     max-width: none !important
     text-align: center
     width: 8rem
+
+  &:has(#pages)
+    background-image: url(/2024/static/images/logo-simple-semi-couleurs.svg)
+    height: 6rem
+    padding: 0 2rem 0 20rem
+    top: 0
+
+  &:has(#categories)
+    padding: 0.5rem 2rem
+    top: 6rem
 
 
 // Footer
@@ -218,7 +242,6 @@ footer
   border-top: 1px solid $grey
   font-size: 0.9rem
   margin-top: 2em
-  width: 100vw
 
   ul
     align-items: center
@@ -261,7 +284,8 @@ footer
       border-radius: 50%
       color: white
       font-size: 0.8em
-      font-weight: 800
+      font-variation-settings: "wdth" 75
+      font-weight: 750
       height: 6em
       line-height: 0
       padding: 0.2em 0 0.2em 0.2em
@@ -274,11 +298,13 @@ footer
 
       sup
         font-size: 1.1em
+        line-height: 1.5
         text-transform: initial
         vertical-align: 95%
 
       span
         font-size: 3em
+        line-height: 1.5
 
     ul
       display: flex
@@ -299,7 +325,7 @@ footer
   .pycon-date
     color: $red
     font-size: 1.2em
-    font-weight: 700
+    font-weight: 600
 
   .details
     display: block
@@ -322,8 +348,9 @@ footer
         max-width: 40em
 
     iframe
+      border-radius: 10px
+      height: 30em
       margin: -5em 0 0 0
-      height: 20em
 
     iframe + a
       display: none
@@ -356,7 +383,7 @@ footer
   .become-sponsor
     aside
       color: $red
-      font-weight: 700
+      font-weight: 600
       margin-top: 3em
       text-align: center
       text-transform: uppercase
@@ -383,7 +410,7 @@ footer
       a
         color: $red
         font-size: 3em
-        font-weight: 700
+        font-weight: 600
         transition: color 0.5s
 
         &:hover
@@ -457,10 +484,14 @@ main
       border-left: 5px solid $red
 
 
-[id|="talks"] section:nth-child(even)
-  background: #F9F9F9
-  padding-bottom: 1.2em
-  padding-top: 0.1em
+#talks, #speakers
+  section
+    margin: 5em auto
+    padding-bottom: 1.2em
+    padding-top: 0.1em
+
+    &:nth-child(even)
+      background: #F9F9F9
 
 
 #index, #schedule
@@ -481,7 +512,7 @@ main
 
       aside
         color: $red
-        font-weight: 700
+        font-weight: 600
         margin-bottom: 1em
         text-transform: uppercase
 
@@ -524,7 +555,7 @@ main
 
         .speaker
           font-size: 1.2em
-          font-weight: 700
+          font-weight: 600
           margin-bottom: 0
 
         .title
@@ -547,6 +578,196 @@ main
           border-radius: 1em 1em 0 0
           display: block
           width: 100%
+
+  iframe
+    border-radius: 10px
+    height: 30em
+
+
+#full-schedule
+  background: $grey
+  min-width: 65em
+  padding: 0.25em
+
+  table
+    border-spacing: 0.5rem
+    table-layout: fixed
+    width: 100%
+
+    a
+      font-variation-settings: "wdth" 100
+      font-weight: normal
+
+  thead
+    height: 2em
+    position: sticky
+    top: 0.5rem
+    z-index: 1
+
+    &.rooms
+      th
+        color: white
+
+      tr > :first-child::before
+        background: $purple
+        box-shadow: 0 0.75em 1em $purple
+        content: ""
+        height: 5em
+        left: 0
+        position: absolute
+        right: 0
+        outline: 1em solid $purple
+        top: -1rem
+        z-index: -1
+
+    &.day
+      top: 3rem
+      z-index: 2
+
+      th
+        background-clip: content-box
+        background-color: $purple
+        color: white
+        padding-bottom: 2rem
+
+  tr:not(:last-child)
+    height: 8rem
+
+  td
+    background: white
+    border-left: 0.5em solid
+    border-radius: 0 0.3em 0.3em 0
+    box-shadow: 0 0 0.1em #ddd, 0 0 1em #ddd8
+    font-size: 0.75em
+    line-height: 1.3
+    padding: 0.5rem 0.5rem 3.5em 0.5rem
+    position: relative
+
+    &:empty
+      background: none
+      border: none
+      box-shadow: none
+
+  th
+    font-weight: 600
+
+  tbody th
+    font-weight: 400
+    position: relative
+    transform: translatey(-52%)
+    z-index: 0
+
+  tr > *:first-child
+    width: 4.5em
+
+  aside
+    &.type
+      bottom: 0.5em
+      font-size: 0.7em
+      font-variation-settings: "wdth" 90
+      left: 0.5em
+      position: absolute
+
+      &::before
+        border-radius: 0.2em
+        box-shadow: 0 0 0.2em #ddd
+        content: ""
+        display: inline-block
+        height: 1em
+        margin-right: 0.4em
+        vertical-align: -10%
+        width: 1em
+
+    &.speakers
+      font-size: 0.8em
+      line-height: 1.1
+      margin-top: 0.5em
+
+  .short-plenary
+    border-left-color: maroon
+
+    .type::before
+      background: maroon
+
+  .plenary
+    border-left-color: blue
+
+    .type::before
+      background: blue
+
+  .workshop
+    border-left-color: turquoise
+
+    .type::before
+      background: turquoise
+
+  .short-talk
+    border-left-color: orange
+
+    .type::before
+      background: orange
+
+  .long-talk
+    border-left-color: red
+
+    .type::before
+      background: red
+
+  .general-assembly
+    border-left-color: maroon
+
+    .type::before
+      background: maroon
+
+  .lightning-talk
+    border-left-color: pink
+
+    .type::before
+      background: pink
+
+  .lunch
+    border-left-color: purple
+
+    .type::before
+      background: purple
+
+  .extra
+    border: none
+    padding: 0
+    vertical-align: top
+
+    div
+      align-items: center
+      background: center / cover
+      border-radius: 0.1em
+      color: white
+      display: flex
+      font-size: 2em
+      font-weight: 600
+      justify-content: center
+      position: absolute
+      text-shadow: 0 0 0.15em $purple
+
+  #saturday-breakfast div,
+  #sunday-breakfast div
+    background-image: url(/2024/static/images/breakfast.webp)
+    height: 8rem
+    width: calc(400% + 0.9 * 3 * 0.5rem)
+
+  #saturday-lunch div
+    background-image: url(/2024/static/images/lunch.webp)
+    height: calc(2 * 8rem + 0.9 * 0.5rem)
+    width: calc(400% + 0.9 * 3 * 0.5rem)
+
+  #saturday-snack div
+    background-image: url(/2024/static/images/snack.webp)
+    height: 8rem
+    width: calc(400% + 0.9 * 3 * 0.5rem)
+
+  #sunday-lunch div
+    background-image: url(/2024/static/images/lunch.webp)
+    height: calc(3 * 8rem + 0.9 * 2 * 0.5rem)
+    width: calc(400% + 0.9 * 3 * 0.5rem)
 
 
 // Mobile
@@ -605,14 +826,16 @@ main
         dl
           width: auto
 
-
-
   nav
     align-items: flex-start
-    background-image: none
     flex-direction: row-reverse
     flex-wrap: wrap
-    padding-left: 2rem
+
+    &:has(#pages)
+      background-image: none
+      height: auto
+      min-height: 6rem
+      padding-left: 2rem
 
     ul#pages
       flex-direction: column
@@ -625,11 +848,12 @@ main
       width: 100%
 
       &:hover
-        height: calc(100svh - 6rem)
+        height: 100vh
 
       &:before
         content: '☰'
         font-size: 3rem
+        line-height: 1.2
         position: absolute
         right: 1.5rem
         top: 0.5rem

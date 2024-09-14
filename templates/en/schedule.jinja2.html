@@ -46,21 +46,21 @@
       <h3>Keynotes</h3>
       <section class="speakers">
         <dl>
-          <dt><img src="{{ url_for('static', filename='images/keynotes/houleymatou_baldé.png')  }}"></dt>
+          <dt><img src="{{ url_for('static', filename='images/keynotes/houleymatou_baldé.png') }}" alt="Photo of Houleymatou Baldé" loading="lazy"></dt>
           <dd class="speaker">Houleymatou Baldé</dd>
           <dd class="title">Fondatrice IT Woman by YEESO</dd>
           <dd class="talk">De villageoise à l’itWoman… Quelles actions pour faire de mon rêve TECH une réalité ?</dd>
         </dl>
 
         <dl>
-          <dt><img src="{{ url_for('static', filename='images/keynotes/françoise_conil.jpg')  }}"></dt>
+          <dt><img src="{{ url_for('static', filename='images/keynotes/françoise_conil.jpg') }}" alt="Photo of Françoise Conil" loading="lazy"></dt>
           <dd class="speaker">Françoise Conil</dd>
           <dd class="title">Développeuse d'applications au CNRS</dd>
           <dd class="talk">Recherche des bonnes pratiques de packaging</dd>
         </dl>
 
         <dl>
-          <dt><img src="{{ url_for('static', filename='images/keynotes/ines_montani.jpg')  }}"></dt>
+          <dt><img src="{{ url_for('static', filename='images/keynotes/ines_montani.jpg') }}" alt="Photo of Ines Montani" loading="lazy"></dt>
           <dd class="speaker">Ines Montani</dd>
           <dd class="title">Fondatrice d'Explosion</dd>
           <dd class="talk">Reality is not an end-to-end prediction problem: Applied NLP in the age of Generative AI</dd>
@@ -68,25 +68,28 @@
       </section>
     </section>
 
-    <!--
-         <section>
-         <h3>Calendar</h3>
-         <p>
-         The calendar is available below, in a
-         <a href="{{ url_for('schedule', lang=lang) }}">fullscreen page</a>, or
-         <a href="{{ url_for('calendar') }}">in your favourite calendar application</a>.
-         </p>
-         <p>
-         You can read the description of
-         <a href="{{ url_for('talks', lang=lang, category='plenary') }}">plenary sessions</a>,
-         <a href="{{ url_for('talks', lang=lang, category='1h') }}">1-hour talks</a>,
-         <a href="{{ url_for('talks', lang=lang, category='30m') }}">30-minute talks</a>,
-         <a href="{{ url_for('talks', lang=lang, category='workshop')}}">workshops</a> and
-         <a href="{{ url_for('talks', lang=lang, category='sprint') }}">sprints</a>.
-         </p>
-         <iframe src="{{ url_for('schedule', lang=lang) }}"></iframe>
-         </section>
-    -->
+    <section>
+      <h3>Calendar</h3>
+      <p>
+        The calendar is available below, in a
+        <a href="{{ url_for('schedule', lang=lang) }}">fullscreen page</a>, or
+        <a href="{{ url_for('calendar') }}">in your favourite calendar application</a>.
+      </p>
+      <p>
+        You can read the description of
+        <a href="{{ url_for('talks', lang=lang, category='plenary') }}">plenary sessions</a>,
+        <a href="{{ url_for('talks', lang=lang, category='long-talk') }}">long talks</a>,
+        <a href="{{ url_for('talks', lang=lang, category='short-talk') }}">short talks</a>,
+        <a href="{{ url_for('talks', lang=lang, category='workshop')}}">workshops</a> and
+        <a href="{{ url_for('talks', lang=lang, category='sprint') }}">sprints</a>.
+      </p>
+      <p>
+        You can also read the biography of
+        <a href="{{ url_for('page', name='speakers', lang=lang) }}">speakers</a>.
+      </p>
+
+      <iframe src="{{ url_for('schedule', lang=lang) }}" loading="lazy"></iframe>
+    </section>
 
     <section id="register">
       <h3>Registration</h3>

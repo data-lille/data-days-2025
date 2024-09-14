@@ -1,6 +1,6 @@
 .venv:
 	python3 -m venv .venv
-	.venv/bin/pip install setuptools frozen-flask flask libsass markdown2 beautifulsoup4 icalendar python-slugify
+	.venv/bin/pip install setuptools frozen-flask flask libsass markdown2 icalendar python-slugify babel
 
 install: .venv
 
@@ -14,6 +14,9 @@ serve: .venv
 serve-static: .venv
 	@echo -e "\nHome page available at \033[0;33mhttp://localhost:8000/index.html\033[0m\n"
 	.venv/bin/python -m http.server 8000 -d build
+
+schedule: .venv
+	.venv/bin/python schedule.py
 
 deploy: static
 	rsync -vazh --delete build/2024/ pyconfr@deb2.afpy.org:/var/www/pycon.fr/2024/
