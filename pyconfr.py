@@ -5,7 +5,6 @@ from babel.dates import format_date, format_time, format_timedelta
 from datetime import date, time, timedelta
 from flask import Flask, Response, render_template
 from flask_frozen import Freezer
-from icalendar import Calendar
 from markdown2 import Markdown
 from sassutils.wsgi import SassMiddleware
 from slugify import slugify
@@ -58,6 +57,16 @@ def markdown(string):
     return Markdown().convert(string)
 
 
+@app.template_filter()
+def ical_datetime(string):
+    return string.replace('-', '').replace(':', '').split('+')[0]
+
+
+@app.template_filter()
+def ical_text(string):
+    return string.replace('\n', '\n\t')
+
+
 @app.route('/')
 @app.route('/2024/')
 @app.route('/2024/<lang>/<name>.html')
@@ -82,10 +91,10 @@ def schedule(lang):
         schedule=SCHEDULE)
 
 
-@app.route('/2024/pyconfr-2024.ics')
-def calendar():
-    calendar = Calendar.from_ical('TODO')
-    return Response(calendar.to_ical(), mimetype='text/calendar')
+@app.route('/2024/<lang>/calendar.ics')
+def calendar(lang):
+    ics = render_template('calendar.jinja2.ics', lang=lang, schedule=SCHEDULE)
+    return Response(ics, mimetype='text/calendar')
 
 
 @app.cli.command('freeze')
