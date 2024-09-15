@@ -37,9 +37,6 @@
               </h3>
               <p>
                 {% for speaker in talk.speakers %}
-                  {% if speaker.avatar %}
-                    <img class="avatar" src="{{ speaker.avatar }}" loading="lazy">
-                  {% endif %}
                   {{ speaker.name }}{{ "," if not loop.last }}
                 {% endfor %}
               </p>
