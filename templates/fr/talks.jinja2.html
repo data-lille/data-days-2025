@@ -37,6 +37,9 @@
               </h3>
               <p>
                 {% for speaker in talk.speakers %}
+                  {% if speaker.avatar %}
+                    <img class="avatar" src="{{ speaker.avatar }}" loading="lazy">
+                  {% endif %}
                   <a href="{{ url_for('page', name='speakers', lang=lang, _anchor="speaker-" + speaker.code) }}">{{ speaker.name }}{{ "," if not loop.last }}</a>
                 {% endfor %}
               </p>
