@@ -18,6 +18,8 @@ app.wsgi_app = SassMiddleware(app.wsgi_app, {
         'strip_extension': True}})
 with (Path(app.root_path) / 'schedule.json').open() as fd:
     SCHEDULE = json.load(fd)
+_GIT_MAIN = Path(app.root_path) / '.git' / 'refs' / 'heads' / 'main'
+GIT_VERSION = _GIT_MAIN.read_text().strip()[:7]
 
 
 @app.template_filter()
@@ -65,6 +67,11 @@ def ical_datetime(string):
 @app.template_filter()
 def ical_text(string):
     return string.replace('\n', '\n\t')
+
+
+@app.template_filter()
+def version(url):
+    return f'{url}?{GIT_VERSION}'
 
 
 @app.route('/')
