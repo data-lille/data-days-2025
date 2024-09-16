@@ -263,13 +263,14 @@ footer
     width: 20%
 
   .coverboard
+    align-items: center
     // Photo by https://unsplash.com/fr/@chan_lee94
     background: url(/2024/static/images/strasbourg-small.jpg) center/ cover no-repeat
-    align-items: center
     display: flex
     flex-direction: column
-    height: 40em
+    height: auto
     overflow: hidden
+    padding: 3em 0
 
   .pycon-presentation
     background: white
@@ -308,11 +309,13 @@ footer
 
     ul
       display: flex
+      flex-wrap: wrap
       list-style: none
+      gap: 1em
       margin: 0
 
-      .register
-        margin-right: 1em
+      .button
+        margin: 0
 
       .schedule
         background: white
