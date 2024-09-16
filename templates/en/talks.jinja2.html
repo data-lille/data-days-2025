@@ -22,7 +22,7 @@
       </p>
     {% endif %}
 
-    {% if category == 'day-sprint' %}
+    {% if category == 'sprint' %}
       {% set talks = schedule.sprints %}
     {% else %}
       {% set talks = schedule.schedule %}
@@ -45,7 +45,7 @@
               </p>
               <p>
                 <em>
-                  {% if category == 'day-sprint' %}
+                  {% if category == 'sprint' %}
                     Thursday and Friday fro 10:00 AM to 5:00 PM
                   {% else %}
                     Room {{ talk.slot.room[lang] }}
