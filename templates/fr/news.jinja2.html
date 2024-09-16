@@ -5,6 +5,67 @@
     <h2>Actualités</h2>
 
     <section>
+      <h3>Planning et inscriptions</h3>
+
+      <p>
+        Le planning de la PyConFR 2024 est <a href="{{ url_for('page', name='schedule', lang=lang) }}">disponible</a> !
+      </p>
+
+      <p>
+        Comme toujours, la PyConFR est un évènement gratuit et l’<a href="https://www.helloasso.com/associations/afpy/evenements/pyconfr-2024">inscription</a> est obligatoire.
+      </p>
+
+      <p>
+        Les deux premiers jours de la conférence seront occupés par
+        les <a href="{{ url_for('talks', lang=lang, category='sprint') }}">sprints</a>. Et
+        les deux jours suivants seront dédiés aux conférences
+        (<a href="{{ url_for('talks', lang=lang, category='long-talk') }}">longues</a>
+        et <a href="{{ url_for('talks', lang=lang, category='short-talk') }}">courtes</a>) et
+        <a href="{{ url_for('talks', lang=lang, category='workshop')}}">ateliers</a>.
+      </p>
+
+      <p>
+        Trois keynotes sont également au programme :
+      </p>
+      <ul>
+        <li><a href="{{ url_for('talks', lang=lang, category='plenary', _anchor='talk-LAXRUP') }}">De villageoise à l’itWoman… Quelles actions pour faire de mon rêve TECH une réalité ?</a>, par Houleymatou Baldé</li>
+        <li><a href="{{ url_for('talks', lang=lang, category='plenary', _anchor='talk-88RCKR') }}">Recherche des bonnes pratiques de packaging</a>, par Françoise Conil</li>
+        <li><a href="{{ url_for('talks', lang=lang, category='plenary', _anchor='talk-SVUGC3') }}">Reality is not an end-to-end prediction problem: Applied NLP in the age of Generative AI</a>, par Ines Montani.</li>
+      </ul>
+
+      <p>
+        Cette année, un <a href="{{ url_for('page', name='schedule', lang=lang) }}#children-area">espace enfants</a> (de
+        3 ans à 12 ans) est mis à disposition gratuitement sur inscription. Vous pouvez <a href="https://www.helloasso.com/associations/afpy/evenements/espace-enfants-a-la-pyconfr-2024">inscrire</a>
+        vos enfants jusqu’au <strong>15 octobre</strong>.
+      </p>
+
+      <p>
+        Durant cette édition, c’est aussi le retour du <a href="{{ url_for('talks', lang=lang, category='lunch', _anchor='talk-MRHUVD') }}">déjeuner PyLadies</a>.
+        Ce déjeuner, gratuit, est destiné à rassembler les femmes
+        (<a href="https://fr.wikipedia.org/wiki/Cisgenre">cis</a> et
+        <a href="https://fr.wikipedia.org/wiki/Transgenre">trans</a>),
+        les hommes <a href="https://fr.wikipedia.org/wiki/Transgenre">trans</a>,
+        les personnes <a href="https://fr.wikipedia.org/wiki/Non-binaire">non-binaires</a> ou les
+        <a href="https://fr.wikipedia.org/wiki/Non-binarit%C3%A9#Identit%C3%A9s_de_genre">agenré⋅es</a>
+        qui font du Python, et a pour but de les aider à
+        devenir des membres actifs et des moteurs de la communauté. Un
+        des objectifs est également de tisser des liens entre la
+        <a href="https://pyladies.com/">communauté PyLadies</a> et le reste de la communauté Python
+        francophone.
+      </p>
+      <p>
+        Les <a href="https://www.helloasso.com/associations/afpy/evenements/dejeuner-pyladies-a-la-pyconfr-2024">inscriptions</a>
+        au déjeuner PyLadies sont ouvertes jusqu’au <strong>27 octobre</strong>.
+      </p>
+
+      <p>
+        Le dimanche matin, l'AFPy tiendra son assemblée générale. Si
+        vous souhaitez y voter, assurez vous d'être à jour de
+        <a href="https://www.helloasso.com/associations/afpy/adhesions/adhesion-2024-a-l-afpy">cotisation</a>.
+      </p>
+    </section>
+
+    <section>
       <h3>Ouverture du CFP et des demandes de bourses</h3>
       <p>
         Le <a href="https://cfp.pycon.fr/pyconfr-2024/cfp">CFP (Call For Proposal)</a> de la PyConFR 2024 est ouvert !
