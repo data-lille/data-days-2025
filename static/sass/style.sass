@@ -56,7 +56,7 @@ a
   color: $purple
   font-variation-settings: "wdth" 95
   font-weight: 600
-  text-decoration: none
+  text-decoration: underline $red-dark
 
   &:hover, &:focus
     text-decoration: underline $red-dark
@@ -114,6 +114,7 @@ sup
   padding: 1rem
   text-transform: uppercase
   transition: background-color 0.5s, border-color 0.5s
+  text-decoration: none
 
   &:hover, &:focus
     background-color: $red-dark
@@ -171,6 +172,7 @@ nav
   a
     color: inherit
     font-weight: inherit
+    text-decoration: none
 
     &:hover
       text-decoration: none
@@ -253,6 +255,7 @@ footer
 
     a
       font-weight: inherit
+      text-decoration: none
 
 
 // Main page
@@ -535,9 +538,6 @@ main
     section
       position: relative
 
-      p:last-of-type
-        margin-bottom: 4em
-
     .button
       bottom: 0
       left: 2em
@@ -547,6 +547,9 @@ main
     .speakers
       display: flex
       justify-content: space-between
+
+      a
+        text-decoration: none
 
       dl
         background: $grey
@@ -603,6 +606,7 @@ main
     a
       font-variation-settings: "wdth" 100
       font-weight: normal
+      text-decoration: none
 
   thead
     height: 2em
