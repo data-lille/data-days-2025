@@ -42,6 +42,11 @@
           respectivement. La recherche scientifique y est représenté
           tant par sa face théorique que par sa face appliquée.
         </p>
+      {% elif company == 'Kraken' %}
+        <p>Fondée en 2017, Kraken Technologies développe un système d'exploitation révolutionnaire pour le secteur de l'énergie. Notre mission est de transformer la gestion des ressources énergétiques en optimisant la production d'énergie renouvelable et en améliorant l'efficacité des réseaux décentralisés. En 2020, nous avons étendu notre présence à l'international. Aujourd'hui, notre technologie est utilisée dans 17 pays, gérant plus de 54 millions de comptes clients et supervisant 42 GW d'énergie souscrite. En 2021, nous avons renforcé notre présence en Europe grâce à des collaborations stratégiques avec plusieurs grands fournisseurs d'énergie.</p>
+
+        <p>Notre plateforme flexible et adaptable permet aux entreprises de réduire leurs coûts tout en offrant une expérience client de haute qualité. Il vise à accompagner les acteurs du marché dans leur transition vers des modèles énergétiques plus durables et décarbonés. Chez Kraken, nous jouons un rôle clé dans la transformation du secteur énergétique mondial en fournissant des outils robustes et évolutifs adaptés aux défis actuels.</p>
+
       {% elif company == "Camptocamp" %}
         <p>
           Camptocamp est une société de services active en Suisse en France et en Allemagne fondée en 2001. Nous proposons des solutions Open Source innovantes pour la mise en œuvre de systèmes d'information géographique (SIG), de logiciels de gestion intégrés pour les PME (ERP Odoo) et de gestion des infrastructures informatiques.
@@ -220,6 +225,10 @@ En complément, nous proposons notre expertise pour la mise en place de deux sol
           computer science respectively. Both the theoretical and
           applied sides of scientific research are represented.
         </p>
+      {% elif company == 'Kraken' %}
+        <p>Founded in 2017, Kraken Technologies develops a revolutionary operating system for the energy sector. Our mission is to transform energy resource management by optimizing renewable energy production and improving the efficiency of decentralized networks. By 2020, we expanded our presence internationally. Today, our technology is used in 17 countries, managing over 54 million customer accounts and supervising 42 GW of contracted power. In 2021, we strengthened our presence in Europe through strategic collaborations with several major energy providers.</p>
+
+        <p>Our flexible and adaptable platform allows companies to reduce costs while delivering high-quality customer experiences. It is designed to support market players in their transition to more sustainable and decarbonized energy models. At Kraken, we play a key role in transforming the global energy sector by providing robust, scalable tools tailored to current challenges.</p>
       {% elif company == "Alma" %}
       <p>Alma is a fintech founded in 2018. We offer flexible payment solutions for physical and online stores, with deferred payment and 2, 3, or 4 installments. We also help consumers stay in control of their budget with the Alma app and card. We prioritize the experience and satisfaction of our customers with simple and pleasant to use tools. We operate in ten European countries and work with more than 7500 major brands such as Maisons du Monde, Nature et Découvertes, Etam, Le Slip Français, Jacquemus, Maje…</p>
       {% elif company == "Camptocamp" %}
@@ -339,6 +348,7 @@ En complément, nous proposons notre expertise pour la mise en place de deux sol
       },
 
       'Or' if lang == 'fr' else 'Gold': {
+          'Kraken': 'https://kraken.tech/',
       },
 
       'Argent' if lang == 'fr' else 'Silver': {
@@ -367,7 +377,7 @@ En complément, nous proposons notre expertise pour la mise en place de deux sol
       },
   } %}
 
-  {% set png_logos = ('Université de Strasbourg', 'Alsace Digitale', 'AIUS', 'API Society', 'PauLLA') %}
+  {% set png_logos = ('Université de Strasbourg', 'Alsace Digitale', 'AIUS', 'API Society', 'PauLLA', 'Kraken') %}
 
 
   {% if lang == 'fr' %}
