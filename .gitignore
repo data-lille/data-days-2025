@@ -6,3 +6,4 @@ __pycache__
 
 # See schedule.py
 token.key
+.DS_Store

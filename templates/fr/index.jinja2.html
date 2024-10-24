@@ -1,23 +1,22 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
-  <img class="pycon-logo" src="/2024/static/images/pyconfr.svg" />
+  <img class="datadays-logo" src="/2025/static/images/pyconfr.svg" />
 
   <article class="coverboard">
-    <section class="pycon-presentation">
-      <h1>Bienvenue à la PyConFR 2024 !</h1>
+    <section class="datadays-presentation">
+      <h1>Bienvenue aux DATA DAYS 2025 !</h1>
 
       <aside>
-        <span>15</span><sup>e</sup> édition
+        <span>1</span><sup>ère</sup> édition
       </aside>
 
-      <p class="pycon-date">Du 31 octobre au 3 novembre 2024 à Strasbourg</p>
+      <p class="datadays-date">Le TODO date à Lille</p>
 
       <p>
-        Organisée par <a href="https://www.afpy.org">l'AFPy</a>, cette conférence de quatre
-        jours est gratuite, entièrement gérée par des bénévoles et dédiée
-        au regroupement des personnes intéressées par le langage de
-        programmation <a href="https://www.python.org/">Python</a>.
+        Organisée par l'association Data Lille, une journée de conférence, 
+        entièrement gérée par des bénévoles et dédiée
+        au regroupement des personnes intéressées par la donnée au sens large.
       </p>
 
       <ul>
@@ -36,28 +35,12 @@
     <a class="button details" href="{{ url_for('page', name='schedule', lang=lang) }}">Plus de détails</a>
 
     <section class="event-description">
-      <section>
-        <aside>31 octobre &amp; 1<sup>er</sup> novembre</aside>
-        <h3>Développements participatifs : sprints !</h3>
-        <p>
-          Les développeurs et développeuses de différents projets open source se
-          rejoignent pour coder ensemble. Chaque personne est la bienvenue pour
-          contribuer, et nous cherchons également à accompagner les débutantes.
-        </p>
-        <p class="important">
-          Participez au développement de votre projet préféré !
-        </p>
-        <p>
-          Nous fournissons l'espace et le matériel nécessaire à l'organisation
-          (tables, chaises, connexion internet… et café !).
-        </p>
-      </section>
 
       <section>
-        <aside>2 &amp; 3 novembre</aside>
+        <aside>TODO date</aside>
         <h3>Conférences &amp; ateliers</h3>
         <p>
-          Durant ces deux jours, vous aurez l'occasion de participer à des
+          Durant cette journée, vous aurez l'occasion de participer à des
           présentations sur des sujets variés, autour du langage Python :
         </p>
         <ul>
@@ -74,43 +57,27 @@
     <h2>Venir</h2>
     <section>
       <section>
-        <img src="{{ url_for('static', filename='images/partners/Université de Strasbourg.png') }}"/>
         <address>
-          <strong>UFR Mathématique et Informatique</strong>
-          7 rue René Descartes
-          67000 Strasbourg
+          <strong>TODO</strong>
+          TODO, 59000, Lille
         </address>
         <a class="button" href="{{ url_for('page', name='venue', lang=lang) }}">
           Plus de détails
         </a>
       </section>
 
-      {{ map() }}
+      {% include 'fr/fragments/map_fullscreen.jinja2.html' %}
     </section>
   </article>
 
   <article class="afpy">
     <section>
-      <h2>AFPy, Association Francophone Python</h2>
-      <a class="button" href="https://www.afpy.org">Notre site web</a>
+      <h2>Data Lille</h2>
+      <a class="button" href="https://www.data-lille.fr">Notre site web</a>
     </section>
     <section>
       <h3>
-        L’AFPy promeut le langage Python, que ce soit auprès d’un public
-        averti ou débutant.
-      </h3>
-      <p>
-        Nous assurons la promotion du langage de programmation Python auprès du
-        plus large public possible.
-      </p>
-      <p>
-        Nous diffusons nos connaissances et sommes ouverts aux apports
-        extérieurs.
-      </p>
-      <p>
-        La solidarité et la démocratie élargissent les horizons et accroissent
-        le potentiel de chacun.
-      </p>
+TODO blabla asso      </p>
     </section>
   </article>
 
@@ -118,12 +85,12 @@
     <aside>Soutenez-nous !</aside>
     <h2>Devenez Sponsors !</h2>
 
-    {{ sponsors(lang, only_logo=True) }}
+    {% include 'fr/fragments/sponsors_list.jinja2.html' %}
 
     <section class="contact-sponsor">
       <p>
         L'équipe est disponible pour répondre à vos questions sur
-        l'événement à l'adresse <a href="mailto:contact@pycon.fr">contact@pycon.fr</a>
+        l'événement à l'adresse <a href="mailto:meetup.data.lille@gmail.com">meetup.data.lille@gmail.com</a>
       </p>
     </section>
   </article>

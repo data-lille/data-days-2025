@@ -2,29 +2,21 @@
   ('index', ('À propos', 'About')),
   ('schedule', ('Programme', 'Schedule')),
   ('venue', ('Venir', 'Venue')),
-  ('financial', ('Bourses', 'Financial Assistance')),
+  ('speakers', ('Speakers', 'Speakers')),
   ('sponsors', ('Sponsors', 'Sponsors')),
   ('news', ('Actualités', 'News')),
-  ('conduct', ('Code de conduite', 'Code of Conduct')),
   ('support', ('Nous soutenir', 'Support Us')),
 ) -%}
-{%- set TITLES = dict(MENU + (
-  ('full-schedule', ('Programme', 'Schedule')),
-  ('speakers', ('Orateurices', 'Speakers')),
-)) -%}
+{%- set TITLES = dict(MENU + ()) -%}
 
 {%- set title = title or dict(TITLES).get(page_name, ['', ''])[1 if lang == 'en' else 0] -%}
-
-{%- from '_sponsors.jinja2' import sponsors -%}
-{%- from '_sponsors.jinja2' import brochures -%}
-{%- from '_map.jinja2' import map -%}
 
 <!DOCTYPE html>
 
 <html lang="{{ lang }}">
   <head>
     {% block head %}
-      <title>{{ title }} − PyConFR 2024</title>
+      <title>{{ title }} − Data Days 2025</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -45,22 +37,6 @@
             </li>
           {% endfor %}
         </ul>
-        {% if request.endpoint in ('page', 'talks') %}
-          {% set view_args = request.view_args %}
-          {{ view_args.pop('lang', 'en') and '' }}
-          <ul id="languages">
-            <li id="french" class="{{ 'active' if lang == 'fr' }}">
-              <a title="Français" href="{{ url_for(request.endpoint, lang='fr', **view_args) }}">
-                FR
-              </a>
-            </li>
-            <li id="english" class="{{ 'active' if lang == 'en' }}">
-              <a title="English" href="{{ url_for(request.endpoint, lang='en', **view_args) }}">
-                EN
-              </a>
-            </li>
-          </ul>
-        {% endif %}
         <a class="button" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">{{ 'S’inscrire' if lang == 'fr' else 'Register' }}</a>
       </nav>
     {% endblock header %}
@@ -72,13 +48,10 @@
     {% block footer %}
       <footer>
         <ul>
-          <li><a href="mailto:contact@pycon.fr">Email</a></li>
-          <li><a href="https://mamot.fr/@AFPy">Mastodon</a></li>
-          <li><a href="https://twitter.com/pyconfr">Twitter</a></li>
-          <li><a href="https://discuss.afpy.org/">Discourse</a></li>
-          <li><a href="https://github.com/AFPy/pyconfr-2024">GitHub</a></li>
+          <li><a href="mailto:meetup.data.lille@gmail.com">Email</a></li>
+          <li><a href="https://github.com/data-lille/data-days-2025">GitHub</a> forké depuis <a href="https://github.com/AFPy/pyconfr-2024">celui de la PyconFr</a></li>
           <li><a href="https://frozen-flask.readthedocs.io/">Frozen-Flask</a></li>
-          <li><a href="https://afpy.org/">© 2024 AFPy</a></li>
+          <li><a href="https://data-lille.fr/">© 2025 Data Lille</a></li>
         </ul>
       </footer>
     {% endblock footer %}

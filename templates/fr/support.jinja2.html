@@ -3,14 +3,17 @@
 {% block content %}
   <article>
     <h2>Nous soutenir</h2>
-    {{ brochures() }}
+
+    {% include 'fr/fragments/brochures.jinja2.html' %}
+
+
     <section>
       <h3>Nous aider avant et pendant l'événement</h3>
 
       <p>
         Si vous souhaitez nous aider pour la préparation de l'événement, et/ou
         lors de l'événement, n'hésitez pas à nous contacter à
-        <a href="mailto:contact@afpy.org">contact@afpy.org</a>.
+        <a href="mailto:meetup.data.lille.fr">meetup.data.lille.fr</a>.
       </p>
 
       <p>
@@ -19,24 +22,21 @@
     </section>
 
     <section>
-      <h3>Financer PyConFR</h3>
+      <h3>Financer les DataDays</h3>
+
+      <p>Le prix des billets et le sponsoring nous permet de financer TODO </p>
 
       <p>
-        Le mécénat nous permet chaque année de couvrir les frais comme la
-        sécurité, des boissons chaudes et fraîches, le nettoyage, la captation
-        vidéo, les bourses…
-      </p>
-
-      <p>
-        PyConFR est organisé par des bénévoles de la communauté Python
-        francophone et permet à cette communauté de se rencontrer, d'échanger et
+        Les data days sont organisés par des bénévoles de la communauté data lilloise
+        et permet à cette communauté de se rencontrer, d'échanger et
         de grandir chaque année.
       </p>
 
+      <h4>Sponsoring</h4>
+
+
       <p>
-        Si vous souhaitez nous soutenir financièrement, vous pouvez contacter le
-        trésorier de l'AFPy
-        (<a href="mailto:tresorier@afpy.org">tresorier@afpy.org</a>) afin de
+        Si vous souhaitez nous soutenir financièrement, vous pouvez contacter nous contacter afin de
         discuter des détails.
       </p>
       
