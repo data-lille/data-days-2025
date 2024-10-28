@@ -1,0 +1,24 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article>
+    <h2>Speakers</h2>
+    {% for speaker in speakers %}
+      <section>
+        <h3 id="speaker-{{ key }}">
+          <a href="#speaker-{{ key }}">
+            {% if speaker.metadata.avatar %}
+              <img class="avatar" src="{{ speaker.avatar }}" loading="lazy">
+            {% endif %}
+            {{ speaker.metadata.name }}
+          </a>
+        </h3>
+        {% if speaker.content %}
+          {{ speaker.content | markdown | safe }}
+        {% else %}
+          <p>Pas de biographie.</p>
+        {% endif %}
+      </section>
+    {% endfor %}
+  </article>
+{% endblock content %}

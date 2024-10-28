@@ -4,13 +4,15 @@
   <article>
     <h2>Actualités</h2>
 
-{% for new in news %}
-
+{% for item in news %}
 <section>
-  <h3>{{ new.metadata.title }}</h3>
-  <p>{{ new.content}}</p>
-</section>
+  <div>
+    <h3>{{ item.metadata.name }}</h3> <span>Publié le {{ item.metadata.publication_date | format_datetime }}</span>
 
-{% endfor %}
+  </div>
+  
+  <p class="news-content">{{ item.content | markdown | safe }}</p>
+</section>
+{% endfor  %}
   </article>
 {% endblock content %}
