@@ -21,10 +21,10 @@
 
       <ul>
         <li>
-          <a class="button register" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">S’inscrire</a>
+          <a class="button register" href="{{ url_for('schedule', lang=lang, _anchor='register') }}">S’inscrire</a>
         </li>
         <li>
-          <a class="button schedule" href="{{ url_for('page', name='schedule', lang=lang) }}">Programme</a>
+          <a class="button schedule" href="{{ url_for('schedule', lang=lang) }}">Programme</a>
         </li>
       </ul>
     </section>
@@ -32,7 +32,7 @@
 
   <article>
     <h2>Programme</h2>
-    <a class="button details" href="{{ url_for('page', name='schedule', lang=lang) }}">Plus de détails</a>
+    <a class="button details" href="{{ url_for('schedule', lang=lang) }}">Plus de détails</a>
 
     <section class="event-description">
 
@@ -61,7 +61,7 @@
           <strong>TODO</strong>
           TODO, 59000, Lille
         </address>
-        <a class="button" href="{{ url_for('page', name='venue', lang=lang) }}">
+        <a class="button" href="{{ url_for('venue', lang=lang) }}">
           Plus de détails
         </a>
       </section>

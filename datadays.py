@@ -4,8 +4,10 @@ from flask_frozen import Freezer
 from markdown2 import Markdown
 from sassutils.wsgi import SassMiddleware
 from slugify import slugify
-from models import Speaker, Sponsors, Talks, News
-from babel.dates import format_date, format_time, format_timedelta
+from models import Speaker, Sponsors, Talks, News, Schedule
+from babel.dates import format_date, format_time as babel_format_time
+from datetime import datetime, date, time
+import pytz
 
 app = Flask(__name__, static_url_path="/2025/static")
 app.wsgi_app = SassMiddleware(
@@ -42,18 +44,23 @@ def version(url):
 
 
 @app.template_filter()
-def format_datetime(string):
-    return format_date(string)
+def format_datetime(dt: datetime):
+    return format_date(dt)
+
+
+@app.template_filter()
+def format_time(dt: time):
+    return babel_format_time(dt, format="short")
 
 
 # TODO
 #   * validation des models
+#   * créer le programme
 #   * afficher listing talks / une présentation d'un talk
-#   * afficher listing speakers / détails speakers
 #   * faire marcher le ICS
 
 
-@app.route("/2025/speakers/")
+@app.route("/2025/<lang>/speakers/")
 def speakers_listing(lang="fr"):
     return render_template(
         f"{lang}/speakers.jinja2.html",
@@ -63,17 +70,25 @@ def speakers_listing(lang="fr"):
     )
 
 
-@app.route("/2025/speakers/<slug>")
+@app.route("/2025/<lang>/speakers/<slug>")
 def speakers_details(slug, lang="fr"):
+    speaker = Speaker.get_item(slug)
+    talks = []
+
+    for talk in Talks.get_all():
+        if speaker["metadata"]["slug"] in talk["metadata"]["speakers"]:
+            talks.append(talk)
+
     return render_template(
         f"{lang}/speakers-details.jinja2.html",
         page_name="speakers",
-        item=Speaker.get_item(slug),
+        item=speaker,
+        talks=talks,
         lang=lang,
     )
 
 
-@app.route("/2025/sponsors/")
+@app.route("/2025/<lang>/sponsors/")
 def sponsors_listing(lang="fr"):
     return render_template(
         f"{lang}/sponsors.jinja2.html",
@@ -83,7 +98,7 @@ def sponsors_listing(lang="fr"):
     )
 
 
-@app.route("/2025/sponsors/<item>")
+@app.route("/2025/<lang>/sponsors/<item>")
 def sponsors_details(item, lang="fr"):
     return render_template(
         f"{lang}/sponsors-details.jinja2.html",
@@ -93,7 +108,7 @@ def sponsors_details(item, lang="fr"):
     )
 
 
-@app.route("/2025/presentations/")
+@app.route("/2025/<lang>/presentations/")
 def talks_listing(lang="fr"):
     return render_template(
         f"{lang}/talks.jinja2.html",
@@ -103,17 +118,20 @@ def talks_listing(lang="fr"):
     )
 
 
-@app.route("/2025/presentations/<item>")
-def talks_details(item, lang="fr"):
+@app.route("/2025/<lang>/presentations/<slug>")
+def talks_details(slug, lang="fr"):
+    talk = Talks.get_item(slug)
+    speakers = [Speaker.get_item(slug) for slug in talk["metadata"]["speakers"]]
     return render_template(
-        f"{lang}/presentation-details.jinja2.html",
-        page_name="talks",
-        item=Talks.get_item(item),
+        f"{lang}/talks-details.jinja2.html",
+        page_name="speakers",
+        item=talk,
+        speakers=speakers,
         lang=lang,
     )
 
 
-@app.route("/2025/actualites/")
+@app.route("/2025/<lang>/actualites/")
 def news_listing(lang="fr"):
     return render_template(
         f"{lang}/news.jinja2.html",
@@ -129,10 +147,48 @@ def calendar(lang):
     return Response(ics, mimetype="text/calendar")
 
 
+@app.route("/2025/<lang>/programme/")
+def schedule(lang="fr"):
+    return render_template(
+        f"{lang}/schedule.jinja2.html", page_name="schedule", lang=lang
+    )
+
+
+@app.route("/2025/<lang>/programme-complet/")
+def full_schedule(lang="fr"):
+    schedule = Schedule()
+
+    day = "Jeudi 20 mars 2025"
+    schedule = {
+        "rooms": schedule.tracks,
+        "schedule": schedule,
+        "day": day,
+    }
+    return render_template(
+        f"{lang}/full-schedule.jinja2.html",
+        page_name="full-schedule",
+        lang=lang,
+        schedule=schedule,
+    )
+
+
+@app.route("/2025/<lang>/venue")
+def venue(lang="fr"):
+    return render_template(f"{lang}/venue.jinja2.html", page_name="venue", lang=lang)
+
+
+@app.route("/2025/<lang>/support")
+def support(lang="fr"):
+    return render_template(
+        f"{lang}/support.jinja2.html", page_name="support", lang=lang
+    )
+
+
 @app.route("/")
 @app.route("/2025/")
-def page(name="index", lang="fr"):
-    return render_template(f"{lang}/{name}.jinja2.html", page_name=name, lang=lang)
+@app.route("/2025/<lang>")
+def index(lang="fr"):
+    return render_template(f"{lang}/index.jinja2.html", page_name="index", lang=lang)
 
 
 @app.cli.command("freeze")

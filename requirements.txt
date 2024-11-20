@@ -1,0 +1,9 @@
+setuptools 
+frozen-flask 
+flask 
+libsass 
+markdown2 
+python-slugify 
+babel
+python-frontmatter
+pydantic

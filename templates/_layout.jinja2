@@ -2,12 +2,14 @@
   ('index', ('À propos', 'About')),
   ('schedule', ('Programme', 'Schedule')),
   ('venue', ('Venir', 'Venue')),
-  ('speakers', ('Speakers', 'Speakers')),
-  ('sponsors', ('Sponsors', 'Sponsors')),
-  ('news', ('Actualités', 'News')),
+  ('speakers_listing', ('Speakers', 'Speakers')),
+  ('sponsors_listing', ('Sponsors', 'Sponsors')),
+  ('news_listing', ('Actualités', 'News')),
   ('support', ('Nous soutenir', 'Support Us')),
 ) -%}
-{%- set TITLES = dict(MENU + ()) -%}
+{%- set TITLES = dict(MENU + (
+
+)) -%}
 
 {%- set title = title or dict(TITLES).get(page_name, ['', ''])[1 if lang == 'en' else 0] -%}
 
@@ -33,11 +35,11 @@
         <ul id="pages">
           {% for endpoint, (title_fr, title_en) in MENU %}
             <li class="{{ 'active' if page_name == endpoint }}">
-              <a href="{{ url_for('page', name=endpoint, lang=lang) }}">{{ title_en if lang == 'en' else title_fr }}</a>
+              <a href="{{ url_for(endpoint, lang=lang) }}">{{ title_en if lang == 'en' else title_fr }}</a>
             </li>
           {% endfor %}
         </ul>
-        <a class="button" href="{{ url_for('page', name='schedule', lang=lang, _anchor='register') }}">{{ 'S’inscrire' if lang == 'fr' else 'Register' }}</a>
+        <a class="button" href="{{ url_for('schedule', lang=lang, _anchor='register') }}">{{ 'S’inscrire' if lang == 'fr' else 'Register' }}</a>
       </nav>
     {% endblock header %}
 

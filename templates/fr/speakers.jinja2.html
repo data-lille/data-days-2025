@@ -5,8 +5,8 @@
     <h2>Speakers</h2>
     {% for speaker in speakers %}
       <section>
-        <h3 id="speaker-{{ key }}">
-          <a href="#speaker-{{ key }}">
+        <h3 id="speaker-{{ speaker.metadata.slug }}">
+          <a href="{{ url_for('speakers_details', lang=lang, slug=speaker.metadata.slug) }}">
             {% if speaker.metadata.avatar %}
               <img class="avatar" src="{{ speaker.avatar }}" loading="lazy">
             {% endif %}

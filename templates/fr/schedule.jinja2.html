@@ -25,12 +25,12 @@
       <h3>Calendrier</h3>
       <p>
         Le calendrier est disponible ci-dessous, sur une
-        <a href="TODO calendrier_plein_ecran">page en plein écran</a>,
+        <a href="{{ url_for('full_schedule', lang=lang) }}">page en plein écran</a>,
         ou <a href="TODO ical">dans votre application de calendrier favorite</a>.
       </p>
       <p>
         Vous pouvez également lire la biographie des
-        <a href="{{ url_for('page', name='speakers', lang=lang) }}">speakers</a>.
+        <a href="{{ url_for('speakers_listing', lang=lang) }}">speakers</a>.
       </p>
 
     </section>

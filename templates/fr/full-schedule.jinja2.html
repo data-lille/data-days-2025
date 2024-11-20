@@ -1,0 +1,61 @@
+{% extends '_layout.jinja2' %}
+
+{% block header %}{% endblock header %}
+{% block footer %}{% endblock footer %}
+
+{% set rowspans = [] %}
+
+{% block content %}
+  <table>
+    <thead class="rooms">
+      <tr>
+        <th></th>
+        {% for room in schedule.rooms %}
+          <th scope="col">{{ room }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+      <thead class="day">
+        <tr>
+          <th colspan="{{ (schedule.rooms | length) + 1 }}">{{ schedule.day }}</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for start_time in schedule.schedule.start_times %}
+        <tr>
+            {% if start_time.minute % 30 == 0 %}
+            <th scope="row">{{ start_time | format_time }}</th>
+            {% else %}
+            <th></th>
+            {% endif %}
+            {% for track in schedule.schedule.tracks %} 
+                {% set talk = schedule.schedule.get_for_track_and_time(track, start_time) %}
+                {% if not talk %}
+                    <td></td>
+                {% else %}
+                <td rowspan="{{talk.metadata.duration / 5}}" class="{{ talk.metadata.kind | slug }}" lang="fr">
+                    <a href="{{ url_for('talks_details', slug=talk.metadata.slug, lang=lang) }}" target="_parent">
+                    {{ talk.metadata.title }}
+                    </a>
+                    <aside class="type">
+                        {{ talk.metadata.kind }}<br>
+                        {{ talk.metadata.duration }} min |
+                    fr
+                    
+                    
+                    </aside>
+                    <aside class="speakers">
+                        {% for speaker in talk.metadata.speakers %}
+                        <a href="{{ url_for('speakers_details', slug=speaker, lang=lang) }}" target="_parent">{{ speaker }}</a>
+                        {% endfor %}
+                    </aside>
+                </td>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </tr>
+      </tbody>
+
+  </table>
+{% endblock content %}
