@@ -5,7 +5,7 @@
 
   <article class="coverboard">
     <section class="datadays-presentation">
-      <h1>Bienvenue aux DATA DAYS 2025 !</h1>
+      <h1>Bienvenue aux DATA DAYS 2025 !</h1>
 
       <aside>
         <span>1</span><sup>ère</sup> édition
@@ -14,7 +14,7 @@
       <p class="datadays-date">Le TODO date à Lille</p>
 
       <p>
-        Organisée par l'association Data Lille, une journée de conférence, 
+        Organisée par l'association Data Lille, une journée de conférence,
         entièrement gérée par des bénévoles et dédiée
         au regroupement des personnes intéressées par la donnée au sens large.
       </p>
@@ -41,7 +41,7 @@
         <h3>Conférences &amp; ateliers</h3>
         <p>
           Durant cette journée, vous aurez l'occasion de participer à des
-          présentations sur des sujets variés, autour du langage Python :
+          présentations sur des sujets variés, autour du langage Python :
         </p>
         <ul>
           <li>usages</li>
@@ -50,6 +50,23 @@
           <li>partages d'idées</li>
         </ul>
       </section>
+    </section>
+  </article>
+
+  <article class="place">
+    <h2>Venir</h2>
+    <section>
+      <section>
+        <address>
+          <strong>TODO</strong>
+          TODO, 59000, Lille
+        </address>
+        <a class="button" href="{{ url_for('venue', lang=lang) }}">
+          Plus de détails
+        </a>
+      </section>
+
+      {% include 'fr/fragments/map_fullscreen.jinja2.html' %}
     </section>
   </article>
 
@@ -82,8 +99,8 @@ TODO blabla asso      </p>
   </article>
 
   <article class="become-sponsor">
-    <aside>Soutenez-nous !</aside>
-    <h2>Devenez Sponsors !</h2>
+    <aside>Soutenez-nous !</aside>
+    <h2>Devenez Sponsors !</h2>
 
     {% include 'fr/fragments/sponsors_list.jinja2.html' %}
 
