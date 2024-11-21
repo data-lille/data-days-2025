@@ -8,6 +8,7 @@ static: .venv
 	.venv/bin/flask --app=datadays freeze
 	# add an index manually to the french directory
 	cp build/2025/index.html build/2025/fr/index.html
+	cp static/homepage.html build/index.html
 
 serve: .venv
 	@echo -e "\nHome page available at \033[0;32mhttp://localhost:5000/\033[0m\n"
