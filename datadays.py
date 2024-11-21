@@ -142,9 +142,10 @@ def news_listing(lang="fr"):
 
 
 @app.route("/2025/calendar.ics")
-def calendar(lang):
-    ics = render_template("calendar.jinja2.ics", lang=lang)
-    return Response(ics, mimetype="text/calendar")
+def calendar(lang="fr"):
+    return "Bientôt"
+    # ics = render_template("calendar.jinja2.ics", lang=lang)
+    # return Response(ics, mimetype="text/calendar")
 
 
 @app.route("/2025/<lang>/programme/")
@@ -186,7 +187,6 @@ def support(lang="fr"):
 
 @app.route("/")
 @app.route("/2025/")
-@app.route("/2025/<lang>")
 def index(lang="fr"):
     return render_template(f"{lang}/index.jinja2.html", page_name="index", lang=lang)
 

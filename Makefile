@@ -6,6 +6,8 @@ install: .venv
 
 static: .venv
 	.venv/bin/flask --app=datadays freeze
+	# add an index manually to the french directory
+	cp build/2025/{index.html,fr/index.html}
 
 serve: .venv
 	@echo -e "\nHome page available at \033[0;32mhttp://localhost:5000/\033[0m\n"
@@ -13,7 +15,7 @@ serve: .venv
 
 serve-static: .venv
 	@echo -e "\nHome page available at \033[0;33mhttp://localhost:8000/\033[0m\n"
-	.venv/bin/python -m http.server 8000 -d build
+	.venv/bin/python http_server.py 8000 -d build
 
 schedule: .venv
 	.venv/bin/python schedule.py
