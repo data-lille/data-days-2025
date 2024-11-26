@@ -2,3 +2,8 @@
   command = "make static"
   publish = "build/"
   environment = { PYTHON_VERSION = "3.12" }
+
+[[redirects]]
+  from = "/"
+  to = "/2025/"
+  status = 301
