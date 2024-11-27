@@ -5,6 +5,8 @@
   ('speakers_listing', ('Speakers', 'Speakers')),
   ('sponsors_listing', ('Sponsors', 'Sponsors')),
   ('news_listing', ('Actualités', 'News')),
+  ('conduct', ('Code de conduite', 'Code of conduct')),
+  ('support', ('Nous soutenir', 'Support Us')),
 ) -%}
 {%- set TITLES = dict(MENU + (
 
@@ -17,11 +19,11 @@
 <html lang="{{ lang }}">
   <head>
     {% block head %}
-      <title>{{ title }} − Data Days 2025</title>
+      <title>{{ title }} - Data Days 2025</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.svg') }}" />
+      <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" />
       <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') | version }}">
       <script>/* Stupid hack for iOS :hover */ document.addEventListener("touchstart", function(){}, true);</script>
     {% endblock head %}
@@ -50,7 +52,7 @@
       <footer>
         <ul>
           <li><a href="mailto:meetup.data.lille@gmail.com">Email</a></li>
-          <li><a href="https://github.com/data-lille/data-days-2025">GitHub</a> forké depuis <a href="https://github.com/AFPy/pyconfr-2024">celui de la PyconFr</a></li>
+          <li><a href="https://github.com/data-lille/data-days-2025">GitHub</a> forké depuis <a href="https://github.com/AFPy/pyconfr-2024">PyconFr</a></li>
           <li><a href="https://frozen-flask.readthedocs.io/">Frozen-Flask</a></li>
           <li><a href="https://data-lille.fr/">© 2025 Data Lille</a></li>
         </ul>

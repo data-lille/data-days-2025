@@ -1,22 +1,21 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
-  <img class="datadays-logo" src="/2025/static/images/pyconfr.svg" />
+  <img class="datadays-logo" src="/2025/static/images/data_days_banner_white.png" />
 
   <article class="coverboard">
     <section class="datadays-presentation">
-      <h1>Bienvenue aux DATA DAYS 2025 !</h1>
+      <h1>Bienvenue aux data days Lille 2025 !</h1>
 
       <aside>
         <span>1</span><sup>ère</sup> édition
       </aside>
 
-      <p class="datadays-date">Le TODO date à Lille</p>
+      <p class="datadays-date">Le 28 mars 2025, à Lille</p>
 
       <p>
-        Organisée par l'association Data Lille, une journée de conférence, 
-        entièrement gérée par des bénévoles et dédiée
-        au regroupement des personnes intéressées par la donnée au sens large.
+        La première édition de <b>la seule conférence uniquement dédiée à la Data sur Lille</b>.
+        Data Lille, une association de bénévoles, vous invite à une journée entièrement dédiée aux professionnels et passionnés de la donnée.
       </p>
 
       <ul>
@@ -24,7 +23,7 @@
           <a class="button register" href="{{ url_for('schedule', lang=lang, _anchor='register') }}">S’inscrire</a>
         </li>
         <li>
-          <a class="button schedule" href="{{ url_for('schedule', lang=lang) }}">Programme</a>
+          <a class="button schedule" href="https://conference-hall.io/data-days-lille-2025">Devenez Speaker</a>
         </li>
       </ul>
     </section>
@@ -35,22 +34,23 @@
     <a class="button details" href="{{ url_for('schedule', lang=lang) }}">Plus de détails</a>
 
     <section class="event-description">
-
       <section>
-        <aside>TODO date</aside>
-        <h3>Conférences &amp; ateliers</h3>
+        <aside>Le 28 mars 2025, à Lille</aside>
+        <h3>Conférences & Quickies</h3>
         <p>
-          Durant cette journée, vous aurez l'occasion de participer à des
-          présentations sur des sujets variés, autour du langage Python :
+          Les différents domaines de la data sont mis à l'honneur sur cette journée.
         </p>
         <ul>
-          <li>usages</li>
-          <li>bonnes pratiques</li>
-          <li>retours d'expériences</li>
-          <li>partages d'idées</li>
+          <li>Data Analytics</li>
+          <li>Data Engineering</li>
+          <li>Data Ethics & Applications</li>
+          <li>Data Governance</li>
+          <li>Data Science</li>
+          <li>Data Visualization</li>
         </ul>
       </section>
     </section>
+
   </article>
 
   <article class="place">
@@ -58,8 +58,8 @@
     <section>
       <section>
         <address>
-          <strong>TODO</strong>
-          TODO, 59000, Lille
+          <strong>Polytech Lille</strong>
+          Avenue Paul Langevin, 59655 Villeneuve-d'Ascq
         </address>
         <a class="button" href="{{ url_for('venue', lang=lang) }}">
           Plus de détails
@@ -76,14 +76,22 @@
       <a class="button" href="https://www.data-lille.fr">Notre site web</a>
     </section>
     <section>
-      <h3>
-TODO blabla asso      </p>
+      <br>
+      <p>
+        Fondée en 2019, l'association cherche à encourager et
+        animer la communauté des passionnés de data sur la métropole.
+      </p>
     </section>
   </article>
 
   <article class="become-sponsor">
-    <aside>Soutenez-nous !</aside>
-    <h2>Devenez Sponsors !</h2>
+    <aside>Soutenez-nous !
+      <br>
+      <a class="button" href="{{ url_for('sponsors_listing', lang=lang) }}">
+        Devenez Sponsors!
+      </a>
+    </aside>
+
 
     {% include 'fr/fragments/sponsors_list.jinja2.html' %}
 

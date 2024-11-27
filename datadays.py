@@ -184,6 +184,11 @@ def support(lang="fr"):
         f"{lang}/support.jinja2.html", page_name="support", lang=lang
     )
 
+@app.route("/2025/<lang>/conduct")
+def conduct(lang="fr"):
+    return render_template(
+        f"{lang}/conduct.jinja2.html", page_name="conduct", lang=lang
+    )
 
 @app.route("/")
 @app.route("/2025/")
