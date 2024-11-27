@@ -5,20 +5,23 @@
     <h2>Le lieu</h2>
     <section>
       <h3>Adresse</h3>
-      <p>
-        PyConFR 2024 est hébergée
-        par TODO
-      </p>
       <address>
-        TODO
+        <strong>Polytech Lille</strong>
+        Avenue Paul Langevin, 59655 Villeneuve-d'Ascq
       </address>
-      <p>
-        Coordonnées GPS : <a href="https://framacarte.org/fr/map/pyconfr-2024_182286">TODO</a>
-      </p>
 
+      <br>
+      <a href="https://maps.app.goo.gl/Zt8gJxstxC1E9p9i9">Ouvrir avec Google Maps</a>
+
+      <br>
+      <br>
       {% with label="Voir la carte en plein ecran" %}
         {% include 'fr/fragments/map_fullscreen.jinja2.html'  %}
       {% endwith %}
+
+      <br>
+      <br>
+
 
     </section>
 
@@ -26,43 +29,62 @@
       <h3>Rejoindre le campus</h3>
 
       <section>
-        <h4>En voiture</h4>
-        <p>
-            TODO
-        </p>
-      </section>
+        <h4>Par les transports en commun</h4>
 
-      <section>
-        <h4>En transport en commun</h4>
-        <p>
-          L’université est accessible en transport en commun :
-        </p>
+        <h5>Arrivée par la gare LILLE EUROPE</h5>
         <ul>
           <li>
-            En metro: TODO
+            Prendre le métro direction Saint Philibert (ligne 2)
           </li>
           <li>
-            En bus: TODO
+            Sortir à la station Gare Lille Flandres
+          </li>
+          <li>
+            Prendre la ligne 1 direction 4 Cantons Stade Pierre Mauroy
+          </li>
+          <li>
+            Sortir à la station 4 Cantons Stade Pierre Mauroy (terminus). Sur le rond point, l’école est fléchée.
+          </li>
+        </ul>
+
+        <h5>Arrivée par la gare LILLE FLANDRES</h5>
+        <ul>
+          <li>
+            Prendre la ligne 1 du métro direction 4 Cantons Stade Pierre Mauroy
+          </li>
+          <li>
+            Sortir à la station 4 Cantons Stade Pierre Mauroy (terminus)
+          </li>
+          <li>
+            Depuis la station Gare Lille Flandres, il faut compter environ 15 minutes pour arriver à  la station 4 Cantons Stade Pierre Mauroy.
+          </li>
+        </ul>
+
+        <p>Tickets et pass : <a href="https://www.ilevia.fr/boutique/trajets-et-pass">Ilévia</a></p>
+
+
+        <h4>Par la route</h4>
+
+        <h5>Par l’autoroute A1 (Paris > Lille)</h5>
+        <ul>
+          <li>
+            Aux abords de Lille suivre la direction Valenciennes – Bruxelles – Villeneuve d’Ascq
+          </li>
+          <li>
+            Quitter l’autoroute à  la sortie Cité Scientifique
+          </li>
+        </ul>
+
+        <h5>Par l’autoroute A23 (Valenciennes > Lille) ou A27 (Bruxelles > Lille)</h5>
+        <ul>
+          <li>
+            Quitter l’autoroute à  la sortie Cité Scientifique          </li>
+          <li>
+            Au carrefour, continuer tout droit en direction du campus Cité scientifique.
+            Une fois arrivé au rond-point situé à côté de la station de métro 4 Cantons Stade Pierre Mauroy, aller tout droit pour entrer sur le parking de l’école.
           </li>
         </ul>
       </section>
 
-      <section>
-        <h4>Depuis la gare (environ 20 minutes)</h4>
-        <p>
-    TODO
-          </p>
-      </section>
-    </section>
-
-    <section>
-      <h3>Conseils pour le logement</h3>
-      <p>
-        Essayez d’être au plus proche de TODO
-      </p>
-      <ul>
-        <li><a href="TODO">TODO (~70€ la nuit)</a> — 5 minutes de marche</li>
-      </ul>
-    </section>
   </article>
 {% endblock content %}

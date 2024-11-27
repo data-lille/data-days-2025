@@ -1,8 +1,8 @@
 // Colors
-$grey: #eff1f3
-$purple: #1b0e29
-$red: #ff213b
-$red-dark: #cc0018
+$cream: #E5E2D9
+$dark: #26201b
+$pink: #e9006e
+$cyan: #4aeded
 
 
 // Fonts
@@ -13,7 +13,7 @@ $red-dark: #cc0018
 
 // Common
 html
-  color: $purple
+  color: $dark
   font-family: MonaSans
   font-size: 1.1em
   letter-spacing: .03em
@@ -26,7 +26,7 @@ body
   min-height: 100vh
 
 h1
-  color: $purple
+  color: $dark
   font-size: 3em
   font-variation-settings: "wdth" 75
   font-weight: 750
@@ -35,7 +35,7 @@ h1
   text-transform: uppercase
 
 h2
-  color: $purple
+  color: $dark
   font-size: 3em
   font-variation-settings: "wdth" 75
   font-weight: 750
@@ -50,16 +50,16 @@ h3
   margin: 1em auto
 
 h4
-  color: $purple
+  color: $dark
 
 a
-  color: $purple
+  color: $dark
   font-variation-settings: "wdth" 95
   font-weight: 600
-  text-decoration: underline $red-dark
+  text-decoration: underline $cyan
 
   &:hover, &:focus
-    text-decoration: underline $red-dark
+    text-decoration: underline $cyan
 
 address
   font-style: normal
@@ -72,7 +72,7 @@ ul
     padding-left: 2em
 
   li::marker
-    color: $red
+    color: $pink
 
 embed
   display: block
@@ -102,8 +102,8 @@ sup
   margin-top: -10rem
 
 .button
-  background-color: $red
-  border: 2px solid $red
+  background-color: $pink
+  border: 2px solid $pink
   border-radius: 6px
   color: white
   display: inline-block
@@ -117,12 +117,12 @@ sup
   text-decoration: none
 
   &:hover, &:focus
-    background-color: $red-dark
-    border-color: $red-dark
+    background-color: $cyan
+    border-color: $cyan
     text-decoration: inherit
 
 .important
-  color: $red
+  color: $pink
   font-weight: 600
 
 .brochures
@@ -141,7 +141,7 @@ sup
 
 // Nav
 nav
-  background: 2rem center no-repeat $purple
+  background: 2rem center no-repeat $dark
   color: white
   display: flex
   font-size: 0.9rem
@@ -160,10 +160,10 @@ nav
     padding-bottom: 0.3em
 
   li:has(a:hover)
-    border-bottom-color: $red-dark
+    border-bottom-color: $cyan
 
   li.active
-    border-bottom-color: $red
+    border-bottom-color: $pink
     font-weight: 600
 
     a:hover
@@ -228,7 +228,8 @@ nav
     width: 8rem
 
   &:has(#pages)
-    background-image: url(/2025/static/images/logo-simple-semi-couleurs.svg)
+    background-image: url(/2025/static/images/data_days_banner.png)
+    background-size: auto 100%
     height: 6rem
     padding: 0 2rem 0 20rem
     top: 0
@@ -240,8 +241,8 @@ nav
 
 // Footer
 footer
-  background: url(/2025/static/images/logo-simple-couleurs.svg) 10% center / 10rem no-repeat
-  border-top: 1px solid $grey
+  background: url(/2025/static/images/data_days_banner_white.png) 10% center / 10rem no-repeat
+  border-top: 1px solid $cream
   font-size: 0.9rem
   margin-top: 2em
 
@@ -288,7 +289,7 @@ footer
     width: 26%
 
     aside
-      background: $red
+      background: $pink
       border-radius: 50%
       color: white
       font-size: 0.8em
@@ -326,14 +327,15 @@ footer
 
       .schedule
         background: white
-        color: $red
+        color: $pink
         transition: background-color 0.5s
 
         &:hover, &:focus
-          background-color: lighten($red, 40%)
+          background-color: $cyan
+          color: white
 
   .datadays-date
-    color: $red
+    color: $pink
     font-size: 1.2em
     font-weight: 600
 
@@ -366,7 +368,7 @@ footer
       display: none
 
   .afpy
-    background: $purple
+    background: $dark
     color: white
     display: flex
     justify-content: center
@@ -392,7 +394,7 @@ footer
 
   .become-sponsor
     aside
-      color: $red
+      color: $pink
       font-weight: 600
       margin-top: 3em
       text-align: center
@@ -406,7 +408,7 @@ footer
       text-align: center
 
     .contact-sponsor
-      background: $grey
+      background: $cream
       border-radius: 10px
       margin: 3em auto
       min-width: min-content
@@ -417,13 +419,13 @@ footer
         width: initial
 
       a
-        color: $red
+        color: $pink
         font-size: 3em
         font-weight: 600
         transition: color 0.5s
 
         &:hover
-          color: $red-dark
+          color: $cyan
 
     .sponsors
       margin: auto
@@ -450,7 +452,7 @@ main
         font-weight: normal
 
       td
-        border: 1px solid $purple
+        border: 1px solid $dark
         padding: 0.25em
 
         &:not(:first-child)
@@ -489,8 +491,8 @@ main
 
     .description
       padding: 1.5rem
-      border-right: 5px solid $purple
-      border-left: 5px solid $red
+      border-right: 5px solid $dark
+      border-left: 5px solid $pink
 
 
 #talks, #speakers
@@ -511,7 +513,7 @@ main
     gap: 2em
 
     section
-      background: $grey
+      background: $cream
       border-radius: 10px
       flex: 1
       padding: 2em
@@ -520,7 +522,7 @@ main
         margin: 0 auto 1em auto
 
       aside
-        color: $red
+        color: $pink
         font-weight: 600
         margin-bottom: 1em
         text-transform: uppercase
@@ -550,7 +552,7 @@ main
         text-decoration: none
 
       dl
-        background: $grey
+        background: $cream
         border-radius: 1em
         width: 31%
 
@@ -570,7 +572,7 @@ main
           position: relative
 
           &::before
-            color: $red;
+            color: $pink;
             content: "\”"
             font-size: 9rem
             line-height: 1
@@ -592,7 +594,7 @@ main
 
 
 #full-schedule
-  background: $grey
+  background: $cream
   min-width: 65em
   padding: 0.25em
 
@@ -617,14 +619,14 @@ main
         color: white
 
       tr > :first-child::before
-        background: $purple
-        box-shadow: 0 0.75em 1em $purple
+        background: $dark
+        box-shadow: 0 0.75em 1em $dark
         content: ""
         height: 5em
         left: 0
         position: absolute
         right: 0
-        outline: 1em solid $purple
+        outline: 1em solid $dark
         top: -1rem
         z-index: -1
 
@@ -634,7 +636,7 @@ main
 
       th
         background-clip: content-box
-        background-color: $purple
+        background-color: $dark
         color: white
         padding-bottom: 2rem
 
@@ -732,7 +734,7 @@ main
 
 #news
   section:not(:last-of-type)
-    border-bottom: 1px solid $purple
+    border-bottom: 1px solid $dark
     padding-bottom: 1em
 
   .news-content
