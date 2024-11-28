@@ -23,8 +23,8 @@ app.wsgi_app = SassMiddleware(
 )
 
 
-_GIT_MAIN = Path(app.root_path) / ".git" / "refs" / "heads" / "main"
-GIT_VERSION = _GIT_MAIN.read_text().strip()[:7]
+# _GIT_MAIN = Path(app.root_path) / ".git" / "refs" / "heads" / "main"
+# GIT_VERSION = _GIT_MAIN.read_text().strip()[:7]
 
 
 @app.template_filter()
@@ -38,9 +38,9 @@ def markdown(string):
     return Markdown().convert(string)
 
 
-@app.template_filter()
-def version(url):
-    return f"{url}?{GIT_VERSION}"
+# @app.template_filter()
+# def version(url):
+#     return f"{url}?{GIT_VERSION}"
 
 
 @app.template_filter()
@@ -184,11 +184,13 @@ def support(lang="fr"):
         f"{lang}/support.jinja2.html", page_name="support", lang=lang
     )
 
+
 @app.route("/2025/<lang>/conduct")
 def conduct(lang="fr"):
     return render_template(
         f"{lang}/conduct.jinja2.html", page_name="conduct", lang=lang
     )
+
 
 @app.route("/")
 @app.route("/2025/")
