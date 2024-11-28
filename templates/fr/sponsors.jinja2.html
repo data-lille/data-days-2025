@@ -3,11 +3,21 @@
 {% block content %}
   <article>
     <h2>Partenaires</h2>
+
+    {% if sponsors %}
+    Sans vous, notre événement ne serait pas possible. 
+
     <section>
       {% for sponsor in sponsors %}
       {% include 'fr/fragments/sponsors_list.jinja2.html' %}
       {% endfor %}
     </section>
+    {% endif %}
+
+    <section>
+      Si vous souhaitez devenir sponsors, vous pouvez nous contacter par <a href="mailto:meetup.data.lille@gmail.com">email</a>
+    </section>
+
   </article>
   
 {% endblock content %}

@@ -3,6 +3,8 @@
 {% block content %}
   <article>
     <h2>Speakers</h2>
+
+    {% if speakers %}
     {% for speaker in speakers %}
       <section>
         <h3 id="speaker-{{ speaker.metadata.slug }}">
@@ -20,5 +22,14 @@
         {% endif %}
       </section>
     {% endfor %}
+    {% else %}
+    <section>
+      <h4>
+        Programme en cours de construction
+      </h4>
+
+      N'hésitez pas à nous soumettre vos présentations. 
+    </section>
+    {% endif %}
   </article>
 {% endblock content %}

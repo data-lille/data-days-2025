@@ -1,24 +1,17 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
-  <article>
-    <h2>Speakers</h2>
-    {% for speaker in speakers %}
-      <section>
-        <h3 id="speaker-{{ key }}">
-          <a href="#speaker-{{ key }}">
-            {% if speaker.metadata.avatar %}
-              <img class="avatar" src="{{ speaker.avatar }}" loading="lazy">
-            {% endif %}
-            {{ speaker.metadata.name }}
-          </a>
-        </h3>
-        {% if speaker.content %}
-          {{ speaker.content | markdown | safe }}
-        {% else %}
-          <p>Pas de biographie.</p>
-        {% endif %}
-      </section>
-    {% endfor %}
-  </article>
-{% endblock content %}
+<article class="speaker">
+
+    <h2>{{ item.metadata.name }}</h2>
+    <section>
+      {% if item.metadata.logo %}
+      <img class="avatar" src="{{ item.metadata.logo }}" loading="lazy">
+      {% endif %}
+      {% if item.content %}
+     <h3>Description</h3>
+      {{ item.content | markdown | safe }}
+      {% endif %}
+    </section>
+</article>
+  {% endblock content %}
