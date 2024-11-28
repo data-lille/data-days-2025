@@ -68,7 +68,7 @@ def format_time(dt: time):
 def speakers_listing(lang="fr"):
     return render_template(
         f"{lang}/speakers.jinja2.html",
-        page_name="speakers",
+        page_name="speakers_listing",
         speakers=Speaker.get_all(),
         lang=lang,
     )
@@ -85,7 +85,7 @@ def speakers_details(slug, lang="fr"):
 
     return render_template(
         f"{lang}/speakers-details.jinja2.html",
-        page_name="speakers",
+        page_name="speakers_listing",
         item=speaker,
         talks=talks,
         lang=lang,
@@ -96,7 +96,7 @@ def speakers_details(slug, lang="fr"):
 def sponsors_listing(lang="fr"):
     return render_template(
         f"{lang}/sponsors.jinja2.html",
-        page_name="sponsors",
+        page_name="sponsors_listing",
         speakers=Sponsors.get_all(),
         lang=lang,
     )
@@ -106,7 +106,7 @@ def sponsors_listing(lang="fr"):
 def sponsors_details(item, lang="fr"):
     return render_template(
         f"{lang}/sponsors-details.jinja2.html",
-        page_name="sponsors",
+        page_name="sponsors_details",
         item=Sponsors.get_item(item),
         lang=lang,
     )
@@ -139,7 +139,7 @@ def talks_details(slug, lang="fr"):
 def news_listing(lang="fr"):
     return render_template(
         f"{lang}/news.jinja2.html",
-        page_name="news",
+        page_name="news_listing",
         news=News.get_all(),
         lang=lang,
     )
@@ -177,19 +177,19 @@ def full_schedule(lang="fr"):
     )
 
 
-@app.route("/2025/<lang>/venue")
+@app.route("/2025/<lang>/venue/")
 def venue(lang="fr"):
     return render_template(f"{lang}/venue.jinja2.html", page_name="venue", lang=lang)
 
 
-@app.route("/2025/<lang>/support")
+@app.route("/2025/<lang>/support/")
 def support(lang="fr"):
     return render_template(
         f"{lang}/support.jinja2.html", page_name="support", lang=lang
     )
 
 
-@app.route("/2025/<lang>/conduct")
+@app.route("/2025/<lang>/conduct/")
 def conduct(lang="fr"):
     return render_template(
         f"{lang}/conduct.jinja2.html", page_name="conduct", lang=lang

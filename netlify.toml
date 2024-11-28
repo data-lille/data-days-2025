@@ -7,3 +7,4 @@
   from = "/"
   to = "/2025/"
   status = 301
+  force = true
