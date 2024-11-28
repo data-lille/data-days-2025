@@ -8,6 +8,7 @@ from models import Speaker, Sponsors, Talks, News, Schedule
 from babel.dates import format_date, format_time as babel_format_time
 from datetime import datetime, date, time
 import pytz
+import os
 
 app = Flask(__name__, static_url_path="/2025/static")
 app.wsgi_app = SassMiddleware(
@@ -23,8 +24,11 @@ app.wsgi_app = SassMiddleware(
 )
 
 
-# _GIT_MAIN = Path(app.root_path) / ".git" / "refs" / "heads" / "main"
-# GIT_VERSION = _GIT_MAIN.read_text().strip()[:7]
+try:
+    _GIT_MAIN = Path(app.root_path) / ".git" / "refs" / "heads" / "main"
+    GIT_VERSION = _GIT_MAIN.read_text().strip()[:7]
+except FileNotFoundError:
+    GIT_VERSION = os.environ.get("COMMIT_REF", "")[:7]
 
 
 @app.template_filter()
@@ -38,9 +42,9 @@ def markdown(string):
     return Markdown().convert(string)
 
 
-# @app.template_filter()
-# def version(url):
-#     return f"{url}?{GIT_VERSION}"
+@app.template_filter()
+def version(url):
+    return f"{url}?{GIT_VERSION}"
 
 
 @app.template_filter()
