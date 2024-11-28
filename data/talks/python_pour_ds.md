@@ -10,6 +10,7 @@ kind: pleniere_courte
 categories: 
     - test
     - test2
+published: false
 ---
 
 C'est super et ça parle de python. 

@@ -9,8 +9,23 @@ from slugify import slugify
 ROOT_PATH = Path(__file__).parent
 
 
+def load_data(root_path: Path, kind: type[BaseModel]) -> list[dict]:
+    data = []
+
+    print(f"Loading {kind.PATH}")  # type: ignore
+    for f in (Path(root_path) / "data" / kind.PATH).glob("*.md"):  # type: ignore
+        parsed = frontmatter.load(f)
+        validated = kind.model_validate(parsed.metadata)
+        if not validated.published:  # type: ignore
+            print(f"not published: {validated}, skipping")
+            continue
+        data.append({"metadata": validated.model_dump(), "content": parsed.content})
+    return data
+
+
 class ListRetrieveMixin:
     slug: str
+    published: bool = False
 
     @classmethod
     def get_all(cls):
@@ -107,24 +122,12 @@ class News(BaseModel, ListRetrieveMixin):
     published: bool
 
 
-def load_data(root_path: Path, kind: type[BaseModel]) -> list[dict]:
-    data = []
-
-    print(f"Loading {kind.PATH}")  # type: ignore
-    for f in (Path(root_path) / "data" / kind.PATH).glob("*.md"):  # type: ignore
-        parsed = frontmatter.load(f)
-        validated = kind.model_validate(parsed.metadata)
-        data.append({"metadata": validated.model_dump(), "content": parsed.content})
-    return data
-
-
 def generate_time_interval_between(start: datetime, stop: datetime, interval: int):
     hours = []
     current = start
     while current <= stop:
         hours.append(current.time())
         current += timedelta(minutes=interval)
-    print(hours)
     return hours
 
 
