@@ -13,50 +13,105 @@
 
 {%- set title = title or dict(TITLES).get(page_name, ['', ''])[1 if lang == 'en' else 0] -%}
 
-
 <!DOCTYPE html>
 
 <html lang="{{ lang }}">
   <head>
     {% block head %}
-      <title>{{ title }} - Data Days 2025</title>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Data Days 2025</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" />
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') | version }}">
-      <script>/* Stupid hack for iOS :hover */ document.addEventListener("touchstart", function(){}, true);</script>
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/favicon.png') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') | version }}"
+    />
+    <script>
+      /* Stupid hack for iOS :hover */ document.addEventListener(
+        "touchstart",
+        function () {},
+        true
+      );
+    </script>
     {% endblock head %}
   </head>
 
   <body id="{{ page_name }}">
-
     {% block header %}
-      <nav>
-        <ul id="pages">
-          {% for endpoint, (title_fr, title_en) in MENU %}
-            <li class="{{ 'active' if page_name == endpoint }}">
-              <a href="{{ url_for(endpoint, lang=lang) }}">{{ title_en if lang == 'en' else title_fr }}</a>
-            </li>
-          {% endfor %}
+    <nav>
+      <div class="logo">
+        <a href="/">
+          <img src="/2025/static/images/data_days_banner.png"></img>
+        </a>
+      </div>
+      <div class="menu-overlay" id="menu-overlay">
+        <ul class="menu">        
+        {% for endpoint, (title_fr, title_en) in MENU %}
+          <li class="{{ 'active' if page_name == endpoint }}">
+            <a
+              href="{{ url_for(endpoint, lang=lang) }}"
+              >{{ title_en if lang == 'en' else title_fr }}</a
+            >
+          </li>
+        {% endfor %}
         </ul>
-        <a class="button" href="{{ url_for('schedule', lang=lang, _anchor='register') }}">{{ 'S’inscrire' if lang == 'fr' else 'Register' }}</a>
-      </nav>
+      </div>
+
+      <div class="wrapper-right">
+        <a class="button" href="/2025/fr/programme/#register">S’inscrire</a>
+        <div class="menu-toggle" id="menu-toggle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+
+    </nav>
+
     {% endblock header %}
 
-    <main>
-      {% block content %}{% endblock content %}
-    </main>
+    <main>{% block content %}{% endblock content %}</main>
 
     {% block footer %}
-      <footer>
-        <ul>
-          <li><a href="mailto:meetup.data.lille@gmail.com">Email</a></li>
-          <li><a href="https://github.com/data-lille/data-days-2025">GitHub</a> forké depuis <a href="https://github.com/AFPy/pyconfr-2024">PyconFr</a></li>
-          <li><a href="https://frozen-flask.readthedocs.io/">Frozen-Flask</a></li>
-          <li><a href="https://data-lille.fr/">© 2025 Data Lille</a></li>
-        </ul>
-      </footer>
+    <footer>
+      <ul>
+        <li><a href="mailto:meetup.data.lille@gmail.com">Email</a></li>
+        <li>
+          <a href="https://github.com/data-lille/data-days-2025">GitHub</a>
+          forké depuis
+          <a href="https://github.com/AFPy/pyconfr-2024">PyconFr</a>
+        </li>
+        <li><a href="https://frozen-flask.readthedocs.io/">Frozen-Flask</a></li>
+        <li><a href="https://data-lille.fr/">© 2025 Data Lille</a></li>
+      </ul>
+    </footer>
     {% endblock footer %}
   </body>
+
+  <script>
+const menuToggle = document.getElementById('menu-toggle');
+const menuOverlay = document.getElementById('menu-overlay');
+
+menuToggle.addEventListener('click', function(event) {
+  this.classList.toggle('active');
+  menuOverlay.classList.toggle('active');
+  if (menuOverlay.classList.contains('active')) {
+    document.body.style.overflow = 'hidden'; // Empêche le défilement
+  } else {
+    document.body.style.overflow = ''; // Réinitialise le défilement
+  }
+
+  event.stopPropagation(); // Empêche la propagation du clic pour qu'il ne ferme pas immédiatement le menu
+});
+
+document.addEventListener('click', function(event) {
+    menuToggle.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = ''; // Réinitialise le défilement
+});
+  </script>
 </html>

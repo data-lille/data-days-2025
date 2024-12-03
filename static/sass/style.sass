@@ -1,14 +1,17 @@
 // Colors
-$cream: #E5E2D9
-$dark: #26201b
-$pink: #e9006e
-$cyan: #4aeded
+$cream: #E5E2D9;
+$dark: #26201b;
+$pink: #e9006e;
+$cyan: #4aeded;
+$primary-color: #333;
+$secondary-color: #fff;
+$hover-color: #ddd;
 
 
 // Fonts
 @font-face
   font-family: MonaSans
-  src: url(/2025/static/fonts/MonaSans[slnt,wdth,wght].woff2)
+  src: url(/2025/static/fonts/MonaSans[slnt,wdth,wght].woff2);
 
 
 // Common
@@ -109,9 +112,8 @@ sup
   display: inline-block
   font-weight: 600
   letter-spacing: 0.01em
-  margin: 1rem 0
-  max-width: max-content
-  padding: 1rem
+  padding: 3px 1rem
+  margin-right: 20px
   text-transform: uppercase
   transition: background-color 0.5s, border-color 0.5s
   text-decoration: none
@@ -139,109 +141,6 @@ sup
   vertical-align: middle
   width: 3em
 
-// Nav
-nav
-  background: 2rem center no-repeat $dark
-  color: white
-  display: flex
-  font-size: 0.9rem
-  padding: 0 2rem 0 20rem
-  position: sticky
-  top: 0
-  height: 4em;
-  z-index: 2
-
-  .button 
-    height: 2em;
-    margin: auto;
-    text-align: center;
-    line-height: 0em;
-  ul
-    align-items: center
-    display: flex
-    list-style: none
-
-  li
-    border-bottom: 1px solid transparent
-    padding-bottom: 0.3em
-
-  li:has(a:hover)
-    border-bottom-color: $cyan
-
-  li.active
-    border-bottom-color: $pink
-    font-weight: 600
-
-    a:hover
-      text-decoration: none
-
-  a
-    color: inherit
-    font-weight: inherit
-    text-decoration: none
-
-    &:hover
-      text-decoration: none
-
-  ul#pages, ul#categories
-    flex-wrap: wrap
-    gap: 0 1em
-    justify-content: center
-    margin: auto
-
-  ul#pages
-    li:first-child a:before
-      content: ""
-      height: 100%
-      left: 0
-      position: absolute
-      top: 0
-      width: 16rem
-
-  ul#categories
-    font-size: 0.8em
-
-  ul#languages
-    justify-content: space-evenly
-    width: 10rem
-
-    li
-      opacity: 0.5
-
-    li.active
-      border: none
-      opacity: 1
-
-    li a::before
-      background: 10% center / 1em no-repeat
-      content: ''
-      display: inline-block
-      height: 0.75em
-      width: 1em
-
-    li#french a::before
-      background-image: url(/2025/static/images/france.svg)
-
-    li#english a::before
-      background-image: url(/2025/static/images/united-kingdom.svg)
-
-  > a
-    align-self: center
-    box-sizing: border-box
-    display: block
-    max-width: none !important
-    text-align: center
-    width: 8rem
-
-  &:has(#pages)
-    background-image: url(/2025/static/images/data_days_banner.png)
-    background-size: auto 100%
-    padding: 0 2rem 0 20rem
-    top: 0
-
-  &:has(#categories)
-    padding: 0.5rem 2rem
-    top: 6rem
 
 
 // Footer
@@ -394,6 +293,7 @@ footer
         color: inherit
         line-height: 1
         margin-top: 0.5em
+        margin-bottom: 0.25em
         text-align: left
 
     section:last-of-type
@@ -755,17 +655,13 @@ main
 
 // Mobile
 @media (max-width: 1000px)
-  html
+  html 
     font-size: 1em
 
   h3
     font-size: 1.4em
 
   #index
-    .logo
-      max-width: 30em
-      width: 80%
-
     .datadays-presentation
       margin: auto
       width: 65%
@@ -809,63 +705,6 @@ main
         dl
           width: auto
 
-  nav
-    display: flex 
-    align-items: center
-    flex-direction: row-reverse
-
-    &:has(#pages)
-      height: auto
-      height: 3rem
-      padding-left: 2rem
-
-    ul#pages
-      flex-direction: column
-      gap: 2em
-      justify-content: center
-      height: 0
-      margin: 0 auto 0 0
-      order: 10
-      overflow: hidden
-      width: 100%
-
-      &:hover
-        height: 100vh
-
-      &:before
-        content: '☰'
-        font-size: 2rem
-        position: absolute
-        right: 1.5rem
-        top: 0
-      
-      &:hover:before
-        content: "⨯"
-
-    &:after
-      content: " "
-      height: 4rem
-      position: absolute
-      right: 1.5rem
-      width: 4rem
-      z-index: -1
-
-    &:has(ul:hover):after
-      transition: z-index 1s
-      z-index: 1
-
-    li:first-child a:before
-      display: none
-
-    ul#languages
-      height: 4rem
-      margin-right: auto
-      width: 7rem
-    
-    .button  
-      margin: 0px
-      margin-right: 50px;
-
   footer
     background-position: center 40px
 
@@ -891,3 +730,133 @@ main
     background: none !important
   .avatar
     margin-bottom: 1em;
+
+// Menu 
+nav 
+  height: 3em 
+  color: $cream
+  background-color: $dark
+  display: flex 
+  align-items: center 
+  align-content: space-between
+
+  .wrapper-right
+    display: flex 
+    align-items: center 
+    flex-direction: row 
+
+  .logo 
+    height: 100%
+    display: flex 
+    align-items: center 
+    margin-left: 5px 
+    a
+      height: 100%
+      display: flex 
+      align-items: center 
+  
+      img
+        height: 70% 
+
+  li
+    border-bottom: 1px solid transparent
+    padding-bottom: 0.3em
+
+  li:has(a:hover)
+    border-bottom-color: $cyan
+
+  li.active
+    border-bottom-color: $pink
+    font-weight: 600
+
+    a:hover
+      text-decoration: none
+
+  a
+    color: inherit
+    font-weight: inherit
+    text-decoration: none
+
+
+.menu-toggle
+  display: none
+  flex-direction: column
+  cursor: pointer
+  height: 100%
+  margin-right: 20px
+
+  .bar
+    width: 25px
+    height: 3px
+    margin: 4px 0
+    transition: 0.3s
+    background-color: white 
+    margin: auto 
+
+.menu-overlay
+  position: fixed
+  background: $dark
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  display: none
+  justify-content: center
+  align-items: center
+  z-index: 1000
+  flex: 1
+
+.menu
+  list-style: none
+  text-align: center
+  overflow: hidden
+  
+  li
+    a
+      display: block
+      padding: 0px 10px
+      text-decoration: none
+      transition: background-color 0.3s
+
+
+@media (max-width: 999px)
+  .logo 
+    flex: 1 
+
+  nav
+    li 
+      padding-bottom: 0.3em 
+      margin-bottom: 1em 
+      font-size: 1.5em
+
+  .menu-toggle
+    display: flex
+    height: 25px 
+
+  #menu-overlay.active
+    display: flex
+  
+  #menu-toggle > *
+  background-color: white 
+
+  .menu-toggle.active .bar:nth-child(2)
+    opacity: 0
+
+  .menu-toggle.active .bar:nth-child(1)
+    transform: translateY(7px) rotate(45deg)
+
+  .menu-toggle.active .bar:nth-child(3)
+    transform: translateY(-7px) rotate(-45deg)
+
+@media (min-width: 1000px)
+  .menu-overlay
+    position: static
+    width: auto
+    display: flex
+  .menu-toggle
+    display: none
+  .menu
+    display: flex 
+    flex-direction: row
+    background-color: transparent
+    padding: 0

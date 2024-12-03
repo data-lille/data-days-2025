@@ -31,9 +31,12 @@
 
   <article>
     <h2>Programme</h2>
-    <a class="button details" href="{{ url_for('schedule', lang=lang) }}">Plus de détails</a>
-
-    Le programme est actuellement en cours de construction. N'hésitez pas à nous soumettre vos présentation.
+    <section>
+      <p>
+        Le programme est actuellement en cours de construction. N'hésitez pas à nous soumettre vos présentation.
+      </p>
+      <a class="button" href="{{ url_for('schedule', lang=lang) }}">Plus de détails</a>
+    </section>
 
     <section class="event-description">
       <section>
@@ -90,7 +93,7 @@
     <aside>Soutenez-nous !
       <br>
       <a class="button" href="{{ url_for('sponsors_listing', lang=lang) }}">
-        Devenez Sponsors!
+        Devenez Sponsors !
       </a>
     </aside>
 
@@ -100,7 +103,7 @@
     <section class="contact-sponsor">
       <p>
         L'équipe est disponible pour répondre à vos questions sur
-        l'événement à l'adresse <a href="mailto:meetup.data.lille@gmail.com">meetup.data.lille@gmail.com</a>
+        l'événement à l'adresse <a href="mailto:meetup.data.lille@gmail.com">par email</a>
       </p>
     </section>
   </article>
