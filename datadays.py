@@ -163,7 +163,7 @@ def schedule(lang="fr"):
 def full_schedule(lang="fr"):
     schedule = Schedule()
 
-    day = "Jeudi 20 mars 2025"
+    day = "Vendredi 28 mars 2025"
     schedule = {
         "rooms": schedule.tracks,
         "schedule": schedule,

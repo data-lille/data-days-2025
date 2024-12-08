@@ -12,24 +12,56 @@
           Les différents domaines de la data sont mis à l'honneur sur cette journée.
         </p>
         <ul>
-          <li>Data Analytics</li>
           <li>Data Engineering</li>
-          <li>Data Ethics & Applications</li>
+          <li>Data Analytics</li>
+          <li>Data Science & IA</li>
           <li>Data Governance</li>
-          <li>Data Science</li>
-          <li>Data Visualization</li>
+          <li>Data Ethics & Applications</li>
+          <li>Et plein d'autres</li>
         </ul>
       </section>
     </section>
 
     <section id="calendar">
-      <h3>Calendrier</h3>
-      <p>
+
+      <h3>Planning</h3>
+      <table>
+        <tr>
+          <th><b>Heure</b></th>
+          <th><b>Track 1</b></th>
+          <th><b>Track 2</b></th>
+          <th><b>Stands</b></th>
+        </tr>
+        <tr>
+          <td>8h30 - 9h00</td>
+          <td colspan="3">Ouverture des portes</td>
+        </tr>
+        <tr>
+          <td>9h00 - 12h00</td>
+          <td colspan="2">Conférences longues et courtes</td>
+          <td>Echanges et networking</td>
+        </tr>
+        <tr>
+          <td>12h00 - 13h30</td>
+          <td colspan="3">Déjeuner</td>
+        </tr>
+        <tr>
+          <td>13h30 - 17h00</td>
+          <td colspan="2">Conférences longues et courtes</td>
+          <td>Echanges et networking</td>
+        </tr>
+        <tr>
+          <td>17h00 - 18h00</td>
+          <td colspan="3">Fermeture des portes</td>
+        </tr>
+      </table>
+
+      <p hidden>
         Le calendrier est disponible ci-dessous, sur une
         <a href="{{ url_for('full_schedule', lang=lang) }}">page en plein écran</a>,
         <!-- ou <a href="TODO ical">dans votre application de calendrier favorite</a>. -->
       </p>
-      <p>
+      <p hidden>
         Vous pouvez également lire la biographie des
         <a href="{{ url_for('speakers_listing', lang=lang) }}">speakers</a>.
       </p>
@@ -40,20 +72,13 @@
       <h3>Inscriptions</h3>
 
       <p>
-        Les inscriptions à la journée, aux conférences et quickies se fait en ligne.
-      </p>
-      <p>
         Les inscriptions sont ouvertes jusqu’à la <b>date limite du 15 mars 2025</b> et dans la limite des <b>300 places</b> disponibles.      </p>
-      <a class="button" href="https://www.helloasso.com/associations/afpy/evenements/data-days-lille-2025">Inscriptions Data Days Lille 2025</a>
+      <a class="button" href="https://www.helloasso.com/associations/data-lille/evenements/inscription-data-days-2025">Inscriptions Data Days Lille 2025</a>
 
     </section>
 
     <section id="register">
       <h3>Devenez Speaker</h3>
-
-      <p>
-        Les inscriptions à la journée, aux conférences et quickies se fait en ligne.
-      </p>
       <p>
         Que vous soyez expert ou passionné, soumettez dès maintenant votre proposition de conférence.
         Nous recherchons des présentations captivantes de 30 ou 60 minutes sur tous les aspects de la data.

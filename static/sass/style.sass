@@ -328,7 +328,7 @@ footer
 
       a
         color: $pink
-        font-size: 3em
+        font-size: 1.5em
         font-weight: 600
         transition: color 0.5s
 
@@ -354,14 +354,21 @@ main
     table
       border-collapse: collapse
       margin: 2em auto
-      width: 60rem
+      width: 100%
+      text-align: center
+
+      th:first-child, td:first-child
+        width: 10%
 
       th
+        background-color: $cream
         font-weight: normal
+        border: 1px solid $dark
+        padding: 0.4em
 
       td
         border: 1px solid $dark
-        padding: 0.25em
+        padding: 0.4em
 
         &:not(:first-child)
           text-align: center
@@ -655,7 +662,7 @@ main
 
 // Mobile
 @media (max-width: 1000px)
-  html 
+  html
     font-size: 1em
 
   h3
@@ -731,32 +738,32 @@ main
   .avatar
     margin-bottom: 1em;
 
-// Menu 
-nav 
-  height: 3em 
+// Menu
+nav
+  height: 3em
   color: $cream
   background-color: $dark
-  display: flex 
-  align-items: center 
+  display: flex
+  align-items: center
   align-content: space-between
 
   .wrapper-right
-    display: flex 
-    align-items: center 
-    flex-direction: row 
+    display: flex
+    align-items: center
+    flex-direction: row
 
-  .logo 
+  .logo
     height: 100%
-    display: flex 
-    align-items: center 
-    margin-left: 5px 
+    display: flex
+    align-items: center
+    margin-left: 5px
     a
       height: 100%
-      display: flex 
-      align-items: center 
-  
+      display: flex
+      align-items: center
+
       img
-        height: 70% 
+        height: 70%
 
   li
     border-bottom: 1px solid transparent
@@ -790,8 +797,8 @@ nav
     height: 3px
     margin: 4px 0
     transition: 0.3s
-    background-color: white 
-    margin: auto 
+    background-color: white
+    margin: auto
 
 .menu-overlay
   position: fixed
@@ -810,7 +817,7 @@ nav
   list-style: none
   text-align: center
   overflow: hidden
-  
+
   li
     a
       display: block
@@ -820,24 +827,24 @@ nav
 
 
 @media (max-width: 999px)
-  .logo 
-    flex: 1 
+  .logo
+    flex: 1
 
   nav
-    li 
-      padding-bottom: 0.3em 
-      margin-bottom: 1em 
+    li
+      padding-bottom: 0.3em
+      margin-bottom: 1em
       font-size: 1.5em
 
   .menu-toggle
     display: flex
-    height: 25px 
+    height: 25px
 
   #menu-overlay.active
     display: flex
-  
+
   #menu-toggle > *
-  background-color: white 
+  background-color: white
 
   .menu-toggle.active .bar:nth-child(2)
     opacity: 0
@@ -856,7 +863,7 @@ nav
   .menu-toggle
     display: none
   .menu
-    display: flex 
+    display: flex
     flex-direction: row
     background-color: transparent
     padding: 0

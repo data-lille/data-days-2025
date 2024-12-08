@@ -7,10 +7,10 @@
 {% for item in news %}
 <section>
   <div>
-    <h3>{{ item.metadata.name }}</h3> <span>Publié le {{ item.metadata.publication_date | format_datetime }}</span>
+    <h3>{{ item.metadata.name }} - {{ item.metadata.publication_date | format_datetime }}</h3>
 
   </div>
-  
+
   <p class="news-content">{{ item.content | markdown | safe }}</p>
 </section>
 {% endfor  %}
