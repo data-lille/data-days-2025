@@ -49,7 +49,7 @@ def version(url):
 
 @app.template_filter()
 def format_datetime(dt: datetime):
-    return format_date(dt)
+    return format_date(dt, locale="fr_FR")
 
 
 @app.template_filter()
