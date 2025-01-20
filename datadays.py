@@ -97,17 +97,17 @@ def sponsors_listing(lang="fr"):
     return render_template(
         f"{lang}/sponsors.jinja2.html",
         page_name="sponsors_listing",
-        speakers=Sponsors.get_all(),
+        sponsors=Sponsors.get_all(),
         lang=lang,
     )
 
 
-@app.route("/2025/<lang>/sponsors/<item>")
-def sponsors_details(item, lang="fr"):
+@app.route("/2025/<lang>/sponsors/<slug>")
+def sponsors_details(slug, lang="fr"):
     return render_template(
         f"{lang}/sponsors-details.jinja2.html",
         page_name="sponsors_details",
-        item=Sponsors.get_item(item),
+        item=Sponsors.get_item(slug),
         lang=lang,
     )
 

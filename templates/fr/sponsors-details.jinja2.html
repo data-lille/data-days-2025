@@ -6,7 +6,8 @@
     <h2>{{ item.metadata.name }}</h2>
     <section>
       {% if item.metadata.logo %}
-      <img class="avatar" src="{{ item.metadata.logo }}" loading="lazy">
+      <img class="avatar" src="{{ url_for('static', filename=item.metadata.logo) }}" loading="lazy">
+
       {% endif %}
       {% if item.content %}
      <h3>Description</h3>

@@ -63,8 +63,7 @@ class Sponsors(BaseModel, ListRetrieveMixin):
     PATH: ClassVar[str] = "sponsors"
 
     name: str
-    slug: str
-    level: str  # TODO : check levels
+    level: str = ""  # TODO : check levels
     short_description: str
     logo: str  # TODO : check the file exists
 
@@ -119,7 +118,6 @@ class News(BaseModel, ListRetrieveMixin):
 
     publication_date: datetime
     name: str
-    published: bool
 
 
 def generate_time_interval_between(start: datetime, stop: datetime, interval: int):
