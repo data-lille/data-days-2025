@@ -111,7 +111,14 @@
     </aside>
 
 
-    {% include 'fr/fragments/sponsors_list.jinja2.html' %}
+    {% if sponsors %}
+    <section style="margin-top: 100px;">
+      <p>    Sans vous, notre événement ne serait pas possible.    </p>
+      {% for sponsor in sponsors %}
+      {% include 'fr/fragments/sponsors_logo.jinja2.html' %}
+      {% endfor %}
+    </section>
+    {% endif %}
 
     <section class="contact-sponsor">
       <p>

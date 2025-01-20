@@ -1,13 +1,25 @@
 <section>
-    <h3 id="sponsors-{{ sponsor.metadata.slug }}">
-        {% if sponsor.metadata.logo %}
-        <img class="avatar" src="{{ url_for('static', filename=sponsor.metadata.logo) }}" loading="lazy">
-        {% endif %}
-      <a href="{{ url_for('sponsors_details', lang=lang, slug=sponsor.metadata.slug) }}">
-        {{ sponsor.metadata.name }}
-    </a>
-    </h3>
-    {% if sponsor.content %}
-      {{ sponsor.content | markdown | safe }}
+  <h3
+    id="sponsors-{{ sponsor.metadata.slug }}"
+    style="
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    {% if sponsor.metadata.logo %}
+    <img
+      class="avatar"
+      src="{{ url_for('static', filename=sponsor.metadata.logo) }}"
+      loading="lazy"
+    />
     {% endif %}
-  </section>
+    <a
+      href="{{ url_for('sponsors_details', lang=lang, slug=sponsor.metadata.slug) }}"
+    >
+      {{ sponsor.metadata.name }}
+    </a>
+  </h3>
+  {% if sponsor.content %} {{ sponsor.content | markdown | safe }} {% endif %}
+</section>

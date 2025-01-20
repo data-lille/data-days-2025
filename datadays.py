@@ -199,7 +199,12 @@ def conduct(lang="fr"):
 @app.route("/")
 @app.route("/2025/")
 def index(lang="fr"):
-    return render_template(f"{lang}/index.jinja2.html", page_name="index", lang=lang)
+    return render_template(
+        f"{lang}/index.jinja2.html",
+        page_name="index",
+        lang=lang,
+        sponsors=Sponsors.get_all(),
+    )
 
 
 @app.cli.command("freeze")
