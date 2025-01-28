@@ -64,7 +64,7 @@ class Sponsors(BaseModel, ListRetrieveMixin):
 
     name: str
     level: str = ""  # TODO : check levels
-    short_description: str
+    short_description: str = ""
     logo: str  # TODO : check the file exists
 
 
