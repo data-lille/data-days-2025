@@ -102,7 +102,7 @@ def sponsors_listing(lang="fr"):
     )
 
 
-@app.route("/2025/<lang>/sponsors/<slug>")
+@app.route("/2025/<lang>/sponsors/<slug>/")
 def sponsors_details(slug, lang="fr"):
     return render_template(
         f"{lang}/sponsors-details.jinja2.html",
@@ -122,7 +122,7 @@ def talks_listing(lang="fr"):
     )
 
 
-@app.route("/2025/<lang>/presentations/<slug>")
+@app.route("/2025/<lang>/presentations/<slug>/")
 def talks_details(slug, lang="fr"):
     talk = Talks.get_item(slug)
     speakers = [Speaker.get_item(slug) for slug in talk["metadata"]["speakers"]]
