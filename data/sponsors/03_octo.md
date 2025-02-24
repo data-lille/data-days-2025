@@ -2,7 +2,7 @@
 name: "Octo"
 slug: octo
 short_description: "OCTO, cabinet de conseil et de réalisation, met son expertise historique en conception et développement logiciel de qualité au service des nouvelles technologies comme la data et l'IA. Nous accompagnons les organisations dans leur transformation digitale, en alliant une approche systémique à des solutions sur-mesure, performantes et pérennes. Notre maîtrise du développement logiciel garantit la qualité et la fiabilité des applications data et IA que nous construisons pour nos clients, les guidant vers des écosystèmes digitaux vertueux."
-logo: images/sponsors/octo.png  
+logo: images/sponsors/octo_square.png  
 published: true
 ---
 

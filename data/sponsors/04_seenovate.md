@@ -2,7 +2,7 @@
 name: "Seenovate"
 slug: seenovate
 short_description: "Seenovate accompagne ses clients dans la valorisation de leurs données et leur transformation data, avec une ambition : aller toujours plus loin dans la recherche de l’excellence et de l'innovation."
-logo: images/sponsors/seenovate.png  
+logo: images/sponsors/seenovate_square.png  
 published: true
 ---
 

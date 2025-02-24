@@ -2,7 +2,7 @@
 name: "Ippon"
 slug: ippon
 short_description: Ippon est un cabinet de conseil et d'expertise en tech qui réunit 500 passionnés, animés par le goût du challenge et de l'innovation. Nous accompagnons les organisations dans leur transformation numérique, en les aidant à concevoir leur stratégie et à déployer leur roadmap à l'échelle, afin de délivrer rapidement la valeur attendue. "
-logo: images/sponsors/ippon.png  
+logo: images/sponsors/ippon_square.png  
 published: true
 ---
 Ippon est un cabinet de conseil et d'expertise en tech, réunissant 500 experts passionnés. Chaque année, nous accompagnons plus d'une centaine d'entreprises dans l'optimisation de leur performance et l'accélération de leur transformation digitale.
