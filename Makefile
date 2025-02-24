@@ -28,6 +28,14 @@ square_logo:
 	# makes a square logo using imagemagick
 	magick xc:none sfeir.png -thumbnail 720x720 -gravity center -composite sfeir_square.png
 
+publish_all:
+	find data/talks -name "*.md" -exec sed -i '' 's/published: false/published: true/' {} \;
+	find data/speakers -name "*.md" -exec sed -i '' 's/published: false/published: true/' {} \;
+
+unpublish_all:
+	find data/talks -name "*.md" -exec sed -i '' 's/published: true/published: false/' {} \;
+	find data/speakers -name "*.md" -exec sed -i '' 's/published: true/published: false/' {} \;
+
 clean:
 	rm -rf build .venv __pycache__
 

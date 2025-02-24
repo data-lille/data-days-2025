@@ -10,13 +10,13 @@
         <h3 id="speaker-{{ speaker.metadata.slug }}">
           <a href="{{ url_for('speakers_details', lang=lang, slug=speaker.metadata.slug) }}">
             {% if speaker.metadata.avatar %}
-              <img class="avatar" src="{{ speaker.avatar }}" loading="lazy">
+              <img class="avatar" src="{{ speaker.metadata.avatar }}" loading="lazy">
             {% endif %}
-            {{ speaker.metadata.name }}
+            <span>{{ speaker.metadata.name }}</span>
           </a>
         </h3>
-        {% if speaker.content %}
-          {{ speaker.content | markdown | safe }}
+        {% if speaker.metadata.short_bio %}
+          {{ speaker.metadata.short_bio | markdown | safe }}
         {% else %}
           <p>Pas de biographie.</p>
         {% endif %}

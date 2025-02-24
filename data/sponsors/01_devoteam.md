@@ -1,5 +1,5 @@
 ---
-name: Devoteam
+name: "Devoteam"
 slug: devoteam
 short_description: Devoteam, votre partenaire Cloud Data & IA de bout en bout.
 logo: images/sponsors/devoteam.png  

@@ -1,5 +1,5 @@
 ---
-name: SFEIR
+name: "SFEIR"
 slug: sfeir
 short_description: Le Groupe SFEIR est une société indépendante de conseil et d’expertise technologique qui accompagne les entreprises dans leurs stratégies et transformations numériques.
 logo: images/sponsors/sfeir.png  
