@@ -4,7 +4,7 @@ short_bio: "With over 20 years of experience navigating the intersection of **AI
 avatar: https://media.licdn.com/dms/image/v2/D4E03AQEaWLDZypwFXg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1725688411931?e=1739404800&v=beta&t=6v5sd5077KZPkWn1XSY5CpxR38jRqxrDVNShDmJ3g0Y
 linkedin: ''
 website: ''
-published: false
+published: true
 ---
 
 With over 20 years of experience navigating the intersection of **AI**, **data**, and **ethics**, I’ve seen enough technological "*apocalypses*" to know what separates hype from reality. 

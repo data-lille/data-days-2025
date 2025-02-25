@@ -45,7 +45,7 @@ categories:
 - Data Analytics
 - Data Science & IA
 - Data Governance
-published: false
+published: true
 ---
 
 La révolution est en marche : en 2025, **moins de 50% des usages de données reposeront sur la Business Intelligence traditionnelle**. Pourquoi ? Parce que l'IA agentique bouleverse tout, transformant vos données d'un simple actif en un moteur décisionnel autonome.

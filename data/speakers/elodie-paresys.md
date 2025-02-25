@@ -4,7 +4,7 @@ short_bio: "Plus de 20 ans d'expérience dont + 10 en DATA et IA, avec une exper
 avatar: https://lh3.googleusercontent.com/a/ACg8ocL427VmcwpFx94RALQ-Vf_oGYz2bUPYe1pOWAZihgGiyl7qbg=s96-c
 linkedin: 'www.linkedin.com/in/elodie-paresys-6b1b19a4'
 website: ''
-published: false
+published: true
 ---
 
 www.linkedin.com/in/elodie-paresys-6b1b19a4

@@ -24,7 +24,7 @@ track: Data Engineering
 categories:
 - Data Engineering
 - Data Analytics
-published: false
+published: true
 ---
 
 🦆 DuckDB croit en popularité dans notre écosystème data, mais où peut il être utilisé ?

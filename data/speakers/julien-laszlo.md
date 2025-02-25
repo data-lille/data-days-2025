@@ -4,7 +4,7 @@ short_bio: "Antonin Braun est le directeur technique du cabinet de conseil en In
 avatar: https://lh3.googleusercontent.com/a/ACg8ocI51DsaqeReZsnpRSuudvoMJbGYegoFPFrfWpoA1JcDUpwXNW11=s96-c
 linkedin: ''
 website: ''
-published: false
+published: true
 ---
 
 Antonin Braun est le directeur technique du cabinet de conseil en Intelligence Artificielle Aquila Data Enabler et est responsable des équipes de Machine learning depuis 7 ans. 

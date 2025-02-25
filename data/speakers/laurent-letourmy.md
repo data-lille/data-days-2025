@@ -4,7 +4,7 @@ short_bio: "Depuis 2020, Laurent Letourmy est nommé Head of Data de Devoteam Fr
 avatar: https://lh3.googleusercontent.com/a/ACg8ocIxFfYcrq6GplrtXpFD3H6FDkZ8x0Ab8qcWigZmrzBmZEKBhuZQ=s96-c
 linkedin: ''
 website: ''
-published: false
+published: true
 ---
 
 Ingénieur EPITA, il créé dès sa première année d’école une société éditant un logiciel dans le domaine des bases de données.

@@ -21,7 +21,7 @@ track: Data Engineering
 categories:
 - Data Engineering
 - Data Analytics
-published: false
+published: true
 ---
 
 ### Titre :  

@@ -43,7 +43,7 @@ track: Data Engineering
 categories:
 - Data Engineering
 - Data Autres
-published: false
+published: true
 ---
 
 À l’heure où les flux de données explosent en volume, où les infrastructures analytiques évoluent rapidement, la gestion des ressources est un défi majeur.

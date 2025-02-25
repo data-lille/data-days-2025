@@ -4,7 +4,7 @@ short_bio: "Emmanuel-Lin Toulemonde recherche deux choses : apprendre et partage
 avatar: https://pycon.lt/_next/image?url=https%3A%2F%2Fpretalx.com%2Fmedia%2Favatars%2Ftoul_kswZRVV.jpg&w=256&q=75
 linkedin: ''
 website: https://github.com/eltoulemonde
-published: false
+published: true
 ---
 
 Emmanuel-Lin Toulemonde recherche deux choses : apprendre et partager.

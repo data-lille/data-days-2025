@@ -4,7 +4,7 @@ short_bio: "Julie Adalian - Data Scientist au sein de Lesaffre International dep
 avatar: https://lh3.googleusercontent.com/a/ACg8ocJKFyEdvZJ5aIOhqG7mFHPiqcpAbmgIqBNU-KGvkRX1R8m0VbI1Cg=s96-c
 linkedin: ''
 website: ''
-published: false
+published: true
 ---
 
 Julie Adalian - Data Scientist au sein de Lesaffre International depuis plus de 3 ans. 

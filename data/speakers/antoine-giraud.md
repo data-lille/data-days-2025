@@ -5,7 +5,7 @@ short_bio: "Je suis un ingénieur passionné en mobilité (\U0001F68D\U0001F689\
 avatar: https://lh3.googleusercontent.com/a/ACg8ocJ6q-btWBRNHd1SxB1SWSCkFvEmdWMBsBsdV5EFlWb9CDq1E6D1=s96-c
 linkedin: ''
 website: ''
-published: false
+published: true
 ---
 
 Je suis un ingénieur passionné en mobilité (🚍🚉🚲) et expert en intelligence décisionnelle.

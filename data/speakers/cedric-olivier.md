@@ -4,7 +4,7 @@ short_bio: "Dans la data depuis plus de 20 ans, j'ai connu les programmes en Pro
 avatar: https://lh3.googleusercontent.com/a/ACg8ocKy-kfgqtKGm6VcV6a0IvZPB-DtgNejsCdZ7EixsTzL8WNYsQ=s96-c
 linkedin: ''
 website: ''
-published: false
+published: true
 ---
 
 Dans la data depuis plus de 20 ans, j'ai connu les programmes en ProCobol, le PL/SQL d'Oracle, les bases de données distribuées sur Teradata, la bascule vers le monde Bigdata Hadoop et aujourd'hui le Cloud Public.

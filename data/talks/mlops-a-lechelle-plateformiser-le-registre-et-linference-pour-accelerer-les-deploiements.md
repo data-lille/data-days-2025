@@ -19,7 +19,7 @@ start_time: 09:00
 track: Data Science & IA
 categories:
 - Data Science & IA
-published: false
+published: true
 ---
 
 L’intelligence artificielle est désormais au cœur de toutes les organisations. Les plateformes de données facilitent la création de modèles performants, mais **le déploiement reste souvent artisanal**, nécessitant la recréation de registres, API et runners pour chaque projet.

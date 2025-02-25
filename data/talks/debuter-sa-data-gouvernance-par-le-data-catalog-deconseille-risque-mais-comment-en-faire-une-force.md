@@ -25,7 +25,7 @@ start_time: 09:00
 track: Data Governance
 categories:
 - Data Governance
-published: false
+published: true
 ---
 
 Il n'existe pas de recette miracle pour bien lancer sa gouvernance de la donnée mais il existe quelques ingrédients à éviter… et débuter par le choix de l'outil en fait partie. Cependant si on le fait en connaissance de cause, quels bénéfices cela peut-il nous apporter ? Comment transformer ce point en atout ? 

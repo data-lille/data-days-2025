@@ -23,7 +23,7 @@ start_time: 09:00
 track: Data Ethics & Applications
 categories:
 - Data Ethics & Applications
-published: false
+published: true
 ---
 
 In a **zombie apocalypse-style** dilemma, survival isn’t just about outrunning the undead—it’s about **confronting ethical data decisions**, because even in chaos, **privacy and fairness matter**! 

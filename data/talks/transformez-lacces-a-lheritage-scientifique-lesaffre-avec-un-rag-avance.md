@@ -37,7 +37,7 @@ categories:
 - Data Engineering
 - Data Analytics
 - Data Science & IA
-published: false
+published: true
 ---
 
 Fondé en 1853, **Lesaffre** s'est imposé comme le leader mondial de la fermentation. Mais rester en tête sur un marché de plus en plus compétitif ne repose que sur deux piliers essentiels : une R&D dotée de moyens d’innover et une capacité à capitaliser sur un savoir-faire accumulé depuis des décennies.
