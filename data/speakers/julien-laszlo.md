@@ -1,7 +1,7 @@
 ---
 name: "Julien Laszlo"
 short_bio: "Antonin Braun est le directeur technique du cabinet de conseil en Intelligence Artificielle Aquila Data Enabler et est responsable des équipes de Machine learning depuis 7 ans."
-avatar: https://lh3.googleusercontent.com/a/ACg8ocI51DsaqeReZsnpRSuudvoMJbGYegoFPFrfWpoA1JcDUpwXNW11=s96-c
+avatar: https://media.licdn.com/dms/image/v2/C5603AQGnCX6xjk352w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1542011174879?e=1746057600&v=beta&t=kYhZNOS2DGi4t9OxeolDNo8ibPfZ5Woe3rU8hgcZAyA
 linkedin: ''
 website: ''
 published: true

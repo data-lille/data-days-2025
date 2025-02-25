@@ -1,7 +1,7 @@
 ---
 name: "Fred Jacquet"
 short_bio: "With over 20 years of experience navigating the intersection of **AI**, **data**, and **ethics**, I’ve seen enough technological '*apocalypses*' to know what separates hype from reality."
-avatar: https://media.licdn.com/dms/image/v2/D4E03AQEaWLDZypwFXg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1725688411931?e=1739404800&v=beta&t=6v5sd5077KZPkWn1XSY5CpxR38jRqxrDVNShDmJ3g0Y
+avatar: https://media.licdn.com/dms/image/v2/D4E03AQEaWLDZypwFXg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725688411951?e=1746057600&v=beta&t=7p4M022-_WlrS1MPZW7TRvBq-fz_NW2K8GY87EZlYo0
 linkedin: ''
 website: ''
 published: true

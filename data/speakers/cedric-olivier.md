@@ -1,7 +1,7 @@
 ---
 name: "Cedric OLIVIER"
 short_bio: "Dans la data depuis plus de 20 ans, j'ai connu les programmes en ProCobol, le PL/SQL d''Oracle, les bases de données distribuées sur Teradata, la bascule vers le monde Bigdata Hadoop et aujourd''hui le Cloud Public."
-avatar: https://lh3.googleusercontent.com/a/ACg8ocKy-kfgqtKGm6VcV6a0IvZPB-DtgNejsCdZ7EixsTzL8WNYsQ=s96-c
+avatar: https://media.licdn.com/dms/image/v2/C4E03AQGeIszu-SIaXg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1652297776597?e=1746057600&v=beta&t=PfPqeM-jn9bsym06q_ZfN7e4HIAo5XRiCQk1xLaZ2hU
 linkedin: ''
 website: ''
 published: true
