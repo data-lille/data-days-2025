@@ -5,8 +5,8 @@ speakers:
 - aurelien-massiot
 short_description: "En 2023, les **bases de données vectorielles** suscitent un vif
   intérêt, en témoignent les statistiques de recherche de Google Trends. [...]  En en codant une en Python à partir de rien, c'est ce que nous allons voir."
-start_time: 09:00
-track: Data Science & IA
+start_time: 14:30
+track: Amphi Migeon
 categories:
 - Data Science & IA
 published: true

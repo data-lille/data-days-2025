@@ -5,8 +5,8 @@ kind: conference_longue
 speakers:
 - adrien-legrand
 short_description: "Nous aborderons dans cette présentation les étapes de mise en production, les défis techniques rencontrés, les points et les questions notables que nous nous sommes posé, et enfin les leçons apprises au cours de ce projet."
-start_time: 09:00
-track: Data Science & IA
+start_time: 15:30
+track: Amphi Migeon
 categories:
 - Data Science & IA
 published: true
