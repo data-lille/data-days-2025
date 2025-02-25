@@ -76,8 +76,8 @@ def main():
     root_dir = Path(__file__).parent
     data_dir = root_dir / "data"
 
-    speakers_dir = data_dir / "speakers"
-    talks_dir = data_dir / "talks"
+    speakers_dir = data_dir / "speakers2"
+    talks_dir = data_dir / "talks2"
 
     Path(speakers_dir).mkdir(parents=True, exist_ok=True)
     Path(talks_dir).mkdir(parents=True, exist_ok=True)
