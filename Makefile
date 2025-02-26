@@ -36,6 +36,12 @@ unpublish_all:
 	find data/talks -name "*.md" -exec sed -i '' 's/published: true/published: false/' {} \;
 	find data/speakers -name "*.md" -exec sed -i '' 's/published: true/published: false/' {} \;
 
+parse_selection: 
+	.venv/bin/python script/parse_selection.py ./selection.json
+
+download_avatars:
+	.venv/bin/python script/download_avatars.py
+
 clean:
 	rm -rf build .venv __pycache__
 
