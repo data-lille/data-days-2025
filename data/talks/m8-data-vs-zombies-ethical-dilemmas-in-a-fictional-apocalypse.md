@@ -4,7 +4,7 @@ kind: conference_courte
 speakers:
 - fred-jacquet
 short_description: "In a **zombie apocalypse-style** dilemma, survival isn’t just about outrunning the undead—it’s about **confronting ethical data decisions**, because even in chaos, **privacy and fairness matter**!"
-start_time: 16:30
+start_time: "16:30"
 track: Amphi Migeon
 categories:
 - Data Ethics & Applications

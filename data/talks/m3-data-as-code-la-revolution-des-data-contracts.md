@@ -4,7 +4,7 @@ kind: conference_longue
 speakers:
 - cedric-olivier
 short_description: 'Dans un monde où les données sont le nouvel or, une transformation silencieuse est en cours.'
-start_time: 11:00
+start_time: "11:00"
 track: Amphi Migeon
 categories:
 - Data Engineering

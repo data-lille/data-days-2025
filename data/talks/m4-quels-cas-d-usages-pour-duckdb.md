@@ -4,7 +4,7 @@ kind: conference_courte
 speakers:
 - antoine-giraud
 short_description: '🦆 DuckDB croit en popularité dans notre écosystème data, mais où peut il être utilisé ?'
-start_time: 13:30
+start_time: "13:30"
 track: Amphi Migeon
 categories:
 - Data Engineering

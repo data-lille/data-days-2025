@@ -4,7 +4,7 @@ kind: conference_longue
 speakers:
 - samuel-boisgontier
 short_description: 'Que vous soyez novice ou expérimenté avec Terraform, ce talk vous donnera les clés pour transformer vos workflows DataOps afin de créer des environnements BigQuery robustes, évolutifs et faciles à gérer. Rejoignez-nous pour découvrir comment "Ecrire du Terraform pour ne plus écrire du Terraform" !'
-start_time: 14:00
+start_time: "14:00"
 track: Amphi Chappe
 categories:
 - Data Engineering

@@ -4,7 +4,7 @@ kind: conference_longue
 speakers:
 - henri-maxime-ducoulombier
 short_description: 'Si _dbt_ est partout aujourd’hui, son adoption précoce a parfois conduit à des implémentations sans gouvernance et sans toutes les fonctionnalités que l’outil propose aujourd’hui.'
-start_time: 15:30
+start_time: "15:30"
 track: Amphi Migeon
 categories:
 - Data Engineering

@@ -4,7 +4,7 @@ kind: conference_courte
 speakers:
 - julie-adalian
 short_description: 'Vous découvrirez ainsi comment transformer un corpus documentaire complexe en un véritable levier d’innovation et, qui sait, repartirez avec de nouvelles idées pour appliquer ces technologies à vos bases de connaissance.*'
-start_time: 14:00
+start_time: "14:00"
 track: Amphi Migeon
 categories:
 - Data Engineering

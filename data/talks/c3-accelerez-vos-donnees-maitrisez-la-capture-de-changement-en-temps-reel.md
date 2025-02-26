@@ -4,8 +4,8 @@ kind: conference_courte
 speakers:
 - benjamin-djidi
 short_description: "Ce talk explore la **Capture de Changement** (Change Data Capture, ou CDC), une méthode révolutionnaire pour déplacer vos données en temps réel avec efficacité."
-start_time: 13:30
-track: Data Engineering
+start_time: "13:30"
+track: Amphi Chappe 
 categories:
 - Data Engineering
 - Data Analytics

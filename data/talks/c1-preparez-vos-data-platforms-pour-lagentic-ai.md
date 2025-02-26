@@ -4,7 +4,7 @@ kind: conference_longue
 speakers:
 - laurent-letourmy
 short_description: 'La révolution est en marche : en 2025, **moins de 50% des usages de données reposeront sur la Business Intelligence traditionnelle**.'
-start_time: 09:45
+start_time: "09:45"
 track: Amphi Migeon
 categories:
 - Data Engineering

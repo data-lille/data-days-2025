@@ -1,6 +1,6 @@
 from datetime import datetime, time, timedelta
 from pathlib import Path
-from typing import Any, ClassVar
+from typing import Any, ClassVar, Optional, List
 
 import frontmatter  # type: ignore
 from pydantic import BaseModel, field_validator, model_validator
@@ -69,12 +69,11 @@ class Sponsors(BaseModel, ListRetrieveMixin):
 
 
 talks_infos = {
-    "gouter": {"duration_minutes": 15, "label": "Goûter"},
-    "pleniere_courte": {"duration_minutes": 20, "label": "Plénière courte"},
-    "pleniere_longue": {"duration_minutes": 30, "label": "Plénière longue"},
+    "pause_15": {"duration_minutes": 15, "label": "Pause (15min)"},
+    "pause_30": {"duration_minutes": 30, "label": "Pause (30min)"},
+    "repas_midi": {"duration_minutes": 90, "label": "Repas"},
     "conference_courte": {"duration_minutes": 30, "label": "Conférence courte"},
     "conference_longue": {"duration_minutes": 60, "label": "Conférence longue"},
-    "repas": {"duration_minutes": 90, "label": "Repas"},
 }
 
 
@@ -83,7 +82,7 @@ class Talks(BaseModel, ListRetrieveMixin):
 
     title: str
     kind: str
-    # kind_humanized: str
+    kind_humanized: str
     speakers: list[str]  # TODO : check the speaker exists
     short_description: str
     start_time: time
@@ -100,16 +99,24 @@ class Talks(BaseModel, ListRetrieveMixin):
     def validate_kind(cls, kind):
         if kind not in talks_infos:
             raise ValueError(f"must be in {talks_infos.keys()}")
-        humanized = talks_infos[kind]["label"]
         return kind
 
     @model_validator(mode="before")
     @classmethod
     def add_end_time_and_duration(cls, data: Any) -> Any:
-        start_time = datetime.strptime(data["start_time"], "%H:%M")
-        duration: int = talks_infos[data["kind"]]["duration_minutes"]  # type: ignore
-        data["end_time"] = (start_time + timedelta(minutes=duration)).time()
-        data["duration"] = duration
+        data["kind_humanized"] = talks_infos[data["kind"]]["label"]
+        if data["kind"] in ["pause_15", "pause_30", "repas_midi"]:
+            data["speakers"] = []
+            data["categories"] = []
+            data["is_extra"] = True
+            data["picture"] = ""
+            data["track"] = ""
+            data["short_description"] = ""
+        if "start_time" in data and data.get("start_time"):
+            start_time = datetime.strptime(data["start_time"], "%H:%M")
+            duration: int = talks_infos[data["kind"]]["duration_minutes"]  # type: ignore
+            data["end_time"] = (start_time + timedelta(minutes=duration)).time()
+            data["duration"] = duration
         return data
 
 

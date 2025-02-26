@@ -4,7 +4,7 @@ kind: conference_longue
 speakers:
 - emmanuel-lin-toulemonde
 short_description: "À l'issue de talk, vous repartirez en ayant compris l'utilité d'une model platform, identifié ses fonctionnalités principales, et vue une proposition d'implémentation. De quoi accélérer tous vos projets d'IA."
-start_time: 11:00
+start_time: "11:00"
 track: Amphi Migeon
 categories:
 - Data Science & IA

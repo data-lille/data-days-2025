@@ -4,7 +4,7 @@ kind: conference_longue
 speakers:
 - elodie-paresys
 short_description: "Il n'existe pas de recette miracle pour bien lancer sa gouvernance de la donnée mais il existe quelques ingrédients à éviter…"
-start_time: 09:45
+start_time: "09:45"
 track: Amphi Migeon
 categories:
 - Data Governance
