@@ -4,7 +4,7 @@
 <article class="speaker">
 
     <h2>{{ item.metadata.title }}</h2>
-    <h3>De {{ item.metadata.start_time | format_time }} à {{ item.metadata.end_time | format_time }} dans la track {{ item.metadata.track }} </h3>
+    <h3>De {{ item.metadata.start_time | format_time }} à {{ item.metadata.end_time | format_time }} dans l'{{ item.metadata.track }} </h3>
     <section>
       {{ item.content | markdown | safe }}
 

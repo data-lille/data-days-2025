@@ -54,7 +54,7 @@ def format_datetime(dt: datetime):
 
 @app.template_filter()
 def format_time(dt: time):
-    return babel_format_time(dt, format="short")
+    return babel_format_time(dt, format="short", locale="fr_FR")
 
 
 # TODO
