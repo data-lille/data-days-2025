@@ -17,13 +17,14 @@ La technologie avance et les attentes des utilisateurs évoluent. Notre moteur d
 En effet, **2 à 4 % des requêtes** sortent du cadre des requêtes traditionnelles, et le moteur de recherche actuel peine à leur fournir des réponses pertinentes (voire même juste *peine à fournir une réponse*).  
 Pour relever ce défi sans pour autant refondre entièrement le moteur de recherche, nous avons développé une solution en deux temps :  
 
-### 1. Classification  
+#### 1. Classification  
 Grâce aux **sentence transformers**, nous distinguons les requêtes "OK pour le search" et celles nécessitant une reformulation.
 Cette étape permet d’identifier les recherches qui ne sont pas directement interprétables par le moteur de recherche.  
 
-### 2. Reformulation  
+#### 2. Reformulation  
 Pour les requêtes classées "à reformuler", nous transformons la requête initiale en plusieurs requêtes ciblées grâce à un **LLM**.  
 Par exemple, une requête vague comme *"construire mur chambre"* est convertie en plusieurs requêtes plus précises telles que :  
+
 - "carreaux de plâtre" 
 - "colle pour carreaux de plâtre"
 - "enduit"
