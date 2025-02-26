@@ -1,5 +1,5 @@
 ---
-avatar: /static/images/speakers/aurelien-massiot.jpg
+avatar: images/speakers/aurelien-massiot.jpg
 linkedin: ''
 name: Aurélien Massiot
 published: true

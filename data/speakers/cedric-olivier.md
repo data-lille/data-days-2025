@@ -1,5 +1,5 @@
 ---
-avatar: /static/images/speakers/cedric-olivier.jpg
+avatar: images/speakers/cedric-olivier.jpg
 linkedin: ''
 name: Cedric OLIVIER
 published: true

@@ -1,5 +1,5 @@
 ---
-avatar: /static/images/speakers/antonin-braun.jpg
+avatar: images/speakers/antonin-braun.jpg
 linkedin: ''
 name: Antonin Braun
 published: true

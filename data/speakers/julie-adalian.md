@@ -1,5 +1,5 @@
 ---
-avatar: /static/images/speakers/julie-adalian.jpg
+avatar: images/speakers/julie-adalian.jpg
 linkedin: ''
 name: Julie ADALIAN
 published: true

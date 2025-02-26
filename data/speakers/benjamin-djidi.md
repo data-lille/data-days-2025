@@ -1,5 +1,5 @@
 ---
-avatar: /static/images/speakers/benjamin-djidi.jpg
+avatar: images/speakers/benjamin-djidi.jpg
 linkedin: ''
 name: Benjamin Djidi
 published: true

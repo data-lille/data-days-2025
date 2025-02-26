@@ -1,5 +1,5 @@
 ---
-avatar: /static/images/speakers/henri-maxime-ducoulombier.jpg
+avatar: images/speakers/henri-maxime-ducoulombier.jpg
 linkedin: ''
 name: Henri-Maxime DUCOULOMBIER
 published: true

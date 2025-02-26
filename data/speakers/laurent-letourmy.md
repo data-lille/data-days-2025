@@ -1,5 +1,5 @@
 ---
-avatar: /static/images/speakers/laurent-letourmy.jpg
+avatar: images/speakers/laurent-letourmy.jpg
 linkedin: ''
 name: Laurent LETOURMY
 published: true

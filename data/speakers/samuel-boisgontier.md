@@ -1,5 +1,5 @@
 ---
-avatar: /static/images/speakers/samuel-boisgontier.jpg
+avatar: images/speakers/samuel-boisgontier.jpg
 linkedin: ''
 name: Samuel Boisgontier
 published: true

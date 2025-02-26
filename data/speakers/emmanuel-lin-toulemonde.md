@@ -1,5 +1,5 @@
 ---
-avatar: /static/images/speakers/emmanuel-lin-toulemonde.jpg
+avatar: images/speakers/emmanuel-lin-toulemonde.jpg
 linkedin: ''
 name: Emmanuel-Lin Toulemonde
 published: true

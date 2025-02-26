@@ -1,5 +1,5 @@
 ---
-avatar: /static/images/speakers/elodie-paresys.jpg
+avatar: images/speakers/elodie-paresys.jpg
 linkedin: www.linkedin.com/in/elodie-paresys-6b1b19a4
 name: Elodie Paresys
 published: true

@@ -63,7 +63,7 @@ class Speaker(BaseModel, ListRetrieveMixin):
     def validate_avatar(cls, avatar: str) -> str:
         if avatar.startswith("http"):
             return avatar
-        avatar_path = ROOT_PATH / avatar.lstrip("/")
+        avatar_path = ROOT_PATH / "static" / avatar.lstrip("/")
         if not avatar_path.exists():
             raise ValueError(f"Avatar file does not exist: {avatar_path}")
         return avatar

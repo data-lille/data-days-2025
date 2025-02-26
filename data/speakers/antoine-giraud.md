@@ -1,5 +1,5 @@
 ---
-avatar: /static/images/speakers/antoine-giraud.jpg
+avatar: images/speakers/antoine-giraud.jpg
 linkedin: ''
 name: Antoine Giraud
 published: true

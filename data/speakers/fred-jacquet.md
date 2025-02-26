@@ -1,5 +1,5 @@
 ---
-avatar: /static/images/speakers/fred-jacquet.jpg
+avatar: images/speakers/fred-jacquet.jpg
 linkedin: ''
 name: Fred Jacquet
 published: true

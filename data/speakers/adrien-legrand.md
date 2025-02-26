@@ -1,5 +1,5 @@
 ---
-avatar: /static/images/speakers/adrien-legrand.jpg
+avatar: images/speakers/adrien-legrand.jpg
 linkedin: ''
 name: Adrien Legrand
 published: true
