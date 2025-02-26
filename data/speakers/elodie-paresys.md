@@ -1,10 +1,12 @@
 ---
-name: "Elodie Paresys"
-short_bio: "Plus de 20 ans d'expérience dont + 10 en DATA et IA, avec une expertise spécifique en gouvernance de la donnée."
-avatar: https://media.licdn.com/dms/image/v2/C4D03AQFb53Ua2mbvMg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1594020087622?e=1746057600&v=beta&t=BQoYwVALN-x7VuGF75x3otGfqYSRM4f4lMxiPCjMYC0
-linkedin: 'www.linkedin.com/in/elodie-paresys-6b1b19a4'
-website: ''
+avatar: /static/images/speakers/elodie-paresys.jpg
+linkedin: www.linkedin.com/in/elodie-paresys-6b1b19a4
+name: Elodie Paresys
 published: true
+short_bio: Plus de 20 ans d'expérience dont + 10 en DATA et IA, avec une expertise
+  spécifique en gouvernance de la donnée.
+slug: elodie-paresys
+website: ''
 ---
 
 www.linkedin.com/in/elodie-paresys-6b1b19a4

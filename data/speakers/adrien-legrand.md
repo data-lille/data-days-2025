@@ -1,11 +1,12 @@
 ---
-name: Adrien Legrand
-short_bio: 'ML Engineer chez Sfeir depuis début 2024, je suis titulaire d''un doctorat
-  en ML appliqué.'
-avatar: https://media.licdn.com/dms/image/v2/C5603AQEdonNW_6yMCQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517403532017?e=1746057600&v=beta&t=WRcOf9ST5o8z4e3Hs6s-Q0biHncDbE7XY0LjmzT3O4s
+avatar: /static/images/speakers/adrien-legrand.jpg
 linkedin: ''
-website: ''
+name: Adrien Legrand
 published: true
+short_bio: ML Engineer chez Sfeir depuis début 2024, je suis titulaire d'un doctorat
+  en ML appliqué.
+slug: adrien-legrand
+website: ''
 ---
 
 ML Engineer chez Sfeir depuis début 2024, je suis titulaire d'un doctorat en ML appliqué.

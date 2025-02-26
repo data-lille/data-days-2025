@@ -58,6 +58,16 @@ class Speaker(BaseModel, ListRetrieveMixin):
     website: str = ""
     talks: list["Talks"] = []
 
+    @field_validator("avatar")
+    @classmethod
+    def validate_avatar(cls, avatar: str) -> str:
+        if avatar.startswith("http"):
+            return avatar
+        avatar_path = ROOT_PATH / avatar.lstrip("/")
+        if not avatar_path.exists():
+            raise ValueError(f"Avatar file does not exist: {avatar_path}")
+        return avatar
+
 
 class Sponsors(BaseModel, ListRetrieveMixin):
     PATH: ClassVar[str] = "sponsors"

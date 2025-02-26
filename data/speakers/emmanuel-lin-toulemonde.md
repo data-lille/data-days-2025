@@ -1,10 +1,11 @@
 ---
-name: "Emmanuel-Lin Toulemonde"
-short_bio: "Emmanuel-Lin Toulemonde recherche deux choses : apprendre et partager."
-avatar: https://media.licdn.com/dms/image/v2/C4D03AQGpDPXAp7lVQQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1615379099923?e=1746057600&v=beta&t=95WKM1UlufYb2eom8FlhYM2QSPWOLUSPCnJreEbWH6M
+avatar: /static/images/speakers/emmanuel-lin-toulemonde.jpg
 linkedin: ''
-website: https://github.com/eltoulemonde
+name: Emmanuel-Lin Toulemonde
 published: true
+short_bio: 'Emmanuel-Lin Toulemonde recherche deux choses : apprendre et partager.'
+slug: emmanuel-lin-toulemonde
+website: https://github.com/eltoulemonde
 ---
 
 Emmanuel-Lin Toulemonde recherche deux choses : apprendre et partager.

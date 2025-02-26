@@ -1,11 +1,12 @@
 ---
-name: "Antoine Giraud"
-short_bio: "Je suis un ingénieur passionné en mobilité (\U0001F68D\U0001F689\U0001F6B2\
-  ) et expert en intelligence décisionnelle."
-avatar: https://media.licdn.com/dms/image/v2/C4D03AQG2Orctig4ycg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1532385599460?e=1746057600&v=beta&t=R1HPvuEn9yJ49PSXgRnsWJlN-NKAr30qv7Gti9XvI3c
+avatar: /static/images/speakers/antoine-giraud.jpg
 linkedin: ''
-website: ''
+name: Antoine Giraud
 published: true
+short_bio: "Je suis un ingénieur passionné en mobilité (\U0001F68D\U0001F689\U0001F6B2)
+  et expert en intelligence décisionnelle."
+slug: antoine-giraud
+website: ''
 ---
 
 Je suis un ingénieur passionné en mobilité (🚍🚉🚲) et expert en intelligence décisionnelle.

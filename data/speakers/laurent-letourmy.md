@@ -1,10 +1,12 @@
 ---
-name: "Laurent LETOURMY"
-short_bio: "Depuis 2020, Laurent Letourmy est nommé Head of Data de Devoteam France. Il est également associé fondateur de 50Partners."
-avatar: https://lh3.googleusercontent.com/a/ACg8ocIxFfYcrq6GplrtXpFD3H6FDkZ8x0Ab8qcWigZmrzBmZEKBhuZQ=s96-c
+avatar: /static/images/speakers/laurent-letourmy.jpg
 linkedin: ''
-website: ''
+name: Laurent LETOURMY
 published: true
+short_bio: Depuis 2020, Laurent Letourmy est nommé Head of Data de Devoteam France.
+  Il est également associé fondateur de 50Partners.
+slug: laurent-letourmy
+website: ''
 ---
 
 Ingénieur EPITA, il créé dès sa première année d’école une société éditant un logiciel dans le domaine des bases de données.
