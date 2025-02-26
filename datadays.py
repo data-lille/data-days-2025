@@ -74,7 +74,7 @@ def speakers_listing(lang="fr"):
     )
 
 
-@app.route("/2025/<lang>/speakers/<slug>")
+@app.route("/2025/<lang>/speakers/<slug>/")
 def speakers_details(slug, lang="fr"):
     speaker = Speaker.get_item(slug)
     talks = []
