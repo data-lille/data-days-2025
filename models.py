@@ -29,7 +29,7 @@ class ListRetrieveMixin:
 
     @classmethod
     def get_all(cls):
-        return load_data(ROOT_PATH, cls)
+        return sorted(load_data(ROOT_PATH, cls), key=lambda x: x["metadata"]["slug"])
 
     @classmethod
     def get_item(cls, slug):
@@ -140,12 +140,19 @@ class Schedule:
     def __init__(self):
         self.talks = Talks.get_all()
         self.tracks = list(sorted(set(t["metadata"]["track"] for t in self.talks)))
+        self._talks_by_track = self._organize_by_track()
 
-        start_day = datetime(2000, 1, 1, hour=9, minute=00)
-        end_day = datetime(2000, 1, 1, hour=18, minute=0)
-        self.start_times = generate_time_interval_between(
-            start_day, end_day, interval=5
-        )
+    def _organize_by_track(self):
+        talks_by_track = {}
+        for track in self.tracks:
+            track_talks = [t for t in self.talks if t["metadata"]["track"] == track]
+            talks_by_track[track] = sorted(
+                track_talks, key=lambda x: x["metadata"]["start_time"]
+            )
+        return talks_by_track
+
+    def get_talks_by_track(self, track):
+        return self._talks_by_track.get(track, [])
 
     def get_for_track_and_time(self, track, start_time):
         for talk in self.talks:

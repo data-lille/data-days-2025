@@ -154,8 +154,15 @@ def calendar(lang="fr"):
 
 @app.route("/2025/<lang>/programme/")
 def schedule(lang="fr"):
+    schedule = Schedule()
+    # Créer un dictionnaire des speakers indexé par leur slug
+    speakers = {s["metadata"]["slug"]: s for s in Speaker.get_all()}
     return render_template(
-        f"{lang}/schedule.jinja2.html", page_name="schedule", lang=lang
+        f"{lang}/schedule.jinja2.html",
+        page_name="schedule",
+        lang=lang,
+        schedule=schedule,
+        speakers=speakers,
     )
 
 

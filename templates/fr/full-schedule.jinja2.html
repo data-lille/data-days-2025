@@ -1,61 +1,58 @@
 {% extends '_layout.jinja2' %}
 
-{% block header %}{% endblock header %}
+{% block header %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/schedule.css') }}">
+{% endblock header %}
 {% block footer %}{% endblock footer %}
 
-{% set rowspans = [] %}
-
 {% block content %}
-  <table>
-    <thead class="rooms">
-      <tr>
-        <th></th>
+<div class="container">
+    <header>
+        <h1 class="header">Programme des data days {{ schedule.day }}</h1>
+    </header>
+    
+    <div class="amphitheaters" aria-label="Amphithéâtres">
         {% for room in schedule.rooms %}
-          <th scope="col">{{ room }}</th>
+            <h2 class="amphi">{{ room }}</h2>
         {% endfor %}
-      </tr>
-    </thead>
-      <thead class="day">
-        <tr>
-          <th colspan="{{ (schedule.rooms | length) + 1 }}">{{ schedule.day }}</th>
-        </tr>
-      </thead>
-
-      <tbody>
+    </div>
+    
+    <main class="schedule">
         {% for start_time in schedule.schedule.start_times %}
-        <tr>
-            {% if start_time.minute % 30 == 0 %}
-            <th scope="row">{{ start_time | format_time }}</th>
-            {% else %}
-            <th></th>
-            {% endif %}
-            {% for track in schedule.schedule.tracks %} 
-                {% set talk = schedule.schedule.get_for_track_and_time(track, start_time) %}
-                {% if not talk %}
-                    <td></td>
+            <div class="time-row">
+                {% if start_time.minute % 30 == 0 %}
+                    <time class="time" datetime="{{ start_time.strftime('%H:%M') }}">{{ start_time | format_time }}</time>
                 {% else %}
-                <td rowspan="{{talk.metadata.duration / 5}}" class="{{ talk.metadata.kind | slug }}" lang="fr">
-                    <a href="{{ url_for('talks_details', slug=talk.metadata.slug, lang=lang) }}" target="_parent">
-                    {{ talk.metadata.title }}
-                    </a>
-                    <aside class="type">
-                        {{ talk.metadata.kind }}<br>
-                        {{ talk.metadata.duration }} min |
-                    fr
-                    
-                    
-                    </aside>
-                    <aside class="speakers">
-                        {% for speaker in talk.metadata.speakers %}
-                        <a href="{{ url_for('speakers_details', slug=speaker, lang=lang) }}" target="_parent">{{ speaker }}</a>
-                        {% endfor %}
-                    </aside>
-                </td>
+                    <time class="time"></time>
                 {% endif %}
-            {% endfor %}
+                
+                <div class="sessions">
+                    {% for track in schedule.schedule.tracks %}
+                        {% set talk = schedule.schedule.get_for_track_and_time(track, start_time) %}
+                        {% if not talk %}
+                            <div class="session invisible" aria-hidden="true"></div>
+                        {% else %}
+                            {% set kind_class = talk.metadata.kind | lower | replace(' ', '_') %}
+                            <article class="session session-{{ kind_class }}" lang="{{ talk.metadata.language | default('fr') }}">
+                                <h3 class="session-title">
+                                    <a href="{{ url_for('talks_details', slug=talk.metadata.slug, lang=lang) }}" target="_parent">
+                                        {{ talk.metadata.title }}
+                                    </a>
+                                </h3>
+                                <div class="talk-metadata">
+                                    {{ talk.metadata.kind }} {{ talk.metadata.duration }} min | {{ talk.metadata.language | default('fr') }}
+                                </div>
+                                <div class="speaker">
+                                    {% for speaker in talk.metadata.speakers %}
+                                        <a href="{{ url_for('speakers_details', slug=speaker, lang=lang) }}" target="_parent">{{ speaker }}</a>{% if not loop.last %}, {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </article>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
         {% endfor %}
-    </tr>
-      </tbody>
-
-  </table>
+    </main>
+</div>
 {% endblock content %}

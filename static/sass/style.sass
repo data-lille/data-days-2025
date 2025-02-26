@@ -123,6 +123,13 @@ sup
     border-color: $cyan
     text-decoration: inherit
 
+  &.disabled
+    background-color: #999
+    border-color: #999
+    cursor: not-allowed
+    pointer-events: none
+    opacity: 0.7
+
 .important
   color: $pink
   font-weight: 600
@@ -319,28 +326,68 @@ footer
       background: $cream
       border-radius: 10px
       margin: 3em auto
-      min-width: min-content
-      padding: 2em 6em
-      width: 30%
+      padding: 3em 2em
+      max-width: 800px
+      text-align: center
 
-      p
-        width: initial
+      div
+        margin: 0 auto
 
-      a
+      p 
+        margin-bottom: 1em
+
+      a 
         color: $pink
-        font-size: 1.5em
+        font-size: 1.2em
         font-weight: 600
         transition: color 0.5s
+        display: inline-block
 
-        &:hover
+        &:hover 
           color: $cyan
 
     .sponsors
-      margin: auto
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      gap: 2rem
+      margin: 2em auto
+      max-width: 800px
+      padding: 0 1rem
 
-      a
-        margin: initial
+      @media (max-width: 1000px)
+        grid-template-columns: 1fr
+        max-width: 400px
+        gap: 1rem
 
+      section
+        background: white
+        padding: 1.5rem
+        border-radius: 8px
+        box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.1)
+        display: flex
+        flex-direction: column
+        align-items: center
+        text-align: center
+
+        h3
+          margin: 0.5em 0
+          font-size: 1.2em
+
+          .avatar
+            width: 150px
+            height: 150px
+            margin-bottom: 1rem
+            border-radius: 8px
+            box-shadow: none
+
+          a
+            color: $dark
+            text-decoration: none
+            transition: color 0.3s
+
+            &:hover
+              color: $pink
+              text-decoration: underline
 
 main
   flex: 1
@@ -384,13 +431,7 @@ main
       width: 100%
 
   .sponsors img
-    display: inline-block
-    line-height: 120px
-    height: 100px
-    margin: 1rem
-    object-fit: contain
-    vertical-align: middle
-    width: 200px
+    max-width: 200px
 
 
 #sponsors
@@ -870,3 +911,63 @@ nav
     flex-direction: row
     background-color: transparent
     padding: 0
+
+.speakers-grid 
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 768px)
+    grid-template-columns: repeat(2, 1fr);
+  
+.speaker-card 
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.1);
+  
+  h3 
+    margin-top: 0;
+    
+    a 
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      
+      &:hover 
+        text-decoration: none;
+        
+        span 
+          text-decoration: underline $cyan;
+    
+  
+
+
+  .avatar 
+    margin-right: 1rem;
+
+  p 
+    margin-bottom: 0;
+
+#calendar
+  .talks-list
+    margin-top: 2em
+    
+    h4
+      margin: 1.5em 0 0.5em 0
+      color: $pink
+    
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+    
+    li
+      margin: 0.5em 0
+      
+      strong
+        color: $pink

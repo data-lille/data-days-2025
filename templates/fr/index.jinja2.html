@@ -112,21 +112,25 @@
 
 
     {% if sponsors %}
-    <section style="margin-top: 100px;">
+    <section style="margin-top: 100px;" >
       <p>    Sans vous, notre événement ne serait pas possible.    </p>
-      {% for sponsor in sponsors %}
-      {% include 'fr/fragments/sponsors_logo.jinja2.html' %}
-      {% endfor %}
+
+      <div class="sponsors">
+        {% for sponsor in sponsors %}
+        {% include 'fr/fragments/sponsors_logo.jinja2.html' %}
+        {% endfor %}
+      </div>
     </section>
     {% endif %}
 
     <section class="contact-sponsor">
-      <p>
-        L'équipe est disponible pour répondre à vos questions sur
-        l'événement.
-        <br/>
-        <a href="mailto:meetup.data.lille@gmail.com">meetup.data.lille@gmail.com</a>
-      </p>
+      <div>
+        <p>
+          L'équipe est disponible pour répondre à vos questions sur
+          l'événement.
+        </p>
+        <a style="font-size: 1em;" href="mailto:meetup.data.lille@gmail.com">meetup.data.lille@gmail.com</a>
+      </div>
     </section>
   </article>
 {% endblock content %}

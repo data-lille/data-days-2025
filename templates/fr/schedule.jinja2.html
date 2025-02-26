@@ -22,11 +22,41 @@
       </section>
     </section>
 
+    <section id="register">
+      <h3>Inscriptions</h3>
+
+      <p>
+        Les inscriptions sont ouvertes jusqu’à la <b>date limite du 15 mars 2025</b> et dans la limite des <b>300 places</b> disponibles.      </p>
+      <a class="button" href="https://www.helloasso.com/associations/data-lille/evenements/inscription-data-days-2025">Inscriptions Data Days Lille 2025</a>
+
+    </section>
+
     <section id="calendar">
 
-      <h3>Planning</h3>
+      <h3>Programme de la journée</h3>
 
       <img src="{{ url_for('static', filename='images/programme.svg') }}" alt="Calendrier des Data Days Lille 2025" />
+
+      <section class="talks-list">
+        {% for track in schedule.tracks %}
+          <h4>{{ track }}</h4>
+          <ul>
+            {% for talk in schedule.get_talks_by_track(track) %}
+              {% if not talk['metadata']['is_extra'] %}
+                <li>
+                  <strong>{{ talk['metadata']['start_time'] | format_time }} - {{ talk['metadata']['end_time'] | format_time }}</strong> : 
+                  <a href="{{ url_for('talks_details', slug=talk['metadata']['slug'], lang=lang) }}">
+                    {{ talk['metadata']['title'] }}</a>
+                  par 
+                    {% for speaker_slug in talk['metadata']['speakers'] %}
+                      <a href="{{ url_for('speakers_details', slug=speaker_slug, lang=lang) }}">{{ speakers[speaker_slug]['metadata']['name'] }}</a>{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </section>
 
       <p hidden>
         Le calendrier est disponible ci-dessous, sur une
@@ -50,13 +80,12 @@
     </section>
 
     <section id="register">
-      <h3>Devenez Speaker</h3>
+      <h3>Call for Papers terminé</h3>
       <p>
-        Que vous soyez expert ou passionné, soumettez dès maintenant votre proposition de conférence.
-        Nous recherchons des présentations captivantes de 30 ou 60 minutes sur tous les aspects de la data.
+        L'appel à conférences est maintenant terminé. Le programme sera bientôt annoncé.
+        Merci à tous les speakers qui ont soumis leurs propositions !
       </p>
-      <a class="button" href="https://conference-hall.io/data-days-lille-2025">Devenez Speaker</a>
-
+      <a class="button disabled" href="https://conference-hall.io/data-days-lille-2025">Call for Papers terminé</a>
     </section>
 
   </article>

@@ -6,14 +6,14 @@
     align-items: center;
   "
 >
+  {% if sponsor.metadata.logo %}
+  <img
+    class=""
+    src="{{ url_for('static', filename=sponsor.metadata.logo) }}"
+    loading="lazy"
+  />
+  {% endif %}
   <h3 id="sponsors-{{ sponsor.metadata.slug }}">
-    {% if sponsor.metadata.logo %}
-    <img
-      class="avatar"
-      src="{{ url_for('static', filename=sponsor.metadata.logo) }}"
-      loading="lazy"
-    />
-    {% endif %}
     <a
       href="{{ url_for('sponsors_details', lang=lang, slug=sponsor.metadata.slug) }}"
     >

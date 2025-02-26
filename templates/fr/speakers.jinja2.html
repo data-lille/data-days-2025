@@ -5,33 +5,35 @@
     <h2>Speakers</h2>
 
     {% if speakers %}
-    {% for speaker in speakers %}
-      <section>
-        <h3 id="speaker-{{ speaker.metadata.slug }}">
-          <a href="{{ url_for('speakers_details', lang=lang, slug=speaker.metadata.slug) }}">
-            {% if speaker.metadata.avatar %}
-              <img class="avatar" src="{{ speaker.metadata.avatar }}" loading="lazy">
-            {% endif %}
-            <span>{{ speaker.metadata.name }}</span>
-          </a>
-        </h3>
-        {% if speaker.metadata.short_bio %}
-          {{ speaker.metadata.short_bio | markdown | safe }}
-        {% else %}
-          <p>Pas de biographie.</p>
-        {% endif %}
-      </section>
-    {% endfor %}
+    <div class="speakers-grid">
+      {% for speaker in speakers %}
+        <section class="speaker-card">
+          <h3 id="speaker-{{ speaker.metadata.slug }}">
+            <a href="{{ url_for('speakers_details', lang=lang, slug=speaker.metadata.slug) }}">
+              {% if speaker.metadata.avatar %}
+                <img class="avatar" src="{{ speaker.metadata.avatar }}" loading="lazy">
+              {% endif %}
+              <span>{{ speaker.metadata.name }}</span>
+            </a>
+          </h3>
+          {% if speaker.metadata.short_bio %}
+            {{ speaker.metadata.short_bio | markdown | safe }}
+          {% else %}
+            <p>Pas de biographie.</p>
+          {% endif %}
+        </section>
+      {% endfor %}
+    </div>
     {% else %}
     <section id="register">
-      <h3>Devenez Speaker</h3>
+      <h3>Call for Papers terminé</h3>
 
       <p>
-        Que vous soyez expert ou passionné, soumettez dès maintenant votre proposition de conférence.
-        Nous recherchons des présentations captivantes de 30 ou 60 minutes sur tous les aspects de la data.
+        L'appel à conférences est maintenant terminé. 
+        Le programme sera bientôt annoncé.
+        Merci à tous les speakers qui ont soumis leurs propositions !
       </p>
-      <a class="button" href="https://conference-hall.io/data-days-lille-2025">Devenez Speaker</a>
-
+      <a class="button disabled" href="https://conference-hall.io/data-days-lille-2025">Call for Papers terminé</a>
     </section>
 
     <br>
@@ -41,15 +43,13 @@
       <h3>Dates Importantes</h3>
 
       <ul>
-        <li><b>9 décembre 2024 :</b> ouverture des propositions de conférence.</li>
-        <li><b>9 février 2025 :</b> fermeture des propositions de conférence.</li>
+        <li><s><b>9 décembre 2024 :</b> ouverture des propositions de conférence.</s></li>
+        <li><s><b>9 février 2025 :</b> fermeture des propositions de conférence.</s></li>
         <li><b>23 février 2025 :</b> réponses aux propositions de conférence.</li>
         <li><b>28 février 2025 :</b> programme des conférences définitif.</li>
         <li><b>28 mars 2025 :</b> Data Days.</li>
       </ul>
     </section>
-
-
 
     {% endif %}
   </article>
