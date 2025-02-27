@@ -11,7 +11,7 @@
           <h3 id="speaker-{{ speaker.metadata.slug }}">
             <a href="{{ url_for('speakers_details', lang=lang, slug=speaker.metadata.slug) }}">
               {% if speaker.metadata.avatar %}
-                <img class="avatar" src="{{ speaker.metadata.avatar }}" loading="lazy">
+                <img class="avatar" src="{{ url_for('static', filename=speaker.metadata.avatar) }}" loading="lazy">
               {% endif %}
               <span>{{ speaker.metadata.name }}</span>
             </a>
