@@ -10,6 +10,7 @@ categories:
 - Data Engineering
 - Data Autres
 published: true
+slides: /slides/c4-google-bigquery-terraform-l-art-de-ne-plus-ecrire-de-terraform-dans-vos-workflows-dataops.pdf
 ---
 
 À l’heure où les flux de données explosent en volume, où les infrastructures analytiques évoluent rapidement, la gestion des ressources est un défi majeur.

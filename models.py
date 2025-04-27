@@ -100,7 +100,7 @@ class Talks(BaseModel, ListRetrieveMixin):
     duration: int
     track: str
     categories: list[str]
-    download_links: list[str] = [""]
+    download_links: list[str] = []  # Changed from [""] to []
     is_extra: bool = False  # should be in all tracks (ie: gouter, petit dejeuner)
     picture: str = ""  # the picture to display in the program
 

@@ -10,6 +10,7 @@ categories:
 - Data Engineering
 - Data Analytics
 published: true
+slides: ""
 ---
 
 🦆 DuckDB croit en popularité dans notre écosystème data, mais où peut il être utilisé ?

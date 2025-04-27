@@ -1,6 +1,6 @@
 .venv:
 	python3 -m venv .venv
-	.venv/bin/pip install -r requirements.txt 
+	.venv/bin/pip install -r requirements.txt
 
 install: .venv
 
@@ -16,7 +16,7 @@ serve: .venv
 
 serve-static: .venv
 	@echo -e "\nHome page available at \033[0;33mhttp://localhost:8000/\033[0m\n"
-	cd build && ../.venv/bin/python ../http_server.py 8000 
+	cd build && ../.venv/bin/python ../http_server.py 8000
 
 schedule: .venv
 	.venv/bin/python schedule.py
@@ -36,13 +36,16 @@ unpublish_all:
 	find data/talks -name "*.md" -exec sed -i '' 's/published: true/published: false/' {} \;
 	find data/speakers -name "*.md" -exec sed -i '' 's/published: true/published: false/' {} \;
 
-parse_selection: 
+parse_selection:
 	.venv/bin/python script/parse_selection.py ./selection.json
 
 download_avatars:
 	.venv/bin/python script/download_avatars.py
 
+slugify_slides:
+	.venv/bin/python scripts/slugify_slides.py
+
 clean:
 	rm -rf build .venv __pycache__
 
-.PHONY: install static serve serve-static deploy clean
+.PHONY: install static serve serve-static deploy clean slugify_slides

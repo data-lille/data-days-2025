@@ -10,6 +10,7 @@ categories:
 - Data Engineering
 - Data Governance
 published: true
+slides: ""
 ---
 
 Dans un monde où les données sont le nouvel or, une transformation silencieuse est en cours. Imaginez une architecture data moderne, où chaque élément est soigneusement orchestré pour créer une symphonie de données. Nous vous invitons à plonger dans l'univers fascinant des **Data Contracts**, une approche qui redéfinit les règles du jeu.

@@ -9,13 +9,14 @@ track: Amphi Chappe
 categories:
 - Data Science & IA
 published: true
+slides: ""
 ---
 
 L’intelligence artificielle est désormais au cœur de toutes les organisations. Les plateformes de données facilitent la création de modèles performants, mais **le déploiement reste souvent artisanal**, nécessitant la recréation de registres, API et runners pour chaque projet.
 
-Ce talk propose une approche innovante pour **standardiser et automatiser** ces étapes en quelques clics ou lignes de commande. 
+Ce talk propose une approche innovante pour **standardiser et automatiser** ces étapes en quelques clics ou lignes de commande.
 
-En 2025, il est crucial de mettre en places des **models platforms** qui intègrent registre de modèles, déploiement, A/B testing et production shadow en toute simplicité. 
+En 2025, il est crucial de mettre en places des **models platforms** qui intègrent registre de modèles, déploiement, A/B testing et production shadow en toute simplicité.
 
 Une **démonstration en live** montrera comment, grâce à des technologies open source, un modèle peut être mis en production en moins de 5 minutes.
 

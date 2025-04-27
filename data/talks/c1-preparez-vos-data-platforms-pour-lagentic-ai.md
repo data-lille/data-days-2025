@@ -12,6 +12,7 @@ categories:
 - Data Science & IA
 - Data Governance
 published: true
+slides: /slides/c1-preparez-vos-data-platforms-pour-lagentic-ai.pdf
 ---
 
 La révolution est en marche : en 2025, **moins de 50% des usages de données reposeront sur la Business Intelligence traditionnelle**. Pourquoi ? Parce que l'IA agentique bouleverse tout, transformant vos données d'un simple actif en un moteur décisionnel autonome.

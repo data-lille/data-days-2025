@@ -10,6 +10,7 @@ categories:
 - Data Engineering
 - Data Governance
 published: true
+slides: /slides/m7-moderniser-un-projet-dbt-legacy-tests-observabilite-et-migration-sans-risque.pdf
 ---
 
 Si _dbt_ est partout aujourd’hui, son adoption précoce a parfois conduit à des implémentations sans gouvernance et sans toutes les fonctionnalités que l’outil propose aujourd’hui.

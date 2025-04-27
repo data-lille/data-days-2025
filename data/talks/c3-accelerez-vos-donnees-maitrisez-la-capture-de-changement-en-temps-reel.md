@@ -11,6 +11,7 @@ categories:
 - Data Engineering
 - Data Analytics
 published: true
+slides: /slides/c3-accelerez-vos-donnees-maitrisez-la-capture-de-changement-en-temps-reel.pdf
 ---
 
 Comment tirer parti de la vitesse et de la fluidité des données dans un monde en constante évolution ? Ce talk explore la **Capture de Changement** (Change Data Capture, ou CDC), une méthode révolutionnaire pour déplacer vos données en temps réel avec efficacité.
