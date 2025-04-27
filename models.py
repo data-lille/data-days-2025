@@ -103,6 +103,7 @@ class Talks(BaseModel, ListRetrieveMixin):
     download_links: list[str] = []  # Changed from [""] to []
     is_extra: bool = False  # should be in all tracks (ie: gouter, petit dejeuner)
     picture: str = ""  # the picture to display in the program
+    slides: str = ""  # Optional, empty string by default
 
     @field_validator("kind")
     @classmethod
@@ -110,6 +111,18 @@ class Talks(BaseModel, ListRetrieveMixin):
         if kind not in talks_infos:
             raise ValueError(f"must be in {talks_infos.keys()}")
         return kind
+
+    @field_validator("slides")
+    @classmethod
+    def validate_slides(cls, slides: str) -> str:
+        if not slides:  # Si vide, on accepte
+            return slides
+        if slides.startswith("http"):  # Si c'est une URL externe, on accepte
+            return slides
+        slides_path = ROOT_PATH / "static" / slides.lstrip("/")
+        if not slides_path.exists():
+            raise ValueError(f"Slides file does not exist: {slides_path}")
+        return slides
 
     @model_validator(mode="before")
     @classmethod

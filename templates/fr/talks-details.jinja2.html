@@ -2,18 +2,28 @@
 
 {% block content %}
 <article class="speaker">
-
     <h2>{{ item.metadata.title }}</h2>
+
+    {% if item.metadata.slides %}
+    <div class="talk-slides">
+      <a href="{{ url_for('static', filename=item.metadata.slides) }}" class="button" target="_blank" rel="noopener">
+        📎 Télécharger les slides
+      </a>
+    </div>
+    {% endif %}
     <h3>De {{ item.metadata.start_time | format_time }} à {{ item.metadata.end_time | format_time }} dans l'{{ item.metadata.track }} </h3>
+
+
+    <h3>Speakers</h3>
+    <div>
+        {% for speaker in speakers %}
+        <a href="{{ url_for('speakers_details', lang=lang, slug=speaker.metadata.slug) }}"> {{ speaker.metadata.name }} </a>
+        {% endfor %}
+    </div>
+
+
     <section>
       {{ item.content | markdown | safe }}
-
-      <h3>Speakers</h3>
-      <div>
-          {% for speaker in speakers %}
-          <a href="{{ url_for('speakers_details', lang=lang, slug=speaker.metadata.slug) }}"> {{ speaker.metadata.name }} </a>
-          {% endfor %}
-      </div>
     </section>
 </article>
-  {% endblock content %}
+{% endblock content %}

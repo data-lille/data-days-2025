@@ -11,7 +11,7 @@ categories:
 - Data Analytics
 - Data Science & IA
 published: true
-slides: "/slides/m5-transformez-lacces-a-lheritage-scientifique-lesaffre-avec-un-rag-avance"
+slides: "/slides/m5-transformez-lacces-a-lheritage-scientifique-lesaffre-avec-un-rag-avance.pdf"
 ---
 
 Fondé en 1853, **Lesaffre** s'est imposé comme le leader mondial de la fermentation. Mais rester en tête sur un marché de plus en plus compétitif ne repose que sur deux piliers essentiels : une R&D dotée de moyens d’innover et une capacité à capitaliser sur un savoir-faire accumulé depuis des décennies.
