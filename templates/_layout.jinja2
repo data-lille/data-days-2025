@@ -18,7 +18,7 @@
 <html lang="{{ lang }}">
   <head>
     {% block head %}
-    <title>{{ title }} - Data Days 2025</title>
+    <title>{{ title }} - Data Days 2026</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -37,6 +37,19 @@
         true
       );
     </script>
+
+    <meta
+      name="description"
+      content="Data Days 2025, la conférence d'une journée dédiée à la data et à l'IA, avec des conférences, des quick talks, des ateliers et des stands de sponsors pour découvrir les dernières innovations du secteur."
+    />
+    <meta name="author" content="Data Lille" />
+    <meta name="keywords" content="data, IA, intelligence artificielle, machine learning, conférence, Lille, France" />
+    <meta property="og:title" content="{{ title }} - Data Days 2026" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://days.data-lille.fr{{ url_for('static', filename='images/favicon.png') }}"
+    />
     {% endblock head %}
   </head>
 
