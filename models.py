@@ -13,7 +13,7 @@ def load_data(root_path: Path, kind: type[BaseModel]) -> list[dict]:
     data = []
 
     print(f"Loading {kind.PATH}")  # type: ignore
-    for f in (Path(root_path) / "data" / kind.PATH).glob("*.md"):  # type: ignore
+    for f in (Path(root_path) / "data" / "current" / kind.PATH).glob("*.md"):  # type: ignore
         parsed = frontmatter.load(f)
         validated = kind.model_validate(parsed.metadata)
         if not validated.published:  # type: ignore

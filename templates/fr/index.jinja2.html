@@ -1,39 +1,47 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
-  <img class="datadays-logo" src="/2025/static/images/data_days_banner_white.png" />
+  <img class="datadays-logo" src="/2026/static/images/data_days_banner_white.png" />
 
   <article class="coverboard">
     <section class="datadays-presentation">
-      <h1>Bienvenue aux data days Lille 2025 !</h1>
+      <h1>Bienvenue aux data days Lille 2026 !</h1>
 
       <aside>
-        <span>1</span><sup>ère</sup> édition
+        <span>2</span><sup>ème</sup> édition
       </aside>
 
-      <p class="datadays-date">Le 28 mars 2025</p>
+      <p class="datadays-date">Courant 2026</p>
 
       <p>
-        Participez à la première édition de <b>la seule conférence uniquement dédiée à la Data et l'IA sur Lille</b>.
-        <br/>
-        <br/>
-        Data Lille, une association de bénévoles, vous invite à une journée conçue pour rassembler les professionnels et passionnés de la donnée.
+        Bonne nouvelle ! Les Data Days reviennent en 2026 pour une nouvelle édition encore plus passionnante et enrichissante. <br>
+        Préparez-vous à plonger dans l'univers fascinant de la data, à découvrir les dernières tendances et innovations, et à échanger avec des experts du domaine.
       </p>
 
-      <ul>
+      <!-- <ul>
         <li>
           <a class="button register" href="https://www.helloasso.com/associations/data-lille/evenements/inscription-data-days-2025">S’inscrire</a>
         </li>
         <li>
           <a class="button schedule" href="https://conference-hall.io/data-days-lille-2025">Devenez Speaker</a>
         </li>
-      </ul>
+      </ul> -->
     </section>
   </article>
 
-  <article>
+  <article id="schedule">
     <h2>Programme</h2>
-    <section>
+    <section class="event-description">
+      <p>
+        Une journée dédiée à la data et à l'IA, avec des conférences, des quick
+        talks, des ateliers et des stands de sponsors pour découvrir les dernières
+        innovations du secteur.
+      </p>
+
+      <p>
+        Nous allons ouvrir les appels à présentation prochainement et vous tiendrons au courant du programme.
+      </p>
+<!--
         N'hésitez pas à nous soumettre vos présentations <a href="https://conference-hall.io/data-days-lille-2025">ici</a>.
 
         <br/>
@@ -48,9 +56,9 @@
 
         <br/>
 
-      <a class="button" href="{{ url_for('schedule', lang=lang) }}">Plus de détails</a>
+      {#<a class="button" href="{{ url_for('schedule', lang=lang) }}">Plus de détails</a> #}-->
     </section>
-
+<!--
     <section class="event-description">
       <section>
         <aside>Le 28 mars 2025, à Lille</aside>
@@ -79,14 +87,14 @@
           <strong>Polytech Lille</strong>
           Avenue Paul Langevin, 59655 Villeneuve-d'Ascq
         </address>
-        <a class="button" href="{{ url_for('venue', lang=lang) }}">
+      {#  <a class="button" href="{{ url_for('venue', lang=lang) }}"> #}
           Plus de détails
         </a>
       </section>
 
       {% include 'fr/fragments/map_fullscreen.jinja2.html' %}
     </section>
-  </article>
+  </article> -->
 
   <article class="afpy">
     <section>

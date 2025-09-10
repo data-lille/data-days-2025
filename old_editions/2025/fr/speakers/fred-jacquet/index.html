@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    
+    <title>Speakers - Data Days 2025</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="shortcut icon"
+      href="/2025/static/images/favicon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="/2025/static/css/style.css?1b57ff9"
+    />
+    <script>
+      /* Stupid hack for iOS :hover */ document.addEventListener(
+        "touchstart",
+        function () {},
+        true
+      );
+    </script>
+    
+  </head>
+
+  <body id="speakers_listing">
+    
+    <nav>
+      <div class="logo">
+        <a href="/">
+          <img src="/2025/static/images/data_days_banner.png"></img>
+        </a>
+      </div>
+      <div class="menu-overlay" id="menu-overlay">
+        <ul class="menu">
+        
+          <li class="">
+            <a
+              href="/2025/?lang=fr"
+              >À propos</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/programme/"
+              >Programme</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/venue/"
+              >Venir</a
+            >
+          </li>
+        
+          <li class="active">
+            <a
+              href="/2025/fr/speakers/"
+              >Speakers</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/sponsors/"
+              >Sponsors</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/actualites/"
+              >Actualités</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/conduct/"
+              >Code de conduite</a
+            >
+          </li>
+        
+        </ul>
+      </div>
+
+      <div class="wrapper-right">
+        <a class="button" href="https://www.helloasso.com/associations/data-lille/evenements/inscription-data-days-2025">S’inscrire</a>
+        <div class="menu-toggle" id="menu-toggle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+
+    </nav>
+
+    
+
+    <main>
+<article class="speaker">
+
+    <h2>Fred Jacquet</h2>
+    <section>
+      
+      <img class="avatar" src="/2025/static/images/speakers/fred-jacquet.jpg" loading="lazy">
+
+      
+      
+     <h3>Biographie</h3>
+      <p>With over 20 years of experience navigating the intersection of <strong>AI</strong>, <strong>data</strong>, and <strong>ethics</strong>, I’ve seen enough technological "<em>apocalypses</em>" to know what separates hype from reality. </p>
+
+<p>As a researcher, speaker, and strategic advisor, I’ve guided companies in developing ethical, data-driven, and AI-enabled business strategies. </p>
+
+<p>From roles as Solution Architect to CTO and Chief Innovation Officer, I’ve led organizations through transformative journeys, leveraging advanced analytics, cutting-edge AI, and human-centered innovation to drive meaningful change.
+From presenting findings at the “<strong>Summit International Databricks AI+Data</strong>” to addressing ethical dilemmas at <strong>“Big Data &amp; AI” in Paris</strong>, my mission at <a href="https://www.linkedin.com/in/jacquetfred/">AI[4]HumanNexus</a>, remains clear: <em>explore the real-world impacts of technology while debunking the myths and exaggerated fears that surround it</em>.</p>
+
+      
+
+      <h3>Présentations</h3>
+      <div>
+          
+          <a href="/2025/fr/presentations/data-vs-zombies-ethical-dilemmas-in-a-fictional-apocalypse/"> Data vs. Zombies: Ethical Dilemmas in a Fictional Apocalypse </a> (Amphi Migeon) <br>
+          
+      </div>
+    </section>
+</article>
+  </main>
+
+    
+    <footer>
+      <ul>
+        <li><a href="mailto:meetup.data.lille@gmail.com">Email</a></li>
+        <li>
+          <a href="https://github.com/data-lille/data-days-2025">GitHub</a>
+          forké depuis
+          <a href="https://github.com/AFPy/pyconfr-2024">PyconFr</a>
+        </li>
+        <li><a href="https://frozen-flask.readthedocs.io/">Frozen-Flask</a></li>
+        <li><a href="https://data-lille.fr/">© 2025 Data Lille</a></li>
+      </ul>
+    </footer>
+    
+  </body>
+
+  <script>
+const menuToggle = document.getElementById('menu-toggle');
+const menuOverlay = document.getElementById('menu-overlay');
+
+menuToggle.addEventListener('click', function(event) {
+  this.classList.toggle('active');
+  menuOverlay.classList.toggle('active');
+  if (menuOverlay.classList.contains('active')) {
+    document.body.style.overflow = 'hidden'; // Empêche le défilement
+  } else {
+    document.body.style.overflow = ''; // Réinitialise le défilement
+  }
+
+  event.stopPropagation(); // Empêche la propagation du clic pour qu'il ne ferme pas immédiatement le menu
+});
+
+document.addEventListener('click', function(event) {
+    menuToggle.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = ''; // Réinitialise le défilement
+});
+  </script>
+</html>

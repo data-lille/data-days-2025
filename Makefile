@@ -7,7 +7,8 @@ install: .venv
 static: .venv
 	.venv/bin/flask --app=datadays freeze
 	# add an index manually to the french directory
-	cp build/2025/index.html build/2025/fr/index.html
+	cp -r old_editions/* build
+	cp build/2026/index.html build/2026/fr/index.html
 	cp static/homepage.html build/index.html
 
 serve: .venv
@@ -15,14 +16,12 @@ serve: .venv
 	.venv/bin/flask --app=datadays run --debug
 
 serve-static: .venv
-	@echo -e "\nHome page available at \033[0;33mhttp://localhost:8000/\033[0m\n"
-	cd build && ../.venv/bin/python ../http_server.py 8000
+	@echo -e "\nHome page available at \033[0;33mhttp://localhost:9898/\033[0m\n"
+	cd build && ../.venv/bin/python ../http_server.py 9898
 
 schedule: .venv
 	.venv/bin/python schedule.py
 
-deploy: static
-	rsync -vazh --delete build/2024/ datadays@deb2.afpy.org:/var/www/pycon.fr/2024/
 
 square_logo:
 	# makes a square logo using imagemagick

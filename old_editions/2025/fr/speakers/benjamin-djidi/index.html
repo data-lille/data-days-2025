@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    
+    <title>Speakers - Data Days 2025</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="shortcut icon"
+      href="/2025/static/images/favicon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="/2025/static/css/style.css?1b57ff9"
+    />
+    <script>
+      /* Stupid hack for iOS :hover */ document.addEventListener(
+        "touchstart",
+        function () {},
+        true
+      );
+    </script>
+    
+  </head>
+
+  <body id="speakers_listing">
+    
+    <nav>
+      <div class="logo">
+        <a href="/">
+          <img src="/2025/static/images/data_days_banner.png"></img>
+        </a>
+      </div>
+      <div class="menu-overlay" id="menu-overlay">
+        <ul class="menu">
+        
+          <li class="">
+            <a
+              href="/2025/?lang=fr"
+              >À propos</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/programme/"
+              >Programme</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/venue/"
+              >Venir</a
+            >
+          </li>
+        
+          <li class="active">
+            <a
+              href="/2025/fr/speakers/"
+              >Speakers</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/sponsors/"
+              >Sponsors</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/actualites/"
+              >Actualités</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/conduct/"
+              >Code de conduite</a
+            >
+          </li>
+        
+        </ul>
+      </div>
+
+      <div class="wrapper-right">
+        <a class="button" href="https://www.helloasso.com/associations/data-lille/evenements/inscription-data-days-2025">S’inscrire</a>
+        <div class="menu-toggle" id="menu-toggle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+
+    </nav>
+
+    
+
+    <main>
+<article class="speaker">
+
+    <h2>Benjamin Djidi</h2>
+    <section>
+      
+      <img class="avatar" src="/2025/static/images/speakers/benjamin-djidi.jpg" loading="lazy">
+
+      
+      
+     <h3>Biographie</h3>
+      <p>Benjamin Djidi is the co-founder and CEO of Popsink, a company established in 2021 that offers services to launch and manage continuous data pipelines without scripting. Prior to founding Popsink, he accumulated nearly a decade of experience in technology leadership and data strategy, holding several Data Engineering and Transformation positions at Amazon across multiple geographies. He later joined SIXT to lead the Data &amp; Analytics teams.</p>
+
+      
+
+      <h3>Présentations</h3>
+      <div>
+          
+          <a href="/2025/fr/presentations/accelerez-vos-donnees-maitrisez-la-capture-de-changement-en-temps-reel/"> Accélérez Vos Données : Maîtrisez la Capture de Changement en Temps Réel </a> (Amphi Chappe) <br>
+          
+      </div>
+    </section>
+</article>
+  </main>
+
+    
+    <footer>
+      <ul>
+        <li><a href="mailto:meetup.data.lille@gmail.com">Email</a></li>
+        <li>
+          <a href="https://github.com/data-lille/data-days-2025">GitHub</a>
+          forké depuis
+          <a href="https://github.com/AFPy/pyconfr-2024">PyconFr</a>
+        </li>
+        <li><a href="https://frozen-flask.readthedocs.io/">Frozen-Flask</a></li>
+        <li><a href="https://data-lille.fr/">© 2025 Data Lille</a></li>
+      </ul>
+    </footer>
+    
+  </body>
+
+  <script>
+const menuToggle = document.getElementById('menu-toggle');
+const menuOverlay = document.getElementById('menu-overlay');
+
+menuToggle.addEventListener('click', function(event) {
+  this.classList.toggle('active');
+  menuOverlay.classList.toggle('active');
+  if (menuOverlay.classList.contains('active')) {
+    document.body.style.overflow = 'hidden'; // Empêche le défilement
+  } else {
+    document.body.style.overflow = ''; // Réinitialise le défilement
+  }
+
+  event.stopPropagation(); // Empêche la propagation du clic pour qu'il ne ferme pas immédiatement le menu
+});
+
+document.addEventListener('click', function(event) {
+    menuToggle.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = ''; // Réinitialise le défilement
+});
+  </script>
+</html>

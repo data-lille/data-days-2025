@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    
+    <title> - Data Days 2025</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="shortcut icon"
+      href="/2025/static/images/favicon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="/2025/static/css/style.css?1b57ff9"
+    />
+    <script>
+      /* Stupid hack for iOS :hover */ document.addEventListener(
+        "touchstart",
+        function () {},
+        true
+      );
+    </script>
+    
+  </head>
+
+  <body id="speakers">
+    
+    <nav>
+      <div class="logo">
+        <a href="/">
+          <img src="/2025/static/images/data_days_banner.png"></img>
+        </a>
+      </div>
+      <div class="menu-overlay" id="menu-overlay">
+        <ul class="menu">
+        
+          <li class="">
+            <a
+              href="/2025/?lang=fr"
+              >À propos</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/programme/"
+              >Programme</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/venue/"
+              >Venir</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/speakers/"
+              >Speakers</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/sponsors/"
+              >Sponsors</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/actualites/"
+              >Actualités</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/conduct/"
+              >Code de conduite</a
+            >
+          </li>
+        
+        </ul>
+      </div>
+
+      <div class="wrapper-right">
+        <a class="button" href="https://www.helloasso.com/associations/data-lille/evenements/inscription-data-days-2025">S’inscrire</a>
+        <div class="menu-toggle" id="menu-toggle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+
+    </nav>
+
+    
+
+    <main>
+<article class="speaker">
+    <h2>Quels cas d&#39;usages pour DuckDB ?!</h2>
+
+    
+    <h3>De 13:30 à 14:00 dans l'Amphi Migeon </h3>
+
+
+    <h3>Speakers</h3>
+    <div>
+        
+        <a href="/2025/fr/speakers/antoine-giraud/"> Antoine Giraud </a>
+        
+    </div>
+
+
+    <section>
+      <p>🦆 DuckDB croit en popularité dans notre écosystème data, mais où peut il être utilisé ?</p>
+
+<p>Cette présentation permettra de faire une mise à jour sur les cas d'usages dans lesquels DuckDB peut être employé
+- démocratiser des analyses exploratoires sans infrastructure
+- analyses sur nos BDD OLTP
+- accélérer les flux de traitement de données
+- un ETL tout en SQL ? - GCS - DuckDB - BigQuery
+- embarqué dans nos app web &amp; mobile (WASM)</p>
+
+    </section>
+</article>
+</main>
+
+    
+    <footer>
+      <ul>
+        <li><a href="mailto:meetup.data.lille@gmail.com">Email</a></li>
+        <li>
+          <a href="https://github.com/data-lille/data-days-2025">GitHub</a>
+          forké depuis
+          <a href="https://github.com/AFPy/pyconfr-2024">PyconFr</a>
+        </li>
+        <li><a href="https://frozen-flask.readthedocs.io/">Frozen-Flask</a></li>
+        <li><a href="https://data-lille.fr/">© 2025 Data Lille</a></li>
+      </ul>
+    </footer>
+    
+  </body>
+
+  <script>
+const menuToggle = document.getElementById('menu-toggle');
+const menuOverlay = document.getElementById('menu-overlay');
+
+menuToggle.addEventListener('click', function(event) {
+  this.classList.toggle('active');
+  menuOverlay.classList.toggle('active');
+  if (menuOverlay.classList.contains('active')) {
+    document.body.style.overflow = 'hidden'; // Empêche le défilement
+  } else {
+    document.body.style.overflow = ''; // Réinitialise le défilement
+  }
+
+  event.stopPropagation(); // Empêche la propagation du clic pour qu'il ne ferme pas immédiatement le menu
+});
+
+document.addEventListener('click', function(event) {
+    menuToggle.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = ''; // Réinitialise le défilement
+});
+  </script>
+</html>

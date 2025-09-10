@@ -1,0 +1,973 @@
+// Colors
+$cream: #E5E2D9;
+$dark: #26201b;
+$pink: #e9006e;
+$cyan: #4aeded;
+$primary-color: #333;
+$secondary-color: #fff;
+$hover-color: #ddd;
+
+
+// Fonts
+@font-face
+  font-family: MonaSans
+  src: url(/2025/static/fonts/MonaSans[slnt,wdth,wght].woff2);
+
+
+// Common
+html
+  color: $dark
+  font-family: MonaSans
+  font-size: 1.1em
+  letter-spacing: .03em
+  line-height: 1.5
+
+body
+  display: flex
+  flex-direction: column
+  margin: 0
+  min-height: 100vh
+
+h1
+  color: $dark
+  font-size: 3em
+  font-variation-settings: "wdth" 75
+  font-weight: 750
+  line-height: 1
+  margin: 0
+  text-transform: uppercase
+
+h2
+  color: $dark
+  font-size: 3em
+  font-variation-settings: "wdth" 75
+  font-weight: 750
+  margin: 1em auto 0 auto
+  text-align: center
+  text-transform: uppercase
+
+h3
+  font-size: 2em
+  font-weight: 600
+  line-height: 1
+  margin: 1em auto
+
+h4
+  color: $dark
+
+a
+  color: $dark
+  font-variation-settings: "wdth" 95
+  font-weight: 600
+  text-decoration: underline $cyan
+
+  &:hover, &:focus
+    text-decoration: underline $cyan
+
+address
+  font-style: normal
+  white-space: pre-line
+
+ul
+  padding: 0
+
+  ul
+    padding-left: 2em
+
+  li::marker
+    color: $pink
+
+embed
+  display: block
+  float: left
+  margin: 0 1em 2em 0
+  width: 50%
+
+embed + p
+  margin-top: 2em
+
+img
+  max-width: 100%
+
+strong
+  font-variation-settings: "wdth" 95
+  font-weight: 600
+
+sup
+  line-height: 1
+  text-transform: initial
+  vertical-align: 35%
+
+*:target::before
+  content: ""
+  display: block
+  height: 10rem
+  margin-top: -10rem
+
+.button
+  background-color: $pink
+  border: 2px solid $pink
+  border-radius: 6px
+  color: white
+  display: inline-block
+  font-weight: 600
+  letter-spacing: 0.01em
+  padding: 3px 1rem
+  margin-right: 20px
+  text-transform: uppercase
+  transition: background-color 0.5s, border-color 0.5s
+  text-decoration: none
+
+  &:hover, &:focus
+    background-color: $cyan
+    border-color: $cyan
+    text-decoration: inherit
+
+  &.disabled
+    background-color: #999
+    border-color: #999
+    cursor: not-allowed
+    pointer-events: none
+    opacity: 0.7
+
+.important
+  color: $pink
+  font-weight: 600
+
+.brochures
+  display: flex
+  justify-content: space-evenly
+  list-style: none
+
+.avatar
+  border-radius: 100%
+  box-shadow: 0 0 0.2em #dddd
+  height: 3em
+  margin-right: 0.2em
+  object-fit: cover
+  vertical-align: middle
+  width: 3em
+
+
+
+// Footer
+footer
+  background: url(/2025/static/images/data_days_banner_white.png) 10% center / 10rem no-repeat
+  border-top: 1px solid $cream
+  font-size: 0.9rem
+  margin-top: 4em
+
+  ul
+    align-items: center
+    display: flex
+    justify-content: space-between
+    list-style: none
+    margin: 2em auto
+    margin-top: 4em
+    width: 40%
+
+    li
+      max-width: 8rem;
+      width: 100%;
+      padding: 5px;
+
+    a
+      font-weight: inherit
+      text-decoration: none
+
+
+// Main page
+#index
+  .datadays-logo
+    display: block
+    margin: 1em auto
+    width: 20%
+
+  .coverboard
+    align-items: center
+    // Photo de <a href="https://unsplash.com/fr/@zhuyx?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Zhu Yunxiao</a> sur <a href="https://unsplash.com/fr/photos/un-groupe-de-personnes-marchant-dans-une-ville-ac-Kw8EbQVs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+    background: url(/2025/static/images/lille.jpg) center/ cover no-repeat
+    display: flex
+    flex-direction: column
+    height: auto
+    overflow: hidden
+    padding: 3em 0
+
+  .datadays-presentation
+    background: white
+    border-radius: 1em
+    margin: auto auto auto 10%
+    padding: 2em
+    position: relative
+    width: 26%
+
+    aside
+      background: $pink
+      border-radius: 50%
+      color: white
+      font-size: 0.8em
+      font-variation-settings: "wdth" 75
+      font-weight: 750
+      height: 6em
+      line-height: 0
+      padding: 0.2em 0 0.2em 0.2em
+      position: absolute
+      right: -2rem
+      top: -2rem
+      text-align: center
+      text-transform: uppercase
+      width: 6em
+
+      sup
+        font-size: 1.1em
+        line-height: 1.5
+        text-transform: initial
+        vertical-align: 95%
+
+      span
+        font-size: 3em
+        line-height: 1.5
+
+    ul
+      display: flex
+      flex-wrap: wrap
+      list-style: none
+      gap: 1em
+      margin: 0
+
+      .button
+        margin: 0
+
+      .schedule
+        background: white
+        color: $pink
+        transition: background-color 0.5s
+
+        &:hover, &:focus
+          background-color: $cyan
+          color: white
+
+  .datadays-date
+    color: $pink
+    font-size: 1.2em
+    font-weight: 600
+
+  .details
+    display: block
+    margin: auto
+
+  .place
+    margin: 4em auto
+
+    h2
+      margin: 0 auto 0.5em auto
+      text-align: left
+
+    > section
+      display: flex
+      gap: 2em
+      justify-content: space-between
+      margin: auto
+
+      section
+        max-width: 40em
+
+    iframe
+      border-radius: 10px
+      height: 30em
+      margin: -5em 0 0 0
+
+    iframe + a
+      display: none
+
+  .afpy
+    background: $dark
+    color: white
+    display: flex
+    justify-content: center
+    gap: 1em
+    padding: 3em 0
+
+    h3
+      line-height: 1.2
+
+    section:first-of-type
+      margin: 0
+      max-width: 25em
+
+      h2
+        color: inherit
+        line-height: 1
+        margin-top: 0.5em
+        margin-bottom: 0.25em
+        text-align: left
+
+    section:last-of-type
+      margin: 0
+      max-width: 30em
+
+  .become-sponsor
+    aside
+      color: $pink
+      font-weight: 600
+      margin-top: 3em
+      text-align: center
+      text-transform: uppercase
+
+    h2
+      margin-top: 0
+
+    p
+      margin: auto
+      text-align: center
+
+    .contact-sponsor
+      background: $cream
+      border-radius: 10px
+      margin: 3em auto
+      padding: 3em 2em
+      max-width: 800px
+      text-align: center
+
+      div
+        margin: 0 auto
+
+      p 
+        margin-bottom: 1em
+
+      a 
+        color: $pink
+        font-size: 1.2em
+        font-weight: 600
+        transition: color 0.5s
+        display: inline-block
+
+        &:hover 
+          color: $cyan
+
+    .sponsors
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      gap: 2rem
+      margin: 2em auto
+      max-width: 800px
+      padding: 0 1rem
+
+      @media (max-width: 1000px)
+        grid-template-columns: 1fr
+        max-width: 400px
+        gap: 1rem
+
+      section
+        background: white
+        padding: 1.5rem
+        border-radius: 8px
+        box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.1)
+        display: flex
+        flex-direction: column
+        align-items: center
+        text-align: center
+
+        h3
+          margin: 0.5em 0
+          font-size: 1.2em
+
+          .avatar
+            width: 150px
+            height: 150px
+            margin-bottom: 1rem
+            border-radius: 8px
+            box-shadow: none
+
+          a
+            color: $dark
+            text-decoration: none
+            transition: color 0.3s
+
+            &:hover
+              color: $pink
+              text-decoration: underline
+
+main
+  flex: 1
+
+  article > *
+    margin-left: auto
+    margin-right: auto
+    max-width: 70rem
+    padding: 0 2rem
+
+    table
+      border-collapse: collapse
+      margin: 2em auto
+      width: 100%
+      text-align: center
+
+      th:first-child, td:first-child
+        width: 10%
+
+      th
+        background-color: $cream
+        font-weight: normal
+        border: 1px solid $dark
+        padding: 0.4em
+
+      td
+        border: 1px solid $dark
+        padding: 0.4em
+
+        &:not(:first-child)
+          text-align: center
+          width: 15%
+
+    iframe
+      border: 0
+      height: 25rem
+      margin: 1em 0
+      max-width: 100%
+      overflow: hidden
+      padding: 0
+      width: 100%
+
+  .sponsors img
+    max-width: 200px
+
+
+#sponsors
+  h2 + p
+    text-align: center
+
+  .sponsor
+    max-width: 32em
+
+    > a
+      display: block
+      text-align: center
+
+    .description
+      padding: 1.5rem
+      border-right: 5px solid $dark
+      border-left: 5px solid $pink
+
+
+#talks, #speakers
+  section
+    margin: 5em auto
+    padding-bottom: 1.2em
+    padding-top: 0.1em
+
+    &:nth-child(even)
+      background: #F9F9F9
+
+
+#index, #schedule
+  .event-description
+    display: flex
+    justify-content: center
+    margin: 4em auto
+    gap: 2em
+
+    section
+      background: $cream
+      border-radius: 10px
+      flex: 1
+      padding: 2em
+
+      h3
+        margin: 0 auto 1em auto
+
+      aside
+        color: $pink
+        font-weight: 600
+        margin-bottom: 1em
+        text-transform: uppercase
+
+      ul
+        list-style: inside
+
+      p:last-of-type
+        margin-bottom: 0
+
+
+#schedule
+  article
+    > p:first-of-type, > p:nth-of-type(2)
+      text-align: center
+
+  .event-description
+    section
+      position: relative
+
+  .keynotes
+    .speakers
+      display: flex
+      justify-content: space-between
+
+      a
+        text-decoration: none
+
+      dl
+        background: $cream
+        border-radius: 1em
+        width: 31%
+
+        dd
+          margin: 1rem 2rem 1rem 2.5rem
+
+        .speaker
+          font-size: 1.2em
+          font-weight: 600
+          margin-bottom: 0
+
+        .title
+          margin-top: 0.3rem
+
+        .talk
+          margin: 1.5rem 2rem 1rem 3.5rem
+          position: relative
+
+          &::before
+            color: $pink;
+            content: "\”"
+            font-size: 9rem
+            line-height: 1
+            opacity: 0.3
+            position: absolute
+            transform: translate(-3rem, -1.5rem)
+
+          a
+            font-weight: normal
+
+        img
+          border-radius: 1em 1em 0 0
+          display: block
+          width: 100%
+
+  iframe
+    border-radius: 10px
+    height: 30em
+
+
+#full-schedule
+  background: $cream
+  min-width: 65em
+  padding: 0.25em
+
+  table
+    border-spacing: 0.5rem
+    table-layout: fixed
+    width: 100%
+
+    a
+      font-variation-settings: "wdth" 100
+      font-weight: normal
+      text-decoration: none
+
+  thead
+    height: 2em
+    position: sticky
+    top: 0.5rem
+    z-index: 1
+
+    &.rooms
+      th
+        color: white
+
+      tr > :first-child::before
+        background: $dark
+        box-shadow: 0 0.75em 1em $dark
+        content: ""
+        height: 5em
+        left: 0
+        position: absolute
+        right: 0
+        outline: 1em solid $dark
+        top: -1rem
+        z-index: -1
+
+    &.day
+      top: 3rem
+      z-index: 2
+
+      th
+        background-clip: content-box
+        background-color: $dark
+        color: white
+        padding-bottom: 2rem
+
+  tr:not(:last-child)
+    height: 1px
+
+  td
+    background: white
+    border-left: 0.5em solid
+    border-radius: 0 0.3em 0.3em 0
+    box-shadow: 0 0 0.1em #ddd, 0 0 1em #ddd8
+    font-size: 0.75em
+    line-height: 1.3
+    padding: 0.5rem 0.5rem 3.5em 0.5rem
+    position: relative
+
+    &:empty
+      background: none
+      border: none
+      box-shadow: none
+
+  th
+    font-weight: 600
+
+  tbody th
+    font-weight: 400
+    position: relative
+    transform: translatey(-52%)
+    z-index: 0
+
+  tr > *:first-child
+    width: 4.5em
+
+  aside
+    &.type
+      bottom: 0.5em
+      font-size: 0.7em
+      font-variation-settings: "wdth" 90
+      left: 0.5em
+      position: absolute
+
+      &::before
+        border-radius: 0.2em
+        box-shadow: 0 0 0.2em #ddd
+        content: ""
+        display: inline-block
+        height: 1em
+        margin-right: 0.4em
+        vertical-align: -10%
+        width: 1em
+
+    &.speakers
+      font-size: 0.8em
+      line-height: 1.1
+      margin-top: 0.5em
+
+  .short-plenary
+    border-left-color: maroon
+
+    .type::before
+      background: maroo
+
+  .Conférence longue
+    border-left-color: red
+
+    .type::before
+      background: red
+
+  .Conférence courte
+    border-left-color: maroon
+
+    .type::before
+      background: maroon
+
+  .Pleinière courte
+    border-left-color: pink
+
+    .type::before
+      background: pink
+
+  .Pleinière longue
+    border-left-color: pink
+
+    .type::before
+      background: pink
+
+
+  .extra
+    border-left-color: purple
+
+    .type::before
+      background: purple
+
+
+
+#news_listing
+  section:not(:last-of-type)
+    border-bottom: 1px solid $dark
+    padding-bottom: 1em
+
+  .news-content
+    margin-top: 2em;
+
+  h3
+    display: inline-block;
+    margin-right: 3em;
+    margin-bottom: 0em;
+  
+  ul 
+    margin-left: 40px;
+
+// Mobile
+@media (max-width: 1000px)
+  html
+    font-size: 1em
+
+  h3
+    font-size: 1.4em
+
+  #index
+    .datadays-presentation
+      margin: auto
+      width: 65%
+
+      a
+        margin: 0 auto
+
+    .place > section
+      flex-direction: column
+
+      iframe
+        margin-top: 0
+
+    .afpy
+      flex-direction: column
+
+      section:first-child,
+      section:last-child
+        max-width: none
+
+    .become-sponsor
+      .contact-sponsor a
+        font-size: 1.2em
+
+  #index, #schedule
+    .event-description
+      flex-direction: column
+      gap: 2em
+
+      section
+        padding: 1em
+
+  #schedule
+    .event-description
+      .button
+        left: 1em
+    .keynotes
+      .speakers
+        flex-direction: column
+        gap: 1em
+        dl
+          width: auto
+
+  footer
+    background-position: center 40px
+
+    ul
+      flex-direction: column
+      margin-top: 120px
+
+  aside ul
+    flex-direction: column
+
+  main article table
+    font-size: 0.9em
+    width: auto
+
+  embed
+    float: none
+    margin: 0
+    width: 100%
+
+.speaker
+  text-align: center
+  section
+    background: none !important
+  .avatar
+    margin-bottom: 1em;
+
+// Menu
+nav
+  height: 3em
+  color: $cream
+  background-color: $dark
+  display: flex
+  align-items: center
+  align-content: space-between
+
+  .wrapper-right
+    display: flex
+    align-items: center
+    flex-direction: row
+
+  .logo
+    height: 100%
+    display: flex
+    align-items: center
+    margin-left: 5px
+    a
+      height: 100%
+      display: flex
+      align-items: center
+
+      img
+        height: 70%
+
+  li
+    border-bottom: 1px solid transparent
+    padding-bottom: 0.3em
+
+  li:has(a:hover)
+    border-bottom-color: $cyan
+
+  li.active
+    border-bottom-color: $pink
+    font-weight: 600
+
+    a:hover
+      text-decoration: none
+
+  a
+    color: inherit
+    font-weight: inherit
+    text-decoration: none
+
+
+.menu-toggle
+  display: none
+  flex-direction: column
+  cursor: pointer
+  height: 100%
+  margin-right: 20px
+
+  .bar
+    width: 25px
+    height: 3px
+    margin: 4px 0
+    transition: 0.3s
+    background-color: white
+    margin: auto
+
+.menu-overlay
+  position: fixed
+  background: $dark
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  display: none
+  justify-content: center
+  align-items: center
+  z-index: 1000
+  flex: 1
+
+.menu
+  list-style: none
+  text-align: center
+  overflow: hidden
+
+  li
+    a
+      display: block
+      padding: 0px 10px
+      text-decoration: none
+      transition: background-color 0.3s
+
+
+@media (max-width: 999px)
+  .logo
+    flex: 1
+
+  nav
+    li
+      padding-bottom: 0.3em
+      margin-bottom: 1em
+      font-size: 1.5em
+
+  .menu-toggle
+    display: flex
+    height: 25px
+
+  #menu-overlay.active
+    display: flex
+
+  #menu-toggle > *
+  background-color: white
+
+  .menu-toggle.active .bar:nth-child(2)
+    opacity: 0
+
+  .menu-toggle.active .bar:nth-child(1)
+    transform: translateY(7px) rotate(45deg)
+
+  .menu-toggle.active .bar:nth-child(3)
+    transform: translateY(-7px) rotate(-45deg)
+
+@media (min-width: 1000px)
+  .menu-overlay
+    position: static
+    width: auto
+    display: flex
+  .menu-toggle
+    display: none
+  .menu
+    display: flex
+    flex-direction: row
+    background-color: transparent
+    padding: 0
+
+.speakers-grid 
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 97%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 768px)
+    grid-template-columns: repeat(2, 1fr);
+  
+.speaker-card 
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.1);
+  
+  h3 
+    margin-top: 0;
+    
+    a 
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      
+      &:hover 
+        text-decoration: none;
+        
+        span 
+          text-decoration: underline $cyan;
+    
+  
+
+
+  .avatar 
+    margin-right: 1rem;
+
+  p 
+    margin-bottom: 0;
+
+#calendar
+  .talks-list
+    margin-top: 2em
+    
+    h4
+      margin: 1.5em 0 0.5em 0
+      color: $pink
+    
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+    
+    li
+      margin: 0.5em 0
+      
+      strong
+        color: $pink

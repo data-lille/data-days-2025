@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    
+    <title> - Data Days 2025</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="shortcut icon"
+      href="/2025/static/images/favicon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="/2025/static/css/style.css?1b57ff9"
+    />
+    <script>
+      /* Stupid hack for iOS :hover */ document.addEventListener(
+        "touchstart",
+        function () {},
+        true
+      );
+    </script>
+    
+  </head>
+
+  <body id="speakers">
+    
+    <nav>
+      <div class="logo">
+        <a href="/">
+          <img src="/2025/static/images/data_days_banner.png"></img>
+        </a>
+      </div>
+      <div class="menu-overlay" id="menu-overlay">
+        <ul class="menu">
+        
+          <li class="">
+            <a
+              href="/2025/?lang=fr"
+              >À propos</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/programme/"
+              >Programme</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/venue/"
+              >Venir</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/speakers/"
+              >Speakers</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/sponsors/"
+              >Sponsors</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/actualites/"
+              >Actualités</a
+            >
+          </li>
+        
+          <li class="">
+            <a
+              href="/2025/fr/conduct/"
+              >Code de conduite</a
+            >
+          </li>
+        
+        </ul>
+      </div>
+
+      <div class="wrapper-right">
+        <a class="button" href="https://www.helloasso.com/associations/data-lille/evenements/inscription-data-days-2025">S’inscrire</a>
+        <div class="menu-toggle" id="menu-toggle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+
+    </nav>
+
+    
+
+    <main>
+<article class="speaker">
+    <h2>REX : Les sentence-transformers en prod, ou comment booster un search avec des LLMs</h2>
+
+    
+    <div class="talk-slides">
+      <a href="/2025/static//slides/c5-rex-les-sentence-transformers-en-prod-ou-comment-booster-un-search-avec-des-llms.pdf" class="button" target="_blank" rel="noopener">
+        📎 Télécharger les slides
+      </a>
+    </div>
+    
+    <h3>De 15:30 à 16:30 dans l'Amphi Chappe </h3>
+
+
+    <h3>Speakers</h3>
+    <div>
+        
+        <a href="/2025/fr/speakers/adrien-legrand/"> Adrien Legrand </a>
+        
+    </div>
+
+
+    <section>
+      <p>La technologie avance et les attentes des utilisateurs évoluent. Notre moteur de recherche fonctionnait très bien pour les requêtes traditionnelles. Toutefois, les utilisateurs ont pris l’habitude des services toujours plus performants, et nous avons vu de plus en plus de requêtes en langage naturel émerger.</p>
+
+<p>En effet, <strong>2 à 4 % des requêtes</strong> sortent du cadre des requêtes traditionnelles, et le moteur de recherche actuel peine à leur fournir des réponses pertinentes (voire même juste <em>peine à fournir une réponse</em>).
+Pour relever ce défi sans pour autant refondre entièrement le moteur de recherche, nous avons développé une solution en deux temps :</p>
+
+<h4>1. Classification</h4>
+
+<p>Grâce aux <strong>sentence transformers</strong>, nous distinguons les requêtes "OK pour le search" et celles nécessitant une reformulation.
+Cette étape permet d’identifier les recherches qui ne sont pas directement interprétables par le moteur de recherche.</p>
+
+<h4>2. Reformulation</h4>
+
+<p>Pour les requêtes classées "à reformuler", nous transformons la requête initiale en plusieurs requêtes ciblées grâce à un <strong>LLM</strong>.
+Par exemple, une requête vague comme <em>"construire mur chambre"</em> est convertie en plusieurs requêtes plus précises telles que :</p>
+
+<ul>
+<li>"carreaux de plâtre"</li>
+<li>"colle pour carreaux de plâtre"</li>
+<li>"enduit"</li>
+<li>"calicot"</li>
+</ul>
+
+<p>Cette décomposition permet d’orienter le moteur de recherche vers des termes qu’il comprend et donc de répondre à quasiment toutes les requêtes, d’améliorer notablement la qualité des résultats, ainsi que l’expérience utilisateur.</p>
+
+<p>Nous aborderons dans cette présentation les étapes de mise en production, les défis techniques rencontrés, les points et les questions notables que nous nous sommes posé, et enfin les leçons apprises au cours de ce projet.</p>
+
+    </section>
+</article>
+</main>
+
+    
+    <footer>
+      <ul>
+        <li><a href="mailto:meetup.data.lille@gmail.com">Email</a></li>
+        <li>
+          <a href="https://github.com/data-lille/data-days-2025">GitHub</a>
+          forké depuis
+          <a href="https://github.com/AFPy/pyconfr-2024">PyconFr</a>
+        </li>
+        <li><a href="https://frozen-flask.readthedocs.io/">Frozen-Flask</a></li>
+        <li><a href="https://data-lille.fr/">© 2025 Data Lille</a></li>
+      </ul>
+    </footer>
+    
+  </body>
+
+  <script>
+const menuToggle = document.getElementById('menu-toggle');
+const menuOverlay = document.getElementById('menu-overlay');
+
+menuToggle.addEventListener('click', function(event) {
+  this.classList.toggle('active');
+  menuOverlay.classList.toggle('active');
+  if (menuOverlay.classList.contains('active')) {
+    document.body.style.overflow = 'hidden'; // Empêche le défilement
+  } else {
+    document.body.style.overflow = ''; // Réinitialise le défilement
+  }
+
+  event.stopPropagation(); // Empêche la propagation du clic pour qu'il ne ferme pas immédiatement le menu
+});
+
+document.addEventListener('click', function(event) {
+    menuToggle.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = ''; // Réinitialise le défilement
+});
+  </script>
+</html>

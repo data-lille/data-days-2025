@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    
+    <title> - Data Days 2025</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="shortcut icon"
+      href="/2025/static/images/favicon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="/2025/static/css/style.css?1b57ff9"
+    />
+    <script>
+      /* Stupid hack for iOS :hover */ document.addEventListener(
+        "touchstart",
+        function () {},
+        true
+      );
+    </script>
+    
+  </head>
+
+  <body id="full-schedule">
+    
+
+
+    <main>
+<div class="container">
+    <header>
+        <h1 class="header">Programme des data days Vendredi 28 mars 2025</h1>
+    </header>
+    
+    <div class="amphitheaters" aria-label="Amphithéâtres">
+        
+            <h2 class="amphi"></h2>
+        
+            <h2 class="amphi">Amphi Chappe</h2>
+        
+            <h2 class="amphi">Amphi Migeon</h2>
+        
+    </div>
+    
+    <main class="schedule">
+        
+    </main>
+</div>
+</main>
+
+    
+  </body>
+
+  <script>
+const menuToggle = document.getElementById('menu-toggle');
+const menuOverlay = document.getElementById('menu-overlay');
+
+menuToggle.addEventListener('click', function(event) {
+  this.classList.toggle('active');
+  menuOverlay.classList.toggle('active');
+  if (menuOverlay.classList.contains('active')) {
+    document.body.style.overflow = 'hidden'; // Empêche le défilement
+  } else {
+    document.body.style.overflow = ''; // Réinitialise le défilement
+  }
+
+  event.stopPropagation(); // Empêche la propagation du clic pour qu'il ne ferme pas immédiatement le menu
+});
+
+document.addEventListener('click', function(event) {
+    menuToggle.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = ''; // Réinitialise le défilement
+});
+  </script>
+</html>

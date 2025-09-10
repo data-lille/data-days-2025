@@ -7,8 +7,11 @@ import http.server
 import socketserver
 import os
 import pathlib
+import sys
 
 PORT = 8000
+if len(sys.argv) > 1:
+    PORT = int(sys.argv[1])
 DIRECTORY = "build"
 
 
