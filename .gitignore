@@ -2,6 +2,7 @@ build
 .venv
 __pycache__
 *.css
+!old_editions/**/static/css/*.css
 *.css.map
 
 # See schedule.py
