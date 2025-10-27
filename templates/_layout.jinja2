@@ -1,11 +1,5 @@
 {%- set MENU = (
   ('index', ('À propos', 'About')),
-  ('schedule', ('Programme', 'Schedule')),
-  ('venue', ('Venir', 'Venue')),
-  ('speakers_listing', ('Speakers', 'Speakers')),
-  ('sponsors_listing', ('Sponsors', 'Sponsors')),
-  ('news_listing', ('Actualités', 'News')),
-  ('conduct', ('Code de conduite', 'Code of conduct')),
 ) -%}
 {%- set TITLES = dict(MENU + (
 
@@ -54,7 +48,6 @@
   </head>
 
   <body id="{{ page_name }}">
-    {#
     {% block header %}
     <nav>
       <div class="logo">
@@ -86,7 +79,6 @@
 
     </nav>
     {% endblock header %}
-    #}
 
     <main>{% block content %}{% endblock content %}</main>
 
