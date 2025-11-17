@@ -11,90 +11,101 @@
         <span>2</span><sup>ème</sup> édition
       </aside>
 
-      <p class="datadays-date">Courant 2026</p>
+      <p class="datadays-date">Le 26 mars 2026
+        <br/> 
+        à l'Université Catholique de Lille
+      </p>
 
       <p>
         Bonne nouvelle ! Les Data Days reviennent en 2026 pour une nouvelle édition encore plus passionnante et enrichissante. <br>
         Préparez-vous à plonger dans l'univers fascinant de la data, à découvrir les dernières tendances et innovations, et à échanger avec des experts du domaine.
       </p>
 
-      <!-- <ul>
+      <ul>
         <li>
-          <a class="button register" href="https://www.helloasso.com/associations/data-lille/evenements/inscription-data-days-2025">S’inscrire</a>
+          <a class="button register disabled" href="https://www.helloasso.com/associations/data-lille/evenements/inscription-data-days-2026">Inscriptions bientôt ouvertes</a>
         </li>
         <li>
-          <a class="button schedule" href="https://conference-hall.io/data-days-lille-2025">Devenez Speaker</a>
+          <a class="button schedule" href="https://conference-hall.io/data-days-lille-2026">Devenez Speaker</a>
         </li>
-      </ul> -->
+      </ul>
     </section>
   </article>
 
   <article id="schedule">
     <h2>Programme</h2>
-    <section class="event-description">
-      <p>
-        Une journée dédiée à la data et à l'IA, avec des conférences, des quick
-        talks, des ateliers et des stands de sponsors pour découvrir les dernières
-        innovations du secteur.
-      </p>
+    
+    <p style="text-align: center; max-width: 50em">
+      Une journée dédiée à la data et à l'IA, avec des conférences, des quick talks et des stands de sponsors pour découvrir les dernières innovations du secteur.
+    </p>
 
-      <p>
-        Nous allons ouvrir les appels à présentation prochainement et vous tiendrons au courant du programme.
-      </p>
-<!--
-        N'hésitez pas à nous soumettre vos présentations <a href="https://conference-hall.io/data-days-lille-2025">ici</a>.
+    <section class="event-description margin:2em;">
+      <div style="text-align: center">
+        <p style="font-size: 1.1em; margin-bottom: 1.5em;">
+          <strong>📢 Appel à présentations ouvert !</strong><br/>
+          Vous avez un projet, une expertise ou un retour d'expérience à partager ?
+        </p>
+        <a class="button" href="https://conference-hall.io/data-days-lille-2026" style="font-size: 1.2em;">
+          Proposez votre talk
+        </a>
+      </div>
+  
 
-        <br/>
-        <br/>
-
-        Cette journée sera l'occasion :
-        <ul>
-          <li><b>D'apprendre </b> sur la data et l’IA via deux tracks de conférences (formats long et court) pour vous laisser le choix.</li>
-          <li><b>De découvrir </b> les stands des sponsors pour échanger sur leurs solutions et expertises.</li>
-          <li><b>De réseauter </b> avec vos pairs et d'élargir votre réseau.</li>
-        </ul>
-
-        <br/>
-
-      {#<a class="button" href="{{ url_for('schedule', lang=lang) }}">Plus de détails</a> #}-->
-    </section>
-<!--
-    <section class="event-description">
       <section>
-        <aside>Le 28 mars 2025, à Lille</aside>
-        <h3>Conférences & Quickies</h3>
+        <aside>📚 Apprendre</aside>
+        <h3>Conférences & Quick Talks</h3>
         <p>
-          Les différents domaines de la data sont mis à l'honneur sur cette journée.
+          Deux tracks de conférences pour explorer tous les aspects de la data et de l'IA.
         </p>
         <ul>
           <li>Data Engineering</li>
-          <li>Data Analytics</li>
-          <li>Data Science & IA</li>
-          <li>Data Governance</li>
-          <li>Data Ethics & Applications</li>
-          <li>Et plein d'autres</li>
+          <li>Data Analytics & Visualisation</li>
+          <li>Data Science & Machine Learning</li>
+          <li>Data Governance & Quality</li>
+          <li>IA Générative & Applications</li>
+          <li>Éthique & Responsabilité</li>
         </ul>
+        <p>
+          <strong>Formats variés :</strong> conférences longues (45 min) et quick talks (15 min) pour s'adapter à tous les sujets.
+        </p>
+      </section>
+
+      <section>
+        <aside>🚀 Découvrir</aside>
+        <h3>Stands Sponsors & Innovations</h3>
+        <p>
+          Rencontrez nos sponsors et découvrez leurs solutions innovantes dans le domaine de la data.
+        </p>
+        <ul>
+          <li>Échanges avec les experts</li>
+          <li>Démonstrations de solutions</li>
+          <li>Opportunités professionnelles</li>
+          <li>Goodies et animations</li>
+        </ul>
+        <p>
+          <strong>Pauses dédiées</strong> tout au long de la journée pour profiter pleinement des stands.
+        </p>
+      </section>
+
+      <section>
+        <aside>🤝 Réseauter</aside>
+        <h3>Networking & Communauté</h3>
+        <p>
+          Élargissez votre réseau professionnel et échangez avec la communauté data de la région.
+        </p>
+        <ul>
+          <li>Plus de 500 participants attendus</li>
+          <li>Petit-déjeuner d'accueil</li>
+          <li>Déjeuner convivial inclus</li>
+          <li>Pauses café & collations</li>
+        </ul>
+        <p>
+          <strong>L'occasion parfaite</strong> pour créer des connexions durables avec vos pairs.
+        </p>
       </section>
     </section>
 
   </article>
-
-  <article class="place">
-    <h2>Venir</h2>
-    <section>
-      <section>
-        <address>
-          <strong>Polytech Lille</strong>
-          Avenue Paul Langevin, 59655 Villeneuve-d'Ascq
-        </address>
-      {#  <a class="button" href="{{ url_for('venue', lang=lang) }}"> #}
-          Plus de détails
-        </a>
-      </section>
-
-      {% include 'fr/fragments/map_fullscreen.jinja2.html' %}
-    </section>
-  </article> -->
 
   <article class="afpy">
     <section>

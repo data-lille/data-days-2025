@@ -200,7 +200,7 @@ footer
     margin: auto auto auto 10%
     padding: 2em
     position: relative
-    width: 26%
+    width: 35%
 
     aside
       background: $pink
@@ -464,6 +464,7 @@ main
 #index, #schedule
   .event-description
     display: flex
+    flex-direction: column
     justify-content: center
     margin: 4em auto
     gap: 2em
@@ -473,21 +474,33 @@ main
       border-radius: 10px
       flex: 1
       padding: 2em
+      transition: transform 0.3s, box-shadow 0.3s
+
+      &:hover
+        transform: translateY(-5px)
+        box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.1)
 
       h3
         margin: 0 auto 1em auto
+        color: $dark
+        font-size: 1.5em
 
       aside
         color: $pink
         font-weight: 600
         margin-bottom: 1em
         text-transform: uppercase
+        font-size: 1.1em
 
       ul
         list-style: inside
+        margin: 1.5em 0
 
       p:last-of-type
         margin-bottom: 0
+
+      strong
+        color: $pink
 
 
 #schedule
