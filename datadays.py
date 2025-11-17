@@ -195,11 +195,11 @@ def sponsors_listing(lang="fr"):
 #     )
 
 
-# @app.route("/2026/<lang>/conduct/")
-# def conduct(lang="fr"):
-#     return render_template(
-#         f"{lang}/conduct.jinja2.html", page_name="conduct", lang=lang
-#     )
+@app.route("/2026/<lang>/conduct/")
+def conduct(lang="fr"):
+    return render_template(
+        f"{lang}/conduct.jinja2.html", page_name="conduct", lang=lang
+    )
 
 
 @app.route("/")
