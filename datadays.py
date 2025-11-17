@@ -101,14 +101,14 @@ def sponsors_listing(lang="fr"):
     )
 
 
-# @app.route("/2026/<lang>/sponsors/<slug>/")
-# def sponsors_details(slug, lang="fr"):
-#     return render_template(
-#         f"{lang}/sponsors-details.jinja2.html",
-#         page_name="sponsors_details",
-#         item=Sponsors.get_item(slug),
-#         lang=lang,
-#     )
+@app.route("/2026/<lang>/sponsors/<slug>/")
+def sponsors_details(slug, lang="fr"):
+    return render_template(
+        f"{lang}/sponsors-details.jinja2.html",
+        page_name="sponsors_details",
+        item=Sponsors.get_item(slug),
+        lang=lang,
+    )
 
 
 # @app.route("/2026/<lang>/presentations/")
@@ -183,9 +183,9 @@ def sponsors_listing(lang="fr"):
 #     )
 
 
-# @app.route("/2026/<lang>/venue/")
-# def venue(lang="fr"):
-#     return render_template(f"{lang}/venue.jinja2.html", page_name="venue", lang=lang)
+@app.route("/2026/<lang>/venue/")
+def venue(lang="fr"):
+    return render_template(f"{lang}/venue.jinja2.html", page_name="venue", lang=lang)
 
 
 # @app.route("/2026/<lang>/support/")

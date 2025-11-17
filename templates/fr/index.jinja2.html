@@ -107,6 +107,30 @@
 
   </article>
 
+  <article class="place">
+    <h2>Venir</h2>
+    <section>
+      <section>
+        <address>
+          <strong>Université Catholique de Lille</strong>
+          60 boulevard Vauban, 59800 Lille
+        </address>
+        <a class="button" href="{{ url_for('venue', lang=lang) }}">
+          Plus de détails
+        </a>
+      </section>
+
+      <iframe
+    id="map"
+    allowfullscreen width="100%"
+    scrolling="no"
+    src="https://www.openstreetmap.org/export/embed.html?bbox=3.0436%2C50.6308%2C3.0496%2C50.6348&layer=mapnik&marker=50.6328%2C3.0466"
+    loading="lazy">
+</iframe>
+<a class="button" href="https://www.openstreetmap.org/?mlat=50.6328&mlon=3.0466#map=18/50.6328/3.0466">Voir la carte en plein écran</a>
+    </section>
+  </article>
+
   <article class="afpy">
     <section>
       <h2>Data Lille</h2>
@@ -148,7 +172,7 @@
           L'équipe est disponible pour répondre à vos questions sur
           l'événement.
         </p>
-        <a style="font-size: 1em;" href="mailto:meetup.data.lille@gmail.com">meetup.data.lille@gmail.com</a>
+        <a style="word-break: break-word; overflow-wrap: break-word;" href="mailto:meetup.data.lille@gmail.com">meetup.data.lille@gmail.com</a>
       </div>
     </section>
   </article>
