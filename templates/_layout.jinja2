@@ -68,6 +68,15 @@
             >
           </li>
         {% endfor %}
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">
+              {{ 'Éditions précédentes' if lang == 'fr' else 'Previous editions' }}
+              <span class="dropdown-arrow">▼</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/2025/">2025</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
 
@@ -123,6 +132,37 @@ document.addEventListener('click', function(event) {
     menuToggle.classList.remove('active');
     menuOverlay.classList.remove('active');
     document.body.style.overflow = ''; // Réinitialise le défilement
+});
+
+// Gestion du dropdown au clic (desktop et mobile)
+const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+dropdownToggles.forEach(function(toggle) {
+  toggle.addEventListener('click', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    
+    const dropdown = this.closest('.dropdown');
+    const isOpen = dropdown.classList.contains('open');
+    
+    // Ferme tous les autres dropdowns
+    document.querySelectorAll('.dropdown').forEach(function(d) {
+      d.classList.remove('open');
+    });
+    
+    // Toggle le dropdown actuel
+    if (!isOpen) {
+      dropdown.classList.add('open');
+    }
+  });
+});
+
+// Ferme les dropdowns quand on clique ailleurs
+document.addEventListener('click', function(event) {
+  if (!event.target.closest('.dropdown')) {
+    document.querySelectorAll('.dropdown').forEach(function(d) {
+      d.classList.remove('open');
+    });
+  }
 });
   </script>
 </html>

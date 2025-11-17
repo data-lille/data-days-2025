@@ -873,7 +873,7 @@ nav
 .menu
   list-style: none
   text-align: center
-  overflow: hidden
+  overflow: visible
 
   li
     a
@@ -881,6 +881,55 @@ nav
       padding: 0px 10px
       text-decoration: none
       transition: background-color 0.3s
+
+  // Styles pour le dropdown
+  .dropdown
+    position: relative
+
+    .dropdown-toggle
+      cursor: pointer
+      display: flex
+      align-items: center
+      gap: 0.3em
+
+    .dropdown-arrow
+      font-size: 0.7em
+      transition: transform 0.3s
+
+    .dropdown-menu
+      display: none
+      position: absolute
+      top: 100%
+      left: 50%
+      transform: translateX(-50%)
+      background-color: $dark
+      list-style: none
+      padding: 0.5em 0
+      margin: 0
+      min-width: 180px
+      border-radius: 4px
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3)
+      z-index: 1000
+
+      li
+        border-bottom: none
+        padding: 0
+        margin: 0
+
+        a
+          padding: 0.5em 1em
+          white-space: nowrap
+          color: $cream
+          display: block
+
+        &:hover
+          background-color: rgba(255, 255, 255, 0.1)
+
+    &.open .dropdown-menu
+      display: block
+
+    &.open .dropdown-arrow
+      transform: rotate(180deg)
 
 
 @media (max-width: 999px)
@@ -893,6 +942,9 @@ nav
       margin-bottom: 1em
       font-size: 1.5em
 
+  .menu
+    overflow: hidden
+
   .menu-toggle
     display: flex
     height: 25px
@@ -901,7 +953,7 @@ nav
     display: flex
 
   #menu-toggle > *
-  background-color: white
+    background-color: white
 
   .menu-toggle.active .bar:nth-child(2)
     opacity: 0
@@ -911,6 +963,23 @@ nav
 
   .menu-toggle.active .bar:nth-child(3)
     transform: translateY(-7px) rotate(-45deg)
+
+  // Styles spécifiques pour le dropdown sur mobile
+  .menu .dropdown
+    .dropdown-toggle
+      justify-content: center
+
+    .dropdown-menu
+      position: static
+      transform: none
+      margin-top: 0.5em
+      box-shadow: none
+      min-width: auto
+      width: 100%
+
+      li
+        margin-bottom: 0.5em
+        font-size: 0.9em
 
 @media (min-width: 1000px)
   .menu-overlay
