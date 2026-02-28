@@ -2,7 +2,7 @@
 categories:
 - Data Autres
 is_extra: false
-kind: conference_longue
+kind: keynote
 published: true
 short_description: 'Lorsqu’un groupe doit prendre une décision - dans une équipe,
   un atelier ou une organisation - on s’attend souvent à ce que le collectif fasse
