@@ -1,27 +1,53 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
-<article class="speaker">
+<article class="speaker-detail">
 
-    <h2>{{ item.metadata.name }}</h2>
-    <section>
+    <header class="speaker-hero">
       {% if item.metadata.avatar %}
-      <img class="avatar" src="{{ url_for('static', filename=item.metadata.avatar) }}" loading="lazy">
-
-      {% endif %}
-      {% if item.content %}
-     <h3>Biographie</h3>
-      {{ item.content | markdown | safe }}
+      <img class="speaker-avatar" src="{{ url_for('static', filename=item.metadata.avatar) }}" loading="lazy" alt="{{ item.metadata.name }}">
       {% else %}
-      <p>Pas de biographie.</p>
+      <div class="speaker-avatar speaker-avatar--placeholder">{{ item.metadata.name[0] }}</div>
       {% endif %}
+      <div class="speaker-hero-info">
+        <h2>{{ item.metadata.name }}</h2>
+        {% if item.metadata.short_bio %}
+        <p class="speaker-company">{{ item.metadata.short_bio }}</p>
+        {% endif %}
+        <div class="speaker-links">
+          {% if item.metadata.linkedin %}
+          <a href="{{ item.metadata.linkedin }}" class="button" target="_blank" rel="noopener">LinkedIn</a>
+          {% endif %}
+          {% if item.metadata.website %}
+          <a href="{{ item.metadata.website }}" class="button button--outline" target="_blank" rel="noopener">Site web</a>
+          {% endif %}
+        </div>
+      </div>
+    </header>
 
-      <h3>Présentations</h3>
-      <div>
-          {% for talk in talks %}
-          <a href="{{ url_for('talks_details', lang=lang, slug=talk.metadata.slug) }}"> {{ talk.metadata.title }} </a> ({{talk.metadata.track}}) <br>
-          {% endfor %}
+    {% if talks %}
+    <section class="speaker-talks">
+      <h3>{{ 'Présentation' if talks|length == 1 else 'Présentations' }}</h3>
+      <div class="talk-cards">
+        {% for talk in talks %}
+        <a href="{{ url_for('talks_details', lang=lang, slug=talk.metadata.slug) }}" class="talk-card">
+          <span class="talk-card-kind">{{ talk.metadata.kind_humanized }}</span>
+          <span class="talk-card-title">{{ talk.metadata.title }}</span>
+          <span class="talk-card-meta">{{ talk.metadata.start_time | format_time }} - {{ talk.metadata.end_time | format_time }} &middot; {{ talk.metadata.track }}</span>
+        </a>
+        {% endfor %}
       </div>
     </section>
+    {% endif %}
+
+    {% if item.content and item.content.strip() %}
+    <section class="speaker-bio">
+      <h3>Biographie</h3>
+      <div class="speaker-bio-content">
+        {{ item.content | markdown | safe }}
+      </div>
+    </section>
+    {% endif %}
+
 </article>
-  {% endblock content %}
+{% endblock content %}

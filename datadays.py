@@ -63,32 +63,32 @@ def format_time(dt: time):
 #   * faire marcher le ICS
 
 
-# @app.route("/2026/<lang>/speakers/")
-# def speakers_listing(lang="fr"):
-#     return render_template(
-#         f"{lang}/speakers.jinja2.html",
-#         page_name="speakers_listing",
-#         speakers=Speaker.get_all(),
-#         lang=lang,
-#     )
+@app.route("/2026/<lang>/speakers/")
+def speakers_listing(lang="fr"):
+    return render_template(
+        f"{lang}/speakers.jinja2.html",
+        page_name="speakers_listing",
+        speakers=Speaker.get_all(),
+        lang=lang,
+    )
 
 
-# @app.route("/2026/<lang>/speakers/<slug>/")
-# def speakers_details(slug, lang="fr"):
-#     speaker = Speaker.get_item(slug)
-#     talks = []
+@app.route("/2026/<lang>/speakers/<slug>/")
+def speakers_details(slug, lang="fr"):
+    speaker = Speaker.get_item(slug)
+    talks = []
 
-#     for talk in Talks.get_all():
-#         if speaker["metadata"]["slug"] in talk["metadata"]["speakers"]:
-#             talks.append(talk)
+    for talk in Talks.get_all():
+        if speaker["metadata"]["slug"] in talk["metadata"]["speakers"]:
+            talks.append(talk)
 
-#     return render_template(
-#         f"{lang}/speakers-details.jinja2.html",
-#         page_name="speakers_listing",
-#         item=speaker,
-#         talks=talks,
-#         lang=lang,
-#     )
+    return render_template(
+        f"{lang}/speakers-details.jinja2.html",
+        page_name="speakers_listing",
+        item=speaker,
+        talks=talks,
+        lang=lang,
+    )
 
 
 @app.route("/2026/<lang>/sponsors/")
@@ -121,17 +121,17 @@ def sponsors_details(slug, lang="fr"):
 #     )
 
 
-# @app.route("/2026/<lang>/presentations/<slug>/")
-# def talks_details(slug, lang="fr"):
-#     talk = Talks.get_item(slug)
-#     speakers = [Speaker.get_item(slug) for slug in talk["metadata"]["speakers"]]
-#     return render_template(
-#         f"{lang}/talks-details.jinja2.html",
-#         page_name="speakers",
-#         item=talk,
-#         speakers=speakers,
-#         lang=lang,
-#     )
+@app.route("/2026/<lang>/presentations/<slug>/")
+def talks_details(slug, lang="fr"):
+    talk = Talks.get_item(slug)
+    speakers = [Speaker.get_item(slug) for slug in talk["metadata"]["speakers"]]
+    return render_template(
+        f"{lang}/talks-details.jinja2.html",
+        page_name="speakers",
+        item=talk,
+        speakers=speakers,
+        lang=lang,
+    )
 
 
 # @app.route("/2026/<lang>/actualites/")
@@ -151,18 +151,18 @@ def sponsors_details(slug, lang="fr"):
 #     # return Response(ics, mimetype="text/calendar")
 
 
-# @app.route("/2026/<lang>/programme/")
-# def schedule(lang="fr"):
-#     schedule = Schedule()
-#     # Créer un dictionnaire des speakers indexé par leur slug
-#     speakers = {s["metadata"]["slug"]: s for s in Speaker.get_all()}
-#     return render_template(
-#         f"{lang}/schedule.jinja2.html",
-#         page_name="schedule",
-#         lang=lang,
-#         schedule=schedule,
-#         speakers=speakers,
-#     )
+@app.route("/2026/<lang>/programme/")
+def schedule(lang="fr"):
+    schedule = Schedule()
+    # Créer un dictionnaire des speakers indexé par leur slug
+    speakers = {s["metadata"]["slug"]: s for s in Speaker.get_all()}
+    return render_template(
+        f"{lang}/schedule.jinja2.html",
+        page_name="schedule",
+        lang=lang,
+        schedule=schedule,
+        speakers=speakers,
+    )
 
 
 # @app.route("/2026/<lang>/programme-complet/")

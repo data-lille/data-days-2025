@@ -33,11 +33,12 @@ def get_image_extension(url: str) -> str:
 
 def process_speakers():
     assets_dir = ROOT_PATH / "static" / "images" / "speakers"
-    speakers_dir = ROOT_PATH / "data" / "speakers"
+    speakers_dir = ROOT_PATH / "data" / "current" / "speakers"
 
     for speaker_file in speakers_dir.glob("*.md"):
         post = frontmatter.load(speaker_file)
-        if not post.metadata.get("avatar"):
+        avatar = post.metadata.get("avatar", "")
+        if not avatar or not avatar.startswith("http"):
             continue
 
         speaker = Speaker.model_validate(post.metadata)
@@ -46,7 +47,7 @@ def process_speakers():
         ext = get_image_extension(speaker.avatar)
         image_filename = f"{speaker.slug}{ext}"
         image_path = assets_dir / image_filename
-        relative_path = f"/static/images/speakers/{image_filename}"
+        relative_path = f"/images/speakers/{image_filename}"
 
         if download_image(speaker.avatar, image_path):
             print(f"Downloaded avatar for {speaker.name} to {image_path}")

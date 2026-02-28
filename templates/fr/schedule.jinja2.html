@@ -6,7 +6,7 @@
 
     <section class="event-description">
       <section>
-        <aside>Le 28 mars 2025, à Lille</aside>
+        <aside>Le 26 mars 2026, à Lille</aside>
         <h3>Conférences & Quickies</h3>
         <p>
           Les différents domaines de la data sont mis à l'honneur sur cette journée.
@@ -26,8 +26,9 @@
       <h3>Inscriptions</h3>
 
       <p>
-        Les inscriptions sont ouvertes jusqu’à la <b>date limite du 15 mars 2025</b> et dans la limite des <b>300 places</b> disponibles.      </p>
-      <a class="button" href="https://www.helloasso.com/associations/data-lille/evenements/inscription-data-days-2025">Inscriptions Data Days Lille 2025</a>
+        Les inscriptions sont ouvertes dans la limite des <b>500 places</b> disponibles.
+      </p>
+      <a class="button" href="https://www.helloasso.com/associations/data-lille/evenements/inscription-data-days-2026">Inscriptions Data Days Lille 2026</a>
 
     </section>
 
@@ -35,7 +36,7 @@
 
       <h3>Programme de la journée</h3>
 
-      <img src="{{ url_for('static', filename='images/programme.svg') }}" alt="Calendrier des Data Days Lille 2025" />
+      <img src="{{ url_for('static', filename='images/programme-2026.svg') }}" alt="Programme des Data Days Lille 2026" />
 
       <section class="talks-list">
         {% for track in schedule.tracks %}
@@ -44,10 +45,10 @@
             {% for talk in schedule.get_talks_by_track(track) %}
               {% if not talk['metadata']['is_extra'] %}
                 <li>
-                  <strong>{{ talk['metadata']['start_time'] | format_time }} - {{ talk['metadata']['end_time'] | format_time }}</strong> : 
+                  <strong>{{ talk['metadata']['start_time'] | format_time }} - {{ talk['metadata']['end_time'] | format_time }}</strong> :
                   <a href="{{ url_for('talks_details', slug=talk['metadata']['slug'], lang=lang) }}">
                     {{ talk['metadata']['title'] }}</a>
-                  par 
+                  par
                     {% for speaker_slug in talk['metadata']['speakers'] %}
                       <a href="{{ url_for('speakers_details', slug=speaker_slug, lang=lang) }}">{{ speakers[speaker_slug]['metadata']['name'] }}</a>{% if not loop.last %}, {% endif %}
                     {% endfor %}
@@ -58,34 +59,11 @@
         {% endfor %}
       </section>
 
-      <p hidden>
-        Le calendrier est disponible ci-dessous, sur une
-        <a href="{{ url_for('full_schedule', lang=lang) }}">page en plein écran</a>,
-        <!-- ou <a href="TODO ical">dans votre application de calendrier favorite</a>. -->
-      </p>
-      <p hidden>
+      <p>
         Vous pouvez également lire la biographie des
         <a href="{{ url_for('speakers_listing', lang=lang) }}">speakers</a>.
       </p>
 
-    </section>
-
-    <section id="register">
-      <h3>Inscriptions</h3>
-
-      <p>
-        Les inscriptions sont ouvertes jusqu’à la <b>date limite du 15 mars 2025</b> et dans la limite des <b>300 places</b> disponibles.      </p>
-      <a class="button" href="https://www.helloasso.com/associations/data-lille/evenements/inscription-data-days-2025">Inscriptions Data Days Lille 2025</a>
-
-    </section>
-
-    <section id="register">
-      <h3>Call for Papers terminé</h3>
-      <p>
-        L'appel à conférences est maintenant terminé. Le programme sera bientôt annoncé.
-        Merci à tous les speakers qui ont soumis leurs propositions !
-      </p>
-      <a class="button disabled" href="https://conference-hall.io/data-days-lille-2025">Call for Papers terminé</a>
     </section>
 
   </article>

@@ -79,11 +79,12 @@ class Sponsors(BaseModel, ListRetrieveMixin):
 
 
 talks_infos = {
-    "pause_15": {"duration_minutes": 15, "label": "Pause (15min)"},
-    "pause_30": {"duration_minutes": 30, "label": "Pause (30min)"},
-    "repas_midi": {"duration_minutes": 90, "label": "Repas"},
-    "conference_courte": {"duration_minutes": 30, "label": "Conférence courte"},
-    "conference_longue": {"duration_minutes": 60, "label": "Conférence longue"},
+    "pause_25": {"duration_minutes": 25, "label": "Pause (25min)"},
+    "repas_midi": {"duration_minutes": 75, "label": "Repas"},
+    "conference_courte": {"duration_minutes": 25, "label": "Quickie (25min)"},
+    "conference_longue": {"duration_minutes": 50, "label": "Conférence (50min)"},
+    "keynote": {"duration_minutes": 50, "label": "Keynote"},
+    "intro": {"duration_minutes": 10, "label": "Introduction"},
 }
 
 

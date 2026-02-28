@@ -1,29 +1,62 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
-<article class="speaker">
-    <h2>{{ item.metadata.title }}</h2>
+<article class="talk-detail">
+
+    <header class="talk-hero">
+      <span class="talk-hero-kind">{{ item.metadata.kind_humanized }}</span>
+      <h2>{{ item.metadata.title }}</h2>
+      <div class="talk-hero-meta">
+        <span>{{ item.metadata.start_time | format_time }} - {{ item.metadata.end_time | format_time }}</span>
+        <span class="talk-hero-sep">&middot;</span>
+        <span>{{ item.metadata.track }}</span>
+      </div>
+      {% if item.metadata.categories %}
+      <div class="talk-hero-categories">
+        {% for cat in item.metadata.categories %}
+        <span class="tag">{{ cat }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
 
     {% if item.metadata.slides %}
-    <div class="talk-slides">
+    <div class="talk-actions">
       <a href="{{ url_for('static', filename=item.metadata.slides) }}" class="button" target="_blank" rel="noopener">
-        📎 Télécharger les slides
+        Télécharger les slides
       </a>
     </div>
     {% endif %}
-    <h3>De {{ item.metadata.start_time | format_time }} à {{ item.metadata.end_time | format_time }} dans l'{{ item.metadata.track }} </h3>
 
-
-    <h3>Speakers</h3>
-    <div>
+    <section class="talk-speakers">
+      <h3>{{ 'Speaker' if speakers|length == 1 else 'Speakers' }}</h3>
+      <div class="speaker-chips">
         {% for speaker in speakers %}
-        <a href="{{ url_for('speakers_details', lang=lang, slug=speaker.metadata.slug) }}"> {{ speaker.metadata.name }} </a>
+        <a href="{{ url_for('speakers_details', lang=lang, slug=speaker.metadata.slug) }}" class="speaker-chip">
+          {% if speaker.metadata.avatar %}
+          <img class="speaker-chip-avatar" src="{{ url_for('static', filename=speaker.metadata.avatar) }}" loading="lazy" alt="{{ speaker.metadata.name }}">
+          {% else %}
+          <span class="speaker-chip-avatar speaker-chip-avatar--placeholder">{{ speaker.metadata.name[0] }}</span>
+          {% endif %}
+          <div class="speaker-chip-info">
+            <span class="speaker-chip-name">{{ speaker.metadata.name }}</span>
+            {% if speaker.metadata.short_bio %}
+            <span class="speaker-chip-company">{{ speaker.metadata.short_bio }}</span>
+            {% endif %}
+          </div>
+        </a>
         {% endfor %}
-    </div>
-
-
-    <section>
-      {{ item.content | markdown | safe }}
+      </div>
     </section>
+
+    {% if item.content and item.content.strip() %}
+    <section class="talk-description">
+      <h3>Description</h3>
+      <div class="talk-description-content">
+        {{ item.content | markdown | safe }}
+      </div>
+    </section>
+    {% endif %}
+
 </article>
 {% endblock content %}
