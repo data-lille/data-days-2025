@@ -434,21 +434,160 @@ main
     max-width: 200px
 
 
-#sponsors
-  h2 + p
+// Sponsors listing page
+.sponsors-page
+  text-align: left
+
+  h2
     text-align: center
 
-  .sponsor
-    max-width: 32em
+.sponsors-intro
+  text-align: center
+  font-size: 1.1em
+  margin-bottom: 2em
 
-    > a
-      display: block
+.sponsors-grid-detail
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 1.5em
+  margin: 2em auto
+
+  @media (max-width: 768px)
+    grid-template-columns: 1fr
+
+.sponsor-card
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: 2em 1.5em
+  background: white
+  border-radius: 8px
+  border: 1px solid #eee
+  text-decoration: none
+  transition: transform 0.2s, box-shadow 0.2s
+
+  &:hover
+    transform: translateY(-4px)
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1)
+    text-decoration: none
+
+  h3
+    margin: 1em 0 0.3em 0
+    font-size: 1.2em
+    color: $dark
+    text-align: center
+
+  p
+    font-size: 0.9em
+    color: #666
+    text-align: center
+    line-height: 1.5
+    margin: 0
+
+.sponsor-card-logo
+  height: 80px
+  display: flex
+  align-items: center
+  justify-content: center
+
+  img
+    max-height: 80px
+    max-width: 200px
+    object-fit: contain
+
+  &--placeholder
+    width: 80px
+    background: $pink
+    color: white
+    border-radius: 12px
+    font-size: 2.5em
+    font-weight: 700
+
+.sponsors-cta
+  margin-top: 3em
+  background: $cream
+  border-radius: 12px
+  padding: 2em
+
+  h3
+    margin-top: 0
+    color: $dark
+
+  h4
+    margin: 1.5em 0 0.5em 0
+
+  .button
+    margin-top: 1em
+
+.sponsors-cta-benefits
+  background: white
+  border-radius: 8px
+  padding: 1em 1.5em
+  margin-top: 1em
+
+// Sponsor detail page
+.sponsor-detail
+  text-align: left
+
+  h2
+    text-align: left
+    margin: 0
+    font-size: 2.5em
+    line-height: 1.1
+
+  h3
+    margin: 0 0 1em 0
+    font-size: 1.4em
+    color: $pink
+    text-transform: uppercase
+    font-variation-settings: "wdth" 75
+    letter-spacing: 0.05em
+
+.sponsor-hero
+  display: flex
+  align-items: center
+  gap: 2em
+  padding: 2em
+  margin-top: 2em
+
+.sponsor-hero-logo
+  max-height: 100px
+  max-width: 200px
+  object-fit: contain
+  flex-shrink: 0
+
+.sponsor-tagline
+  color: #666
+  font-size: 1.05em
+  margin: 0.5em 0 0 0
+  line-height: 1.5
+
+.sponsor-description
+  margin-top: 2em
+
+.sponsor-description-content
+  background: #f9f9f9
+  border-radius: 8px
+  padding: 1.5em 2em
+  line-height: 1.7
+
+.sponsor-back
+  margin-top: 2em
+
+  a
+    font-weight: 400
+    color: #666
+
+    &:hover
+      color: $pink
+
+@media (max-width: 1000px)
+  .sponsor-hero
+    flex-direction: column
+    text-align: center
+
+    h2
       text-align: center
-
-    .description
-      padding: 1.5rem
-      border-right: 5px solid $dark
-      border-left: 5px solid $pink
 
 
 #talks, #speakers

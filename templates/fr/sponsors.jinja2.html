@@ -1,58 +1,59 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
-  <article>
+  <article class="sponsors-page">
     <h2>Partenaires</h2>
 
     {% if sponsors %}
-    
-    <section>
-      <p>    Sans vous, notre événement ne serait pas possible.    </p>
+    <p class="sponsors-intro">Sans vous, notre événement ne serait pas possible.</p>
+
+    <div class="sponsors-grid-detail">
       {% for sponsor in sponsors %}
-      {% include 'fr/fragments/sponsors_list.jinja2.html' %}
+      <a href="{{ url_for('sponsors_details', lang=lang, slug=sponsor.metadata.slug) }}" class="sponsor-card">
+        {% if sponsor.metadata.logo %}
+        <div class="sponsor-card-logo">
+          <img src="{{ url_for('static', filename=sponsor.metadata.logo) }}" loading="lazy" alt="{{ sponsor.metadata.name }}">
+        </div>
+        {% else %}
+        <div class="sponsor-card-logo sponsor-card-logo--placeholder">
+          {{ sponsor.metadata.name[0] }}
+        </div>
+        {% endif %}
+        <h3>{{ sponsor.metadata.name }}</h3>
+        {% if sponsor.metadata.short_description %}
+        <p>{{ sponsor.metadata.short_description[:150] }}{% if sponsor.metadata.short_description|length > 150 %}...{% endif %}</p>
+        {% endif %}
+      </a>
       {% endfor %}
-    </section>
+    </div>
     {% endif %}
 
-    <section id="sponsors" style="margin-top: 100px;">
+    <section class="sponsors-cta">
       <h3>Devenez Sponsors</h3>
 
-      Devenez sponsor de notre événement dédié à la Data et à l’IA et :
+      <p>Devenez sponsor de notre événement dédié à la Data et à l'IA et :</p>
 
       <ul>
         <li><b>Renforcez votre marque employeur</b> en vous positionnant comme un acteur clé et innovant du secteur.</li>
-        <li><b>Identifiez et attirez de nouveaux talents</b>. Nos événements ont déjà permis à de nombreuses entreprises de recruter des profils d’exception.</li>
+        <li><b>Identifiez et attirez de nouveaux talents</b>. Nos événements ont déjà permis à de nombreuses entreprises de recruter des profils d'exception.</li>
         <li><b>Offrez à vos collaborateurs une veille technologique</b> en leur permettant de participer à une journée riche en conférences et en échanges.</li>
-        <li><b>Bénéficiez d’une visibilité accrue</b> auprès d’un public d’experts, de passionnés et de décideurs influents.</li>
+        <li><b>Bénéficiez d'une visibilité accrue</b> auprès d'un public d'experts, de passionnés et de décideurs influents.</li>
       </ul>
 
-      <br>
-      <br>
+      <div class="sponsors-cta-benefits">
+        <h4>Les avantages</h4>
+        <ul>
+          <li>Un stand le jour de la conférence.</li>
+          <li>Une mention sur nos réseaux sociaux.</li>
+          <li>Deux entrées gratuites à l'événement.</li>
+          <li>Votre logo sur le site web de l'événement.</li>
+          <li>Votre logo et un remerciement lors d'une conférence le jour J.</li>
+        </ul>
+      </div>
 
-      <a class="button" href="mailto:meetup.data.lille@gmail.com">Nous Contacter - meetup.data.lille@gmail.com</a>
-
-    </section>
-
-    <br>
-    <br>
-
-    <section id="sponsors">
-      <h3>Les avantages</h3>
-
-      En tant que sponsor, vous bénéficierez de :
-
-      <ul>
-        <li>Un stand le jour de la conférence.</li>
-        <li>Une mention sur nos réseaux sociaux.</li>
-        <li>Deux entrées gratuites à l’événement.</li>
-        <li>Votre logo sur le site web de l’événement.</li>
-        <li>Votre logo et un remerciement lors d’une conférence le jour J.</li>
-      </ul>
-
+      <a class="button" href="mailto:meetup.data.lille@gmail.com">Nous Contacter</a>
     </section>
 
   </article>
 
 {% endblock content %}
-
-<section>

@@ -1,18 +1,32 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
-<article class="speaker">
+<article class="sponsor-detail">
 
-    <h2>{{ item.metadata.name }}</h2>
-    <section>
+    <header class="sponsor-hero">
       {% if item.metadata.logo %}
-      <img class="avatar" src="{{ url_for('static', filename=item.metadata.logo) }}" loading="lazy">
+      <img class="sponsor-hero-logo" src="{{ url_for('static', filename=item.metadata.logo) }}" loading="lazy" alt="{{ item.metadata.name }}">
+      {% endif %}
+      <div class="sponsor-hero-info">
+        <h2>{{ item.metadata.name }}</h2>
+        {% if item.metadata.short_description %}
+        <p class="sponsor-tagline">{{ item.metadata.short_description }}</p>
+        {% endif %}
+      </div>
+    </header>
 
-      {% endif %}
-      {% if item.content %}
-     <h3>Description</h3>
-      {{ item.content | markdown | safe }}
-      {% endif %}
+    {% if item.content and item.content.strip() %}
+    <section class="sponsor-description">
+      <h3>À propos</h3>
+      <div class="sponsor-description-content">
+        {{ item.content | markdown | safe }}
+      </div>
     </section>
+    {% endif %}
+
+    <div class="sponsor-back">
+      <a href="{{ url_for('sponsors_listing', lang=lang) }}">&larr; Tous les partenaires</a>
+    </div>
+
 </article>
-  {% endblock content %}
+{% endblock content %}
