@@ -1,7 +1,7 @@
 ---
 name: Ganti
 level: ''
-short_description: Edition de logiciel dans la détection d'incohérences de données
+short_description: Ganti est un éditeur de logiciels dans la détection d'incohérences de données
 logo: /images/sponsors/ganti.png
 published: true
 ---
