@@ -8,3 +8,9 @@
   to = "/2026/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/2025/fr/programme/"
+  to = "/2026/fr/programme/"
+  status = 301
+  force = true
