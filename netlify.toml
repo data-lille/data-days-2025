@@ -6,11 +6,17 @@
 [[redirects]]
   from = "/"
   to = "/2026/"
-  status = 301
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/programme"
+  to = "/2026/fr/programme/"
+  status = 302
   force = true
 
 [[redirects]]
   from = "/2025/fr/programme/"
   to = "/2026/fr/programme/"
-  status = 301
+  status = 302
   force = true
