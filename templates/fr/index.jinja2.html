@@ -32,6 +32,20 @@
     </section>
   </article>
 
+  <article class="infos-pratiques">
+    <h2>Infos pratiques</h2>
+    <section class="infos-resume">
+      <p>
+        <strong>8h15</strong> accueil · <strong>9h</strong> conférences · <strong>12h30</strong> déjeuner · <strong>17h</strong> fin
+        <br>
+        Entrée par le <strong>60 Bd Vauban</strong> — préparez votre QR code HelloAsso pour récupérer votre badge.
+        <br>
+        Repas et pauses café inclus. Écocups fournis — ramenez le vôtre si possible !
+      </p>
+      <a class="button" href="{{ url_for('infos', lang=lang) }}">Toutes les infos pratiques</a>
+    </section>
+  </article>
+
   <article id="schedule">
     <h2>Programme</h2>
     
@@ -39,13 +53,13 @@
       Une journée dédiée à la data et à l'IA, avec des conférences, des quick talks et des stands de sponsors pour découvrir les dernières innovations du secteur.
     </p>
 
+    <div style="text-align: center; margin-bottom: 1em;">
+      <a class="button" href="{{ url_for('schedule', lang=lang) }}" style="font-size: 1.2em;">
+        Voir le programme
+      </a>
+    </div>
+
     <section class="event-description margin:2em;">
-      <div style="text-align: center">
-        <a class="button" href="{{ url_for('schedule', lang=lang) }}" style="font-size: 1.2em;">
-          Voir le programme
-        </a>
-      </div>
-  
 
       <section>
         <aside>📚 Apprendre</aside>

@@ -1,0 +1,86 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article class="infos-page">
+    <h2>Informations pratiques</h2>
+    <p style="text-align: center; font-size: 1.2em; margin-top: 0.5em;">
+      <strong>60 Boulevard Vauban, Lille</strong> — Accueil à partir de 8h15
+    </p>
+
+    <section class="info-hero">
+      <div class="info-hero-map">
+        <iframe
+          allowfullscreen width="100%"
+          scrolling="no"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=3.0436%2C50.6308%2C3.0496%2C50.6348&layer=mapnik&marker=50.6328%2C3.0466"
+          loading="lazy">
+        </iframe>
+      </div>
+      <div class="info-hero-photo">
+        <img src="{{ url_for('static', filename='images/entree-catho.jpg') }}" alt="Entrée de l'Université Catholique de Lille — 60 Boulevard Vauban">
+      </div>
+    </section>
+
+    <div class="infos-grid">
+
+      <section class="info-card">
+        <h3>Horaires</h3>
+        <ul>
+          <li><strong>8h15</strong> — Accueil des participants</li>
+          <li><strong>9h00</strong> — Début des conférences</li>
+          <li><strong>12h30</strong> — Déjeuner</li>
+          <li><strong>17h00</strong> — Fin de la journée</li>
+        </ul>
+      </section>
+
+      <section class="info-card">
+        <h3>Comment entrer ?</h3>
+        <ul>
+          <li>Entrez dans la Catho par le <strong>60 Boulevard Vauban</strong></li>
+          <li>Stand Data Days dès l'entrée pour récupérer votre badge</li>
+          <li>Préparez votre <strong>QR code</strong> HelloAsso pour un scan rapide</li>
+        </ul>
+      </section>
+
+      <section class="info-card">
+        <h3>Repas & pauses café</h3>
+        <p>
+          <strong>Repas sur place à midi</strong> et <strong>pauses café</strong> tout au long de la journée.
+        </p>
+        <p>
+          Liste des allergènes disponible sur place à votre arrivée.
+        </p>
+      </section>
+
+      <section class="info-card">
+        <h3>Éco-responsabilité</h3>
+        <p>
+          Des <strong>écocups</strong> sont fournis — ramenez le vôtre si possible ! Gardez-le toute la journée.
+        </p>
+        <p>
+          Pareil pour les <strong>tours de cou</strong> (lanières de badge).
+        </p>
+      </section>
+
+      <section class="info-card">
+        <h3>Le programme</h3>
+        <p>Deux tracks de conférences de 9h à 17h.</p>
+        <a class="button" href="{{ url_for('schedule', lang=lang) }}">Programme complet</a>
+      </section>
+
+      <section class="info-card">
+        <h3>Photo & vidéo</h3>
+        <p>
+          Reportage photo et vidéo pendant l'événement.
+          Dispositif d'<strong>opt-out à l'accueil</strong>.
+        </p>
+      </section>
+
+    </div>
+
+    <div style="text-align: center; margin: 2em auto;">
+      <a class="button" href="{{ url_for('venue', lang=lang) }}">Comment venir (transports, parking...)</a>
+    </div>
+
+  </article>
+{% endblock content %}

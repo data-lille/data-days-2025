@@ -183,6 +183,11 @@ def schedule(lang="fr"):
 #     )
 
 
+@app.route("/2026/<lang>/infos/")
+def infos(lang="fr"):
+    return render_template(f"{lang}/infos.jinja2.html", page_name="infos", lang=lang)
+
+
 @app.route("/2026/<lang>/venue/")
 def venue(lang="fr"):
     return render_template(f"{lang}/venue.jinja2.html", page_name="venue", lang=lang)
