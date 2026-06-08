@@ -207,6 +207,13 @@ def conduct(lang="fr"):
     )
 
 
+# Page cachée (non listée dans le menu) : générateur de QR code à la charte.
+# Route sans argument -> gelée automatiquement par Frozen-Flask sans être liée.
+@app.route("/2026/qrcode/")
+def qrcode_tool(lang="fr"):
+    return render_template("fr/qrcode.jinja2.html", page_name="qrcode", lang=lang)
+
+
 @app.route("/")
 @app.route("/2026/")
 def index(lang="fr"):

@@ -1,0 +1,136 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+<article class="qr-page">
+
+  <header class="qr-head">
+    <span class="qr-kind">Outil interne</span>
+    <h2>Générateur de QR code</h2>
+    <p class="qr-sub">QR code à la charte Data Lille (rose dégradé + logo). Tout est généré dans le navigateur.</p>
+  </header>
+
+  <section class="qr-tool">
+    <div class="qr-form">
+      <label class="qr-label" for="qr-url">URL à encoder</label>
+      <input class="qr-input" id="qr-url" type="text" value="https://days.data-lille.fr/2026/" placeholder="https://…" autocomplete="off">
+
+      <label class="qr-label" for="qr-name">Nom du fichier</label>
+      <input class="qr-input" id="qr-name" type="text" value="qrcode-data-days" autocomplete="off">
+
+      <div class="qr-options">
+        <label class="qr-check"><input type="checkbox" id="qr-logo" checked> Logo au centre</label>
+      </div>
+
+      <div class="talk-actions">
+        <button class="button" id="qr-png" type="button">Télécharger PNG</button>
+        <button class="button button--outline" id="qr-svg" type="button">SVG</button>
+      </div>
+      <p class="qr-hint">Astuce : laisse l'URL la plus courte possible pour un QR code plus lisible.</p>
+    </div>
+
+    <div class="qr-previewWrap">
+      <div class="qr-preview" id="qr-preview"></div>
+    </div>
+  </section>
+
+</article>
+
+<style>
+  .qr-page
+    /* l'article hérite déjà de la largeur/centrage globaux */
+  .qr-head { margin-top: 1.4em; }
+  .qr-kind {
+    display: inline-block; background: #4aeded; color: #26201b;
+    padding: 0.25em 0.85em; border-radius: 100px; font-size: 0.75em;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .qr-head h2 { text-align: left; margin: 0.3em 0 0; font-size: 2.2em; }
+  .qr-sub { color: #666; margin: 0.4em 0 0; }
+
+  .qr-tool {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2em;
+    align-items: start; margin-top: 1.8em;
+  }
+  @media (max-width: 800px) { .qr-tool { grid-template-columns: 1fr; } }
+
+  .qr-label {
+    display: block; font-weight: 600; font-size: 0.85em;
+    text-transform: uppercase; letter-spacing: 0.04em; color: #e9006e;
+    margin: 1.1em 0 0.4em;
+  }
+  .qr-label:first-child { margin-top: 0; }
+  .qr-input {
+    width: 100%; box-sizing: border-box; padding: 0.7em 0.9em;
+    border: 1px solid rgba(38,32,27,0.18); border-radius: 10px;
+    font: inherit; font-size: 0.95em; background: #fff;
+  }
+  .qr-input:focus { outline: none; border-color: #4aeded; box-shadow: 0 0 0 3px rgba(74,237,237,0.25); }
+  .qr-options { margin-top: 1.1em; }
+  .qr-check { font-weight: 600; cursor: pointer; }
+  .qr-hint { margin: 1em 0 0; font-size: 0.85em; color: #888; font-style: italic; }
+
+  .qr-previewWrap {
+    background: linear-gradient(135deg, #faf6f1, #f0ece4);
+    border-radius: 18px; padding: 1.6em; display: flex;
+    align-items: center; justify-content: center;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .qr-preview canvas, .qr-preview svg {
+    width: 100%; height: auto; max-width: 340px; display: block;
+    border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  }
+</style>
+
+<script src="{{ url_for('static', filename='js/qr-code-styling.js') }}"></script>
+<script>
+  (function () {
+    var LOGO = "{{ url_for('static', filename='images/logo-qrcode.png') }}";
+
+    function buildOptions() {
+      var withLogo = document.getElementById("qr-logo").checked;
+      return {
+        width: 1000,
+        height: 1000,
+        type: "canvas",
+        data: document.getElementById("qr-url").value || " ",
+        margin: 10,
+        qrOptions: { errorCorrectionLevel: "H" },
+        image: withLogo ? LOGO : undefined,
+        imageOptions: { crossOrigin: "anonymous", margin: 8, imageSize: 0.22, hideBackgroundDots: true },
+        backgroundOptions: { color: "#FFFFFF" },
+        dotsOptions: {
+          type: "dots",
+          gradient: {
+            type: "linear",
+            rotation: 0.785,
+            colorStops: [
+              { offset: 0, color: "#E9006E" },
+              { offset: 1, color: "#261F1B" }
+            ]
+          }
+        },
+        cornersSquareOptions: { type: "extra-rounded", color: "#E9006E" },
+        cornersDotOptions: { type: "dot", color: "#E9006E" }
+      };
+    }
+
+    var qr = new QRCodeStyling(buildOptions());
+    qr.append(document.getElementById("qr-preview"));
+
+    function refresh() { qr.update(buildOptions()); }
+
+    document.getElementById("qr-url").addEventListener("input", refresh);
+    document.getElementById("qr-logo").addEventListener("change", refresh);
+
+    function fileName() {
+      return (document.getElementById("qr-name").value || "qrcode").trim();
+    }
+    document.getElementById("qr-png").addEventListener("click", function () {
+      qr.download({ name: fileName(), extension: "png" });
+    });
+    document.getElementById("qr-svg").addEventListener("click", function () {
+      qr.download({ name: fileName(), extension: "svg" });
+    });
+  })();
+</script>
+{% endblock content %}
