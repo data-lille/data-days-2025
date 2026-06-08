@@ -22,6 +22,7 @@ speakers:
 start_time: '11:40'
 title: Ces stats de m...
 track: Amphithéâtre René Thery
+slides: /slides/ces-stats-de-m.pdf
 ---
 
 

@@ -25,6 +25,8 @@ categories:
 - Data Engineering
 is_extra: false
 published: true
+slides: /slides/la-guerre-des-orchestrateurs-airflow-vs-kestra.pdf
+slides_pptx: /slides/la-guerre-des-orchestrateurs-airflow-vs-kestra.pptx
 ---
 
 Face à l’explosion des pipelines data, l’orchestration est devenue le cœur battant des data platforms. Historiquement, Apache Airflow s’est imposé comme une référence incontournable pour planifier, monitorer et exécuter des workflows, mais une nouvelle génération d’outils émerge dont Kestra.

@@ -3,30 +3,33 @@
 {% block content %}
 <article class="talk-detail">
 
-    <header class="talk-hero">
-      <span class="talk-hero-kind">{{ item.metadata.kind_humanized }}</span>
-      <h2>{{ item.metadata.title }}</h2>
-      <div class="talk-hero-meta">
-        <span>{{ item.metadata.start_time | format_time }} - {{ item.metadata.end_time | format_time }}</span>
-        <span class="talk-hero-sep">&middot;</span>
-        <span>{{ item.metadata.track }}</span>
-      </div>
-      {% if item.metadata.categories %}
-      <div class="talk-hero-categories">
-        {% for cat in item.metadata.categories %}
-        <span class="tag">{{ cat }}</span>
-        {% endfor %}
-      </div>
-      {% endif %}
-    </header>
+    <a href="{{ url_for('schedule', lang=lang) }}" class="talk-back">&larr; Programme</a>
 
-    {% if item.metadata.slides %}
-    <div class="talk-actions">
-      <a href="{{ url_for('static', filename=item.metadata.slides) }}" class="button" target="_blank" rel="noopener">
-        Télécharger les slides
-      </a>
-    </div>
-    {% endif %}
+    <header class="talk-hero">
+      <div class="talk-hero-inner">
+        <span class="talk-hero-kind">{{ item.metadata.kind_humanized }}</span>
+        <h2>{{ item.metadata.title }}</h2>
+        <div class="talk-hero-meta">
+          <span class="talk-hero-meta-item">
+            <svg class="talk-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            {{ item.metadata.start_time | format_time }}&nbsp;&ndash;&nbsp;{{ item.metadata.end_time | format_time }}
+          </span>
+          {% if item.metadata.track %}
+          <span class="talk-hero-meta-item">
+            <svg class="talk-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            {{ item.metadata.track }}
+          </span>
+          {% endif %}
+        </div>
+        {% if item.metadata.categories %}
+        <div class="talk-hero-categories">
+          {% for cat in item.metadata.categories %}
+          <span class="tag tag--hero">{{ cat }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </header>
 
     <section class="talk-speakers">
       <h3>{{ 'Speaker' if speakers|length == 1 else 'Speakers' }}</h3>
@@ -56,6 +59,40 @@
         {{ item.content | markdown | safe }}
       </div>
     </section>
+    {% endif %}
+
+    {% if item.metadata.slides %}
+    {% set slides_url = url_for('static', filename=item.metadata.slides.lstrip('/')) %}
+    <section class="talk-slides">
+      <h3 class="talk-slides-head">Slides<span class="slides-count" aria-live="polite"></span></h3>
+      <div class="slides-frame">
+        <div class="slides-viewer" data-pdf="{{ slides_url }}">
+          <div class="slides-pages"></div>
+          <noscript>
+            <p class="slides-error">Activez JavaScript pour l'aperçu, ou
+              <a href="{{ slides_url }}" target="_blank" rel="noopener">ouvrez le PDF</a>.</p>
+          </noscript>
+        </div>
+      </div>
+      <p class="slides-hint">Faites défiler dans le cadre pour parcourir les slides.</p>
+      <div class="talk-actions">
+        <a href="{{ slides_url }}" class="button" target="_blank" rel="noopener">
+          {{ 'Télécharger le PDF' if item.metadata.slides_pptx else 'Télécharger les slides' }}
+        </a>
+        {% if item.metadata.slides_pptx %}
+        {% set pptx_url = url_for('static', filename=item.metadata.slides_pptx.lstrip('/')) %}
+        <a href="{{ pptx_url }}" class="button button--outline" download>
+          PowerPoint (.pptx)
+        </a>
+        {% endif %}
+        <a href="{{ slides_url }}" class="slides-fullscreen-link" target="_blank" rel="noopener">
+          Ouvrir en plein écran ↗
+        </a>
+      </div>
+    </section>
+    <script>window.PDFJS_WORKER_SRC = "{{ url_for('static', filename='js/pdfjs/pdf.worker.min.js') }}";</script>
+    <script src="{{ url_for('static', filename='js/pdfjs/pdf.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/slides-viewer.js') }}"></script>
     {% endif %}
 
 </article>

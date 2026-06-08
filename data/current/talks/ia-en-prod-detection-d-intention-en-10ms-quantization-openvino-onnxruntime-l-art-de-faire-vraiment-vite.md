@@ -31,6 +31,8 @@ categories:
 - Data Science & IA
 is_extra: false
 published: true
+slides: /slides/ia-en-prod-detection-d-intention-en-10ms-quantization-openvino-onnxruntime-l-art-de-faire-vraiment-vite.pdf
+slides_pptx: /slides/ia-en-prod-detection-d-intention-en-10ms-quantization-openvino-onnxruntime-l-art-de-faire-vraiment-vite.pptx
 ---
 
 Chez Leroy Merlin, l’intention de l’utilisateur est un enjeu central : les requêtes du moteur de recherche expriment souvent plus qu’un besoin produit (un projet, un problème à résoudre, un besoin de service, parfois tout à la fois...). La détecter permet **d'orienter immédiatement** l’utilisateur vers le bon parcours (recherche multiple, conseil, configurateur, service, FAQ…) et d’améliorer nettement **la pertinence** comme **l’expérience**.

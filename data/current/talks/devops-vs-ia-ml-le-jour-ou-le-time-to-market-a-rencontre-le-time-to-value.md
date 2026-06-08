@@ -16,6 +16,8 @@ categories:
 - Data Autres
 is_extra: false
 published: true
+slides: /slides/devops-vs-ia-ml-le-jour-ou-le-time-to-market-a-rencontre-le-time-to-value.pdf
+slides_pptx: /slides/devops-vs-ia-ml-le-jour-ou-le-time-to-market-a-rencontre-le-time-to-value.pptx
 ---
 
 OPS de terrain, j’ai accompagné la bascule DevOps quand la pression du Time‑To‑Market a tout accéléré. Dix ans plus tard, je vois la même histoire côté IA/ML : données vivantes, dérive des modèles, promesses qui se heurtent aux silos, au mode projet et au manque de monitoring.

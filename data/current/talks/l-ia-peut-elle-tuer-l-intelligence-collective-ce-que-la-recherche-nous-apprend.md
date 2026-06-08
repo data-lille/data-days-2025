@@ -29,6 +29,7 @@ speakers:
 start_time: 09:10
 title: L'IA peut-elle tuer l'intelligence collective ? Ce que la recherche nous apprend
 track: Amphithéâtre René Thery
+slides: /slides/l-ia-peut-elle-tuer-l-intelligence-collective-ce-que-la-recherche-nous-apprend.pdf
 ---
 
 

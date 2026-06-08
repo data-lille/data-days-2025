@@ -105,6 +105,8 @@ class Talks(BaseModel, ListRetrieveMixin):
     is_extra: bool = False  # should be in all tracks (ie: gouter, petit dejeuner)
     picture: str = ""  # the picture to display in the program
     slides: str = ""  # Optional, empty string by default
+    slides_pptx: str = ""  # Optional source file (.pptx) when slides come from one
+    video: str = ""  # Optional replay URL, filled once videos are available
 
     @field_validator("kind")
     @classmethod
@@ -113,7 +115,7 @@ class Talks(BaseModel, ListRetrieveMixin):
             raise ValueError(f"must be in {talks_infos.keys()}")
         return kind
 
-    @field_validator("slides")
+    @field_validator("slides", "slides_pptx")
     @classmethod
     def validate_slides(cls, slides: str) -> str:
         if not slides:  # Si vide, on accepte

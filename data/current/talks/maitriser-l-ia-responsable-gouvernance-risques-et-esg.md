@@ -47,6 +47,7 @@ speakers:
 start_time: '15:35'
 title: 'Maîtriser l''IA Responsable : Gouvernance, Risques et ESG'
 track: Salle des Actes
+slides: /slides/maitriser-l-ia-responsable-gouvernance-risques-et-esg.pdf
 ---
 
 

@@ -41,6 +41,8 @@ categories:
 - Data Science & IA
 is_extra: false
 published: true
+slides: /slides/optimiser-rag-piloter-l-amelioration-continue-par-le-feedback-utilisateur.pdf
+slides_pptx: /slides/optimiser-rag-piloter-l-amelioration-continue-par-le-feedback-utilisateur.pptx
 ---
 
 À l'origine conçu pour répondre aux questions "Do It Yourself" depuis la barre de recherche de Leroy Merlin France, RAGEdito a évolué pour devenir une solution universelle. Le succès d'un projet de RAG ne s'arrête pas à sa mise en production ; il commence au premier feedback utilisateur. Pour RAGEdito, nous avons mis en place une boucle d'amélioration continue où l'analyse des interactions façonne directement l'évolution technique du produit.

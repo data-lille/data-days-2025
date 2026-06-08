@@ -34,6 +34,8 @@ categories:
 - Data Governance
 is_extra: false
 published: true
+slides: /slides/arretez-d-embaucher-des-experts-cherchez-plutot-des-responsables.pdf
+slides_pptx: /slides/arretez-d-embaucher-des-experts-cherchez-plutot-des-responsables.pptx
 ---
 
 « Qui est le Data Owner de cette donnée ? » Si vous avez déjà entendu cette question au cours d'une réunion et vu s'installer soudainement un silence gênant, suivi d'un «il faudrait vérifier dans le RACI », vous risquez d'être intéressé par le sujet de cette conférence. 

@@ -53,6 +53,7 @@ categories:
 - Data Ethics & Applications
 is_extra: false
 published: true
+slides: /slides/temoignage-sur-la-construction-de-notre-ia-generative-open-source-neogen.pdf
 ---
 
 # Il est possible de créer une IA Générative sans succomber à une solution sur étagère

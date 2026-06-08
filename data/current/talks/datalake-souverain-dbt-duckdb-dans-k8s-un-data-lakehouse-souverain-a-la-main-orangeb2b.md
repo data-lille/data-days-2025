@@ -39,6 +39,8 @@ categories:
 - Data Engineering
 is_extra: false
 published: true
+slides: /slides/datalake-souverain-dbt-duckdb-dans-k8s-un-data-lakehouse-souverain-a-la-main-orangeb2b.pdf
+slides_pptx: /slides/datalake-souverain-dbt-duckdb-dans-k8s-un-data-lakehouse-souverain-a-la-main-orangeb2b.pptx
 ---
 
 Un an après avoir présenté **DuckDB** et les **Data Contracts** au DataDays Lille 2025, Cédric Olivier *(Orange)* & Antoine Giraud *(Ippon)* reviennent pour raconter la **construction** — en conditions réelles — **d’un data lakehouse souverain** chez Orange B2B, basé sur dbt-duckdb & déployé dans Kubernetes, le tout dans une philosophie DataOps & Data/Infra as code.

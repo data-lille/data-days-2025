@@ -56,6 +56,7 @@ categories:
 - Data Science & IA
 is_extra: false
 published: true
+slides: /slides/reranking-via-transformers-la-semantique-au-service-du-e-commerce.pdf
 ---
 
 Proposer le bon produit au bon endroit : le Graal du e-commerce. Pourtant, dans un catalogue de millions de références, un best-seller peut devenir un "bruit" polluant s'il apparaît hors contexte. Si la popularité a longtemps régné sur le ranking, elle atteint aujourd'hui un plafond de verre. Comment passer d'un classement purement statistique à une navigation plus intelligente ?

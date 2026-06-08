@@ -48,6 +48,8 @@
                   <strong>{{ talk['metadata']['start_time'] | format_time }} - {{ talk['metadata']['end_time'] | format_time }}</strong> :
                   <a href="{{ url_for('talks_details', slug=talk['metadata']['slug'], lang=lang) }}">
                     {{ talk['metadata']['title'] }}</a>
+                  {% if talk['metadata']['slides'] %}<span class="prog-badge prog-badge--slides" title="Slides disponibles">Slides</span>{% endif %}
+                  {% if talk['metadata']['video'] %}<span class="prog-badge prog-badge--video" title="Replay vidéo disponible">Vidéo</span>{% endif %}
                   par
                     {% for speaker_slug in talk['metadata']['speakers'] %}
                       <a href="{{ url_for('speakers_details', slug=speaker_slug, lang=lang) }}">{{ speakers[speaker_slug]['metadata']['name'] }}</a>{% if not loop.last %}, {% endif %}

@@ -32,6 +32,7 @@ speakers:
 start_time: '16:10'
 title: 'Des Analyses pertinentes... mais ignorées : comment optimiser l''Adoption?'
 track: Salle des Actes
+slides: /slides/des-analyses-pertinentes-mais-ignorees-comment-optimiser-l-adoption.pdf
 ---
 
 
