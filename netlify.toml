@@ -4,12 +4,6 @@
   environment = { PYTHON_VERSION = "3.12" }
 
 [[redirects]]
-  from = "/"
-  to = "/2027/"
-  status = 302
-  force = true
-
-[[redirects]]
   from = "/programme"
   to = "/2026/fr/programme/"
   status = 302
