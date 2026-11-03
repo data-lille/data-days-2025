@@ -1,8 +1,5 @@
 {%- set MENU = (
   ('index', ('À propos', 'About')),
-  ('schedule', ('Programme', 'Schedule')),
-  ('speakers_listing', ('Speakers', 'Speakers')),
-  ('infos', ('Infos pratiques', 'Practical Info')),
   ('venue', ('Venir', 'Venue')),
   ('sponsors_listing', ('Sponsors', 'Sponsors')),
   ('conduct', ('Code de conduite', 'Code of Conduct')),
@@ -18,7 +15,7 @@
 <html lang="{{ lang }}">
   <head>
     {% block head %}
-    <title>{{ title }} - Data Days 2026</title>
+    <title>{{ title }} - Data Days 2027</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -40,11 +37,11 @@
 
     <meta
       name="description"
-      content="Data Days 2026, la conférence d'une journée dédiée à la data et à l'IA, avec des conférences, des quick talks, des ateliers et des stands de sponsors pour découvrir les dernières innovations du secteur."
+      content="Data Days 2027, la conférence d'une journée dédiée à la data et à l'IA, avec des conférences, des quick talks, des ateliers et des stands de sponsors pour découvrir les dernières innovations du secteur."
     />
     <meta name="author" content="Data Lille" />
     <meta name="keywords" content="data, IA, intelligence artificielle, machine learning, conférence, Lille, France" />
-    <meta property="og:title" content="{{ title }} - Data Days 2026" />
+    <meta property="og:title" content="{{ title }} - Data Days 2027" />
     <meta property="og:type" content="website" />
     <meta
       property="og:image"
@@ -58,7 +55,7 @@
     <nav>
       <div class="logo">
         <a href="/">
-          <img src="/2026/static/images/data_days_banner.png"></img>
+          <img src="/2027/static/images/data_days_banner.png"></img>
         </a>
       </div>
       <div class="menu-overlay" id="menu-overlay">
@@ -77,6 +74,7 @@
               <span class="dropdown-arrow">▼</span>
             </a>
             <ul class="dropdown-menu">
+              <li><a href="/2026/">2026</a></li>
               <li><a href="/2025/">2025</a></li>
             </ul>
           </li>
@@ -84,7 +82,7 @@
       </div>
 
       <div class="wrapper-right">
-        <a class="button" href="https://www.helloasso.com/associations/data-lille/evenements/inscription-data-days-2026">S'inscrire</a>
+        <a class="button" href="{{ url_for('sponsors_listing', lang=lang) }}">Devenir sponsor</a>
         <div class="menu-toggle" id="menu-toggle">
           <div class="bar"></div>
           <div class="bar"></div>
@@ -107,7 +105,7 @@
           <a href="https://github.com/AFPy/pyconfr-2024">PyconFr</a>
         </li>
         <li><a href="https://frozen-flask.readthedocs.io/">Frozen-Flask</a></li>
-        <li><a href="https://data-lille.fr/">© 2026 Data Lille</a></li>
+        <li><a href="https://data-lille.fr/">© 2027 Data Lille</a></li>
       </ul>
       <p class="footer-photo-notice">Un reportage photographique et vidéo sera réalisé lors de l'événement. Les images pourront être diffusées sur le site web et les réseaux sociaux de Data Lille. Un dispositif d'opt-out sera disponible à l'accueil.</p>
     </footer>

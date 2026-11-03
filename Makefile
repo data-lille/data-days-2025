@@ -8,7 +8,7 @@ static: .venv
 	.venv/bin/flask --app=datadays freeze
 	# add an index manually to the french directory
 	cp -r old_editions/* build
-	cp build/2026/index.html build/2026/fr/index.html
+	cp build/2027/index.html build/2027/fr/index.html
 	cp static/homepage.html build/index.html
 
 serve: .venv

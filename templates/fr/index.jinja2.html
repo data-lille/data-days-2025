@@ -1,48 +1,38 @@
 {% extends '_layout.jinja2' %}
 
 {% block content %}
-  <img class="datadays-logo" src="/2026/static/images/data_days_banner_white.png" />
+  <img class="datadays-logo" src="/2027/static/images/data_days_banner_white.png" />
 
   <article class="coverboard">
     <section class="datadays-presentation">
-      <h1>Bienvenue aux data days Lille 2026 !</h1>
+      <h1>Bienvenue aux data days Lille 2027 !</h1>
 
       <aside>
-        <span>2</span><sup>ème</sup> édition
+        <span>3</span><sup>ème</sup> édition
       </aside>
 
-      <p class="datadays-date">Le 26 mars 2026
+      <p class="datadays-date">Le 26 mars 2027
         <br/> 
         à l'Université Catholique de Lille
       </p>
 
       <p>
-        Bonne nouvelle ! Les Data Days reviennent en 2026 pour une nouvelle édition encore plus passionnante et enrichissante. <br>
-        Préparez-vous à plonger dans l'univers fascinant de la data, à découvrir les dernières tendances et innovations, et à échanger avec des experts du domaine.
+        Bonne nouvelle ! Les Data Days reviennent le 26 mars 2027 pour une troisième édition, toujours à l'Université Catholique de Lille. <br>
+        Réservez la date : une journée pour plonger dans l'univers de la data et de l'IA, découvrir les dernières tendances et échanger avec des experts du domaine.
+      </p>
+
+      <p>
+        <strong>Le call for papers et les inscriptions ouvriront prochainement</strong> — restez connectés !
       </p>
 
       <ul>
         <li>
-          <a class="button register" href="https://www.helloasso.com/associations/data-lille/evenements/inscription-data-days-2026">S'inscrire</a>
+          <a class="button" href="{{ url_for('sponsors_listing', lang=lang) }}">Devenir sponsor</a>
         </li>
         <li>
-          <a class="button schedule" href="{{ url_for('schedule', lang=lang) }}">Voir le programme</a>
+          <a class="button" href="/2026/">Revoir l'édition 2026</a>
         </li>
       </ul>
-    </section>
-  </article>
-
-  <article class="infos-pratiques">
-    <h2>Infos pratiques</h2>
-    <section class="infos-resume">
-      <p>
-        <strong>8h15</strong> accueil · <strong>9h</strong> conférences · <strong>12h30</strong> déjeuner · <strong>17h</strong> fin
-        <br>
-        Entrée par le <strong>60 Bd Vauban</strong> — préparez votre QR code HelloAsso pour récupérer votre badge.
-        <br>
-        Repas et pauses café inclus. Écocups fournis — ramenez le vôtre si possible !
-      </p>
-      <a class="button" href="{{ url_for('infos', lang=lang) }}">Toutes les infos pratiques</a>
     </section>
   </article>
 
@@ -53,17 +43,15 @@
       Une journée dédiée à la data et à l'IA, avec des conférences, des quick talks et des stands de sponsors pour découvrir les dernières innovations du secteur.
     </p>
 
-    <div style="text-align: center; margin-bottom: 1em;">
-      <a class="button" href="{{ url_for('schedule', lang=lang) }}" style="font-size: 1.2em;">
-        Voir le programme
-      </a>
-    </div>
+    <p style="text-align: center; max-width: 50em">
+      <strong>Le programme sera dévoilé après le call for papers.</strong>
+    </p>
 
     <section class="event-description margin:2em;">
 
       <section>
         <aside>📚 Apprendre</aside>
-        <h3>Conférences & Quick Talks</h3>
+        <h3>Conférences, Quick Talks & Ateliers</h3>
         <p>
           Deux tracks de conférences pour explorer tous les aspects de la data et de l'IA.
         </p>
@@ -76,7 +64,7 @@
           <li>Éthique & Responsabilité</li>
         </ul>
         <p>
-          <strong>Formats variés :</strong> conférences longues (45 min) et quick talks (15 min) pour s'adapter à tous les sujets.
+          <strong>Formats variés :</strong> conférences longues (45 min), quick talks (15 min) et ateliers plus longs pour passer à la pratique.
         </p>
       </section>
 
