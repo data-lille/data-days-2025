@@ -15,7 +15,7 @@
 <html lang="{{ lang }}">
   <head>
     {% block head %}
-    <title>{{ 'Data Days Lille 2027 — 26 mars 2027' if page_name == 'index' else title ~ ' - Data Days Lille 2027' }}</title>
+    <title>{{ 'Data Days Lille 2027, le 26 mars à Lille' if page_name == 'index' else title ~ ' - Data Days Lille 2027' }}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -37,9 +37,9 @@
 
 {%- set SITE = 'https://days.data-lille.fr' -%}
     {%- set meta_description = meta_description | default("Data Days Lille 2027 : une journée dédiée à la data et à l'IA le 26 mars 2027 à l'Université Catholique de Lille. Conférences, quick talks, ateliers pratiques et stands sponsors.") -%}
-    {%- set meta_title = 'Data Days Lille 2027 — 26 mars 2027' if page_name == 'index' else title ~ ' - Data Days Lille 2027' -%}
+    {%- set meta_title = 'Data Days Lille 2027, le 26 mars à Lille' if page_name == 'index' else title ~ ' - Data Days Lille 2027' -%}
     {%- set canonical = SITE ~ ('/' if page_name == 'index' else request.path) -%}
-    {%- set og_image = SITE ~ url_for('static', filename='images/og-2027.jpg') -%}
+    {%- set og_image = SITE ~ (url_for('static', filename='images/og-2027.jpg') | version) -%}
     <meta name="description" content="{{ meta_description }}" />
     <meta name="author" content="Data Lille" />
     <meta name="keywords" content="data, IA, intelligence artificielle, machine learning, data engineering, conférence, atelier, Lille, Hauts-de-France, 2027" />
@@ -57,7 +57,7 @@
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Data Days Lille, 26 mars 2027, Université Catholique de Lille — conférences, quick talks, ateliers" />
+    <meta property="og:image:alt" content="Data Days Lille, 26 mars 2027, Université Catholique de Lille, conférences, quick talks, ateliers" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ meta_title }}" />
