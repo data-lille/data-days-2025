@@ -1,0 +1,51 @@
+{% extends '_layout.jinja2' %}
+
+{% block content %}
+  <article class="organizers-page">
+    <h2>Organisateurs</h2>
+    <p class="organizers-intro">
+      Les Data Days sont organisés bénévolement par l'équipe de l'association
+      <a href="https://www.data-lille.fr">Data Lille</a>. Chacun porte un rôle dans l'association,
+      et on se partage toute l'organisation de l'événement.
+    </p>
+
+    <div class="organizers-grid">
+      {% for orga in organizers %}
+      <section class="organizer-card" id="{{ orga.metadata.slug }}">
+        <img class="organizer-photo" src="{{ url_for('static', filename=orga.metadata.avatar) }}" alt="{{ orga.metadata.name }}" loading="lazy">
+        <div class="organizer-body">
+          {% if orga.metadata.role %}<p class="organizer-badge">{{ orga.metadata.role }}</p>{% endif %}
+          <h3>{{ orga.metadata.name }}</h3>
+          <p class="organizer-poste">{{ orga.metadata.poste }}</p>
+          {% if orga.content %}
+          <div class="organizer-bio">{{ orga.content | markdown | safe }}</div>
+          {% endif %}
+          <p class="organizer-links">
+            {% if orga.metadata.linkedin %}
+            <a class="button" href="{{ orga.metadata.linkedin }}" target="_blank" rel="noopener">
+              {% include 'fr/fragments/linkedin_icon.jinja2.html' %} LinkedIn
+            </a>
+            {% endif %}
+            {% if orga.metadata.website %}
+            <a class="button button--outline" href="{{ orga.metadata.website }}" target="_blank" rel="noopener">Site web</a>
+            {% endif %}
+          </p>
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+
+    <section class="organizers-shared">
+      <h3>Une organisation à cinq</h3>
+      <p>Au-delà des rôles de chacun, toutes les décisions se prennent ensemble :</p>
+      <ul>
+        <li>l'organisation de la journée</li>
+        <li>les idées d'événements</li>
+        <li>la sélection des talks</li>
+        <li>les formats de talks</li>
+      </ul>
+      <p>Une question, une idée, envie de nous rejoindre ? Écrivez-nous ou contactez-nous directement sur LinkedIn.</p>
+      <a class="button" href="mailto:meetup.data.lille@gmail.com">Nous contacter</a>
+    </section>
+  </article>
+{% endblock content %}

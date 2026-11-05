@@ -133,6 +133,31 @@
     </section>
   </article>
 
+  {% if organizers %}
+  <article class="team">
+    <h2>L'équipe</h2>
+    <p class="team-intro">Les bénévoles de Data Lille qui organisent les Data Days 2027.</p>
+    <ul class="team-list">
+      {% for orga in organizers %}
+      <li class="team-member">
+        <a href="{{ url_for('organizers', lang=lang) }}#{{ orga.metadata.slug }}">
+          <img src="{{ url_for('static', filename=orga.metadata.avatar) }}" alt="{{ orga.metadata.name }}" loading="lazy">
+          <strong>{{ orga.metadata.name }}</strong>
+          {% if orga.metadata.role %}<em class="team-badge">{{ orga.metadata.role }}</em>{% endif %}
+          <span>{{ orga.metadata.poste }}</span>
+        </a>
+        {% if orga.metadata.linkedin %}
+        <a class="team-linkedin" href="{{ orga.metadata.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn de {{ orga.metadata.name }}">
+          {% include 'fr/fragments/linkedin_icon.jinja2.html' %}
+        </a>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    <a class="button" href="{{ url_for('organizers', lang=lang) }}">Découvrir l'équipe</a>
+  </article>
+  {% endif %}
+
   <article class="afpy">
     <section>
       <h2>Data Lille</h2>

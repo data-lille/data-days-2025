@@ -69,6 +69,33 @@ class Speaker(BaseModel, ListRetrieveMixin):
         return avatar
 
 
+class Organizer(BaseModel, ListRetrieveMixin):
+    PATH: ClassVar[str] = "organizers"
+
+    name: str
+    role: str = ""  # rôle dans l'association (badge)
+    poste: str  # métier / entreprise affiché sous le nom
+    avatar: str
+    linkedin: str = ""
+    website: str = ""
+    order: int = 100  # ordre d'affichage (croissant)
+
+    @field_validator("avatar")
+    @classmethod
+    def validate_avatar(cls, avatar: str) -> str:
+        avatar_path = ROOT_PATH / "static" / avatar.lstrip("/")
+        if not avatar_path.exists():
+            raise ValueError(f"Avatar file does not exist: {avatar_path}")
+        return avatar
+
+    @classmethod
+    def get_all(cls):
+        return sorted(
+            load_data(ROOT_PATH, cls),
+            key=lambda x: (x["metadata"]["order"], x["metadata"]["slug"]),
+        )
+
+
 class Sponsors(BaseModel, ListRetrieveMixin):
     PATH: ClassVar[str] = "sponsors"
 

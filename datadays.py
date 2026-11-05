@@ -4,7 +4,7 @@ from flask_frozen import Freezer
 from markdown2 import Markdown
 from sassutils.wsgi import SassMiddleware
 from slugify import slugify
-from models import Speaker, Sponsors, Talks, News, Schedule
+from models import Speaker, Sponsors, Talks, News, Schedule, Organizer
 from babel.dates import format_date, format_time as babel_format_time
 from datetime import datetime, time
 import os
@@ -188,6 +188,16 @@ def sponsors_details(slug, lang="fr"):
 #     return render_template(f"{lang}/infos.jinja2.html", page_name="infos", lang=lang)
 
 
+@app.route("/2027/<lang>/organisateurs/")
+def organizers(lang="fr"):
+    return render_template(
+        f"{lang}/organizers.jinja2.html",
+        page_name="organizers",
+        organizers=Organizer.get_all(),
+        lang=lang,
+    )
+
+
 @app.route("/2027/<lang>/venue/")
 def venue(lang="fr"):
     return render_template(f"{lang}/venue.jinja2.html", page_name="venue", lang=lang)
@@ -222,6 +232,7 @@ def index(lang="fr"):
         page_name="index",
         lang=lang,
         sponsors=Sponsors.get_all(),
+        organizers=Organizer.get_all(),
     )
 
 
